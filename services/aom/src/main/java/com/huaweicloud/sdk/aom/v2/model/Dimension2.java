@@ -43,7 +43,7 @@ public class Dimension2 {
     }
 
     /**
-     * 指标数据的值。
+     * 维度取值。
      * @return value
      */
     public String getValue() {

@@ -109,7 +109,7 @@ public class RepoMemberInfo {
     }
 
     /**
-     * 添加的用户权限，取值范围：30->普通成员，40->管理员
+     * 添加的用户权限，取值范围：20->浏览者，30->普通成员，40->管理员
      * @return role
      */
     public Integer getRole() {

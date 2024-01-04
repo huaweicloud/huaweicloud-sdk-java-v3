@@ -16,42 +16,41 @@ import java.util.function.Consumer;
 public class ShowClusterConfigurationDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "responses")
+    @JsonProperty(value = "body")
 
-    private Map<String, List<PackageOptions>> responses = null;
+    private Map<String, List<PackageOptions>> body = null;
 
-    public ShowClusterConfigurationDetailsResponse withResponses(Map<String, List<PackageOptions>> responses) {
-        this.responses = responses;
+    public ShowClusterConfigurationDetailsResponse withBody(Map<String, List<PackageOptions>> body) {
+        this.body = body;
         return this;
     }
 
-    public ShowClusterConfigurationDetailsResponse putResponsesItem(String key, List<PackageOptions> responsesItem) {
-        if (this.responses == null) {
-            this.responses = new HashMap<>();
+    public ShowClusterConfigurationDetailsResponse putBodyItem(String key, List<PackageOptions> bodyItem) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
         }
-        this.responses.put(key, responsesItem);
+        this.body.put(key, bodyItem);
         return this;
     }
 
-    public ShowClusterConfigurationDetailsResponse withResponses(
-        Consumer<Map<String, List<PackageOptions>>> responsesSetter) {
-        if (this.responses == null) {
-            this.responses = new HashMap<>();
+    public ShowClusterConfigurationDetailsResponse withBody(Consumer<Map<String, List<PackageOptions>>> bodySetter) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
         }
-        responsesSetter.accept(this.responses);
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * 指定集群配置项列表返回体，非实际返回参数
-     * @return responses
+     * 获取指定集群配置项列表返回体
+     * @return body
      */
-    public Map<String, List<PackageOptions>> getResponses() {
-        return responses;
+    public Map<String, List<PackageOptions>> getBody() {
+        return body;
     }
 
-    public void setResponses(Map<String, List<PackageOptions>> responses) {
-        this.responses = responses;
+    public void setBody(Map<String, List<PackageOptions>> body) {
+        this.body = body;
     }
 
     @Override
@@ -63,19 +62,19 @@ public class ShowClusterConfigurationDetailsResponse extends SdkResponse {
             return false;
         }
         ShowClusterConfigurationDetailsResponse that = (ShowClusterConfigurationDetailsResponse) obj;
-        return Objects.equals(this.responses, that.responses);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(responses);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterConfigurationDetailsResponse {\n");
-        sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -98,7 +98,7 @@ public class CreateInstanceReq {
     private EngineEnum engine;
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm,hk_sbc,sbc)。 
      */
     public static final class EngineVersionEnum {
 
@@ -481,7 +481,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm,hk_sbc,sbc)。 
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {
@@ -633,7 +633,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 产品标识。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
+     * 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
      * @return productId
      */
     public String getProductId() {

@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetWithEngineRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetWithEngineResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodRequest;
@@ -1244,6 +1246,41 @@ public class KafkaClient {
         ResetMessageOffsetRequest request) {
         return new SyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse>(request,
             KafkaMeta.resetMessageOffset, hcClient);
+    }
+
+    /**
+     * 重置消费组消费进度到指定位置
+     *
+     * Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
+     * 
+     * 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetMessageOffsetWithEngineRequest 请求对象
+     * @return ResetMessageOffsetWithEngineResponse
+     */
+    public ResetMessageOffsetWithEngineResponse resetMessageOffsetWithEngine(
+        ResetMessageOffsetWithEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.resetMessageOffsetWithEngine);
+    }
+
+    /**
+     * 重置消费组消费进度到指定位置
+     *
+     * Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
+     * 
+     * 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetMessageOffsetWithEngineRequest 请求对象
+     * @return SyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse>
+     */
+    public SyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> resetMessageOffsetWithEngineInvoker(
+        ResetMessageOffsetWithEngineRequest request) {
+        return new SyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse>(request,
+            KafkaMeta.resetMessageOffsetWithEngine, hcClient);
     }
 
     /**

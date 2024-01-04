@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.dlf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -36,7 +34,7 @@ public class Cron {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependJobs")
 
-    private List<DependJob> dependJobs = null;
+    private DependJob dependJobs;
 
     public Cron withStartTime(String startTime) {
         this.startTime = startTime;
@@ -106,36 +104,29 @@ public class Cron {
         this.dependPrePeriod = dependPrePeriod;
     }
 
-    public Cron withDependJobs(List<DependJob> dependJobs) {
+    public Cron withDependJobs(DependJob dependJobs) {
         this.dependJobs = dependJobs;
         return this;
     }
 
-    public Cron addDependJobsItem(DependJob dependJobsItem) {
+    public Cron withDependJobs(Consumer<DependJob> dependJobsSetter) {
         if (this.dependJobs == null) {
-            this.dependJobs = new ArrayList<>();
+            this.dependJobs = new DependJob();
+            dependJobsSetter.accept(this.dependJobs);
         }
-        this.dependJobs.add(dependJobsItem);
-        return this;
-    }
 
-    public Cron withDependJobs(Consumer<List<DependJob>> dependJobsSetter) {
-        if (this.dependJobs == null) {
-            this.dependJobs = new ArrayList<>();
-        }
-        dependJobsSetter.accept(this.dependJobs);
         return this;
     }
 
     /**
-     * 依赖其它作业列表
+     * Get dependJobs
      * @return dependJobs
      */
-    public List<DependJob> getDependJobs() {
+    public DependJob getDependJobs() {
         return dependJobs;
     }
 
-    public void setDependJobs(List<DependJob> dependJobs) {
+    public void setDependJobs(DependJob dependJobs) {
         this.dependJobs = dependJobs;
     }
 

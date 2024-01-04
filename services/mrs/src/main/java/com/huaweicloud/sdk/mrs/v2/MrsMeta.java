@@ -15,6 +15,9 @@ import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSyncIamUserRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSyncIamUserResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSyncRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterReqV2;
@@ -50,6 +53,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsFlavorsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsFlavorsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeRequest;
@@ -58,6 +63,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSyncIamUserRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSyncIamUserResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowTagStatusRequest;
@@ -79,6 +86,9 @@ import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterReq;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateSyncIamUserRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateSyncIamUserResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateSyncRequest;
 
 import java.util.List;
 
@@ -916,6 +926,95 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelSyncIamUserRequest, CancelSyncIamUserResponse> cancelSyncIamUser =
+        genForcancelSyncIamUser();
+
+    private static HttpRequestDef<CancelSyncIamUserRequest, CancelSyncIamUserResponse> genForcancelSyncIamUser() {
+        // basic
+        HttpRequestDef.Builder<CancelSyncIamUserRequest, CancelSyncIamUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, CancelSyncIamUserRequest.class, CancelSyncIamUserResponse.class)
+                .withName("CancelSyncIamUser")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/iam-sync-user")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelSyncIamUserRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CancelSyncRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CancelSyncRequest.class),
+            f -> f.withMarshaller(CancelSyncIamUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSyncIamUserRequest, ShowSyncIamUserResponse> showSyncIamUser =
+        genForshowSyncIamUser();
+
+    private static HttpRequestDef<ShowSyncIamUserRequest, ShowSyncIamUserResponse> genForshowSyncIamUser() {
+        // basic
+        HttpRequestDef.Builder<ShowSyncIamUserRequest, ShowSyncIamUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSyncIamUserRequest.class, ShowSyncIamUserResponse.class)
+                .withName("ShowSyncIamUser")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/iam-sync-user")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSyncIamUserRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSyncIamUserRequest, UpdateSyncIamUserResponse> updateSyncIamUser =
+        genForupdateSyncIamUser();
+
+    private static HttpRequestDef<UpdateSyncIamUserRequest, UpdateSyncIamUserResponse> genForupdateSyncIamUser() {
+        // basic
+        HttpRequestDef.Builder<UpdateSyncIamUserRequest, UpdateSyncIamUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateSyncIamUserRequest.class, UpdateSyncIamUserResponse.class)
+                .withName("UpdateSyncIamUser")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/iam-sync-user")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSyncIamUserRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<UpdateSyncRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateSyncRequest.class),
+            f -> f.withMarshaller(UpdateSyncIamUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelSqlRequest, CancelSqlResponse> cancelSql = genForcancelSql();
 
     private static HttpRequestDef<CancelSqlRequest, CancelSqlResponse> genForcancelSql() {
@@ -1091,6 +1190,31 @@ public class MrsMeta {
             TypeCasts.uncheckedConversion(ModifyDefaultTagsRequestBody.class),
             f -> f.withMarshaller(SwitchClusterTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMrsFlavorsRequest, ShowMrsFlavorsResponse> showMrsFlavors =
+        genForshowMrsFlavors();
+
+    private static HttpRequestDef<ShowMrsFlavorsRequest, ShowMrsFlavorsResponse> genForshowMrsFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowMrsFlavorsRequest, ShowMrsFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMrsFlavorsRequest.class, ShowMrsFlavorsResponse.class)
+                .withName("ShowMrsFlavors")
+                .withUri("/v2/{project_id}/metadata/version/{version_name}/available-flavor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMrsFlavorsRequest::getVersionName, (req, v) -> {
+                req.setVersionName(v);
             }));
 
         // response

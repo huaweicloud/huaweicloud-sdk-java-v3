@@ -26,7 +26,7 @@ public class MuteConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scope")
 
-    private List<String> scope = null;
+    private List<Integer> scope = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "starts_at")
@@ -34,7 +34,7 @@ public class MuteConfig {
     private Long startsAt;
 
     /**
-     * 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
+     * 静默规则生效时间种类。FIXED：固定方式统计，DAILY：按日合计，WEEKLY：按周统计，MONTHLY：按月统计
      */
     public static final class TypeEnum {
 
@@ -139,12 +139,12 @@ public class MuteConfig {
         this.endsAt = endsAt;
     }
 
-    public MuteConfig withScope(List<String> scope) {
+    public MuteConfig withScope(List<Integer> scope) {
         this.scope = scope;
         return this;
     }
 
-    public MuteConfig addScopeItem(String scopeItem) {
+    public MuteConfig addScopeItem(Integer scopeItem) {
         if (this.scope == null) {
             this.scope = new ArrayList<>();
         }
@@ -152,7 +152,7 @@ public class MuteConfig {
         return this;
     }
 
-    public MuteConfig withScope(Consumer<List<String>> scopeSetter) {
+    public MuteConfig withScope(Consumer<List<Integer>> scopeSetter) {
         if (this.scope == null) {
             this.scope = new ArrayList<>();
         }
@@ -164,11 +164,11 @@ public class MuteConfig {
      * 当type为每周或者每月时，scope不能为空
      * @return scope
      */
-    public List<String> getScope() {
+    public List<Integer> getScope() {
         return scope;
     }
 
-    public void setScope(List<String> scope) {
+    public void setScope(List<Integer> scope) {
         this.scope = scope;
     }
 
@@ -197,7 +197,7 @@ public class MuteConfig {
     }
 
     /**
-     * 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
+     * 静默规则生效时间种类。FIXED：固定方式统计，DAILY：按日合计，WEEKLY：按周统计，MONTHLY：按月统计
      * @return type
      */
     public TypeEnum getType() {

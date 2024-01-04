@@ -5,12 +5,23 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserRequest;
+import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserRequestBody;
+import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserResponse;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequestBody;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchSubscriptionsFilterPolicesRequestBody;
+import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequest;
@@ -47,6 +58,7 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicResponse;
+import com.huaweicloud.sdk.smn.v2.model.HttpDetectRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointAttributesRequest;
@@ -85,9 +97,13 @@ import com.huaweicloud.sdk.smn.v2.model.ListVersionsResponse;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageResponse;
+import com.huaweicloud.sdk.smn.v2.model.PublishHttpDetectRequest;
+import com.huaweicloud.sdk.smn.v2.model.PublishHttpDetectResponse;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageResponse;
+import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
+import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
@@ -145,6 +161,41 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse> addSubscriptionFromSubscriptionUser =
+        genForaddSubscriptionFromSubscriptionUser();
+
+    private static HttpRequestDef<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse> genForaddSubscriptionFromSubscriptionUser() {
+        // basic
+        HttpRequestDef.Builder<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddSubscriptionFromSubscriptionUserRequest.class,
+                    AddSubscriptionFromSubscriptionUserResponse.class)
+                .withName("AddSubscriptionFromSubscriptionUser")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions/from-subscription-users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddSubscriptionFromSubscriptionUserRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<AddSubscriptionFromSubscriptionUserRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddSubscriptionFromSubscriptionUserRequestBody.class),
+            f -> f.withMarshaller(AddSubscriptionFromSubscriptionUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> batchCreateOrDeleteResourceTags =
         genForbatchCreateOrDeleteResourceTags();
 
@@ -179,6 +230,90 @@ public class SmnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteResourceTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateOrDeleteResourceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse> batchCreateSubscriptionsFilterPolices =
+        genForbatchCreateSubscriptionsFilterPolices();
+
+    private static HttpRequestDef<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse> genForbatchCreateSubscriptionsFilterPolices() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSubscriptionsFilterPolicesRequest.class,
+                    BatchCreateSubscriptionsFilterPolicesResponse.class)
+                .withName("BatchCreateSubscriptionsFilterPolices")
+                .withUri("/v2/{project_id}/notifications/subscriptions/filter_polices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchSubscriptionsFilterPolicesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSubscriptionsFilterPolicesRequestBody.class),
+            f -> f.withMarshaller(BatchCreateSubscriptionsFilterPolicesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse> batchDeleteSubscriptionsFilterPolices =
+        genForbatchDeleteSubscriptionsFilterPolices();
+
+    private static HttpRequestDef<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse> genForbatchDeleteSubscriptionsFilterPolices() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteSubscriptionsFilterPolicesRequest.class,
+                    BatchDeleteSubscriptionsFilterPolicesResponse.class)
+                .withName("BatchDeleteSubscriptionsFilterPolices")
+                .withUri("/v2/{project_id}/notifications/subscriptions/filter_polices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchDeleteSubscriptionsFilterPolicesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteSubscriptionsFilterPolicesRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSubscriptionsFilterPolicesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse> batchUpdateSubscriptionsFilterPolices =
+        genForbatchUpdateSubscriptionsFilterPolices();
+
+    private static HttpRequestDef<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse> genForbatchUpdateSubscriptionsFilterPolices() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateSubscriptionsFilterPolicesRequest.class,
+                    BatchUpdateSubscriptionsFilterPolicesResponse.class)
+                .withName("BatchUpdateSubscriptionsFilterPolices")
+                .withUri("/v2/{project_id}/notifications/subscriptions/filter_polices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchSubscriptionsFilterPolicesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSubscriptionsFilterPolicesRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateSubscriptionsFilterPolicesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -746,6 +881,13 @@ public class SmnMeta {
             f -> f.withMarshaller(ListSubscriptionsRequest::getEndpoint, (req, v) -> {
                 req.setEndpoint(v);
             }));
+        builder.<String>withRequestField("fuzzy_remark",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getFuzzyRemark, (req, v) -> {
+                req.setFuzzyRemark(v);
+            }));
 
         // response
 
@@ -785,6 +927,13 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubscriptionsByTopicRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("fuzzy_remark",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsByTopicRequest::getFuzzyRemark, (req, v) -> {
+                req.setFuzzyRemark(v);
             }));
 
         // response
@@ -902,6 +1051,13 @@ public class SmnMeta {
             f -> f.withMarshaller(ListTopicsRequest::getTopicId, (req, v) -> {
                 req.setTopicId(v);
             }));
+        builder.<String>withRequestField("fuzzy_display_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsRequest::getFuzzyDisplayName, (req, v) -> {
+                req.setFuzzyDisplayName(v);
+            }));
 
         // response
 
@@ -942,6 +1098,38 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PublishHttpDetectRequest, PublishHttpDetectResponse> publishHttpDetect =
+        genForpublishHttpDetect();
+
+    private static HttpRequestDef<PublishHttpDetectRequest, PublishHttpDetectResponse> genForpublishHttpDetect() {
+        // basic
+        HttpRequestDef.Builder<PublishHttpDetectRequest, PublishHttpDetectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishHttpDetectRequest.class, PublishHttpDetectResponse.class)
+                .withName("PublishHttpDetect")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/detection")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishHttpDetectRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<HttpDetectRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HttpDetectRequestBody.class),
+            f -> f.withMarshaller(PublishHttpDetectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PublishMessageRequest, PublishMessageResponse> publishMessage =
         genForpublishMessage();
 
@@ -967,6 +1155,38 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(PublishMessageRequestBody.class),
             f -> f.withMarshaller(PublishMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse> showHttpDetectResult =
+        genForshowHttpDetectResult();
+
+    private static HttpRequestDef<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse> genForshowHttpDetectResult() {
+        // basic
+        HttpRequestDef.Builder<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowHttpDetectResultRequest.class, ShowHttpDetectResultResponse.class)
+            .withName("ShowHttpDetectResult")
+            .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/detection/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHttpDetectResultRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHttpDetectResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response

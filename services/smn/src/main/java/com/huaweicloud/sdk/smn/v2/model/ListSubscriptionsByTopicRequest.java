@@ -25,6 +25,11 @@ public class ListSubscriptionsByTopicRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fuzzy_remark")
+
+    private String fuzzyRemark;
+
     public ListSubscriptionsByTopicRequest withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -76,6 +81,23 @@ public class ListSubscriptionsByTopicRequest {
         this.limit = limit;
     }
 
+    public ListSubscriptionsByTopicRequest withFuzzyRemark(String fuzzyRemark) {
+        this.fuzzyRemark = fuzzyRemark;
+        return this;
+    }
+
+    /**
+     * 检索的订阅备注字段，模糊匹配。最大长度限制为128字节。
+     * @return fuzzyRemark
+     */
+    public String getFuzzyRemark() {
+        return fuzzyRemark;
+    }
+
+    public void setFuzzyRemark(String fuzzyRemark) {
+        this.fuzzyRemark = fuzzyRemark;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class ListSubscriptionsByTopicRequest {
         }
         ListSubscriptionsByTopicRequest that = (ListSubscriptionsByTopicRequest) obj;
         return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.fuzzyRemark, that.fuzzyRemark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topicUrn, offset, limit);
+        return Objects.hash(topicUrn, offset, limit, fuzzyRemark);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class ListSubscriptionsByTopicRequest {
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    fuzzyRemark: ").append(toIndentedString(fuzzyRemark)).append("\n");
         sb.append("}");
         return sb.toString();
     }

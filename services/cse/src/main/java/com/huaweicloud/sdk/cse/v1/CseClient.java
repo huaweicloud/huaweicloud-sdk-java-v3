@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.cse.v1.model.RetryEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.RetryEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineJobRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineJobResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasResponse;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.UpdateGovernancePolicyRequest;
@@ -558,6 +560,36 @@ public class CseClient {
      */
     public SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse> showEngineJobInvoker(ShowEngineJobRequest request) {
         return new SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse>(request, CseMeta.showEngineJob, hcClient);
+    }
+
+    /**
+     * 查询微服务引擎配额
+     *
+     * 查询微服务引擎配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineQuotasRequest 请求对象
+     * @return ShowEngineQuotasResponse
+     */
+    public ShowEngineQuotasResponse showEngineQuotas(ShowEngineQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.showEngineQuotas);
+    }
+
+    /**
+     * 查询微服务引擎配额
+     *
+     * 查询微服务引擎配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineQuotasRequest 请求对象
+     * @return SyncInvoker<ShowEngineQuotasRequest, ShowEngineQuotasResponse>
+     */
+    public SyncInvoker<ShowEngineQuotasRequest, ShowEngineQuotasResponse> showEngineQuotasInvoker(
+        ShowEngineQuotasRequest request) {
+        return new SyncInvoker<ShowEngineQuotasRequest, ShowEngineQuotasResponse>(request, CseMeta.showEngineQuotas,
+            hcClient);
     }
 
     /**

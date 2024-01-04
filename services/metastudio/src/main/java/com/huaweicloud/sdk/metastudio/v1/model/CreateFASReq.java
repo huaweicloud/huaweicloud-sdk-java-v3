@@ -20,6 +20,11 @@ public class CreateFASReq {
 
     private Integer frameRate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "emotion")
+
+    private Integer emotion;
+
     public CreateFASReq withAudioFileDownloadUrl(String audioFileDownloadUrl) {
         this.audioFileDownloadUrl = audioFileDownloadUrl;
         return this;
@@ -56,6 +61,25 @@ public class CreateFASReq {
         this.frameRate = frameRate;
     }
 
+    public CreateFASReq withEmotion(Integer emotion) {
+        this.emotion = emotion;
+        return this;
+    }
+
+    /**
+     * 情绪： 0：平静（默认） 1：开心 2：哀伤 3：愤怒
+     * minimum: 0
+     * maximum: 3
+     * @return emotion
+     */
+    public Integer getEmotion() {
+        return emotion;
+    }
+
+    public void setEmotion(Integer emotion) {
+        this.emotion = emotion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -66,12 +90,12 @@ public class CreateFASReq {
         }
         CreateFASReq that = (CreateFASReq) obj;
         return Objects.equals(this.audioFileDownloadUrl, that.audioFileDownloadUrl)
-            && Objects.equals(this.frameRate, that.frameRate);
+            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.emotion, that.emotion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(audioFileDownloadUrl, frameRate);
+        return Objects.hash(audioFileDownloadUrl, frameRate, emotion);
     }
 
     @Override
@@ -80,6 +104,7 @@ public class CreateFASReq {
         sb.append("class CreateFASReq {\n");
         sb.append("    audioFileDownloadUrl: ").append(toIndentedString(audioFileDownloadUrl)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
+        sb.append("    emotion: ").append(toIndentedString(emotion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

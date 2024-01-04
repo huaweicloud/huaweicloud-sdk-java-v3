@@ -207,6 +207,11 @@ public class ComponentSpec {
 
     private String buildLogId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configuration_operation_id")
+
+    private String configurationOperationId;
+
     public ComponentSpec withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
         return this;
@@ -471,6 +476,23 @@ public class ComponentSpec {
         this.buildLogId = buildLogId;
     }
 
+    public ComponentSpec withConfigurationOperationId(String configurationOperationId) {
+        this.configurationOperationId = configurationOperationId;
+        return this;
+    }
+
+    /**
+     * 组件最新配置的操作ID。
+     * @return configurationOperationId
+     */
+    public String getConfigurationOperationId() {
+        return configurationOperationId;
+    }
+
+    public void setConfigurationOperationId(String configurationOperationId) {
+        this.configurationOperationId = configurationOperationId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -486,7 +508,8 @@ public class ComponentSpec {
             && Objects.equals(this.accessInfo, that.accessInfo) && Objects.equals(this.imageUrl, that.imageUrl)
             && Objects.equals(this.availableReplica, that.availableReplica) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.buildId, that.buildId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.buildLogId, that.buildLogId);
+            && Objects.equals(this.buildLogId, that.buildLogId)
+            && Objects.equals(this.configurationOperationId, that.configurationOperationId);
     }
 
     @Override
@@ -503,7 +526,8 @@ public class ComponentSpec {
             jobId,
             buildId,
             status,
-            buildLogId);
+            buildLogId,
+            configurationOperationId);
     }
 
     @Override
@@ -523,6 +547,7 @@ public class ComponentSpec {
         sb.append("    buildId: ").append(toIndentedString(buildId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    buildLogId: ").append(toIndentedString(buildLogId)).append("\n");
+        sb.append("    configurationOperationId: ").append(toIndentedString(configurationOperationId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

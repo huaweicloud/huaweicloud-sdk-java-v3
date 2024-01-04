@@ -15,8 +15,6 @@ import com.huaweicloud.sdk.koomap.v1.model.CreateTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceResponse;
-import com.huaweicloud.sdk.koomap.v1.model.DeleteMarkPointInfoRequest;
-import com.huaweicloud.sdk.koomap.v1.model.DeleteMarkPointInfoResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DTaskRequest;
@@ -25,16 +23,12 @@ import com.huaweicloud.sdk.koomap.v1.model.DeleteSpurPointRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteSpurPointResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteTaskResponse;
-import com.huaweicloud.sdk.koomap.v1.model.EstimateSpurPointRequest;
-import com.huaweicloud.sdk.koomap.v1.model.EstimateSpurPointResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListCommonWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListFolderRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListFolderResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoResponse;
-import com.huaweicloud.sdk.koomap.v1.model.ListMarkPointsRequest;
-import com.huaweicloud.sdk.koomap.v1.model.ListMarkPointsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListSpurPointsRequest;
@@ -45,12 +39,10 @@ import com.huaweicloud.sdk.koomap.v1.model.ListTasksInWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListTasksInWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoResponse;
-import com.huaweicloud.sdk.koomap.v1.model.SaveMarkPointInfoRequest;
-import com.huaweicloud.sdk.koomap.v1.model.SaveMarkPointInfoResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ShowReal3DUsageRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowReal3DUsageResponse;
-import com.huaweicloud.sdk.koomap.v1.model.ShowSpurPredictStatusRequest;
-import com.huaweicloud.sdk.koomap.v1.model.ShowSpurPredictStatusResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ShowSpurCountRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ShowSpurCountResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewInWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewInWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewRequest;
@@ -162,7 +154,7 @@ public class KooMapAsyncClient {
     /**
      * 生成刺点文件
      *
-     * 根据当前任务中的所有图片的刺点信息，生成算法运行时需要的刺点文件。
+     * 根据当前任务中的所有图片的刺点信息，生成算法运行时需要的刺点文件。注意：该接口调用需要传递空请求体“{}”。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -176,7 +168,7 @@ public class KooMapAsyncClient {
     /**
      * 生成刺点文件
      *
-     * 根据当前任务中的所有图片的刺点信息，生成算法运行时需要的刺点文件。
+     * 根据当前任务中的所有图片的刺点信息，生成算法运行时需要的刺点文件。注意：该接口调用需要传递空请求体“{}”。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -279,36 +271,6 @@ public class KooMapAsyncClient {
     }
 
     /**
-     * 删除用户已上传的像控点信息
-     *
-     * 删除上传过的像控点信息（生产资料）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteMarkPointInfoRequest 请求对象
-     * @return CompletableFuture<DeleteMarkPointInfoResponse>
-     */
-    public CompletableFuture<DeleteMarkPointInfoResponse> deleteMarkPointInfoAsync(DeleteMarkPointInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooMapMeta.deleteMarkPointInfo);
-    }
-
-    /**
-     * 删除用户已上传的像控点信息
-     *
-     * 删除上传过的像控点信息（生产资料）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteMarkPointInfoRequest 请求对象
-     * @return AsyncInvoker<DeleteMarkPointInfoRequest, DeleteMarkPointInfoResponse>
-     */
-    public AsyncInvoker<DeleteMarkPointInfoRequest, DeleteMarkPointInfoResponse> deleteMarkPointInfoAsyncInvoker(
-        DeleteMarkPointInfoRequest request) {
-        return new AsyncInvoker<DeleteMarkPointInfoRequest, DeleteMarkPointInfoResponse>(request,
-            KooMapMeta.deleteMarkPointInfo, hcClient);
-    }
-
-    /**
      * 删除实景三维成果影像
      *
      * 删除实景三维成果影像。仅当成果影像状态为“available”时才可以删除。该接口执行后，成果影像状态更新为“deleting”。在完成删除后成果影像将被删除，且数据不可恢复。
@@ -371,7 +333,7 @@ public class KooMapAsyncClient {
     /**
      * 删除图片上的刺点
      *
-     * 根据刺点ID, 删除图片上的刺点。
+     * 根据刺点ID，删除图片上的刺点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -385,7 +347,7 @@ public class KooMapAsyncClient {
     /**
      * 删除图片上的刺点
      *
-     * 根据刺点ID, 删除图片上的刺点。
+     * 根据刺点ID，删除图片上的刺点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -424,36 +386,6 @@ public class KooMapAsyncClient {
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
         return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, KooMapMeta.deleteTask, hcClient);
-    }
-
-    /**
-     * 预测刺点信息
-     *
-     * 根据选中的像控点信息，筛选出可能包含该像控点的图片列表，并给出像控点在图片中的位置，提供刺点参考信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param EstimateSpurPointRequest 请求对象
-     * @return CompletableFuture<EstimateSpurPointResponse>
-     */
-    public CompletableFuture<EstimateSpurPointResponse> estimateSpurPointAsync(EstimateSpurPointRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooMapMeta.estimateSpurPoint);
-    }
-
-    /**
-     * 预测刺点信息
-     *
-     * 根据选中的像控点信息，筛选出可能包含该像控点的图片列表，并给出像控点在图片中的位置，提供刺点参考信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param EstimateSpurPointRequest 请求对象
-     * @return AsyncInvoker<EstimateSpurPointRequest, EstimateSpurPointResponse>
-     */
-    public AsyncInvoker<EstimateSpurPointRequest, EstimateSpurPointResponse> estimateSpurPointAsyncInvoker(
-        EstimateSpurPointRequest request) {
-        return new AsyncInvoker<EstimateSpurPointRequest, EstimateSpurPointResponse>(request,
-            KooMapMeta.estimateSpurPoint, hcClient);
     }
 
     /**
@@ -497,9 +429,9 @@ public class KooMapAsyncClient {
     }
 
     /**
-     * 查询当前租户的影像列表
+     * 查询当前租户的倾斜影像列表
      *
-     * 根据分页条件（分页的偏移量或每页的数据量），查询当前租户的影像基本信息列表。
+     * 根据过滤条件查询当前租户的倾斜影像基本信息列表。过滤条件有：影像名称、影像别名、影像上传起止时间、影像状态、影像描述、分页偏移量、每页显示条数，影像排序规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -511,9 +443,9 @@ public class KooMapAsyncClient {
     }
 
     /**
-     * 查询当前租户的影像列表
+     * 查询当前租户的倾斜影像列表
      *
-     * 根据分页条件（分页的偏移量或每页的数据量），查询当前租户的影像基本信息列表。
+     * 根据过滤条件查询当前租户的倾斜影像基本信息列表。过滤条件有：影像名称、影像别名、影像上传起止时间、影像状态、影像描述、分页偏移量、每页显示条数，影像排序规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -552,36 +484,6 @@ public class KooMapAsyncClient {
         ListImageBaseInfoRequest request) {
         return new AsyncInvoker<ListImageBaseInfoRequest, ListImageBaseInfoResponse>(request,
             KooMapMeta.listImageBaseInfo, hcClient);
-    }
-
-    /**
-     * 获取用户上传的像控点信息
-     *
-     * 获取用户上传的所有像控点信息（生产资料）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListMarkPointsRequest 请求对象
-     * @return CompletableFuture<ListMarkPointsResponse>
-     */
-    public CompletableFuture<ListMarkPointsResponse> listMarkPointsAsync(ListMarkPointsRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooMapMeta.listMarkPoints);
-    }
-
-    /**
-     * 获取用户上传的像控点信息
-     *
-     * 获取用户上传的所有像控点信息（生产资料）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListMarkPointsRequest 请求对象
-     * @return AsyncInvoker<ListMarkPointsRequest, ListMarkPointsResponse>
-     */
-    public AsyncInvoker<ListMarkPointsRequest, ListMarkPointsResponse> listMarkPointsAsyncInvoker(
-        ListMarkPointsRequest request) {
-        return new AsyncInvoker<ListMarkPointsRequest, ListMarkPointsResponse>(request, KooMapMeta.listMarkPoints,
-            hcClient);
     }
 
     /**
@@ -687,6 +589,7 @@ public class KooMapAsyncClient {
      * 对单个工作共享空间内的任务进行分页查询，支持过滤条件：
      * - 任务名称（task_name）：支持模糊查询。
      * - 任务类型（task_type）：支持REAL3D-UNCTRL和REAL3D-CTRL。
+     * - 建模类型（modeling_type）：支持Mesh和Nerf。
      * - 任务ID（task_ids）：支持同时过滤多个任务ID。
      * - 任务状态（task_status）：支持同时过滤多个任务状态。
      * - 创建时间范围（create_time_from和create_time_to）：为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
@@ -709,6 +612,7 @@ public class KooMapAsyncClient {
      * 对单个工作共享空间内的任务进行分页查询，支持过滤条件：
      * - 任务名称（task_name）：支持模糊查询。
      * - 任务类型（task_type）：支持REAL3D-UNCTRL和REAL3D-CTRL。
+     * - 建模类型（modeling_type）：支持Mesh和Nerf。
      * - 任务ID（task_ids）：支持同时过滤多个任务ID。
      * - 任务状态（task_status）：支持同时过滤多个任务状态。
      * - 创建时间范围（create_time_from和create_time_to）：为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
@@ -761,45 +665,9 @@ public class KooMapAsyncClient {
     }
 
     /**
-     * 保存用户上传的像控点信息
-     *
-     * 保存用户上传的像控点文本信息（生产资料）：
-     * - 文本信息包含多行，每行的数据格式为“名称 经度 纬度 高度 精度”。
-     * - 名称要求不超过50个字符。
-     * - 经度、纬度、高度、精度信息都为Double数据格式。经度、纬度、高度要求为WGS84地理坐标系下的经纬度坐标，数据范围：[-10000000, 10000000]。精度（单位：米）数据范围：（0, 100）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SaveMarkPointInfoRequest 请求对象
-     * @return CompletableFuture<SaveMarkPointInfoResponse>
-     */
-    public CompletableFuture<SaveMarkPointInfoResponse> saveMarkPointInfoAsync(SaveMarkPointInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooMapMeta.saveMarkPointInfo);
-    }
-
-    /**
-     * 保存用户上传的像控点信息
-     *
-     * 保存用户上传的像控点文本信息（生产资料）：
-     * - 文本信息包含多行，每行的数据格式为“名称 经度 纬度 高度 精度”。
-     * - 名称要求不超过50个字符。
-     * - 经度、纬度、高度、精度信息都为Double数据格式。经度、纬度、高度要求为WGS84地理坐标系下的经纬度坐标，数据范围：[-10000000, 10000000]。精度（单位：米）数据范围：（0, 100）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SaveMarkPointInfoRequest 请求对象
-     * @return AsyncInvoker<SaveMarkPointInfoRequest, SaveMarkPointInfoResponse>
-     */
-    public AsyncInvoker<SaveMarkPointInfoRequest, SaveMarkPointInfoResponse> saveMarkPointInfoAsyncInvoker(
-        SaveMarkPointInfoRequest request) {
-        return new AsyncInvoker<SaveMarkPointInfoRequest, SaveMarkPointInfoResponse>(request,
-            KooMapMeta.saveMarkPointInfo, hcClient);
-    }
-
-    /**
      * 查询实景三维用量
      *
-     * 您可以查询实景三维生产服务（当前仅实现基础版）时空专属存储或影像建模的用量统计。
+     * 您可以查询实景三维生产服务时空专属存储或影像建模的用量统计。
      * - 时空专属存储：统计导入的原始影像、生产资料和成果影像存储总量（单位为“GB”）。
      * - 影像建模用量：统计成功建模的倾斜影像的像素点数量（单位为“GP”，即十亿像素）、成功建模的次数。
      * 
@@ -815,7 +683,7 @@ public class KooMapAsyncClient {
     /**
      * 查询实景三维用量
      *
-     * 您可以查询实景三维生产服务（当前仅实现基础版）时空专属存储或影像建模的用量统计。
+     * 您可以查询实景三维生产服务时空专属存储或影像建模的用量统计。
      * - 时空专属存储：统计导入的原始影像、生产资料和成果影像存储总量（单位为“GB”）。
      * - 影像建模用量：统计成功建模的倾斜影像的像素点数量（单位为“GP”，即十亿像素）、成功建模的次数。
      * 
@@ -831,34 +699,33 @@ public class KooMapAsyncClient {
     }
 
     /**
-     * 查询当前任务的刺点预测状态
+     * 查询单个像控点的已刺点数量
      *
-     * 查询当前任务的刺点预测状态，返回的“status”取值为“2”时，表示刺点预测功能可用。
+     * 根据像控点信息，查询该像控点在图片上已刺点数量，数量等同于已刺点图片的张数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpurPredictStatusRequest 请求对象
-     * @return CompletableFuture<ShowSpurPredictStatusResponse>
+     * @param ShowSpurCountRequest 请求对象
+     * @return CompletableFuture<ShowSpurCountResponse>
      */
-    public CompletableFuture<ShowSpurPredictStatusResponse> showSpurPredictStatusAsync(
-        ShowSpurPredictStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooMapMeta.showSpurPredictStatus);
+    public CompletableFuture<ShowSpurCountResponse> showSpurCountAsync(ShowSpurCountRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooMapMeta.showSpurCount);
     }
 
     /**
-     * 查询当前任务的刺点预测状态
+     * 查询单个像控点的已刺点数量
      *
-     * 查询当前任务的刺点预测状态，返回的“status”取值为“2”时，表示刺点预测功能可用。
+     * 根据像控点信息，查询该像控点在图片上已刺点数量，数量等同于已刺点图片的张数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpurPredictStatusRequest 请求对象
-     * @return AsyncInvoker<ShowSpurPredictStatusRequest, ShowSpurPredictStatusResponse>
+     * @param ShowSpurCountRequest 请求对象
+     * @return AsyncInvoker<ShowSpurCountRequest, ShowSpurCountResponse>
      */
-    public AsyncInvoker<ShowSpurPredictStatusRequest, ShowSpurPredictStatusResponse> showSpurPredictStatusAsyncInvoker(
-        ShowSpurPredictStatusRequest request) {
-        return new AsyncInvoker<ShowSpurPredictStatusRequest, ShowSpurPredictStatusResponse>(request,
-            KooMapMeta.showSpurPredictStatus, hcClient);
+    public AsyncInvoker<ShowSpurCountRequest, ShowSpurCountResponse> showSpurCountAsyncInvoker(
+        ShowSpurCountRequest request) {
+        return new AsyncInvoker<ShowSpurCountRequest, ShowSpurCountResponse>(request, KooMapMeta.showSpurCount,
+            hcClient);
     }
 
     /**

@@ -237,6 +237,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
@@ -3786,6 +3790,66 @@ public class DataArtsStudioClient {
         ListFactoryJobsRequest request) {
         return new SyncInvoker<ListFactoryJobsRequest, ListFactoryJobsResponse>(request,
             DataArtsStudioMeta.listFactoryJobs, hcClient);
+    }
+
+    /**
+     * 查询任务完成情况
+     *
+     * 查询任务完成情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryTaskCompletionRequest 请求对象
+     * @return ListFactoryTaskCompletionResponse
+     */
+    public ListFactoryTaskCompletionResponse listFactoryTaskCompletion(ListFactoryTaskCompletionRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryTaskCompletion);
+    }
+
+    /**
+     * 查询任务完成情况
+     *
+     * 查询任务完成情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryTaskCompletionRequest 请求对象
+     * @return SyncInvoker<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse>
+     */
+    public SyncInvoker<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> listFactoryTaskCompletionInvoker(
+        ListFactoryTaskCompletionRequest request) {
+        return new SyncInvoker<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse>(request,
+            DataArtsStudioMeta.listFactoryTaskCompletion, hcClient);
+    }
+
+    /**
+     * 查询实例运行状态
+     *
+     * 查询实例运行状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryTaskOverviewRequest 请求对象
+     * @return ListFactoryTaskOverviewResponse
+     */
+    public ListFactoryTaskOverviewResponse listFactoryTaskOverview(ListFactoryTaskOverviewRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryTaskOverview);
+    }
+
+    /**
+     * 查询实例运行状态
+     *
+     * 查询实例运行状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryTaskOverviewRequest 请求对象
+     * @return SyncInvoker<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse>
+     */
+    public SyncInvoker<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> listFactoryTaskOverviewInvoker(
+        ListFactoryTaskOverviewRequest request) {
+        return new SyncInvoker<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse>(request,
+            DataArtsStudioMeta.listFactoryTaskOverview, hcClient);
     }
 
     /**

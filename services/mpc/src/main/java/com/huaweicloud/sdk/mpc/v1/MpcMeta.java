@@ -136,6 +136,8 @@ import com.huaweicloud.sdk.mpc.v1.model.QualityEnhanceTemplate;
 import com.huaweicloud.sdk.mpc.v1.model.RemuxRetryReq;
 import com.huaweicloud.sdk.mpc.v1.model.ShowAgenciesTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ShowAgenciesTaskResponse;
+import com.huaweicloud.sdk.mpc.v1.model.ShowTenantAccessInfoRequest;
+import com.huaweicloud.sdk.mpc.v1.model.ShowTenantAccessInfoResponse;
 import com.huaweicloud.sdk.mpc.v1.model.TransTemplate;
 import com.huaweicloud.sdk.mpc.v1.model.TransTemplateGroup;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateBucketAuthorizedRequest;
@@ -145,6 +147,9 @@ import com.huaweicloud.sdk.mpc.v1.model.UpdateQualityEnhanceTemplateRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateQualityEnhanceTemplateResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTemplateGroupRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTemplateGroupResponse;
+import com.huaweicloud.sdk.mpc.v1.model.UpdateTenantAccessInfoReq;
+import com.huaweicloud.sdk.mpc.v1.model.UpdateTenantAccessInfoRequest;
+import com.huaweicloud.sdk.mpc.v1.model.UpdateTenantAccessInfoResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTransTemplateRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTransTemplateResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateWatermarkTemplateRequest;
@@ -1608,6 +1613,63 @@ public class MpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTransTemplateGroup.class),
             f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> showTenantAccessInfo =
+        genForshowTenantAccessInfo();
+
+    private static HttpRequestDef<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> genForshowTenantAccessInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTenantAccessInfoRequest.class, ShowTenantAccessInfoResponse.class)
+            .withName("ShowTenantAccessInfo")
+            .withUri("/v1/{project_id}/tenant/access")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTenantAccessInfoRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> updateTenantAccessInfo =
+        genForupdateTenantAccessInfo();
+
+    private static HttpRequestDef<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> genForupdateTenantAccessInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateTenantAccessInfoRequest.class, UpdateTenantAccessInfoResponse.class)
+            .withName("UpdateTenantAccessInfo")
+            .withUri("/v1/{project_id}/tenant/access")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTenantAccessInfoRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateTenantAccessInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateTenantAccessInfoReq.class),
+            f -> f.withMarshaller(UpdateTenantAccessInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

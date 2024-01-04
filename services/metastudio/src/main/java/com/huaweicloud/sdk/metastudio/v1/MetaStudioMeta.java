@@ -11,14 +11,21 @@ import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoReque
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlDigitalHumanLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlSmartLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobReq;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
@@ -47,6 +54,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTTSAReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingJobReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
@@ -54,6 +71,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRespon
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -66,6 +85,11 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserReq;
+import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
@@ -73,6 +97,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandR
 import com.huaweicloud.sdk.metastudio.v1.model.FilesCreateReq;
 import com.huaweicloud.sdk.metastudio.v1.model.InteractionRuleGroup;
 import com.huaweicloud.sdk.metastudio.v1.model.LanguageCheckInfoReq;
+import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummarysReq;
@@ -102,6 +128,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.PictureModelingByUrlReq;
@@ -110,10 +138,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
@@ -124,10 +158,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveResponse;
@@ -135,6 +175,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
@@ -3280,6 +3322,938 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse> commitVoiceTrainingJob =
+        genForcommitVoiceTrainingJob();
+
+    private static HttpRequestDef<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse> genForcommitVoiceTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CommitVoiceTrainingJobRequest.class, CommitVoiceTrainingJobResponse.class)
+            .withName("CommitVoiceTrainingJob")
+            .withUri("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitVoiceTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitVoiceTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitVoiceTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitVoiceTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitVoiceTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse> confirmTrainingSegment =
+        genForconfirmTrainingSegment();
+
+    private static HttpRequestDef<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse> genForconfirmTrainingSegment() {
+        // basic
+        HttpRequestDef.Builder<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ConfirmTrainingSegmentRequest.class, ConfirmTrainingSegmentResponse.class)
+            .withName("ConfirmTrainingSegment")
+            .withUri("/v1/{project_id}/voice-training-manage/user/training-segment")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmTrainingSegmentRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("index",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ConfirmTrainingSegmentRequest::getIndex, (req, v) -> {
+                req.setIndex(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse> createTrainingAdvanceJob =
+        genForcreateTrainingAdvanceJob();
+
+    private static HttpRequestDef<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse> genForcreateTrainingAdvanceJob() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateTrainingAdvanceJobRequest.class, CreateTrainingAdvanceJobResponse.class)
+                .withName("CreateTrainingAdvanceJob")
+                .withUri("/v1/{project_id}/voice-training-manage/user/advance-jobs")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingAdvanceJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<CreateTrainingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrainingJobReq.class),
+            f -> f.withMarshaller(CreateTrainingAdvanceJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse> createTrainingBasicJob =
+        genForcreateTrainingBasicJob();
+
+    private static HttpRequestDef<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse> genForcreateTrainingBasicJob() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTrainingBasicJobRequest.class, CreateTrainingBasicJobResponse.class)
+            .withName("CreateTrainingBasicJob")
+            .withUri("/v1/{project_id}/voice-training-manage/user/basic-jobs")
+            .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingBasicJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingBasicJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingBasicJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingBasicJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<CreateTrainingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrainingJobReq.class),
+            f -> f.withMarshaller(CreateTrainingBasicJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse> createTrainingMiddleJob =
+        genForcreateTrainingMiddleJob();
+
+    private static HttpRequestDef<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse> genForcreateTrainingMiddleJob() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTrainingMiddleJobRequest.class, CreateTrainingMiddleJobResponse.class)
+            .withName("CreateTrainingMiddleJob")
+            .withUri("/v1/{project_id}/voice-training-manage/user/middle-jobs")
+            .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingMiddleJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingMiddleJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingMiddleJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingMiddleJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<CreateTrainingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrainingJobReq.class),
+            f -> f.withMarshaller(CreateTrainingMiddleJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> deleteVoiceTrainingJob =
+        genFordeleteVoiceTrainingJob();
+
+    private static HttpRequestDef<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> genFordeleteVoiceTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteVoiceTrainingJobRequest.class, DeleteVoiceTrainingJobResponse.class)
+            .withName("DeleteVoiceTrainingJob")
+            .withUri("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVoiceTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVoiceTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVoiceTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVoiceTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVoiceTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse> listVoiceTrainingJob =
+        genForlistVoiceTrainingJob();
+
+    private static HttpRequestDef<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse> genForlistVoiceTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListVoiceTrainingJobRequest.class, ListVoiceTrainingJobResponse.class)
+            .withName("ListVoiceTrainingJob")
+            .withUri("/v1/{project_id}/voice-training-manage/user/jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getCreateUntil, (req, v) -> {
+                req.setCreateUntil(v);
+            }));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getCreateSince, (req, v) -> {
+                req.setCreateSince(v);
+            }));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getState, (req, v) -> {
+                req.setState(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("voice_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getVoiceName, (req, v) -> {
+                req.setVoiceName(v);
+            }));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getTag, (req, v) -> {
+                req.setTag(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJobAuditResultRequest, ShowJobAuditResultResponse> showJobAuditResult =
+        genForshowJobAuditResult();
+
+    private static HttpRequestDef<ShowJobAuditResultRequest, ShowJobAuditResultResponse> genForshowJobAuditResult() {
+        // basic
+        HttpRequestDef.Builder<ShowJobAuditResultRequest, ShowJobAuditResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobAuditResultRequest.class, ShowJobAuditResultResponse.class)
+                .withName("ShowJobAuditResult")
+                .withUri("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/audit-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobAuditResultRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse> showJobUploadingAddress =
+        genForshowJobUploadingAddress();
+
+    private static HttpRequestDef<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse> genForshowJobUploadingAddress() {
+        // basic
+        HttpRequestDef.Builder<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowJobUploadingAddressRequest.class, ShowJobUploadingAddressResponse.class)
+            .withName("ShowJobUploadingAddress")
+            .withUri("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/uploading-address-url")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobUploadingAddressRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse> showTrainingSegmentInfo =
+        genForshowTrainingSegmentInfo();
+
+    private static HttpRequestDef<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse> genForshowTrainingSegmentInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTrainingSegmentInfoRequest.class, ShowTrainingSegmentInfoResponse.class)
+            .withName("ShowTrainingSegmentInfo")
+            .withUri("/v1/{project_id}/voice-training-manage/user/training-segment")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingSegmentInfoRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse> showVoiceTrainingJob =
+        genForshowVoiceTrainingJob();
+
+    private static HttpRequestDef<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse> genForshowVoiceTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVoiceTrainingJobRequest.class, ShowVoiceTrainingJobResponse.class)
+            .withName("ShowVoiceTrainingJob")
+            .withUri("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse> create2dModelTrainingJob =
+        genForcreate2dModelTrainingJob();
+
+    private static HttpRequestDef<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse> genForcreate2dModelTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, Create2dModelTrainingJobRequest.class, Create2dModelTrainingJobResponse.class)
+                .withName("Create2dModelTrainingJob")
+                .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Create2dModelTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Create2dModelTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Create2dModelTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Create2dModelTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<Create2dModelTrainingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Create2dModelTrainingJobReq.class),
+            f -> f.withMarshaller(Create2dModelTrainingJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(Create2dModelTrainingJobResponse::getXRequestId,
+                Create2dModelTrainingJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse> delete2dModelTrainingJob =
+        genFordelete2dModelTrainingJob();
+
+    private static HttpRequestDef<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse> genFordelete2dModelTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    Delete2dModelTrainingJobRequest.class,
+                    Delete2dModelTrainingJobResponse.class)
+                .withName("Delete2dModelTrainingJob")
+                .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Delete2dModelTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Delete2dModelTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Delete2dModelTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Delete2dModelTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Delete2dModelTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(Delete2dModelTrainingJobResponse::getXRequestId,
+                Delete2dModelTrainingJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse> execute2dModelTrainingCommandByUser =
+        genForexecute2dModelTrainingCommandByUser();
+
+    private static HttpRequestDef<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse> genForexecute2dModelTrainingCommandByUser() {
+        // basic
+        HttpRequestDef.Builder<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    Execute2dModelTrainingCommandByUserRequest.class,
+                    Execute2dModelTrainingCommandByUserResponse.class)
+                .withName("Execute2dModelTrainingCommandByUser")
+                .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}/command")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<Execute2dModelTrainingCommandByUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Execute2dModelTrainingCommandByUserReq.class),
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(Execute2dModelTrainingCommandByUserResponse::getXRequestId,
+                Execute2dModelTrainingCommandByUserResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse> list2dModelTrainingJob =
+        genForlist2dModelTrainingJob();
+
+    private static HttpRequestDef<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse> genForlist2dModelTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, List2dModelTrainingJobRequest.class, List2dModelTrainingJobResponse.class)
+            .withName("List2dModelTrainingJob")
+            .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getState, (req, v) -> {
+                req.setState(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getCreateUntil, (req, v) -> {
+                req.setCreateUntil(v);
+            }));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getCreateSince, (req, v) -> {
+                req.setCreateSince(v);
+            }));
+        builder.<String>withRequestField("batch_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getBatchName, (req, v) -> {
+                req.setBatchName(v);
+            }));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getTag, (req, v) -> {
+                req.setTag(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(List2dModelTrainingJobResponse::getXRequestId,
+                List2dModelTrainingJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse> show2dModelTrainingJob =
+        genForshow2dModelTrainingJob();
+
+    private static HttpRequestDef<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse> genForshow2dModelTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, Show2dModelTrainingJobRequest.class, Show2dModelTrainingJobResponse.class)
+            .withName("Show2dModelTrainingJob")
+            .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Show2dModelTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Show2dModelTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Show2dModelTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Show2dModelTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Show2dModelTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(Show2dModelTrainingJobResponse::getXRequestId,
+                Show2dModelTrainingJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse> update2dModelTrainingJob =
+        genForupdate2dModelTrainingJob();
+
+    private static HttpRequestDef<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse> genForupdate2dModelTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, Update2dModelTrainingJobRequest.class, Update2dModelTrainingJobResponse.class)
+                .withName("Update2dModelTrainingJob")
+                .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Update2dModelTrainingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Update2dModelTrainingJobRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Update2dModelTrainingJobRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Update2dModelTrainingJobRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Update2dModelTrainingJobRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<Create2dModelTrainingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Create2dModelTrainingJobReq.class),
+            f -> f.withMarshaller(Update2dModelTrainingJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(Update2dModelTrainingJobResponse::getXRequestId,
+                Update2dModelTrainingJobResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> createFacialAnimations =
         genForcreateFacialAnimations();
 
@@ -3512,6 +4486,126 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListTtsaJobsResponse::getXRequestId, ListTtsaJobsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTtsAuditionRequest, CreateTtsAuditionResponse> createTtsAudition =
+        genForcreateTtsAudition();
+
+    private static HttpRequestDef<CreateTtsAuditionRequest, CreateTtsAuditionResponse> genForcreateTtsAudition() {
+        // basic
+        HttpRequestDef.Builder<CreateTtsAuditionRequest, CreateTtsAuditionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTtsAuditionRequest.class, CreateTtsAuditionResponse.class)
+                .withName("CreateTtsAudition")
+                .withUri("/v1/{project_id}/ttsc/audition")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtsAuditionRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtsAuditionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtsAuditionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtsAuditionRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtsAuditionRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<CreateTtsAuditionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTtsAuditionRequestBody.class),
+            f -> f.withMarshaller(CreateTtsAuditionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFile =
+        genForshowTtsAuditionFile();
+
+    private static HttpRequestDef<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> genForshowTtsAuditionFile() {
+        // basic
+        HttpRequestDef.Builder<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTtsAuditionFileRequest.class, ShowTtsAuditionFileResponse.class)
+                .withName("ShowTtsAuditionFile")
+                .withUri("/v1/{project_id}/ttsc/audition-file/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
         return builder.build();
     }
 

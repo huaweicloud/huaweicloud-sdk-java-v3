@@ -15,46 +15,90 @@ import java.util.function.Consumer;
 public class ListEventStreamingResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "total")
 
-    private List<EventStreamingDetail> body = null;
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "items")
+
+    private List<EventStreamingDetail> items = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
 
-    public ListEventStreamingResponse withBody(List<EventStreamingDetail> body) {
-        this.body = body;
-        return this;
-    }
-
-    public ListEventStreamingResponse addBodyItem(EventStreamingDetail bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public ListEventStreamingResponse withBody(Consumer<List<EventStreamingDetail>> bodySetter) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
+    public ListEventStreamingResponse withTotal(Integer total) {
+        this.total = total;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 总数
+     * @return total
      */
-    public List<EventStreamingDetail> getBody() {
-        return body;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setBody(List<EventStreamingDetail> body) {
-        this.body = body;
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ListEventStreamingResponse withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 本页数量
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public ListEventStreamingResponse withItems(List<EventStreamingDetail> items) {
+        this.items = items;
+        return this;
+    }
+
+    public ListEventStreamingResponse addItemsItem(EventStreamingDetail itemsItem) {
+        if (this.items == null) {
+            this.items = new ArrayList<>();
+        }
+        this.items.add(itemsItem);
+        return this;
+    }
+
+    public ListEventStreamingResponse withItems(Consumer<List<EventStreamingDetail>> itemsSetter) {
+        if (this.items == null) {
+            this.items = new ArrayList<>();
+        }
+        itemsSetter.accept(this.items);
+        return this;
+    }
+
+    /**
+     * 对象列表
+     * @return items
+     */
+    public List<EventStreamingDetail> getItems() {
+        return items;
+    }
+
+    public void setItems(List<EventStreamingDetail> items) {
+        this.items = items;
     }
 
     public ListEventStreamingResponse withXRequestId(String xRequestId) {
@@ -85,19 +129,22 @@ public class ListEventStreamingResponse extends SdkResponse {
             return false;
         }
         ListEventStreamingResponse that = (ListEventStreamingResponse) obj;
-        return Objects.equals(this.body, that.body) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.items, that.items) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, xRequestId);
+        return Objects.hash(total, size, items, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEventStreamingResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

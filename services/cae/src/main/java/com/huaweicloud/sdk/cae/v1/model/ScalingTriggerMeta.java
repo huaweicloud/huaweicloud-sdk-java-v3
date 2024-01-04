@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数含义：trigger元数据。
+ * trigger元数据。
  */
 public class ScalingTriggerMeta {
 
@@ -29,7 +29,7 @@ public class ScalingTriggerMeta {
     private String value;
 
     /**
-     * - type为\"cron\"时，配置此参数。 - 参数含义：生效周期，只支持day、week、month。
+     * 生效周期。  type为\"cron\"时，配置此参数。 
      */
     public static final class PeriodTypeEnum {
 
@@ -120,7 +120,7 @@ public class ScalingTriggerMeta {
     }
 
     /**
-     * - type为\"cpu、memory\"时，配置此参数。 - 参数含义：数据类型，当前只支持利用率，默认值为Utilization。
+     * 数据类型，当前只支持利用率，默认值为Utilization。  type为\"cpu、memory\"时，配置此参数。 
      * @return type
      */
     public String getType() {
@@ -137,7 +137,7 @@ public class ScalingTriggerMeta {
     }
 
     /**
-     * - type为\"cpu、memory\"时，配置此参数。 - 参数含义：触发指标的期望值。
+     * 触发指标的阈值。  type为\"cpu、memory\"时，配置此参数。 
      * @return value
      */
     public String getValue() {
@@ -154,7 +154,7 @@ public class ScalingTriggerMeta {
     }
 
     /**
-     * - type为\"cron\"时，配置此参数。 - 参数含义：生效周期，只支持day、week、month。
+     * 生效周期。  type为\"cron\"时，配置此参数。 
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {
@@ -187,7 +187,7 @@ public class ScalingTriggerMeta {
     }
 
     /**
-     * - type为\"cron\"时，配置此参数。 - 参数含义：每个周期内触发的时间点和实例数。
+     * 每个周期内触发的时间点和实例数。  type为\"cron\"时，配置此参数。 
      * @return schedulers
      */
     public List<CronTriggerScheduler> getSchedulers() {

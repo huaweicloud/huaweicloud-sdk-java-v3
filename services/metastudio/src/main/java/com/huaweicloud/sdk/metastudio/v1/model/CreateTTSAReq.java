@@ -216,7 +216,7 @@ public class CreateTTSAReq {
     }
 
     /**
-     * 音色模型ID
+     * 音色模型ID。需要使用MetaStudio的数字资产管理相关接口从资产库查出。
      * @return voiceAssetId
      */
     public String getVoiceAssetId() {
@@ -358,7 +358,7 @@ public class CreateTTSAReq {
     }
 
     /**
-     * 风格化ID。
+     * 风格化ID。需要调用数字人风格管理相关接口，从系统重查得。
      * @return styleId
      */
     public String getStyleId() {

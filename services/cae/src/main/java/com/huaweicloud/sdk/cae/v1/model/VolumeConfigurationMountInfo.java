@@ -26,7 +26,7 @@ public class VolumeConfigurationMountInfo {
     private String subPath;
 
     /**
-     * 读写权限，支持读写、只读。
+     * 读写权限。
      */
     public static final class AccessModeEnum {
 
@@ -140,7 +140,7 @@ public class VolumeConfigurationMountInfo {
     }
 
     /**
-     * 读写权限，支持读写、只读。
+     * 读写权限。
      * @return accessMode
      */
     public AccessModeEnum getAccessMode() {

@@ -9,10 +9,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoReque
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardRequest;
@@ -33,12 +39,22 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -51,10 +67,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
@@ -83,16 +105,24 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
@@ -103,16 +133,24 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
@@ -1506,6 +1544,564 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 提交语音训练任务
+     *
+     * 提交训练任务,执行该接口后,任务会进入审核状态,审核完成后会等待训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CommitVoiceTrainingJobRequest 请求对象
+     * @return CompletableFuture<CommitVoiceTrainingJobResponse>
+     */
+    public CompletableFuture<CommitVoiceTrainingJobResponse> commitVoiceTrainingJobAsync(
+        CommitVoiceTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.commitVoiceTrainingJob);
+    }
+
+    /**
+     * 提交语音训练任务
+     *
+     * 提交训练任务,执行该接口后,任务会进入审核状态,审核完成后会等待训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CommitVoiceTrainingJobRequest 请求对象
+     * @return AsyncInvoker<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse>
+     */
+    public AsyncInvoker<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse> commitVoiceTrainingJobAsyncInvoker(
+        CommitVoiceTrainingJobRequest request) {
+        return new AsyncInvoker<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse>(request,
+            MetaStudioMeta.commitVoiceTrainingJob, hcClient);
+    }
+
+    /**
+     * 确认在线录音结果
+     *
+     * 确认在线录音结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ConfirmTrainingSegmentRequest 请求对象
+     * @return CompletableFuture<ConfirmTrainingSegmentResponse>
+     */
+    public CompletableFuture<ConfirmTrainingSegmentResponse> confirmTrainingSegmentAsync(
+        ConfirmTrainingSegmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.confirmTrainingSegment);
+    }
+
+    /**
+     * 确认在线录音结果
+     *
+     * 确认在线录音结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ConfirmTrainingSegmentRequest 请求对象
+     * @return AsyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse>
+     */
+    public AsyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse> confirmTrainingSegmentAsyncInvoker(
+        ConfirmTrainingSegmentRequest request) {
+        return new AsyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse>(request,
+            MetaStudioMeta.confirmTrainingSegment, hcClient);
+    }
+
+    /**
+     * 创建高级版语音训练任务
+     *
+     * 用户创建语音训练基础版任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 仅支持zip包方式上传语音文件：
+     * * 语音文件打包成zip上传：上传的训练数据为一个zip格式压缩文件,其中包含一段wav格式的长音频文件。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrainingAdvanceJobRequest 请求对象
+     * @return CompletableFuture<CreateTrainingAdvanceJobResponse>
+     */
+    public CompletableFuture<CreateTrainingAdvanceJobResponse> createTrainingAdvanceJobAsync(
+        CreateTrainingAdvanceJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTrainingAdvanceJob);
+    }
+
+    /**
+     * 创建高级版语音训练任务
+     *
+     * 用户创建语音训练基础版任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 仅支持zip包方式上传语音文件：
+     * * 语音文件打包成zip上传：上传的训练数据为一个zip格式压缩文件,其中包含一段wav格式的长音频文件。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrainingAdvanceJobRequest 请求对象
+     * @return AsyncInvoker<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse>
+     */
+    public AsyncInvoker<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse> createTrainingAdvanceJobAsyncInvoker(
+        CreateTrainingAdvanceJobRequest request) {
+        return new AsyncInvoker<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse>(request,
+            MetaStudioMeta.createTrainingAdvanceJob, hcClient);
+    }
+
+    /**
+     * 创建基础版语音训练任务
+     *
+     * 用户创建语音训练基础版任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 支持2种方式上传语音文件：
+     * * 语音文件和文本文件打包成zip上传：语音文件已经切分成20个wav文件，每个语音文件对应一个txt文本文件，所有文件打包成zip文件。语音文件命名规则：0.wav~19.wav；文本文件命名规则：0.txt~19.txt。
+     * * 语音文件和文本文件逐句上传：每次上传一句语料的语音文件和文本文件，再调用“确认在线录音结果”接口确认语音和文本内容是否一致。确认成功后再上传和确认下一句。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrainingBasicJobRequest 请求对象
+     * @return CompletableFuture<CreateTrainingBasicJobResponse>
+     */
+    public CompletableFuture<CreateTrainingBasicJobResponse> createTrainingBasicJobAsync(
+        CreateTrainingBasicJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTrainingBasicJob);
+    }
+
+    /**
+     * 创建基础版语音训练任务
+     *
+     * 用户创建语音训练基础版任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 支持2种方式上传语音文件：
+     * * 语音文件和文本文件打包成zip上传：语音文件已经切分成20个wav文件，每个语音文件对应一个txt文本文件，所有文件打包成zip文件。语音文件命名规则：0.wav~19.wav；文本文件命名规则：0.txt~19.txt。
+     * * 语音文件和文本文件逐句上传：每次上传一句语料的语音文件和文本文件，再调用“确认在线录音结果”接口确认语音和文本内容是否一致。确认成功后再上传和确认下一句。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrainingBasicJobRequest 请求对象
+     * @return AsyncInvoker<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse>
+     */
+    public AsyncInvoker<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse> createTrainingBasicJobAsyncInvoker(
+        CreateTrainingBasicJobRequest request) {
+        return new AsyncInvoker<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse>(request,
+            MetaStudioMeta.createTrainingBasicJob, hcClient);
+    }
+
+    /**
+     * 创建进阶版语音训练任务
+     *
+     * 用户创建语音训练基础版任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 支持2种方式上传语音文件：
+     * * 语音文件和文本文件打包成zip上传：语音文件已经切分成100个wav文件，每个语音文件对应一个txt文本文件，所有文件打包成zip文件。语音文件命名规则：0.wav~99.wav；文本文件命名规则：0.txt~99.txt。
+     * * 语音文件和文本文件逐句上传：每次上传一句语料的语音文件和文本文件，再调用“确认在线录音结果”接口确认语音和文本内容是否一致。确认成功后再上传和确认下一句。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrainingMiddleJobRequest 请求对象
+     * @return CompletableFuture<CreateTrainingMiddleJobResponse>
+     */
+    public CompletableFuture<CreateTrainingMiddleJobResponse> createTrainingMiddleJobAsync(
+        CreateTrainingMiddleJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTrainingMiddleJob);
+    }
+
+    /**
+     * 创建进阶版语音训练任务
+     *
+     * 用户创建语音训练基础版任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 支持2种方式上传语音文件：
+     * * 语音文件和文本文件打包成zip上传：语音文件已经切分成100个wav文件，每个语音文件对应一个txt文本文件，所有文件打包成zip文件。语音文件命名规则：0.wav~99.wav；文本文件命名规则：0.txt~99.txt。
+     * * 语音文件和文本文件逐句上传：每次上传一句语料的语音文件和文本文件，再调用“确认在线录音结果”接口确认语音和文本内容是否一致。确认成功后再上传和确认下一句。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrainingMiddleJobRequest 请求对象
+     * @return AsyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse>
+     */
+    public AsyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse> createTrainingMiddleJobAsyncInvoker(
+        CreateTrainingMiddleJobRequest request) {
+        return new AsyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse>(request,
+            MetaStudioMeta.createTrainingMiddleJob, hcClient);
+    }
+
+    /**
+     * 删除语音训练任务
+     *
+     * 删除语音训练任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVoiceTrainingJobRequest 请求对象
+     * @return CompletableFuture<DeleteVoiceTrainingJobResponse>
+     */
+    public CompletableFuture<DeleteVoiceTrainingJobResponse> deleteVoiceTrainingJobAsync(
+        DeleteVoiceTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteVoiceTrainingJob);
+    }
+
+    /**
+     * 删除语音训练任务
+     *
+     * 删除语音训练任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVoiceTrainingJobRequest 请求对象
+     * @return AsyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse>
+     */
+    public AsyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> deleteVoiceTrainingJobAsyncInvoker(
+        DeleteVoiceTrainingJobRequest request) {
+        return new AsyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse>(request,
+            MetaStudioMeta.deleteVoiceTrainingJob, hcClient);
+    }
+
+    /**
+     * 查询语音训练任务列表
+     *
+     * 查询语音训练任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVoiceTrainingJobRequest 请求对象
+     * @return CompletableFuture<ListVoiceTrainingJobResponse>
+     */
+    public CompletableFuture<ListVoiceTrainingJobResponse> listVoiceTrainingJobAsync(
+        ListVoiceTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listVoiceTrainingJob);
+    }
+
+    /**
+     * 查询语音训练任务列表
+     *
+     * 查询语音训练任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVoiceTrainingJobRequest 请求对象
+     * @return AsyncInvoker<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse>
+     */
+    public AsyncInvoker<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse> listVoiceTrainingJobAsyncInvoker(
+        ListVoiceTrainingJobRequest request) {
+        return new AsyncInvoker<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse>(request,
+            MetaStudioMeta.listVoiceTrainingJob, hcClient);
+    }
+
+    /**
+     * 获取语音训练任务审核结果
+     *
+     * 获取语音训练任务审核结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobAuditResultRequest 请求对象
+     * @return CompletableFuture<ShowJobAuditResultResponse>
+     */
+    public CompletableFuture<ShowJobAuditResultResponse> showJobAuditResultAsync(ShowJobAuditResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showJobAuditResult);
+    }
+
+    /**
+     * 获取语音训练任务审核结果
+     *
+     * 获取语音训练任务审核结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobAuditResultRequest 请求对象
+     * @return AsyncInvoker<ShowJobAuditResultRequest, ShowJobAuditResultResponse>
+     */
+    public AsyncInvoker<ShowJobAuditResultRequest, ShowJobAuditResultResponse> showJobAuditResultAsyncInvoker(
+        ShowJobAuditResultRequest request) {
+        return new AsyncInvoker<ShowJobAuditResultRequest, ShowJobAuditResultResponse>(request,
+            MetaStudioMeta.showJobAuditResult, hcClient);
+    }
+
+    /**
+     * 获取语音文件上传地址
+     *
+     * 获取语音文件上传地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobUploadingAddressRequest 请求对象
+     * @return CompletableFuture<ShowJobUploadingAddressResponse>
+     */
+    public CompletableFuture<ShowJobUploadingAddressResponse> showJobUploadingAddressAsync(
+        ShowJobUploadingAddressRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showJobUploadingAddress);
+    }
+
+    /**
+     * 获取语音文件上传地址
+     *
+     * 获取语音文件上传地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobUploadingAddressRequest 请求对象
+     * @return AsyncInvoker<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse>
+     */
+    public AsyncInvoker<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse> showJobUploadingAddressAsyncInvoker(
+        ShowJobUploadingAddressRequest request) {
+        return new AsyncInvoker<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse>(request,
+            MetaStudioMeta.showJobUploadingAddress, hcClient);
+    }
+
+    /**
+     * 获取在线录音确认结果
+     *
+     * 获取在线录音确认结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrainingSegmentInfoRequest 请求对象
+     * @return CompletableFuture<ShowTrainingSegmentInfoResponse>
+     */
+    public CompletableFuture<ShowTrainingSegmentInfoResponse> showTrainingSegmentInfoAsync(
+        ShowTrainingSegmentInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTrainingSegmentInfo);
+    }
+
+    /**
+     * 获取在线录音确认结果
+     *
+     * 获取在线录音确认结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrainingSegmentInfoRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse>
+     */
+    public AsyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse> showTrainingSegmentInfoAsyncInvoker(
+        ShowTrainingSegmentInfoRequest request) {
+        return new AsyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse>(request,
+            MetaStudioMeta.showTrainingSegmentInfo, hcClient);
+    }
+
+    /**
+     * 查询语音训练任务详情
+     *
+     * 查询语音训练任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVoiceTrainingJobRequest 请求对象
+     * @return CompletableFuture<ShowVoiceTrainingJobResponse>
+     */
+    public CompletableFuture<ShowVoiceTrainingJobResponse> showVoiceTrainingJobAsync(
+        ShowVoiceTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showVoiceTrainingJob);
+    }
+
+    /**
+     * 查询语音训练任务详情
+     *
+     * 查询语音训练任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVoiceTrainingJobRequest 请求对象
+     * @return AsyncInvoker<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse>
+     */
+    public AsyncInvoker<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse> showVoiceTrainingJobAsyncInvoker(
+        ShowVoiceTrainingJobRequest request) {
+        return new AsyncInvoker<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse>(request,
+            MetaStudioMeta.showVoiceTrainingJob, hcClient);
+    }
+
+    /**
+     * 创建分身数字人模型训练任务
+     *
+     * 该接口用于创建分身数字人模型训练任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Create2dModelTrainingJobRequest 请求对象
+     * @return CompletableFuture<Create2dModelTrainingJobResponse>
+     */
+    public CompletableFuture<Create2dModelTrainingJobResponse> create2dModelTrainingJobAsync(
+        Create2dModelTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.create2dModelTrainingJob);
+    }
+
+    /**
+     * 创建分身数字人模型训练任务
+     *
+     * 该接口用于创建分身数字人模型训练任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Create2dModelTrainingJobRequest 请求对象
+     * @return AsyncInvoker<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse>
+     */
+    public AsyncInvoker<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse> create2dModelTrainingJobAsyncInvoker(
+        Create2dModelTrainingJobRequest request) {
+        return new AsyncInvoker<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse>(request,
+            MetaStudioMeta.create2dModelTrainingJob, hcClient);
+    }
+
+    /**
+     * 删除分身数字人模型训练任务
+     *
+     * 该接口用于删除分身数字人模型训练任务。同时需要删除训练任务相关的训练视频、身份证照片、授权文件、模型资产等。
+     * &gt; * 该接口应当在任务处于以下状态时调用：WAIT_FILE_UPLOAD、AUTO_VERIFY_FAILED、MANUAL_VERIFYING、MANUAL_VERIFY_FAILED、TRAINING_DATA_PREPROCESS_FAILED、TRAIN_FAILED、INFERENCE_DATA_PREPROCESS_FAILED、JOB_SUCCESS、WAIT_USER_CONFIRM、JOB_REJECT、JOB_FINISH
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Delete2dModelTrainingJobRequest 请求对象
+     * @return CompletableFuture<Delete2dModelTrainingJobResponse>
+     */
+    public CompletableFuture<Delete2dModelTrainingJobResponse> delete2dModelTrainingJobAsync(
+        Delete2dModelTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.delete2dModelTrainingJob);
+    }
+
+    /**
+     * 删除分身数字人模型训练任务
+     *
+     * 该接口用于删除分身数字人模型训练任务。同时需要删除训练任务相关的训练视频、身份证照片、授权文件、模型资产等。
+     * &gt; * 该接口应当在任务处于以下状态时调用：WAIT_FILE_UPLOAD、AUTO_VERIFY_FAILED、MANUAL_VERIFYING、MANUAL_VERIFY_FAILED、TRAINING_DATA_PREPROCESS_FAILED、TRAIN_FAILED、INFERENCE_DATA_PREPROCESS_FAILED、JOB_SUCCESS、WAIT_USER_CONFIRM、JOB_REJECT、JOB_FINISH
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Delete2dModelTrainingJobRequest 请求对象
+     * @return AsyncInvoker<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse>
+     */
+    public AsyncInvoker<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse> delete2dModelTrainingJobAsyncInvoker(
+        Delete2dModelTrainingJobRequest request) {
+        return new AsyncInvoker<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse>(request,
+            MetaStudioMeta.delete2dModelTrainingJob, hcClient);
+    }
+
+    /**
+     * 租户执行分身数字人模型训练任务命令
+     *
+     * 该接口用于租户执行分身数字人模型训练任务命令，如提交训练审核等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Execute2dModelTrainingCommandByUserRequest 请求对象
+     * @return CompletableFuture<Execute2dModelTrainingCommandByUserResponse>
+     */
+    public CompletableFuture<Execute2dModelTrainingCommandByUserResponse> execute2dModelTrainingCommandByUserAsync(
+        Execute2dModelTrainingCommandByUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.execute2dModelTrainingCommandByUser);
+    }
+
+    /**
+     * 租户执行分身数字人模型训练任务命令
+     *
+     * 该接口用于租户执行分身数字人模型训练任务命令，如提交训练审核等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Execute2dModelTrainingCommandByUserRequest 请求对象
+     * @return AsyncInvoker<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse>
+     */
+    public AsyncInvoker<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse> execute2dModelTrainingCommandByUserAsyncInvoker(
+        Execute2dModelTrainingCommandByUserRequest request) {
+        return new AsyncInvoker<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse>(
+            request, MetaStudioMeta.execute2dModelTrainingCommandByUser, hcClient);
+    }
+
+    /**
+     * 查询分身数字人模型训练任务列表
+     *
+     * 该接口用于查询分身数字人模型训练任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param List2dModelTrainingJobRequest 请求对象
+     * @return CompletableFuture<List2dModelTrainingJobResponse>
+     */
+    public CompletableFuture<List2dModelTrainingJobResponse> list2dModelTrainingJobAsync(
+        List2dModelTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.list2dModelTrainingJob);
+    }
+
+    /**
+     * 查询分身数字人模型训练任务列表
+     *
+     * 该接口用于查询分身数字人模型训练任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param List2dModelTrainingJobRequest 请求对象
+     * @return AsyncInvoker<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse>
+     */
+    public AsyncInvoker<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse> list2dModelTrainingJobAsyncInvoker(
+        List2dModelTrainingJobRequest request) {
+        return new AsyncInvoker<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse>(request,
+            MetaStudioMeta.list2dModelTrainingJob, hcClient);
+    }
+
+    /**
+     * 查询分身数字人模型训练任务详情
+     *
+     * 该接口用于查询分身数字人模型训练任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Show2dModelTrainingJobRequest 请求对象
+     * @return CompletableFuture<Show2dModelTrainingJobResponse>
+     */
+    public CompletableFuture<Show2dModelTrainingJobResponse> show2dModelTrainingJobAsync(
+        Show2dModelTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.show2dModelTrainingJob);
+    }
+
+    /**
+     * 查询分身数字人模型训练任务详情
+     *
+     * 该接口用于查询分身数字人模型训练任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Show2dModelTrainingJobRequest 请求对象
+     * @return AsyncInvoker<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse>
+     */
+    public AsyncInvoker<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse> show2dModelTrainingJobAsyncInvoker(
+        Show2dModelTrainingJobRequest request) {
+        return new AsyncInvoker<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse>(request,
+            MetaStudioMeta.show2dModelTrainingJob, hcClient);
+    }
+
+    /**
+     * 更新分身数字人模型训练任务
+     *
+     * 该接口用于更新分身数字人模型训练任务。用于在自动审核或者人工审核不通过情况下，更新训练视频、身份证照片等。
+     * &gt; * 该接口只能在AUTO_VERIFY_FAILED或者MANUAL_VERIFY_FAILED状态下调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Update2dModelTrainingJobRequest 请求对象
+     * @return CompletableFuture<Update2dModelTrainingJobResponse>
+     */
+    public CompletableFuture<Update2dModelTrainingJobResponse> update2dModelTrainingJobAsync(
+        Update2dModelTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.update2dModelTrainingJob);
+    }
+
+    /**
+     * 更新分身数字人模型训练任务
+     *
+     * 该接口用于更新分身数字人模型训练任务。用于在自动审核或者人工审核不通过情况下，更新训练视频、身份证照片等。
+     * &gt; * 该接口只能在AUTO_VERIFY_FAILED或者MANUAL_VERIFY_FAILED状态下调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Update2dModelTrainingJobRequest 请求对象
+     * @return AsyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse>
+     */
+    public AsyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse> update2dModelTrainingJobAsyncInvoker(
+        Update2dModelTrainingJobRequest request) {
+        return new AsyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse>(request,
+            MetaStudioMeta.update2dModelTrainingJob, hcClient);
+    }
+
+    /**
      * 创建语音驱动表情动画任务
      *
      * 该接口用于创建驱动数字人表情的任务。
@@ -1653,6 +2249,66 @@ public class MetaStudioAsyncClient {
         ListTtsaJobsRequest request) {
         return new AsyncInvoker<ListTtsaJobsRequest, ListTtsaJobsResponse>(request, MetaStudioMeta.listTtsaJobs,
             hcClient);
+    }
+
+    /**
+     * 创建TTS试听任务
+     *
+     * 该接口用于创建生成播报内容的语音试听文件任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTtsAuditionRequest 请求对象
+     * @return CompletableFuture<CreateTtsAuditionResponse>
+     */
+    public CompletableFuture<CreateTtsAuditionResponse> createTtsAuditionAsync(CreateTtsAuditionRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTtsAudition);
+    }
+
+    /**
+     * 创建TTS试听任务
+     *
+     * 该接口用于创建生成播报内容的语音试听文件任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTtsAuditionRequest 请求对象
+     * @return AsyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse>
+     */
+    public AsyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse> createTtsAuditionAsyncInvoker(
+        CreateTtsAuditionRequest request) {
+        return new AsyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse>(request,
+            MetaStudioMeta.createTtsAudition, hcClient);
+    }
+
+    /**
+     * 获取TTS试听文件
+     *
+     * 该接口用于获取TTS试听文件下载链接，返回List中包含当前已生产的试听文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTtsAuditionFileRequest 请求对象
+     * @return CompletableFuture<ShowTtsAuditionFileResponse>
+     */
+    public CompletableFuture<ShowTtsAuditionFileResponse> showTtsAuditionFileAsync(ShowTtsAuditionFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTtsAuditionFile);
+    }
+
+    /**
+     * 获取TTS试听文件
+     *
+     * 该接口用于获取TTS试听文件下载链接，返回List中包含当前已生产的试听文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTtsAuditionFileRequest 请求对象
+     * @return AsyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse>
+     */
+    public AsyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFileAsyncInvoker(
+        ShowTtsAuditionFileRequest request) {
+        return new AsyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse>(request,
+            MetaStudioMeta.showTtsAuditionFile, hcClient);
     }
 
     /**

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.aom.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 事件或者告警元数据。
@@ -28,17 +31,17 @@ public class EventModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Object metadata;
+    private Map<String, String> metadata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
-    private Object annotations;
+    private Map<String, String> annotations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attach_rule")
 
-    private Object attachRule;
+    private Map<String, String> attachRule = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -96,25 +99,57 @@ public class EventModel {
         this.timeout = timeout;
     }
 
-    public EventModel withMetadata(Object metadata) {
+    public EventModel withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
+    public EventModel putMetadataItem(String key, String metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
+        this.metadata.put(key, metadataItem);
+        return this;
+    }
+
+    public EventModel withMetadata(Consumer<Map<String, String>> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
+        metadataSetter.accept(this.metadata);
+        return this;
+    }
+
     /**
-     * 事件或者告警的详细信息，为键值对形式。必须字段为： - event_name：事件或者告警名称,类型为String； - event_severity：事件级别枚举值。类型为String，四种类型 \"Critical\", \"Major\", \"Minor\", \"Info\"； - event_type：事件类别枚举值。类型为String，event为普通告警，alarm为告警事件； - resource_provider：事件对应云服务名称。类型为String； - resource_type：事件对应资源类型。类型为String； - resource_id：事件对应资源信息。类型为String。
+     * 事件或者告警的详细信息，为键值对形式。必须字段为：  - event_name：事件或者告警名称,类型为String；  - event_severity：事件级别枚举值。类型为String，四种类型 \"Critical\", \"Major\", \"Minor\", \"Info\"；  - event_type：事件类别枚举值。类型为String，event为普通告警，alarm为告警事件；  - resource_provider：事件对应云服务名称。类型为String；  - resource_type：事件对应资源类型。类型为String；  - resource_id：事件对应资源信息。类型为String。
      * @return metadata
      */
-    public Object getMetadata() {
+    public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
 
-    public EventModel withAnnotations(Object annotations) {
+    public EventModel withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
+        return this;
+    }
+
+    public EventModel putAnnotationsItem(String key, String annotationsItem) {
+        if (this.annotations == null) {
+            this.annotations = new HashMap<>();
+        }
+        this.annotations.put(key, annotationsItem);
+        return this;
+    }
+
+    public EventModel withAnnotations(Consumer<Map<String, String>> annotationsSetter) {
+        if (this.annotations == null) {
+            this.annotations = new HashMap<>();
+        }
+        annotationsSetter.accept(this.annotations);
         return this;
     }
 
@@ -122,16 +157,32 @@ public class EventModel {
      * 事件或者告警附加字段，可以为空。
      * @return annotations
      */
-    public Object getAnnotations() {
+    public Map<String, String> getAnnotations() {
         return annotations;
     }
 
-    public void setAnnotations(Object annotations) {
+    public void setAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
     }
 
-    public EventModel withAttachRule(Object attachRule) {
+    public EventModel withAttachRule(Map<String, String> attachRule) {
         this.attachRule = attachRule;
+        return this;
+    }
+
+    public EventModel putAttachRuleItem(String key, String attachRuleItem) {
+        if (this.attachRule == null) {
+            this.attachRule = new HashMap<>();
+        }
+        this.attachRule.put(key, attachRuleItem);
+        return this;
+    }
+
+    public EventModel withAttachRule(Consumer<Map<String, String>> attachRuleSetter) {
+        if (this.attachRule == null) {
+            this.attachRule = new HashMap<>();
+        }
+        attachRuleSetter.accept(this.attachRule);
         return this;
     }
 
@@ -139,11 +190,11 @@ public class EventModel {
      * 事件或者告警预留字段，为空。
      * @return attachRule
      */
-    public Object getAttachRule() {
+    public Map<String, String> getAttachRule() {
         return attachRule;
     }
 
-    public void setAttachRule(Object attachRule) {
+    public void setAttachRule(Map<String, String> attachRule) {
         this.attachRule = attachRule;
     }
 

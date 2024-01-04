@@ -39,7 +39,7 @@ public class Cron {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependJobs")
 
-    private DependJobs dependJobs;
+    private DependJob dependJobs;
 
     public Cron withStartTime(String startTime) {
         this.startTime = startTime;
@@ -126,14 +126,14 @@ public class Cron {
         this.dependPrePeriod = dependPrePeriod;
     }
 
-    public Cron withDependJobs(DependJobs dependJobs) {
+    public Cron withDependJobs(DependJob dependJobs) {
         this.dependJobs = dependJobs;
         return this;
     }
 
-    public Cron withDependJobs(Consumer<DependJobs> dependJobsSetter) {
+    public Cron withDependJobs(Consumer<DependJob> dependJobsSetter) {
         if (this.dependJobs == null) {
-            this.dependJobs = new DependJobs();
+            this.dependJobs = new DependJob();
             dependJobsSetter.accept(this.dependJobs);
         }
 
@@ -144,11 +144,11 @@ public class Cron {
      * Get dependJobs
      * @return dependJobs
      */
-    public DependJobs getDependJobs() {
+    public DependJob getDependJobs() {
         return dependJobs;
     }
 
-    public void setDependJobs(DependJobs dependJobs) {
+    public void setDependJobs(DependJob dependJobs) {
         this.dependJobs = dependJobs;
     }
 

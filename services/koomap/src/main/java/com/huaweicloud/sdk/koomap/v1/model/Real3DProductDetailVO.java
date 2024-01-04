@@ -34,7 +34,7 @@ public class Real3DProductDetailVO {
     }
 
     /**
-     * 文件类型。  - mesh_osgb：Mesh输出OSGB三维预览文件。 - mesh_obj：Mesh输出OBJ三维模型文件。
+     * 文件类型。  - mesh_osgb：纹理模型格实景三维模型输出.osgb三维预览文件。 - mesh_obj：纹理模型格实景三维模型输出.obj三维模型文件。 - nerf_osgb：显式辐射场实景三维模型输出.osgb三维预览文件。 - nerf_obj：显式辐射场实景三维模型输出.obj三维模型文件。 - metadata: metadata.xml文件，用于模型坐标校准。
      * @return type
      */
     public String getType() {

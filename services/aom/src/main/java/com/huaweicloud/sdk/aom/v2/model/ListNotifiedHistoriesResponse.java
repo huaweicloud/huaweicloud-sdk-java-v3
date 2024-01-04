@@ -15,63 +15,42 @@ import java.util.function.Consumer;
 public class ListNotifiedHistoriesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "event_sn")
+    @JsonProperty(value = "notified_histories")
 
-    private String eventSn;
+    private List<NotifiedHistoriesResult> notifiedHistories = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notifications")
+    public ListNotifiedHistoriesResponse withNotifiedHistories(List<NotifiedHistoriesResult> notifiedHistories) {
+        this.notifiedHistories = notifiedHistories;
+        return this;
+    }
 
-    private List<Notifications> notifications = null;
+    public ListNotifiedHistoriesResponse addNotifiedHistoriesItem(NotifiedHistoriesResult notifiedHistoriesItem) {
+        if (this.notifiedHistories == null) {
+            this.notifiedHistories = new ArrayList<>();
+        }
+        this.notifiedHistories.add(notifiedHistoriesItem);
+        return this;
+    }
 
-    public ListNotifiedHistoriesResponse withEventSn(String eventSn) {
-        this.eventSn = eventSn;
+    public ListNotifiedHistoriesResponse withNotifiedHistories(
+        Consumer<List<NotifiedHistoriesResult>> notifiedHistoriesSetter) {
+        if (this.notifiedHistories == null) {
+            this.notifiedHistories = new ArrayList<>();
+        }
+        notifiedHistoriesSetter.accept(this.notifiedHistories);
         return this;
     }
 
     /**
-     * 告警流水号
-     * @return eventSn
+     * 通知历史列表。
+     * @return notifiedHistories
      */
-    public String getEventSn() {
-        return eventSn;
+    public List<NotifiedHistoriesResult> getNotifiedHistories() {
+        return notifiedHistories;
     }
 
-    public void setEventSn(String eventSn) {
-        this.eventSn = eventSn;
-    }
-
-    public ListNotifiedHistoriesResponse withNotifications(List<Notifications> notifications) {
-        this.notifications = notifications;
-        return this;
-    }
-
-    public ListNotifiedHistoriesResponse addNotificationsItem(Notifications notificationsItem) {
-        if (this.notifications == null) {
-            this.notifications = new ArrayList<>();
-        }
-        this.notifications.add(notificationsItem);
-        return this;
-    }
-
-    public ListNotifiedHistoriesResponse withNotifications(Consumer<List<Notifications>> notificationsSetter) {
-        if (this.notifications == null) {
-            this.notifications = new ArrayList<>();
-        }
-        notificationsSetter.accept(this.notifications);
-        return this;
-    }
-
-    /**
-     * 通知结果
-     * @return notifications
-     */
-    public List<Notifications> getNotifications() {
-        return notifications;
-    }
-
-    public void setNotifications(List<Notifications> notifications) {
-        this.notifications = notifications;
+    public void setNotifiedHistories(List<NotifiedHistoriesResult> notifiedHistories) {
+        this.notifiedHistories = notifiedHistories;
     }
 
     @Override
@@ -83,20 +62,19 @@ public class ListNotifiedHistoriesResponse extends SdkResponse {
             return false;
         }
         ListNotifiedHistoriesResponse that = (ListNotifiedHistoriesResponse) obj;
-        return Objects.equals(this.eventSn, that.eventSn) && Objects.equals(this.notifications, that.notifications);
+        return Objects.equals(this.notifiedHistories, that.notifiedHistories);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventSn, notifications);
+        return Objects.hash(notifiedHistories);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNotifiedHistoriesResponse {\n");
-        sb.append("    eventSn: ").append(toIndentedString(eventSn)).append("\n");
-        sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+        sb.append("    notifiedHistories: ").append(toIndentedString(notifiedHistories)).append("\n");
         sb.append("}");
         return sb.toString();
     }

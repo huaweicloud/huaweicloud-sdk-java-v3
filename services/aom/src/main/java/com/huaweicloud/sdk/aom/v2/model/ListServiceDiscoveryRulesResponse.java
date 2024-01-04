@@ -29,6 +29,11 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
 
     private String errorMessage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private List<String> id = null;
+
     public ListServiceDiscoveryRulesResponse withAppRules(List<AppRules> appRules) {
         this.appRules = appRules;
         return this;
@@ -96,6 +101,39 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
+    public ListServiceDiscoveryRulesResponse withId(List<String> id) {
+        this.id = id;
+        return this;
+    }
+
+    public ListServiceDiscoveryRulesResponse addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
+
+    public ListServiceDiscoveryRulesResponse withId(Consumer<List<String>> idSetter) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
+
+    /**
+     * Get id
+     * @return id
+     */
+    public List<String> getId() {
+        return id;
+    }
+
+    public void setId(List<String> id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +144,12 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         }
         ListServiceDiscoveryRulesResponse that = (ListServiceDiscoveryRulesResponse) obj;
         return Objects.equals(this.appRules, that.appRules) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.errorMessage, that.errorMessage);
+            && Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appRules, errorCode, errorMessage);
+        return Objects.hash(appRules, errorCode, errorMessage, id);
     }
 
     @Override
@@ -121,6 +159,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         sb.append("    appRules: ").append(toIndentedString(appRules)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

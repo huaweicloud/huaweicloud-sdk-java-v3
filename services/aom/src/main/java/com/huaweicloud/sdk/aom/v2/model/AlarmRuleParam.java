@@ -130,10 +130,92 @@ public class AlarmRuleParam {
 
     private String alarmRuleName;
 
+    /**
+     * 超限条件。<：小于阈值。>：大于阈值。<=：小于等于阈值。>=：大于等于阈值。
+     */
+    public static final class ComparisonOperatorEnum {
+
+        /**
+         * Enum LESS_THAN for value: "<"
+         */
+        public static final ComparisonOperatorEnum LESS_THAN = new ComparisonOperatorEnum("<");
+
+        /**
+         * Enum GREATER_THAN for value: ">"
+         */
+        public static final ComparisonOperatorEnum GREATER_THAN = new ComparisonOperatorEnum(">");
+
+        /**
+         * Enum LESS_THAN_OR_EQUAL_TO for value: "<="
+         */
+        public static final ComparisonOperatorEnum LESS_THAN_OR_EQUAL_TO = new ComparisonOperatorEnum("<=");
+
+        /**
+         * Enum GREATER_THAN_OR_EQUAL_TO for value: ">="
+         */
+        public static final ComparisonOperatorEnum GREATER_THAN_OR_EQUAL_TO = new ComparisonOperatorEnum(">=");
+
+        private static final Map<String, ComparisonOperatorEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ComparisonOperatorEnum> createStaticFields() {
+            Map<String, ComparisonOperatorEnum> map = new HashMap<>();
+            map.put("<", LESS_THAN);
+            map.put(">", GREATER_THAN);
+            map.put("<=", LESS_THAN_OR_EQUAL_TO);
+            map.put(">=", GREATER_THAN_OR_EQUAL_TO);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ComparisonOperatorEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ComparisonOperatorEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComparisonOperatorEnum(value));
+        }
+
+        public static ComparisonOperatorEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ComparisonOperatorEnum) {
+                return this.value.equals(((ComparisonOperatorEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comparison_operator")
 
-    private String comparisonOperator;
+    private ComparisonOperatorEnum comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
@@ -146,9 +228,9 @@ public class AlarmRuleParam {
     private Integer evaluationPeriods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id_turn_on")
+    @JsonProperty(value = "is_turn_on")
 
-    private Boolean idTurnOn;
+    private Boolean isTurnOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insufficient_data_actions")
@@ -170,10 +252,92 @@ public class AlarmRuleParam {
 
     private List<String> okActions = null;
 
+    /**
+     * 统计周期。60000：一分钟。300000：五分钟。900000：十五分钟。3600000：一小时。
+     */
+    public static final class PeriodEnum {
+
+        /**
+         * Enum NUMBER_60000 for value: 60000
+         */
+        public static final PeriodEnum NUMBER_60000 = new PeriodEnum(60000);
+
+        /**
+         * Enum NUMBER_300000 for value: 300000
+         */
+        public static final PeriodEnum NUMBER_300000 = new PeriodEnum(300000);
+
+        /**
+         * Enum NUMBER_900000 for value: 900000
+         */
+        public static final PeriodEnum NUMBER_900000 = new PeriodEnum(900000);
+
+        /**
+         * Enum NUMBER_36000000 for value: 36000000
+         */
+        public static final PeriodEnum NUMBER_36000000 = new PeriodEnum(36000000);
+
+        private static final Map<Integer, PeriodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PeriodEnum> createStaticFields() {
+            Map<Integer, PeriodEnum> map = new HashMap<>();
+            map.put(60000, NUMBER_60000);
+            map.put(300000, NUMBER_300000);
+            map.put(900000, NUMBER_900000);
+            map.put(36000000, NUMBER_36000000);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PeriodEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PeriodEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
+        }
+
+        public static PeriodEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PeriodEnum) {
+                return this.value.equals(((PeriodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    private Integer period;
+    private PeriodEnum period;
 
     /**
      * 统计方式。
@@ -385,7 +549,7 @@ public class AlarmRuleParam {
     }
 
     /**
-     * 阈值规则名称。
+     * 阈值规则名称。规则名称包含大小写字母、数字、特殊字符（-_）和汉字组成，不能以特殊字符开头或结尾，最大长度为100。
      * @return alarmRuleName
      */
     public String getAlarmRuleName() {
@@ -396,20 +560,20 @@ public class AlarmRuleParam {
         this.alarmRuleName = alarmRuleName;
     }
 
-    public AlarmRuleParam withComparisonOperator(String comparisonOperator) {
+    public AlarmRuleParam withComparisonOperator(ComparisonOperatorEnum comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
         return this;
     }
 
     /**
-     * 超限条件。
+     * 超限条件。<：小于阈值。>：大于阈值。<=：小于等于阈值。>=：大于等于阈值。
      * @return comparisonOperator
      */
-    public String getComparisonOperator() {
+    public ComparisonOperatorEnum getComparisonOperator() {
         return comparisonOperator;
     }
 
-    public void setComparisonOperator(String comparisonOperator) {
+    public void setComparisonOperator(ComparisonOperatorEnum comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
 
@@ -453,6 +617,8 @@ public class AlarmRuleParam {
 
     /**
      * 间隔周期。
+     * minimum: 1
+     * maximum: 5
      * @return evaluationPeriods
      */
     public Integer getEvaluationPeriods() {
@@ -463,21 +629,21 @@ public class AlarmRuleParam {
         this.evaluationPeriods = evaluationPeriods;
     }
 
-    public AlarmRuleParam withIdTurnOn(Boolean idTurnOn) {
-        this.idTurnOn = idTurnOn;
+    public AlarmRuleParam withIsTurnOn(Boolean isTurnOn) {
+        this.isTurnOn = isTurnOn;
         return this;
     }
 
     /**
      * 阈值规则是否启用。
-     * @return idTurnOn
+     * @return isTurnOn
      */
-    public Boolean getIdTurnOn() {
-        return idTurnOn;
+    public Boolean getIsTurnOn() {
+        return isTurnOn;
     }
 
-    public void setIdTurnOn(Boolean idTurnOn) {
-        this.idTurnOn = idTurnOn;
+    public void setIsTurnOn(Boolean isTurnOn) {
+        this.isTurnOn = isTurnOn;
     }
 
     public AlarmRuleParam withInsufficientDataActions(List<String> insufficientDataActions) {
@@ -580,20 +746,20 @@ public class AlarmRuleParam {
         this.okActions = okActions;
     }
 
-    public AlarmRuleParam withPeriod(Integer period) {
+    public AlarmRuleParam withPeriod(PeriodEnum period) {
         this.period = period;
         return this;
     }
 
     /**
-     * 统计周期。
+     * 统计周期。60000：一分钟。300000：五分钟。900000：十五分钟。3600000：一小时。
      * @return period
      */
-    public Integer getPeriod() {
+    public PeriodEnum getPeriod() {
         return period;
     }
 
-    public void setPeriod(Integer period) {
+    public void setPeriod(PeriodEnum period) {
         this.period = period;
     }
 
@@ -666,7 +832,7 @@ public class AlarmRuleParam {
             && Objects.equals(this.comparisonOperator, that.comparisonOperator)
             && Objects.equals(this.dimensions, that.dimensions)
             && Objects.equals(this.evaluationPeriods, that.evaluationPeriods)
-            && Objects.equals(this.idTurnOn, that.idTurnOn)
+            && Objects.equals(this.isTurnOn, that.isTurnOn)
             && Objects.equals(this.insufficientDataActions, that.insufficientDataActions)
             && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.okActions, that.okActions) && Objects.equals(this.period, that.period)
@@ -685,7 +851,7 @@ public class AlarmRuleParam {
             comparisonOperator,
             dimensions,
             evaluationPeriods,
-            idTurnOn,
+            isTurnOn,
             insufficientDataActions,
             metricName,
             namespace,
@@ -709,7 +875,7 @@ public class AlarmRuleParam {
         sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("    evaluationPeriods: ").append(toIndentedString(evaluationPeriods)).append("\n");
-        sb.append("    idTurnOn: ").append(toIndentedString(idTurnOn)).append("\n");
+        sb.append("    isTurnOn: ").append(toIndentedString(isTurnOn)).append("\n");
         sb.append("    insufficientDataActions: ").append(toIndentedString(insufficientDataActions)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");

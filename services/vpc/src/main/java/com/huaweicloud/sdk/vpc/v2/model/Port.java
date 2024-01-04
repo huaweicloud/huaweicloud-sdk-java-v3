@@ -293,6 +293,11 @@ public class Port {
 
     private Boolean enableEfi;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_bandwidth_id")
+
+    private String ipv6BandwidthId;
+
     public Port withId(String id) {
         this.id = id;
         return this;
@@ -773,6 +778,23 @@ public class Port {
         this.enableEfi = enableEfi;
     }
 
+    public Port withIpv6BandwidthId(String ipv6BandwidthId) {
+        this.ipv6BandwidthId = ipv6BandwidthId;
+        return this;
+    }
+
+    /**
+     * 功能说明：IPv6网卡绑定的共享带宽ID 约束：只有IPv6网卡绑定了共享带宽，才会显示此参数
+     * @return ipv6BandwidthId
+     */
+    public String getIpv6BandwidthId() {
+        return ipv6BandwidthId;
+    }
+
+    public void setIpv6BandwidthId(String ipv6BandwidthId) {
+        this.ipv6BandwidthId = ipv6BandwidthId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -796,7 +818,8 @@ public class Port {
             && Objects.equals(this.bindingProfile, that.bindingProfile)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
             && Objects.equals(this.portSecurityEnabled, that.portSecurityEnabled)
-            && Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.enableEfi, that.enableEfi);
+            && Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.enableEfi, that.enableEfi)
+            && Objects.equals(this.ipv6BandwidthId, that.ipv6BandwidthId);
     }
 
     @Override
@@ -823,7 +846,8 @@ public class Port {
             instanceType,
             portSecurityEnabled,
             zoneId,
-            enableEfi);
+            enableEfi,
+            ipv6BandwidthId);
     }
 
     @Override
@@ -853,6 +877,7 @@ public class Port {
         sb.append("    portSecurityEnabled: ").append(toIndentedString(portSecurityEnabled)).append("\n");
         sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
         sb.append("    enableEfi: ").append(toIndentedString(enableEfi)).append("\n");
+        sb.append("    ipv6BandwidthId: ").append(toIndentedString(ipv6BandwidthId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

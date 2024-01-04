@@ -24,6 +24,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateClusterMasterSnapshotRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateClusterMasterSnapshotResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateKubernetesClusterCertRequest;
@@ -34,9 +36,16 @@ import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePreCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateReleaseReqBody;
 import com.huaweicloud.sdk.cce.v3.model.CreateReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
@@ -62,6 +71,12 @@ import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterMasterSnapshotTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterMasterSnapshotTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradeFeatureGatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradeFeatureGatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
@@ -70,8 +85,14 @@ import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListReleasesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListReleasesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsResponse;
 import com.huaweicloud.sdk.cce.v3.model.MasterEIPRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
@@ -83,6 +104,8 @@ import com.huaweicloud.sdk.cce.v3.model.PartitionReqBody;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaim;
+import com.huaweicloud.sdk.cce.v3.model.PostcheckClusterRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.PrecheckClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ReleaseResp;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodeResponse;
@@ -111,6 +134,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsRequest;
@@ -121,6 +146,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
@@ -129,6 +156,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
@@ -159,6 +188,9 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateResponse;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartResponse;
@@ -412,6 +444,34 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> createClusterMasterSnapshot =
+        genForcreateClusterMasterSnapshot();
+
+    private static HttpRequestDef<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> genForcreateClusterMasterSnapshot() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateClusterMasterSnapshotRequest.class,
+                    CreateClusterMasterSnapshotResponse.class)
+                .withName("CreateClusterMasterSnapshot")
+                .withUri("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterMasterSnapshotRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> createKubernetesClusterCert =
         genForcreateKubernetesClusterCert();
 
@@ -555,6 +615,70 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePostCheckRequest, CreatePostCheckResponse> createPostCheck =
+        genForcreatePostCheck();
+
+    private static HttpRequestDef<CreatePostCheckRequest, CreatePostCheckResponse> genForcreatePostCheck() {
+        // basic
+        HttpRequestDef.Builder<CreatePostCheckRequest, CreatePostCheckResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePostCheckRequest.class, CreatePostCheckResponse.class)
+                .withName("CreatePostCheck")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/postcheck")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePostCheckRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<PostcheckClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostcheckClusterRequestBody.class),
+            f -> f.withMarshaller(CreatePostCheckRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePreCheckRequest, CreatePreCheckResponse> createPreCheck =
+        genForcreatePreCheck();
+
+    private static HttpRequestDef<CreatePreCheckRequest, CreatePreCheckResponse> genForcreatePreCheck() {
+        // basic
+        HttpRequestDef.Builder<CreatePreCheckRequest, CreatePreCheckResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePreCheckRequest.class, CreatePreCheckResponse.class)
+                .withName("CreatePreCheck")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePreCheckRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<PrecheckClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PrecheckClusterRequestBody.class),
+            f -> f.withMarshaller(CreatePreCheckRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateReleaseRequest, CreateReleaseResponse> createRelease =
         genForcreateRelease();
 
@@ -579,6 +703,38 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateReleaseReqBody.class),
             f -> f.withMarshaller(CreateReleaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> createUpgradeWorkFlow =
+        genForcreateUpgradeWorkFlow();
+
+    private static HttpRequestDef<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> genForcreateUpgradeWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateUpgradeWorkFlowRequest.class, CreateUpgradeWorkFlowResponse.class)
+            .withName("CreateUpgradeWorkFlow")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUpgradeWorkFlowRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CreateUpgradeWorkFlowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUpgradeWorkFlowRequestBody.class),
+            f -> f.withMarshaller(CreateUpgradeWorkFlowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1048,6 +1204,73 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> listClusterMasterSnapshotTasks =
+        genForlistClusterMasterSnapshotTasks();
+
+    private static HttpRequestDef<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> genForlistClusterMasterSnapshotTasks() {
+        // basic
+        HttpRequestDef.Builder<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterMasterSnapshotTasksRequest.class,
+                    ListClusterMasterSnapshotTasksResponse.class)
+                .withName("ListClusterMasterSnapshotTasks")
+                .withUri("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterMasterSnapshotTasksRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> listClusterUpgradeFeatureGates =
+        genForlistClusterUpgradeFeatureGates();
+
+    private static HttpRequestDef<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> genForlistClusterUpgradeFeatureGates() {
+        // basic
+        HttpRequestDef.Builder<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterUpgradeFeatureGatesRequest.class,
+                    ListClusterUpgradeFeatureGatesResponse.class)
+                .withName("ListClusterUpgradeFeatureGates")
+                .withUri("/api/v3/clusterupgradefeaturegates")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> listClusterUpgradePaths =
+        genForlistClusterUpgradePaths();
+
+    private static HttpRequestDef<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> genForlistClusterUpgradePaths() {
+        // basic
+        HttpRequestDef.Builder<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClusterUpgradePathsRequest.class, ListClusterUpgradePathsResponse.class)
+            .withName("ListClusterUpgradePaths")
+            .withUri("/api/v3/clusterupgradepaths")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
 
     private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
@@ -1174,6 +1397,31 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPreCheckTasksRequest, ListPreCheckTasksResponse> listPreCheckTasks =
+        genForlistPreCheckTasks();
+
+    private static HttpRequestDef<ListPreCheckTasksRequest, ListPreCheckTasksResponse> genForlistPreCheckTasks() {
+        // basic
+        HttpRequestDef.Builder<ListPreCheckTasksRequest, ListPreCheckTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPreCheckTasksRequest.class, ListPreCheckTasksResponse.class)
+                .withName("ListPreCheckTasks")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPreCheckTasksRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListReleasesRequest, ListReleasesResponse> listReleases = genForlistReleases();
 
     private static HttpRequestDef<ListReleasesRequest, ListReleasesResponse> genForlistReleases() {
@@ -1215,6 +1463,56 @@ public class CceMeta {
             f -> f.withMarshaller(ListReleasesResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(ReleaseResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> listUpgradeClusterTasks =
+        genForlistUpgradeClusterTasks();
+
+    private static HttpRequestDef<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> genForlistUpgradeClusterTasks() {
+        // basic
+        HttpRequestDef.Builder<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListUpgradeClusterTasksRequest.class, ListUpgradeClusterTasksResponse.class)
+            .withName("ListUpgradeClusterTasks")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeClusterTasksRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> listUpgradeWorkFlows =
+        genForlistUpgradeWorkFlows();
+
+    private static HttpRequestDef<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> genForlistUpgradeWorkFlows() {
+        // basic
+        HttpRequestDef.Builder<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListUpgradeWorkFlowsRequest.class, ListUpgradeWorkFlowsResponse.class)
+            .withName("ListUpgradeWorkFlows")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeWorkFlowsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -1631,6 +1929,31 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfo =
+        genForshowClusterUpgradeInfo();
+
+    private static HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> genForshowClusterUpgradeInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowClusterUpgradeInfoRequest.class, ShowClusterUpgradeInfoResponse.class)
+            .withName("ShowClusterUpgradeInfo")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterUpgradeInfoRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
 
     private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
@@ -1784,6 +2107,37 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPreCheckRequest, ShowPreCheckResponse> showPreCheck = genForshowPreCheck();
+
+    private static HttpRequestDef<ShowPreCheckRequest, ShowPreCheckResponse> genForshowPreCheck() {
+        // basic
+        HttpRequestDef.Builder<ShowPreCheckRequest, ShowPreCheckResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPreCheckRequest.class, ShowPreCheckResponse.class)
+                .withName("ShowPreCheck")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPreCheckRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPreCheckRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
@@ -1910,6 +2264,39 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> showUpgradeWorkFlow =
+        genForshowUpgradeWorkFlow();
+
+    private static HttpRequestDef<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> genForshowUpgradeWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowUpgradeWorkFlowRequest.class, ShowUpgradeWorkFlowResponse.class)
+            .withName("ShowUpgradeWorkFlow")
+            .withUri(
+                "/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeWorkFlowRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("upgrade_workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeWorkFlowRequest::getUpgradeWorkflowId, (req, v) -> {
+                req.setUpgradeWorkflowId(v);
             }));
 
         // response
@@ -2322,6 +2709,46 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeClusterRequestBody.class),
             f -> f.withMarshaller(UpgradeClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> upgradeWorkFlowUpdate =
+        genForupgradeWorkFlowUpdate();
+
+    private static HttpRequestDef<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> genForupgradeWorkFlowUpdate() {
+        // basic
+        HttpRequestDef.Builder<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PATCH, UpgradeWorkFlowUpdateRequest.class, UpgradeWorkFlowUpdateResponse.class)
+            .withName("UpgradeWorkFlowUpdate")
+            .withUri(
+                "/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("upgrade_workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getUpgradeWorkflowId, (req, v) -> {
+                req.setUpgradeWorkflowId(v);
+            }));
+        builder.<UpgradeWorkFlowUpdateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeWorkFlowUpdateRequestBody.class),
+            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

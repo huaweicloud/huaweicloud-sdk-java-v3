@@ -1794,6 +1794,13 @@ public class LtsMeta {
             }));
 
         // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

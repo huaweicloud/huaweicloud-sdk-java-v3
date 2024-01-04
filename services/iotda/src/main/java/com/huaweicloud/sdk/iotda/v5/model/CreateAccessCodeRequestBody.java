@@ -15,6 +15,11 @@ public class CreateAccessCodeRequestBody {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_disconnect")
+
+    private Boolean forceDisconnect;
+
     public CreateAccessCodeRequestBody withType(String type) {
         this.type = type;
         return this;
@@ -32,6 +37,23 @@ public class CreateAccessCodeRequestBody {
         this.type = type;
     }
 
+    public CreateAccessCodeRequestBody withForceDisconnect(Boolean forceDisconnect) {
+        this.forceDisconnect = forceDisconnect;
+        return this;
+    }
+
+    /**
+     * **参数说明**: 是否将AMQP/MQTT连接断开
+     * @return forceDisconnect
+     */
+    public Boolean getForceDisconnect() {
+        return forceDisconnect;
+    }
+
+    public void setForceDisconnect(Boolean forceDisconnect) {
+        this.forceDisconnect = forceDisconnect;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class CreateAccessCodeRequestBody {
             return false;
         }
         CreateAccessCodeRequestBody that = (CreateAccessCodeRequestBody) obj;
-        return Objects.equals(this.type, that.type);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.forceDisconnect, that.forceDisconnect);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(type, forceDisconnect);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class CreateAccessCodeRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAccessCodeRequestBody {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    forceDisconnect: ").append(toIndentedString(forceDisconnect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

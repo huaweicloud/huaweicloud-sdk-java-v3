@@ -67,7 +67,7 @@ public class DiscoveryRule {
     }
 
     /**
-     * 匹配条件。 contain、equals
+     * 匹配条件。contain、equals
      * @return checkMode
      */
     public String getCheckMode() {
@@ -84,7 +84,7 @@ public class DiscoveryRule {
     }
 
     /**
-     * 匹配类型。 cmdLine、env、scope
+     * 匹配类型。cmdLine、env、scope
      * @return checkType
      */
     public String getCheckType() {

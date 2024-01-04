@@ -24,7 +24,7 @@ public class EventQueryParamSort {
     private List<String> orderBy = null;
 
     /**
-     * 排序方式枚举值。asc代表正序，desc代表倒叙。
+     * 排序方式枚举值。asc代表正序，desc代表倒序。
      */
     public static final class OrderEnum {
 
@@ -137,7 +137,7 @@ public class EventQueryParamSort {
     }
 
     /**
-     * 排序方式枚举值。asc代表正序，desc代表倒叙。
+     * 排序方式枚举值。asc代表正序，desc代表倒序。
      * @return order
      */
     public OrderEnum getOrder() {

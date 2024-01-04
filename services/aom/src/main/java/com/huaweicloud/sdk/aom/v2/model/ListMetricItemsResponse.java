@@ -17,21 +17,21 @@ public class ListMetricItemsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metaData")
 
-    private MetaData metaData;
+    private MetaDataSeries metaData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
     private List<MetricItemResultAPI> metrics = null;
 
-    public ListMetricItemsResponse withMetaData(MetaData metaData) {
+    public ListMetricItemsResponse withMetaData(MetaDataSeries metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ListMetricItemsResponse withMetaData(Consumer<MetaData> metaDataSetter) {
+    public ListMetricItemsResponse withMetaData(Consumer<MetaDataSeries> metaDataSetter) {
         if (this.metaData == null) {
-            this.metaData = new MetaData();
+            this.metaData = new MetaDataSeries();
             metaDataSetter.accept(this.metaData);
         }
 
@@ -42,11 +42,11 @@ public class ListMetricItemsResponse extends SdkResponse {
      * Get metaData
      * @return metaData
      */
-    public MetaData getMetaData() {
+    public MetaDataSeries getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaData metaData) {
+    public void setMetaData(MetaDataSeries metaData) {
         this.metaData = metaData;
     }
 

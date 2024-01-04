@@ -29,7 +29,7 @@ public class AccessConfigurationPort {
     private String port;
 
     /**
-     * 协议。
+     * 协议，负载均衡支持TCP，负载均衡与路由配置支持HTTP、HTTPS。
      */
     public static final class ProtocolEnum {
 
@@ -211,6 +211,11 @@ public class AccessConfigurationPort {
 
     private List<AccessConfigurationHttpPath> path = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elb_id")
+
+    private String elbId;
+
     public AccessConfigurationPort withTargetPort(String targetPort) {
         this.targetPort = targetPort;
         return this;
@@ -251,7 +256,7 @@ public class AccessConfigurationPort {
     }
 
     /**
-     * 协议。
+     * 协议，负载均衡支持TCP，负载均衡与路由配置支持HTTP、HTTPS。
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -346,6 +351,23 @@ public class AccessConfigurationPort {
         this.path = path;
     }
 
+    public AccessConfigurationPort withElbId(String elbId) {
+        this.elbId = elbId;
+        return this;
+    }
+
+    /**
+     * 用户选择的elb的ID。
+     * @return elbId
+     */
+    public String getElbId() {
+        return elbId;
+    }
+
+    public void setElbId(String elbId) {
+        this.elbId = elbId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,12 +381,12 @@ public class AccessConfigurationPort {
             && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.defaultCertificate, that.defaultCertificate)
             && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.policy, that.policy)
-            && Objects.equals(this.path, that.path);
+            && Objects.equals(this.path, that.path) && Objects.equals(this.elbId, that.elbId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, path);
+        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, path, elbId);
     }
 
     @Override
@@ -378,6 +400,7 @@ public class AccessConfigurationPort {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    elbId: ").append(toIndentedString(elbId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

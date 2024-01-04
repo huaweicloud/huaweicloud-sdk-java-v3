@@ -53,13 +53,18 @@ public class AppRules {
 
     private AppRulesSpec spec;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
     public AppRules withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
-     * 规则创建时间(创建时不传,修改时传查询返回的createTime)。
+     * 规则创建时间(创建时不传，修改时传查询返回的createTime)。
      * @return createTime
      */
     public String getCreateTime() {
@@ -93,7 +98,7 @@ public class AppRules {
     }
 
     /**
-     * aom_inventory_rules_event 规则事件名称,对于服务发现固定 为\"aom_inventory_rules_event\"。
+     * aom_inventory_rules_event规则事件名称，对于服务发现固定为\"aom_inventory_rules_event\"。
      * @return eventName
      */
     public String getEventName() {
@@ -126,7 +131,7 @@ public class AppRules {
     }
 
     /**
-     * 主机ID(暂不使用,传空即可)。
+     * 主机ID（暂不使用，传空即可）。
      * @return hostid
      */
     public List<String> getHostid() {
@@ -160,7 +165,7 @@ public class AppRules {
     }
 
     /**
-     * 规则名称。 字符长度小于64位,以小写字母(a-z)开头,只能包含0-9/a-z/-,不能以-结尾。
+     * 规则名称。 字符长度为4到63位，以小写字母a-z开头，只能包含0-9/a-z/-，不能以-结尾。
      * @return name
      */
     public String getName() {
@@ -177,7 +182,7 @@ public class AppRules {
     }
 
     /**
-     * 租户从IAM申请到的projectid,一般为32位字符串。
+     * 租户从IAM申请到的projectid，一般为32位字符串。
      * @return projectid
      */
     public String getProjectid() {
@@ -214,6 +219,23 @@ public class AppRules {
         this.spec = spec;
     }
 
+    public AppRules withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * 自定义描述信息
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -226,12 +248,13 @@ public class AppRules {
         return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.enable, that.enable)
             && Objects.equals(this.eventName, that.eventName) && Objects.equals(this.hostid, that.hostid)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.projectid, that.projectid) && Objects.equals(this.spec, that.spec);
+            && Objects.equals(this.projectid, that.projectid) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, enable, eventName, hostid, id, name, projectid, spec);
+        return Objects.hash(createTime, enable, eventName, hostid, id, name, projectid, spec, desc);
     }
 
     @Override
@@ -246,6 +269,7 @@ public class AppRules {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectid: ").append(toIndentedString(projectid)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

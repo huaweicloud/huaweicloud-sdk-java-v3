@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DependJob
@@ -18,7 +21,7 @@ public class DependJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private String jobs;
+    private List<String> jobs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependPeriod")
@@ -26,7 +29,7 @@ public class DependJob {
     private String dependPeriod;
 
     /**
-     * Gets or Sets dependFailPolicy
+     * 依赖作业任务执行失败处理策略
      */
     public static final class DependFailPolicyEnum {
 
@@ -106,20 +109,46 @@ public class DependJob {
 
     private DependFailPolicyEnum dependFailPolicy;
 
-    public DependJob withJobs(String jobs) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sameWorkSpaceJobs")
+
+    private List<DependWorkSpaceJob> sameWorkSpaceJobs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "otherWorkSpaceJobs")
+
+    private List<DependWorkSpaceJob> otherWorkSpaceJobs = null;
+
+    public DependJob withJobs(List<String> jobs) {
         this.jobs = jobs;
         return this;
     }
 
+    public DependJob addJobsItem(String jobsItem) {
+        if (this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
+        this.jobs.add(jobsItem);
+        return this;
+    }
+
+    public DependJob withJobs(Consumer<List<String>> jobsSetter) {
+        if (this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
+        jobsSetter.accept(this.jobs);
+        return this;
+    }
+
     /**
-     * Get jobs
+     * 依赖的作业名称列表，必须依赖已存在的作业.
      * @return jobs
      */
-    public String getJobs() {
+    public List<String> getJobs() {
         return jobs;
     }
 
-    public void setJobs(String jobs) {
+    public void setJobs(List<String> jobs) {
         this.jobs = jobs;
     }
 
@@ -129,7 +158,7 @@ public class DependJob {
     }
 
     /**
-     * Get dependPeriod
+     * 依赖周期
      * @return dependPeriod
      */
     public String getDependPeriod() {
@@ -146,7 +175,7 @@ public class DependJob {
     }
 
     /**
-     * Get dependFailPolicy
+     * 依赖作业任务执行失败处理策略
      * @return dependFailPolicy
      */
     public DependFailPolicyEnum getDependFailPolicy() {
@@ -155,6 +184,72 @@ public class DependJob {
 
     public void setDependFailPolicy(DependFailPolicyEnum dependFailPolicy) {
         this.dependFailPolicy = dependFailPolicy;
+    }
+
+    public DependJob withSameWorkSpaceJobs(List<DependWorkSpaceJob> sameWorkSpaceJobs) {
+        this.sameWorkSpaceJobs = sameWorkSpaceJobs;
+        return this;
+    }
+
+    public DependJob addSameWorkSpaceJobsItem(DependWorkSpaceJob sameWorkSpaceJobsItem) {
+        if (this.sameWorkSpaceJobs == null) {
+            this.sameWorkSpaceJobs = new ArrayList<>();
+        }
+        this.sameWorkSpaceJobs.add(sameWorkSpaceJobsItem);
+        return this;
+    }
+
+    public DependJob withSameWorkSpaceJobs(Consumer<List<DependWorkSpaceJob>> sameWorkSpaceJobsSetter) {
+        if (this.sameWorkSpaceJobs == null) {
+            this.sameWorkSpaceJobs = new ArrayList<>();
+        }
+        sameWorkSpaceJobsSetter.accept(this.sameWorkSpaceJobs);
+        return this;
+    }
+
+    /**
+     * 依赖本工作空间的作业名称列表
+     * @return sameWorkSpaceJobs
+     */
+    public List<DependWorkSpaceJob> getSameWorkSpaceJobs() {
+        return sameWorkSpaceJobs;
+    }
+
+    public void setSameWorkSpaceJobs(List<DependWorkSpaceJob> sameWorkSpaceJobs) {
+        this.sameWorkSpaceJobs = sameWorkSpaceJobs;
+    }
+
+    public DependJob withOtherWorkSpaceJobs(List<DependWorkSpaceJob> otherWorkSpaceJobs) {
+        this.otherWorkSpaceJobs = otherWorkSpaceJobs;
+        return this;
+    }
+
+    public DependJob addOtherWorkSpaceJobsItem(DependWorkSpaceJob otherWorkSpaceJobsItem) {
+        if (this.otherWorkSpaceJobs == null) {
+            this.otherWorkSpaceJobs = new ArrayList<>();
+        }
+        this.otherWorkSpaceJobs.add(otherWorkSpaceJobsItem);
+        return this;
+    }
+
+    public DependJob withOtherWorkSpaceJobs(Consumer<List<DependWorkSpaceJob>> otherWorkSpaceJobsSetter) {
+        if (this.otherWorkSpaceJobs == null) {
+            this.otherWorkSpaceJobs = new ArrayList<>();
+        }
+        otherWorkSpaceJobsSetter.accept(this.otherWorkSpaceJobs);
+        return this;
+    }
+
+    /**
+     * 依赖其他工作空间的作业名称列表
+     * @return otherWorkSpaceJobs
+     */
+    public List<DependWorkSpaceJob> getOtherWorkSpaceJobs() {
+        return otherWorkSpaceJobs;
+    }
+
+    public void setOtherWorkSpaceJobs(List<DependWorkSpaceJob> otherWorkSpaceJobs) {
+        this.otherWorkSpaceJobs = otherWorkSpaceJobs;
     }
 
     @Override
@@ -167,12 +262,14 @@ public class DependJob {
         }
         DependJob that = (DependJob) obj;
         return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.dependPeriod, that.dependPeriod)
-            && Objects.equals(this.dependFailPolicy, that.dependFailPolicy);
+            && Objects.equals(this.dependFailPolicy, that.dependFailPolicy)
+            && Objects.equals(this.sameWorkSpaceJobs, that.sameWorkSpaceJobs)
+            && Objects.equals(this.otherWorkSpaceJobs, that.otherWorkSpaceJobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs, dependPeriod, dependFailPolicy);
+        return Objects.hash(jobs, dependPeriod, dependFailPolicy, sameWorkSpaceJobs, otherWorkSpaceJobs);
     }
 
     @Override
@@ -182,6 +279,8 @@ public class DependJob {
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("    dependPeriod: ").append(toIndentedString(dependPeriod)).append("\n");
         sb.append("    dependFailPolicy: ").append(toIndentedString(dependFailPolicy)).append("\n");
+        sb.append("    sameWorkSpaceJobs: ").append(toIndentedString(sameWorkSpaceJobs)).append("\n");
+        sb.append("    otherWorkSpaceJobs: ").append(toIndentedString(otherWorkSpaceJobs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

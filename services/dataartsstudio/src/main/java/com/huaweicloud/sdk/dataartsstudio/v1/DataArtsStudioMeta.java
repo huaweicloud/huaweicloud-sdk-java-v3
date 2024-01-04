@@ -287,6 +287,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
@@ -5456,6 +5460,80 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryJobsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> listFactoryTaskCompletion =
+        genForlistFactoryTaskCompletion();
+
+    private static HttpRequestDef<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> genForlistFactoryTaskCompletion() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFactoryTaskCompletionRequest.class,
+                    ListFactoryTaskCompletionResponse.class)
+                .withName("ListFactoryTaskCompletion")
+                .withUri("/v2/{project_id}/factory/monitor/task-completion-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryTaskCompletionRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryTaskCompletionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> listFactoryTaskOverview =
+        genForlistFactoryTaskOverview();
+
+    private static HttpRequestDef<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> genForlistFactoryTaskOverview() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFactoryTaskOverviewRequest.class, ListFactoryTaskOverviewResponse.class)
+            .withName("ListFactoryTaskOverview")
+            .withUri("/v2/{project_id}/factory/monitor/task-statistics-overview")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("is_own",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getIsOwn, (req, v) -> {
+                req.setIsOwn(v);
+            }));
+        builder.<String>withRequestField("query_days",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getQueryDays, (req, v) -> {
+                req.setQueryDays(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
             }));
 

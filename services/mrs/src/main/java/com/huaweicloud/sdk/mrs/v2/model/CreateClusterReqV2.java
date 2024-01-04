@@ -243,6 +243,11 @@ public class CreateClusterReqV2 {
 
     private List<ComponentConfig> componentConfigs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smn_notify")
+
+    private SmnNotify smnNotify;
+
     public CreateClusterReqV2 withIsDecProject(Boolean isDecProject) {
         this.isDecProject = isDecProject;
         return this;
@@ -876,6 +881,32 @@ public class CreateClusterReqV2 {
         this.componentConfigs = componentConfigs;
     }
 
+    public CreateClusterReqV2 withSmnNotify(SmnNotify smnNotify) {
+        this.smnNotify = smnNotify;
+        return this;
+    }
+
+    public CreateClusterReqV2 withSmnNotify(Consumer<SmnNotify> smnNotifySetter) {
+        if (this.smnNotify == null) {
+            this.smnNotify = new SmnNotify();
+            smnNotifySetter.accept(this.smnNotify);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get smnNotify
+     * @return smnNotify
+     */
+    public SmnNotify getSmnNotify() {
+        return smnNotify;
+    }
+
+    public void setSmnNotify(SmnNotify smnNotify) {
+        this.smnNotify = smnNotify;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -908,7 +939,8 @@ public class CreateClusterReqV2 {
             && Objects.equals(this.nodeGroups, that.nodeGroups)
             && Objects.equals(this.bootstrapScripts, that.bootstrapScripts)
             && Objects.equals(this.addJobs, that.addJobs) && Objects.equals(this.logUri, that.logUri)
-            && Objects.equals(this.componentConfigs, that.componentConfigs);
+            && Objects.equals(this.componentConfigs, that.componentConfigs)
+            && Objects.equals(this.smnNotify, that.smnNotify);
     }
 
     @Override
@@ -943,7 +975,8 @@ public class CreateClusterReqV2 {
             bootstrapScripts,
             addJobs,
             logUri,
-            componentConfigs);
+            componentConfigs,
+            smnNotify);
     }
 
     @Override
@@ -983,6 +1016,7 @@ public class CreateClusterReqV2 {
         sb.append("    addJobs: ").append(toIndentedString(addJobs)).append("\n");
         sb.append("    logUri: ").append(toIndentedString(logUri)).append("\n");
         sb.append("    componentConfigs: ").append(toIndentedString(componentConfigs)).append("\n");
+        sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("}");
         return sb.toString();
     }

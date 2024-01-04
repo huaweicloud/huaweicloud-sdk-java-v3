@@ -35,6 +35,11 @@ public class ListSubscriptionsRequest {
 
     private String endpoint;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fuzzy_remark")
+
+    private String fuzzyRemark;
+
     public ListSubscriptionsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -120,6 +125,23 @@ public class ListSubscriptionsRequest {
         this.endpoint = endpoint;
     }
 
+    public ListSubscriptionsRequest withFuzzyRemark(String fuzzyRemark) {
+        this.fuzzyRemark = fuzzyRemark;
+        return this;
+    }
+
+    /**
+     * 检索的订阅备注字段，模糊匹配。最大长度限制为128个字节。
+     * @return fuzzyRemark
+     */
+    public String getFuzzyRemark() {
+        return fuzzyRemark;
+    }
+
+    public void setFuzzyRemark(String fuzzyRemark) {
+        this.fuzzyRemark = fuzzyRemark;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class ListSubscriptionsRequest {
         ListSubscriptionsRequest that = (ListSubscriptionsRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.endpoint, that.endpoint);
+            && Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.fuzzyRemark, that.fuzzyRemark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, protocol, status, endpoint);
+        return Objects.hash(offset, limit, protocol, status, endpoint, fuzzyRemark);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class ListSubscriptionsRequest {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    fuzzyRemark: ").append(toIndentedString(fuzzyRemark)).append("\n");
         sb.append("}");
         return sb.toString();
     }

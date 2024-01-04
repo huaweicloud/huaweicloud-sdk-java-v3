@@ -18,17 +18,17 @@ public class ModelingParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_point_limit")
 
-    private String keyPointLimit;
+    private Integer keyPointLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tie_point_limit")
 
-    private String tiePointLimit;
+    private Integer tiePointLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mesh_accuracy")
 
-    private String meshAccuracy;
+    private Integer meshAccuracy;
 
     public ModelingParams withAccuracy(String accuracy) {
         this.accuracy = accuracy;
@@ -47,7 +47,7 @@ public class ModelingParams {
         this.accuracy = accuracy;
     }
 
-    public ModelingParams withKeyPointLimit(String keyPointLimit) {
+    public ModelingParams withKeyPointLimit(Integer keyPointLimit) {
         this.keyPointLimit = keyPointLimit;
         return this;
     }
@@ -56,15 +56,15 @@ public class ModelingParams {
      * 空三关键点数量。取值范围：1000~1000000。缺省值：40000。
      * @return keyPointLimit
      */
-    public String getKeyPointLimit() {
+    public Integer getKeyPointLimit() {
         return keyPointLimit;
     }
 
-    public void setKeyPointLimit(String keyPointLimit) {
+    public void setKeyPointLimit(Integer keyPointLimit) {
         this.keyPointLimit = keyPointLimit;
     }
 
-    public ModelingParams withTiePointLimit(String tiePointLimit) {
+    public ModelingParams withTiePointLimit(Integer tiePointLimit) {
         this.tiePointLimit = tiePointLimit;
         return this;
     }
@@ -73,15 +73,15 @@ public class ModelingParams {
      * 空三连接点数量。取值范围：100~100000。缺省值：4000。
      * @return tiePointLimit
      */
-    public String getTiePointLimit() {
+    public Integer getTiePointLimit() {
         return tiePointLimit;
     }
 
-    public void setTiePointLimit(String tiePointLimit) {
+    public void setTiePointLimit(Integer tiePointLimit) {
         this.tiePointLimit = tiePointLimit;
     }
 
-    public ModelingParams withMeshAccuracy(String meshAccuracy) {
+    public ModelingParams withMeshAccuracy(Integer meshAccuracy) {
         this.meshAccuracy = meshAccuracy;
         return this;
     }
@@ -90,11 +90,11 @@ public class ModelingParams {
      * Mesh重建质量。枚举值：  - 0：高 - 1：中 - 2：低
      * @return meshAccuracy
      */
-    public String getMeshAccuracy() {
+    public Integer getMeshAccuracy() {
         return meshAccuracy;
     }
 
-    public void setMeshAccuracy(String meshAccuracy) {
+    public void setMeshAccuracy(Integer meshAccuracy) {
         this.meshAccuracy = meshAccuracy;
     }
 

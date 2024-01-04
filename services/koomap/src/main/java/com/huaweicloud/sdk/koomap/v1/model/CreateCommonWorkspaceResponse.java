@@ -118,7 +118,7 @@ public class CreateCommonWorkspaceResponse extends SdkResponse {
     }
 
     /**
-     * 华为云IAM租户账号ID。
+     * IAM租户账号domain ID。
      * @return tenantDomainId
      */
     public String getTenantDomainId() {

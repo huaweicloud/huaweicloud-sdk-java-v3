@@ -52,6 +52,8 @@ import com.huaweicloud.sdk.cse.v1.model.RetryEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.RetryEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineJobRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineJobResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasResponse;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.UpdateGovernancePolicyRequest;
@@ -830,6 +832,24 @@ public class CseMeta {
             f -> f.withMarshaller(ShowEngineJobRequest::getXEnterpriseProjectID, (req, v) -> {
                 req.setXEnterpriseProjectID(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEngineQuotasRequest, ShowEngineQuotasResponse> showEngineQuotas =
+        genForshowEngineQuotas();
+
+    private static HttpRequestDef<ShowEngineQuotasRequest, ShowEngineQuotasResponse> genForshowEngineQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowEngineQuotasRequest, ShowEngineQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEngineQuotasRequest.class, ShowEngineQuotasResponse.class)
+                .withName("ShowEngineQuotas")
+                .withUri("/v2/{project_id}/enginemgr/quotas")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

@@ -303,6 +303,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
         * [7.2.2 Asynchronous Retry](#722-asynchronous-retry-top)
         * [7.2.3 Typical Usage Scenarios](#723-typical-usage-scenarios-top)
 * [8. Upload and download files](#8-upload-and-download-files-top)
+    * [8.1 Upload and download](#81-upload-and-download-top)
+    * [8.2 Obtain progress](#82-obtain-progress-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
 
@@ -1296,13 +1298,14 @@ try {
 
 ### 8. Upload and download files [:top:](#user-manual-top)
 
+#### 8.1 Upload and download [:top:](#user-manual-top)
+
 Take the interface `CreateImageWatermark` of the service `Data Security Center` as an example, this interface needs to upload an image file and return the watermarked image file stream:
 
 ```java
 package com.huaweicloud.sdk.test;
 
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.dsc.v1.DscClient;
 import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequest;
 import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequestBody;
@@ -1361,15 +1364,12 @@ public class CreateImageWatermarkDemo {
         String sk = System.getenv("HUAWEICLOUD_SDK_SK");
         String endpoint = "{your endpoint string}";
         String projectId = "{your project id}";
-        HttpConfig config = HttpConfig.getDefaultHttpConfig();
-        config.withIgnoreSSLVerification(true);
         BasicCredentials auth = new BasicCredentials()
                 .withAk(ak)
                 .withSk(sk)
                 .withProjectId(projectId);
 
         DscClient client = DscClient.newBuilder()
-                .withHttpConfig(config)
                 .withCredential(auth)
                 .withEndpoint(endpoint)
                 .build();
@@ -1378,5 +1378,99 @@ public class CreateImageWatermarkDemo {
 
     }
     
+}
+```
+
+#### 8.2 Obtain progress [:top:](#user-manual-top)
+
+Take the `PutObject` and `GetObject` of the OBS service as an example:
+
+```java
+package com.huaweicloud.sdk.test;
+
+import com.huaweicloud.sdk.obs.v1.ObsClient;
+import com.huaweicloud.sdk.obs.v1.ObsCredentials;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.region.ObsRegion;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.function.Consumer;
+
+public class ObsDemo {
+
+    // Upload the object.
+    public static void putObject(ObsClient client) throws IOException {
+        PutObjectRequest request = new PutObjectRequest().withBucketName("bucketname").withObjectKey("objectname");
+        FileInputStream fileInputStream = new FileInputStream("/tmp/file-to-upload");
+        request.setUploadStream(fileInputStream);
+
+        request.setProgressListener(progressStatus -> {
+            // Obtain the average upload rate (B/S).
+            System.out.println("AverageSpeed:" + progressStatus.getAverageSpeed());
+            // Obtain the upload progress in percentage.
+            System.out.println("TransferPercentage:" + progressStatus.getTransferPercentage());
+        });
+        // Refresh the upload progress each time 1 MB data is uploaded.
+        request.setProgressInterval(1024 * 1024L);
+
+        PutObjectResponse response = client.putObject(request);
+        System.out.println(response.getHttpStatusCode());
+        fileInputStream.close();
+    }
+
+    // Download the object.
+    public static void getObject(ObsClient client) {
+        GetObjectRequest request = new GetObjectRequest().withBucketName("bucketname").withObjectKey("objectname");
+
+        request.setProgressListener(progressStatus -> {
+            // Obtain the average download rate (B/S).
+            System.out.println("AverageSpeed:" + progressStatus.getAverageSpeed());
+            // Obtain the download progress in percentage.
+            System.out.println("TransferPercentage:" + progressStatus.getTransferPercentage());
+        });
+        // Refresh the upload progress each time 1 MB data is downloaded.
+        request.setProgressInterval(1024 * 1024L);
+
+        GetObjectResponse response = client.getObject(request);
+        System.out.println(response.getHttpStatusCode());
+
+        //Consumer of downloading files.
+        Consumer<InputStream> consumer = inputStream -> {
+            try {
+                FileOutputStream out = new FileOutputStream("/tmp/downloaded-file");
+                byte[] data = new byte[1024];
+                int len;
+                while ((len = inputStream.read(data)) != -1) {
+                    out.write(data, 0, len);
+                }
+
+                inputStream.close();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+        response.consumeDownloadStream(consumer);
+    }
+
+    public static void main(String[] args) throws IOException {
+        ObsCredentials credentials = new ObsCredentials()
+                .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+                .withSk(System.getenv("HUAWEICLOUD_SDK_SK"));
+
+        ObsClient client = ObsClient.newBuilder()
+                .withCredential(credentials)
+                .withRegion(ObsRegion.valueOf("cn-north-1"))
+                .build();
+
+        putObject(client);
+        getObject(client);
+    }
 }
 ```

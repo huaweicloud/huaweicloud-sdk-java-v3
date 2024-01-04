@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -58,10 +63,80 @@ public class Event2alarmRuleBody {
 
     private List<Event2alarmRuleBodyTriggerPolicies> triggerPolicies = null;
 
+    /**
+     * 告警类型。notification：直接告警。denoising：告警降噪。
+     */
+    public static final class AlarmTypeEnum {
+
+        /**
+         * Enum NOTIFICATION for value: "notification"
+         */
+        public static final AlarmTypeEnum NOTIFICATION = new AlarmTypeEnum("notification");
+
+        /**
+         * Enum DENOISING for value: "denoising"
+         */
+        public static final AlarmTypeEnum DENOISING = new AlarmTypeEnum("denoising");
+
+        private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlarmTypeEnum> createStaticFields() {
+            Map<String, AlarmTypeEnum> map = new HashMap<>();
+            map.put("notification", NOTIFICATION);
+            map.put("denoising", DENOISING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlarmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlarmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlarmTypeEnum(value));
+        }
+
+        public static AlarmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlarmTypeEnum) {
+                return this.value.equals(((AlarmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_type")
 
-    private String alarmType;
+    private AlarmTypeEnum alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_rule")
@@ -77,6 +152,21 @@ public class Event2alarmRuleBody {
     @JsonProperty(value = "route_group_rule")
 
     private String routeGroupRule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_names")
+
+    private List<String> eventNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "migrated")
+
+    private Boolean migrated;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topics")
+
+    private List<SmnTopics> topics = null;
 
     public Event2alarmRuleBody withUserId(String userId) {
         this.userId = userId;
@@ -101,7 +191,7 @@ public class Event2alarmRuleBody {
     }
 
     /**
-     * 规则名称
+     * 规则名称。规则名称包含大小写字母，数字，特殊字符（_-）和汉字组成，不能以特殊字符开头或结尾，最大长度为100。
      * @return name
      */
     public String getName() {
@@ -118,7 +208,7 @@ public class Event2alarmRuleBody {
     }
 
     /**
-     * 规则描述
+     * 规则描述。描述包含大小写字母，数字，特殊字符（_-<>=,.）和汉字组成，不能以下划线、中划线开头结尾，最大长度为1024。
      * @return description
      */
     public String getDescription() {
@@ -261,20 +351,20 @@ public class Event2alarmRuleBody {
         this.triggerPolicies = triggerPolicies;
     }
 
-    public Event2alarmRuleBody withAlarmType(String alarmType) {
+    public Event2alarmRuleBody withAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
         return this;
     }
 
     /**
-     * 告警类型
+     * 告警类型。notification：直接告警。denoising：告警降噪。
      * @return alarmType
      */
-    public String getAlarmType() {
+    public AlarmTypeEnum getAlarmType() {
         return alarmType;
     }
 
-    public void setAlarmType(String alarmType) {
+    public void setAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
     }
 
@@ -318,7 +408,7 @@ public class Event2alarmRuleBody {
     }
 
     /**
-     * 告警静默规则
+     * 告警分组规则
      * @return routeGroupRule
      */
     public String getRouteGroupRule() {
@@ -327,6 +417,89 @@ public class Event2alarmRuleBody {
 
     public void setRouteGroupRule(String routeGroupRule) {
         this.routeGroupRule = routeGroupRule;
+    }
+
+    public Event2alarmRuleBody withEventNames(List<String> eventNames) {
+        this.eventNames = eventNames;
+        return this;
+    }
+
+    public Event2alarmRuleBody addEventNamesItem(String eventNamesItem) {
+        if (this.eventNames == null) {
+            this.eventNames = new ArrayList<>();
+        }
+        this.eventNames.add(eventNamesItem);
+        return this;
+    }
+
+    public Event2alarmRuleBody withEventNames(Consumer<List<String>> eventNamesSetter) {
+        if (this.eventNames == null) {
+            this.eventNames = new ArrayList<>();
+        }
+        eventNamesSetter.accept(this.eventNames);
+        return this;
+    }
+
+    /**
+     * 事件名称
+     * @return eventNames
+     */
+    public List<String> getEventNames() {
+        return eventNames;
+    }
+
+    public void setEventNames(List<String> eventNames) {
+        this.eventNames = eventNames;
+    }
+
+    public Event2alarmRuleBody withMigrated(Boolean migrated) {
+        this.migrated = migrated;
+        return this;
+    }
+
+    /**
+     * 是否迁移到2.0
+     * @return migrated
+     */
+    public Boolean getMigrated() {
+        return migrated;
+    }
+
+    public void setMigrated(Boolean migrated) {
+        this.migrated = migrated;
+    }
+
+    public Event2alarmRuleBody withTopics(List<SmnTopics> topics) {
+        this.topics = topics;
+        return this;
+    }
+
+    public Event2alarmRuleBody addTopicsItem(SmnTopics topicsItem) {
+        if (this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
+        this.topics.add(topicsItem);
+        return this;
+    }
+
+    public Event2alarmRuleBody withTopics(Consumer<List<SmnTopics>> topicsSetter) {
+        if (this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
+        topicsSetter.accept(this.topics);
+        return this;
+    }
+
+    /**
+     * smn信息
+     * @return topics
+     */
+    public List<SmnTopics> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(List<SmnTopics> topics) {
+        this.topics = topics;
     }
 
     @Override
@@ -346,7 +519,9 @@ public class Event2alarmRuleBody {
             && Objects.equals(this.triggerPolicies, that.triggerPolicies)
             && Objects.equals(this.alarmType, that.alarmType) && Objects.equals(this.actionRule, that.actionRule)
             && Objects.equals(this.inhibitRule, that.inhibitRule)
-            && Objects.equals(this.routeGroupRule, that.routeGroupRule);
+            && Objects.equals(this.routeGroupRule, that.routeGroupRule)
+            && Objects.equals(this.eventNames, that.eventNames) && Objects.equals(this.migrated, that.migrated)
+            && Objects.equals(this.topics, that.topics);
     }
 
     @Override
@@ -363,7 +538,10 @@ public class Event2alarmRuleBody {
             alarmType,
             actionRule,
             inhibitRule,
-            routeGroupRule);
+            routeGroupRule,
+            eventNames,
+            migrated,
+            topics);
     }
 
     @Override
@@ -383,6 +561,9 @@ public class Event2alarmRuleBody {
         sb.append("    actionRule: ").append(toIndentedString(actionRule)).append("\n");
         sb.append("    inhibitRule: ").append(toIndentedString(inhibitRule)).append("\n");
         sb.append("    routeGroupRule: ").append(toIndentedString(routeGroupRule)).append("\n");
+        sb.append("    eventNames: ").append(toIndentedString(eventNames)).append("\n");
+        sb.append("    migrated: ").append(toIndentedString(migrated)).append("\n");
+        sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("}");
         return sb.toString();
     }

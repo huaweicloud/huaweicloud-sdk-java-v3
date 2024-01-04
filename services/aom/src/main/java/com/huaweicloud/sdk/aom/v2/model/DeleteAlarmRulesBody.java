@@ -40,7 +40,7 @@ public class DeleteAlarmRulesBody {
     }
 
     /**
-     * 阈值规则列表
+     * 要删除的规则名称
      * @return alarmRules
      */
     public List<String> getAlarmRules() {

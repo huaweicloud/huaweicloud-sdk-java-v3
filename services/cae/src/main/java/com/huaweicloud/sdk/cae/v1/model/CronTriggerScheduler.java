@@ -26,7 +26,7 @@ public class CronTriggerScheduler {
     }
 
     /**
-     * 触发触发时间点，以五位cron表达式表示。
+     * 触发时间点，以五位cron表达式表示。
      * @return cron
      */
     public String getCron() {

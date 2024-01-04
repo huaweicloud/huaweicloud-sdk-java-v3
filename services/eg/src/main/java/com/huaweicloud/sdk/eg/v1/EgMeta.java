@@ -48,7 +48,6 @@ import com.huaweicloud.sdk.eg.v1.model.DeleteSubscriptionTargetResponse;
 import com.huaweicloud.sdk.eg.v1.model.EndpointCreateReq;
 import com.huaweicloud.sdk.eg.v1.model.EndpointUpdateReq;
 import com.huaweicloud.sdk.eg.v1.model.EventStreamingCreateReq;
-import com.huaweicloud.sdk.eg.v1.model.EventStreamingDetail;
 import com.huaweicloud.sdk.eg.v1.model.EventStreamingOperateReq;
 import com.huaweicloud.sdk.eg.v1.model.EventStreamingUpdateReq;
 import com.huaweicloud.sdk.eg.v1.model.ListAgenciesRequest;
@@ -955,13 +954,6 @@ public class EgMeta {
             }));
 
         // response
-        builder.<List<EventStreamingDetail>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEventStreamingResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(EventStreamingDetail.class));
 
         builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,

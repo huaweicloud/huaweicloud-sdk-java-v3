@@ -45,7 +45,7 @@ public class AccessControl {
     }
 
     /**
-     * 黑名单数组。 1.每行一个IP地址或网段，以回车结束。 2.每个IP地址组最多可添加300个IP地址或网段。
+     * 黑名单数组。 - 每行一个IP地址或网段，以回车结束。 - 每个IP地址组最多可添加300个IP地址或网段。 
      * @return black
      */
     public List<String> getBlack() {
@@ -78,7 +78,7 @@ public class AccessControl {
     }
 
     /**
-     * 白名单数组。 1.每行一个IP地址或网段，以回车结束。 2.每个IP地址组最多可添加300个IP地址或网段。
+     * 白名单数组。 - 每行一个IP地址或网段，以回车结束。 - 每个IP地址组最多可添加300个IP地址或网段。 
      * @return white
      */
     public List<String> getWhite() {

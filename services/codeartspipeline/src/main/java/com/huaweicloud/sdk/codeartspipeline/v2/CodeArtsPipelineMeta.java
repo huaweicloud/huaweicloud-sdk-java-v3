@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusRes
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BusinessTypePluginsQueryDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateRequest;
@@ -38,8 +36,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
@@ -60,8 +56,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineQuery;
@@ -82,8 +76,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginVersionNumberRequ
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginVersionNumberResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginsResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPublisherRequest;
@@ -97,7 +89,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.LogQuery;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.OpenSourceRuleSetCreateVO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineByTemplateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineExecuteStates;
@@ -135,8 +126,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
@@ -157,8 +146,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginOutputsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginOutputsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginVersionRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginVersionResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherRequest;
@@ -177,16 +164,11 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineRunResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.TemplateCddl;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.TenantOpenSourceRuleSetCreateVO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
@@ -426,39 +408,6 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(CreateBasicPluginResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse> createOpenSourceStrategy =
-        genForcreateOpenSourceStrategy();
-
-    private static HttpRequestDef<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse> genForcreateOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, CreateOpenSourceStrategyRequest.class, CreateOpenSourceStrategyResponse.class)
-                .withName("CreateOpenSourceStrategy")
-                .withUri("/v2/{domain_id}/tenant/open-source/rule-sets/create")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOpenSourceStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
-        builder.<TenantOpenSourceRuleSetCreateVO>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(TenantOpenSourceRuleSetCreateVO.class),
-            f -> f.withMarshaller(CreateOpenSourceStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
 
         return builder.build();
     }
@@ -860,41 +809,6 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse> deleteOpenSourceStrategy =
-        genFordeleteOpenSourceStrategy();
-
-    private static HttpRequestDef<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse> genFordeleteOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteOpenSourceStrategyRequest.class,
-                    DeleteOpenSourceStrategyResponse.class)
-                .withName("DeleteOpenSourceStrategy")
-                .withUri("/v2/{domain_id}/tenant/open-source/rule-sets/{rule_set_id}/delete")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOpenSourceStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
-        builder.<String>withRequestField("rule_set_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOpenSourceStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> deletePipeline =
         genFordeletePipeline();
 
@@ -1263,59 +1177,6 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse> listOpenSourceStrategy =
-        genForlistOpenSourceStrategy();
-
-    private static HttpRequestDef<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse> genForlistOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListOpenSourceStrategyRequest.class, ListOpenSourceStrategyResponse.class)
-            .withName("ListOpenSourceStrategy")
-            .withUri("/v2/{domain_id}/tenant/open-source/rule-sets/query")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpenSourceStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpenSourceStrategyRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
-        builder.<String>withRequestField("creator_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpenSourceStrategyRequest::getCreatorName, (req, v) -> {
-                req.setCreatorName(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOpenSourceStrategyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOpenSourceStrategyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListPLuginVersionRequest, ListPLuginVersionResponse> listPLuginVersion =
         genForlistPLuginVersion();
 
@@ -1627,69 +1488,6 @@ public class CodeArtsPipelineMeta {
             TypeCasts.uncheckedConversion(AgentPluginInfoQueryDTO.class),
             f -> f.withMarshaller(ListPluginsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse> listProjectOpenSourceStrategy =
-        genForlistProjectOpenSourceStrategy();
-
-    private static HttpRequestDef<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse> genForlistProjectOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListProjectOpenSourceStrategyRequest.class,
-                    ListProjectOpenSourceStrategyResponse.class)
-                .withName("ListProjectOpenSourceStrategy")
-                .withUri("/v2/{project_id}/open-source/rule-sets/query")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectOpenSourceStrategyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectOpenSourceStrategyRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
-        builder.<String>withRequestField("creator_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectOpenSourceStrategyRequest::getCreatorName, (req, v) -> {
-                req.setCreatorName(v);
-            }));
-        builder.<Boolean>withRequestField("include_tenant_rule_set",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListProjectOpenSourceStrategyRequest::getIncludeTenantRuleSet, (req, v) -> {
-                req.setIncludeTenantRuleSet(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectOpenSourceStrategyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectOpenSourceStrategyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
             }));
 
         // response
@@ -2378,38 +2176,6 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse> showOpenSourceStrategy =
-        genForshowOpenSourceStrategy();
-
-    private static HttpRequestDef<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse> genForshowOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowOpenSourceStrategyRequest.class, ShowOpenSourceStrategyResponse.class)
-            .withName("ShowOpenSourceStrategy")
-            .withUri("/v2/{domain_id}/tenant/open-source/rule-sets/{rule_set_id}/detail")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOpenSourceStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
-        builder.<String>withRequestField("rule_set_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOpenSourceStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetail =
         genForshowPipelineDetail();
 
@@ -2797,41 +2563,6 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse> showProjectOpenSourceStrategy =
-        genForshowProjectOpenSourceStrategy();
-
-    private static HttpRequestDef<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse> genForshowProjectOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowProjectOpenSourceStrategyRequest.class,
-                    ShowProjectOpenSourceStrategyResponse.class)
-                .withName("ShowProjectOpenSourceStrategy")
-                .withUri("/v2/{project_id}/open-source/rule-sets/{rule_set_id}/detail")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectOpenSourceStrategyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("rule_set_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectOpenSourceStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowProjectStrategyRequest, ShowProjectStrategyResponse> showProjectStrategy =
         genForshowProjectStrategy();
 
@@ -3114,46 +2845,6 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse> switchOpenSourceStrategy =
-        genForswitchOpenSourceStrategy();
-
-    private static HttpRequestDef<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse> genForswitchOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT, SwitchOpenSourceStrategyRequest.class, SwitchOpenSourceStrategyResponse.class)
-                .withName("SwitchOpenSourceStrategy")
-                .withUri("/v2/{domain_id}/tenant/open-source/rule-sets/{rule_set_id}/switch")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchOpenSourceStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
-        builder.<String>withRequestField("rule_set_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchOpenSourceStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
-        builder.<UpdateRuleSetStatusReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateRuleSetStatusReq.class),
-            f -> f.withMarshaller(SwitchOpenSourceStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<SwitchStrategyRequest, SwitchStrategyResponse> switchStrategy =
         genForswitchStrategy();
 
@@ -3228,46 +2919,6 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(UpdateBasicPluginResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse> updateOpenSourceStrategy =
-        genForupdateOpenSourceStrategy();
-
-    private static HttpRequestDef<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse> genForupdateOpenSourceStrategy() {
-        // basic
-        HttpRequestDef.Builder<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT, UpdateOpenSourceStrategyRequest.class, UpdateOpenSourceStrategyResponse.class)
-                .withName("UpdateOpenSourceStrategy")
-                .withUri("/v2/{domain_id}/tenant/open-source/rule-sets/{rule_set_id}/update")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOpenSourceStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
-        builder.<String>withRequestField("rule_set_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOpenSourceStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
-        builder.<OpenSourceRuleSetCreateVO>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OpenSourceRuleSetCreateVO.class),
-            f -> f.withMarshaller(UpdateOpenSourceStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
 
         return builder.build();
     }

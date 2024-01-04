@@ -203,7 +203,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * Get vhosts
+     * vhost信息
      * @return vhosts
      */
     public List<ShowCeshierarchyRespVhosts> getVhosts() {
@@ -236,7 +236,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * Get exchanges
+     * exchange信息
      * @return exchanges
      */
     public List<ShowCeshierarchyRespExchanges> getExchanges() {

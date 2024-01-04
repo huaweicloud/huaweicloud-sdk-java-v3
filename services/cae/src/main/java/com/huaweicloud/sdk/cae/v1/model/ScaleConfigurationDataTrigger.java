@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ScaleConfigurationDataTrigger {
 
     /**
-     * 指标类型，支持cpu、memory、cron。
+     * 指标类型。
      */
     public static final class TypeEnum {
 
@@ -108,7 +108,7 @@ public class ScaleConfigurationDataTrigger {
     }
 
     /**
-     * 指标类型，支持cpu、memory、cron。
+     * 指标类型。
      * @return type
      */
     public TypeEnum getType() {

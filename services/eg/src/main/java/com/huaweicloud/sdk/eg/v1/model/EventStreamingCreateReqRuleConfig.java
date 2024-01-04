@@ -19,7 +19,7 @@ public class EventStreamingCreateReqRuleConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
-    private String filter;
+    private Object filter;
 
     public EventStreamingCreateReqRuleConfig withTransform(TransForm transform) {
         this.transform = transform;
@@ -47,7 +47,7 @@ public class EventStreamingCreateReqRuleConfig {
         this.transform = transform;
     }
 
-    public EventStreamingCreateReqRuleConfig withFilter(String filter) {
+    public EventStreamingCreateReqRuleConfig withFilter(Object filter) {
         this.filter = filter;
         return this;
     }
@@ -56,11 +56,11 @@ public class EventStreamingCreateReqRuleConfig {
      * 过滤规则
      * @return filter
      */
-    public String getFilter() {
+    public Object getFilter() {
         return filter;
     }
 
-    public void setFilter(String filter) {
+    public void setFilter(Object filter) {
         this.filter = filter;
     }
 

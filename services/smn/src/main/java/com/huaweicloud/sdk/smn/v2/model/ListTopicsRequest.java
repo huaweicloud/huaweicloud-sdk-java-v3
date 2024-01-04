@@ -40,6 +40,11 @@ public class ListTopicsRequest {
 
     private String topicId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fuzzy_display_name")
+
+    private String fuzzyDisplayName;
+
     public ListTopicsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -114,7 +119,7 @@ public class ListTopicsRequest {
     }
 
     /**
-     * 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
+     * 检索的主题名称，模糊匹配。
      * @return fuzzyName
      */
     public String getFuzzyName() {
@@ -142,6 +147,23 @@ public class ListTopicsRequest {
         this.topicId = topicId;
     }
 
+    public ListTopicsRequest withFuzzyDisplayName(String fuzzyDisplayName) {
+        this.fuzzyDisplayName = fuzzyDisplayName;
+        return this;
+    }
+
+    /**
+     * 检索的主题显示名。模糊匹配。参数字节长度不能大于192字节。
+     * @return fuzzyDisplayName
+     */
+    public String getFuzzyDisplayName() {
+        return fuzzyDisplayName;
+    }
+
+    public void setFuzzyDisplayName(String fuzzyDisplayName) {
+        this.fuzzyDisplayName = fuzzyDisplayName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +176,13 @@ public class ListTopicsRequest {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName)
-            && Objects.equals(this.topicId, that.topicId);
+            && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.fuzzyDisplayName, that.fuzzyDisplayName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, enterpriseProjectId, name, fuzzyName, topicId);
+        return Objects.hash(offset, limit, enterpriseProjectId, name, fuzzyName, topicId, fuzzyDisplayName);
     }
 
     @Override
@@ -172,6 +195,7 @@ public class ListTopicsRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
         sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");
+        sb.append("    fuzzyDisplayName: ").append(toIndentedString(fuzzyDisplayName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

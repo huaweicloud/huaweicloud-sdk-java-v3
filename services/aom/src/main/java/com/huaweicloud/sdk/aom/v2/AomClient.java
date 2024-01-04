@@ -114,7 +114,7 @@ public class AomClient {
     /**
      * 新增告警行动规则
      *
-     * 新增告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 新增告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -128,7 +128,7 @@ public class AomClient {
     /**
      * 新增告警行动规则
      *
-     * 新增告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 新增告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -142,7 +142,7 @@ public class AomClient {
     /**
      * 添加阈值规则
      *
-     * 该接口用于添加一条阈值规则。
+     * 该接口用于添加一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -156,7 +156,7 @@ public class AomClient {
     /**
      * 添加阈值规则
      *
-     * 该接口用于添加一条阈值规则。
+     * 该接口用于添加一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -170,7 +170,7 @@ public class AomClient {
     /**
      * 新增一条事件类告警规则
      *
-     * 新增一条事件类告警规则。（注：接口目前开放的region为：上海一）。
+     * 新增一条事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -184,7 +184,7 @@ public class AomClient {
     /**
      * 新增一条事件类告警规则
      *
-     * 新增一条事件类告警规则。（注：接口目前开放的region为：上海一）。
+     * 新增一条事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -200,7 +200,7 @@ public class AomClient {
     /**
      * 添加监控数据
      *
-     * 该接口用于向服务端添加一条或多条监控数据。
+     * 该接口用于向服务端添加一条或多条监控数据。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -214,7 +214,7 @@ public class AomClient {
     /**
      * 添加监控数据
      *
-     * 该接口用于向服务端添加一条或多条监控数据。
+     * 该接口用于向服务端添加一条或多条监控数据。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -228,7 +228,7 @@ public class AomClient {
     /**
      * 新增静默规则
      *
-     * 新增静默规则。（注：接口目前开放的region为：上海一）。
+     * 新增静默规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -242,7 +242,7 @@ public class AomClient {
     /**
      * 新增静默规则
      *
-     * 新增静默规则。（注：接口目前开放的region为：上海一）。
+     * 新增静默规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -256,7 +256,7 @@ public class AomClient {
     /**
      * 添加或修改服务发现规则
      *
-     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
+     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -271,7 +271,7 @@ public class AomClient {
     /**
      * 添加或修改服务发现规则
      *
-     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
+     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -315,7 +315,7 @@ public class AomClient {
     /**
      * 删除告警行动规则
      *
-     * 删除告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 删除告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -329,7 +329,7 @@ public class AomClient {
     /**
      * 删除告警行动规则
      *
-     * 删除告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 删除告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -345,7 +345,7 @@ public class AomClient {
     /**
      * 删除阈值规则
      *
-     * 该接口用于删除阈值规则。
+     * 该接口用于删除阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -359,7 +359,7 @@ public class AomClient {
     /**
      * 删除阈值规则
      *
-     * 该接口用于删除阈值规则。
+     * 该接口用于删除阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -375,7 +375,7 @@ public class AomClient {
     /**
      * 批量删除阈值规则
      *
-     * 批量删除阈值规则
+     * 批量删除阈值规则[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -389,7 +389,7 @@ public class AomClient {
     /**
      * 批量删除阈值规则
      *
-     * 批量删除阈值规则
+     * 批量删除阈值规则[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -405,7 +405,7 @@ public class AomClient {
     /**
      * 删除事件类告警规则
      *
-     * 删除一条事件类告警规则。（注：接口目前开放的region为：上海一）。
+     * 删除一条事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -419,7 +419,7 @@ public class AomClient {
     /**
      * 删除事件类告警规则
      *
-     * 删除一条事件类告警规则。（注：接口目前开放的region为：上海一）。
+     * 删除一条事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -435,7 +435,7 @@ public class AomClient {
     /**
      * 删除静默规则
      *
-     * 删除静默规则。（注：接口目前开放的region为：上海一）。
+     * 删除静默规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -449,7 +449,7 @@ public class AomClient {
     /**
      * 删除静默规则
      *
-     * 删除静默规则。（注：接口目前开放的region为：上海一）。
+     * 删除静默规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -465,7 +465,7 @@ public class AomClient {
     /**
      * 删除服务发现规则
      *
-     * 该接口用于删除服务发现规则。
+     * 该接口用于删除服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -479,7 +479,7 @@ public class AomClient {
     /**
      * 删除服务发现规则
      *
-     * 该接口用于删除服务发现规则。
+     * 该接口用于删除服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -495,7 +495,7 @@ public class AomClient {
     /**
      * 获取告警行动规则列表
      *
-     * 获取告警行动规则列表。（注：接口目前开放的region为：上海一）。
+     * 获取告警行动规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -509,7 +509,7 @@ public class AomClient {
     /**
      * 获取告警行动规则列表
      *
-     * 获取告警行动规则列表。（注：接口目前开放的region为：上海一）。
+     * 获取告警行动规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -553,7 +553,7 @@ public class AomClient {
     /**
      * 查询阈值规则列表
      *
-     * 该接口用于查询阈值规则列表。
+     * 该接口用于查询阈值规则列表。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -567,7 +567,7 @@ public class AomClient {
     /**
      * 查询阈值规则列表
      *
-     * 该接口用于查询阈值规则列表。
+     * 该接口用于查询阈值规则列表。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -581,7 +581,7 @@ public class AomClient {
     /**
      * 查询事件类告警规则列表
      *
-     * 查询事件类告警规则列表。（注：接口目前开放的region为：上海一）。
+     * 查询事件类告警规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -595,7 +595,7 @@ public class AomClient {
     /**
      * 查询事件类告警规则列表
      *
-     * 查询事件类告警规则列表。（注：接口目前开放的region为：上海一）。
+     * 查询事件类告警规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -667,7 +667,7 @@ public class AomClient {
     /**
      * 查询指标
      *
-     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -681,7 +681,7 @@ public class AomClient {
     /**
      * 查询指标
      *
-     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -697,7 +697,7 @@ public class AomClient {
     /**
      * 获取静默规则列表
      *
-     * 获取静默规则列表。（注：接口目前开放的region为：上海一）。
+     * 获取静默规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -711,7 +711,7 @@ public class AomClient {
     /**
      * 获取静默规则列表
      *
-     * 获取静默规则列表。（注：接口目前开放的region为：上海一）。
+     * 获取静默规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -725,7 +725,7 @@ public class AomClient {
     /**
      * 获取告警发送结果
      *
-     * 获取告警发送结果。（注：接口目前开放的region为：上海一）。
+     * 获取告警发送结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -739,7 +739,7 @@ public class AomClient {
     /**
      * 获取告警发送结果
      *
-     * 获取告警发送结果。（注：接口目前开放的region为：上海一）。
+     * 获取告警发送结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -785,7 +785,7 @@ public class AomClient {
     /**
      * 查询时序数据
      *
-     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -799,7 +799,7 @@ public class AomClient {
     /**
      * 查询时序数据
      *
-     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -813,7 +813,7 @@ public class AomClient {
     /**
      * 查询时间序列
      *
-     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -827,7 +827,7 @@ public class AomClient {
     /**
      * 查询时间序列
      *
-     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -841,7 +841,7 @@ public class AomClient {
     /**
      * 查询系统中已有服务发现规则
      *
-     * 该接口用于查询系统当前已存在的服务发现规则。
+     * 该接口用于查询系统当前已存在的服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -855,7 +855,7 @@ public class AomClient {
     /**
      * 查询系统中已有服务发现规则
      *
-     * 该接口用于查询系统当前已存在的服务发现规则。
+     * 该接口用于查询系统当前已存在的服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -899,7 +899,7 @@ public class AomClient {
     /**
      * 通过规则名称获取告警行动规则
      *
-     * 通过规则名称获取告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 通过规则名称获取告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -913,7 +913,7 @@ public class AomClient {
     /**
      * 通过规则名称获取告警行动规则
      *
-     * 通过规则名称获取告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 通过规则名称获取告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -929,7 +929,7 @@ public class AomClient {
     /**
      * 查询单条阈值规则
      *
-     * 该接口用于查询单条阈值规则。
+     * 该接口用于查询单条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -943,7 +943,7 @@ public class AomClient {
     /**
      * 查询单条阈值规则
      *
-     * 该接口用于查询单条阈值规则。
+     * 该接口用于查询单条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -957,7 +957,7 @@ public class AomClient {
     /**
      * 查询监控数据
      *
-     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -971,7 +971,7 @@ public class AomClient {
     /**
      * 查询监控数据
      *
-     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -987,7 +987,7 @@ public class AomClient {
     /**
      * 修改告警行动规则
      *
-     * 修改告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 修改告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1001,7 +1001,7 @@ public class AomClient {
     /**
      * 修改告警行动规则
      *
-     * 修改告警行动规则。（注：接口目前开放的region为：上海一）。
+     * 修改告警行动规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1017,7 +1017,7 @@ public class AomClient {
     /**
      * 修改阈值规则
      *
-     * 该接口用于修改一条阈值规则。
+     * 该接口用于修改一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1031,7 +1031,7 @@ public class AomClient {
     /**
      * 修改阈值规则
      *
-     * 该接口用于修改一条阈值规则。
+     * 该接口用于修改一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1047,7 +1047,7 @@ public class AomClient {
     /**
      * 更新事件类告警规则
      *
-     * 更新事件类告警规则。（注：接口目前开放的region为：上海一）。
+     * 更新事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1061,7 +1061,7 @@ public class AomClient {
     /**
      * 更新事件类告警规则
      *
-     * 更新事件类告警规则。（注：接口目前开放的region为：上海一）。
+     * 更新事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1077,7 +1077,7 @@ public class AomClient {
     /**
      * 修改静默规则
      *
-     * 修改静默规则。（注：接口目前开放的region为：上海一）。
+     * 修改静默规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1091,7 +1091,7 @@ public class AomClient {
     /**
      * 修改静默规则
      *
-     * 修改静默规则。（注：接口目前开放的region为：上海一）。
+     * 修改静默规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

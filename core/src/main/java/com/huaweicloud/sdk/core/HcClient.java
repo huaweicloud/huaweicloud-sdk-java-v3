@@ -515,15 +515,16 @@ public class HcClient implements CustomizationConfigure {
     }
 
     public <S> Object responseToObject(String respBody, Field<S, ?> responseField) {
-        Object obj;
-        if (responseField.getFieldType().isAssignableFrom(List.class)) {
-            obj = JsonUtils.toListObject(respBody, responseField.getInnerContainerType());
-        } else if (responseField.getFieldType().isAssignableFrom(Map.class)) {
-            obj = JsonUtils.toMapObject(respBody, responseField.getInnerContainerType());
+        Class<?> fieldType = responseField.getFieldType();
+        if (String.class.isAssignableFrom(fieldType)) {
+            return respBody;
+        } else if (List.class.isAssignableFrom(fieldType)) {
+            return JsonUtils.toListObject(respBody, responseField.getInnerContainerType());
+        } else if (Map.class.isAssignableFrom(fieldType)) {
+            return JsonUtils.toMapObject(respBody, responseField.getInnerContainerType());
         } else {
-            obj = respBody;
+            return JsonUtils.toObject(respBody, fieldType);
         }
-        return obj;
     }
 
     private <S> void fillHeaderField(HttpResponse httpResponse, S wrapperResponse, Field<S, ?> field) {

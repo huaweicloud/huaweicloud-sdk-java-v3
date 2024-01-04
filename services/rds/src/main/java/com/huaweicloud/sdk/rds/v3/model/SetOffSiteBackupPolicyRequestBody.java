@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.rds.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,38 +14,31 @@ public class SetOffSiteBackupPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_para")
 
-    private List<OffSiteBackupPolicy> policyPara = null;
+    private OffSiteBackupPolicy policyPara;
 
-    public SetOffSiteBackupPolicyRequestBody withPolicyPara(List<OffSiteBackupPolicy> policyPara) {
+    public SetOffSiteBackupPolicyRequestBody withPolicyPara(OffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
         return this;
     }
 
-    public SetOffSiteBackupPolicyRequestBody addPolicyParaItem(OffSiteBackupPolicy policyParaItem) {
+    public SetOffSiteBackupPolicyRequestBody withPolicyPara(Consumer<OffSiteBackupPolicy> policyParaSetter) {
         if (this.policyPara == null) {
-            this.policyPara = new ArrayList<>();
+            this.policyPara = new OffSiteBackupPolicy();
+            policyParaSetter.accept(this.policyPara);
         }
-        this.policyPara.add(policyParaItem);
-        return this;
-    }
 
-    public SetOffSiteBackupPolicyRequestBody withPolicyPara(Consumer<List<OffSiteBackupPolicy>> policyParaSetter) {
-        if (this.policyPara == null) {
-            this.policyPara = new ArrayList<>();
-        }
-        policyParaSetter.accept(this.policyPara);
         return this;
     }
 
     /**
-     * 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
+     * Get policyPara
      * @return policyPara
      */
-    public List<OffSiteBackupPolicy> getPolicyPara() {
+    public OffSiteBackupPolicy getPolicyPara() {
         return policyPara;
     }
 
-    public void setPolicyPara(List<OffSiteBackupPolicy> policyPara) {
+    public void setPolicyPara(OffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
     }
 

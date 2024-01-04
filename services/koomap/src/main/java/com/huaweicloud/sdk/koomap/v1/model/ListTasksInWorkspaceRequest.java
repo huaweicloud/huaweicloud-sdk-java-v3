@@ -39,6 +39,11 @@ public class ListTasksInWorkspaceRequest {
     private List<String> taskType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modeling_type")
+
+    private String modelingType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time_from")
 
     private String createTimeFrom;
@@ -171,6 +176,23 @@ public class ListTasksInWorkspaceRequest {
 
     public void setTaskType(List<String> taskType) {
         this.taskType = taskType;
+    }
+
+    public ListTasksInWorkspaceRequest withModelingType(String modelingType) {
+        this.modelingType = modelingType;
+        return this;
+    }
+
+    /**
+     * 建模类型。支持Mesh和Nerf。
+     * @return modelingType
+     */
+    public String getModelingType() {
+        return modelingType;
+    }
+
+    public void setModelingType(String modelingType) {
+        this.modelingType = modelingType;
     }
 
     public ListTasksInWorkspaceRequest withCreateTimeFrom(String createTimeFrom) {
@@ -318,7 +340,8 @@ public class ListTasksInWorkspaceRequest {
         ListTasksInWorkspaceRequest that = (ListTasksInWorkspaceRequest) obj;
         return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.taskName, that.taskName)
-            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.createTimeFrom, that.createTimeFrom)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.modelingType, that.modelingType)
+            && Objects.equals(this.createTimeFrom, that.createTimeFrom)
             && Objects.equals(this.createTimeTo, that.createTimeTo)
             && Objects.equals(this.updateTimeFrom, that.updateTimeFrom)
             && Objects.equals(this.updateTimeTo, that.updateTimeTo) && Objects.equals(this.taskIds, that.taskIds)
@@ -332,6 +355,7 @@ public class ListTasksInWorkspaceRequest {
             limit,
             taskName,
             taskType,
+            modelingType,
             createTimeFrom,
             createTimeTo,
             updateTimeFrom,
@@ -349,6 +373,7 @@ public class ListTasksInWorkspaceRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    modelingType: ").append(toIndentedString(modelingType)).append("\n");
         sb.append("    createTimeFrom: ").append(toIndentedString(createTimeFrom)).append("\n");
         sb.append("    createTimeTo: ").append(toIndentedString(createTimeTo)).append("\n");
         sb.append("    updateTimeFrom: ").append(toIndentedString(updateTimeFrom)).append("\n");

@@ -111,7 +111,7 @@ public class MuteRule {
     }
 
     /**
-     * 规则的匹配条件
+     * 规则的匹配条件。串行条件和并行条件的最大数量限制为10。
      * @return match
      */
     public List<List<Match>> getMatch() {
@@ -154,7 +154,7 @@ public class MuteRule {
     }
 
     /**
-     * 规则名称
+     * 规则名称。名称包含大小写字母、数字、特殊字符（_）、不能以下划线开头或结尾，最大长度为100。
      * @return name
      */
     public String getName() {

@@ -63,13 +63,28 @@ public class AppRulesSpec {
 
     private Integer priority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dataSource")
+
+    private String dataSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "editable")
+
+    private String editable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aom_metric_relabel_configs")
+
+    private Object aomMetricRelabelConfigs;
+
     public AppRulesSpec withAppType(String appType) {
         this.appType = appType;
         return this;
     }
 
     /**
-     * 服务类型,用于标记服务的分类,仅用于规则分类和界面展示。可以填写任意字段,如按技术栈分类可填写Java,Python。按作用分类可填写collector(采集),database(数据库)等。
+     * 服务类型，用于标记服务的分类，仅用于规则分类和界面展示。可以填写任意字段,如按技术栈分类可填写Java，Python。按作用分类可填写collector(采集)，database(数据库)等。
      * @return appType
      */
     public String getAppType() {
@@ -152,7 +167,7 @@ public class AppRulesSpec {
     }
 
     /**
-     * 规则发现部分,数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。 checkType为cmdLine时checkMode填contain,checkContent格式为[“xxx”]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain,checkContent格式为 [\"k1\",\"v1\"]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals,checkContent格式为节点ID数组[\"hostId1”,”hostId2”],表示规则仅会在这些节点上生效(如果不指定节点范围,规则将下发到该项目所有的节点)。
+     * 规则发现部分，数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。 checkType为cmdLine时checkMode填contain，checkContent格式为[\"xxx\"]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain，checkContent格式为 [\"k1\",\"v1\"]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals，checkContent格式为节点ID数组[\"hostId1\",\"hostId2\"]，表示规则仅会在这些节点上生效(如果不指定节点范围，规则将下发到该项目所有的节点)。
      * @return discoveryRule
      */
     public List<DiscoveryRule> getDiscoveryRule() {
@@ -186,7 +201,7 @@ public class AppRulesSpec {
     }
 
     /**
-     * 是否为规则预探测场景(预探测场景不会保存规则,仅用于规则下发之前验证该规则能否有效发现节点上的进程)。 true、false
+     * 是否为规则预探测场景（预探测场景不会保存规则,仅用于规则下发之前验证该规则能否有效发现节点上的进程）。true、false
      * @return isDetect
      */
     public String getIsDetect() {
@@ -252,7 +267,7 @@ public class AppRulesSpec {
     }
 
     /**
-     * 日志路径配置规则。 当cmdLineHash为固定字符串时,指定日志路径或者日志文件。否则只采集进程当前打开的以.log和.trace结尾的文件。nameType取值cmdLineHash时,args格式为[\"00001\"],value格式为[\"/xxx/xx.log\"],表示当启动命令是00001时,日志路径为/xxx/xx.log。
+     * 日志路径配置规则。 当cmdLineHash为固定字符串时,指定日志路径或者日志文件。否则只采集进程当前打开的以.log和.trace结尾的文件。nameType取值cmdLineHash时，args格式为[\"00001\"]，value格式为[\"/xxx/xx.log\"]，表示当启动命令是00001时,日志路径为/xxx/xx.log。
      * @return logPathRule
      */
     public List<LogPathRule> getLogPathRule() {
@@ -295,7 +310,7 @@ public class AppRulesSpec {
     }
 
     /**
-     * 规则优先级。 1~9999的整数字符串,默认取值为9999
+     * 规则优先级。1~9999的整数字符串，默认取值为9999
      * @return priority
      */
     public Integer getPriority() {
@@ -304,6 +319,57 @@ public class AppRulesSpec {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public AppRulesSpec withDataSource(String dataSource) {
+        this.dataSource = dataSource;
+        return this;
+    }
+
+    /**
+     * 数据源
+     * @return dataSource
+     */
+    public String getDataSource() {
+        return dataSource;
+    }
+
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public AppRulesSpec withEditable(String editable) {
+        this.editable = editable;
+        return this;
+    }
+
+    /**
+     * 是否支持编辑 true、false
+     * @return editable
+     */
+    public String getEditable() {
+        return editable;
+    }
+
+    public void setEditable(String editable) {
+        this.editable = editable;
+    }
+
+    public AppRulesSpec withAomMetricRelabelConfigs(Object aomMetricRelabelConfigs) {
+        this.aomMetricRelabelConfigs = aomMetricRelabelConfigs;
+        return this;
+    }
+
+    /**
+     * 指标配置
+     * @return aomMetricRelabelConfigs
+     */
+    public Object getAomMetricRelabelConfigs() {
+        return aomMetricRelabelConfigs;
+    }
+
+    public void setAomMetricRelabelConfigs(Object aomMetricRelabelConfigs) {
+        this.aomMetricRelabelConfigs = aomMetricRelabelConfigs;
     }
 
     @Override
@@ -319,7 +385,9 @@ public class AppRulesSpec {
             && Objects.equals(this.detectLog, that.detectLog) && Objects.equals(this.discoveryRule, that.discoveryRule)
             && Objects.equals(this.isDefaultRule, that.isDefaultRule) && Objects.equals(this.isDetect, that.isDetect)
             && Objects.equals(this.logFileFix, that.logFileFix) && Objects.equals(this.logPathRule, that.logPathRule)
-            && Objects.equals(this.nameRule, that.nameRule) && Objects.equals(this.priority, that.priority);
+            && Objects.equals(this.nameRule, that.nameRule) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.editable, that.editable)
+            && Objects.equals(this.aomMetricRelabelConfigs, that.aomMetricRelabelConfigs);
     }
 
     @Override
@@ -333,7 +401,10 @@ public class AppRulesSpec {
             logFileFix,
             logPathRule,
             nameRule,
-            priority);
+            priority,
+            dataSource,
+            editable,
+            aomMetricRelabelConfigs);
     }
 
     @Override
@@ -350,6 +421,9 @@ public class AppRulesSpec {
         sb.append("    logPathRule: ").append(toIndentedString(logPathRule)).append("\n");
         sb.append("    nameRule: ").append(toIndentedString(nameRule)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
+        sb.append("    editable: ").append(toIndentedString(editable)).append("\n");
+        sb.append("    aomMetricRelabelConfigs: ").append(toIndentedString(aomMetricRelabelConfigs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

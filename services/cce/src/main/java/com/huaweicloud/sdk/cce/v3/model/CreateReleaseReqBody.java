@@ -32,6 +32,11 @@ public class CreateReleaseReqBody {
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
     private ReleaseReqBodyParams parameters;
@@ -109,6 +114,23 @@ public class CreateReleaseReqBody {
         this.namespace = namespace;
     }
 
+    public CreateReleaseReqBody withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 模板实例版本号
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public CreateReleaseReqBody withParameters(ReleaseReqBodyParams parameters) {
         this.parameters = parameters;
         return this;
@@ -172,12 +194,13 @@ public class CreateReleaseReqBody {
         CreateReleaseReqBody that = (CreateReleaseReqBody) obj;
         return Objects.equals(this.chartId, that.chartId) && Objects.equals(this.description, that.description)
             && Objects.equals(this.name, that.name) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.values, that.values);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chartId, description, name, namespace, parameters, values);
+        return Objects.hash(chartId, description, name, namespace, version, parameters, values);
     }
 
     @Override
@@ -188,6 +211,7 @@ public class CreateReleaseReqBody {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
         sb.append("}");

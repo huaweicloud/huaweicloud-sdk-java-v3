@@ -21,7 +21,7 @@ public class ShowReal3DUsageRequest {
     }
 
     /**
-     * 查询的用量类型。  - DATA：时空专属存储（实景三维生产服务）占用空间大小。 - REAL3D：统计实景三维生产服务完成的建模的倾斜影像的像素点数量（单位为“GP”，即十亿像素）以及次数。
+     * 查询的用量类型。  - DATA：时空专属存储占用空间大小。 - REAL3D：统计实景三维生产服务完成的建模的倾斜影像的像素点数量（单位为“GP”，即十亿像素）以及次数。
      * @return usageType
      */
     public String getUsageType() {

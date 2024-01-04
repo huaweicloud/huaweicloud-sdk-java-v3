@@ -16,6 +16,11 @@ import java.util.Objects;
 public class SourceKafkaMQParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addr")
+
+    private String addr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
 
     private String group;
@@ -214,6 +219,23 @@ public class SourceKafkaMQParameters {
     @JsonProperty(value = "password")
 
     private String password;
+
+    public SourceKafkaMQParameters withAddr(String addr) {
+        this.addr = addr;
+        return this;
+    }
+
+    /**
+     * kafka连接地址
+     * @return addr
+     */
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
 
     public SourceKafkaMQParameters withGroup(String group) {
         this.group = group;
@@ -428,7 +450,8 @@ public class SourceKafkaMQParameters {
             return false;
         }
         SourceKafkaMQParameters that = (SourceKafkaMQParameters) obj;
-        return Objects.equals(this.group, that.group) && Objects.equals(this.instanceName, that.instanceName)
+        return Objects.equals(this.addr, that.addr) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.instanceName, that.instanceName)
             && Objects.equals(this.securityProtocol, that.securityProtocol)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
             && Objects.equals(this.seekTo, that.seekTo) && Objects.equals(this.enableSaslSsl, that.enableSaslSsl)
@@ -440,7 +463,8 @@ public class SourceKafkaMQParameters {
 
     @Override
     public int hashCode() {
-        return Objects.hash(group,
+        return Objects.hash(addr,
+            group,
             instanceName,
             securityProtocol,
             instanceId,
@@ -458,6 +482,7 @@ public class SourceKafkaMQParameters {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SourceKafkaMQParameters {\n");
+        sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    securityProtocol: ").append(toIndentedString(securityProtocol)).append("\n");

@@ -26,7 +26,7 @@ public class HealthCheckConfigurationHttpGet {
     private String port;
 
     /**
-     * 协议，支持HTTP、HTTPS。
+     * 协议。
      */
     public static final class SchemeEnum {
 
@@ -140,7 +140,7 @@ public class HealthCheckConfigurationHttpGet {
     }
 
     /**
-     * 协议，支持HTTP、HTTPS。
+     * 协议。
      * @return scheme
      */
     public SchemeEnum getScheme() {

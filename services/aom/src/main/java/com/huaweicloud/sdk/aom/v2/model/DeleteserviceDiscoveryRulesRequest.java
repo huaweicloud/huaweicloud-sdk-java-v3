@@ -40,7 +40,7 @@ public class DeleteserviceDiscoveryRulesRequest {
     }
 
     /**
-     * 发现规则ID,传多个时以逗号分隔。
+     * 发现规则ID，传多个时以逗号分隔。不允许为空。
      * @return appRulesIds
      */
     public List<String> getAppRulesIds() {

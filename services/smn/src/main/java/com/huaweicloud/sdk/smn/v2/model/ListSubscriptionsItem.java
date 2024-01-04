@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.smn.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ListSubscriptionsItem
@@ -44,6 +47,11 @@ public class ListSubscriptionsItem {
     @JsonProperty(value = "status")
 
     private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filter_polices")
+
+    private List<SubscriptionsFilterPolicy> filterPolices = null;
 
     public ListSubscriptionsItem withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -164,6 +172,39 @@ public class ListSubscriptionsItem {
         this.status = status;
     }
 
+    public ListSubscriptionsItem withFilterPolices(List<SubscriptionsFilterPolicy> filterPolices) {
+        this.filterPolices = filterPolices;
+        return this;
+    }
+
+    public ListSubscriptionsItem addFilterPolicesItem(SubscriptionsFilterPolicy filterPolicesItem) {
+        if (this.filterPolices == null) {
+            this.filterPolices = new ArrayList<>();
+        }
+        this.filterPolices.add(filterPolicesItem);
+        return this;
+    }
+
+    public ListSubscriptionsItem withFilterPolices(Consumer<List<SubscriptionsFilterPolicy>> filterPolicesSetter) {
+        if (this.filterPolices == null) {
+            this.filterPolices = new ArrayList<>();
+        }
+        filterPolicesSetter.accept(this.filterPolices);
+        return this;
+    }
+
+    /**
+     * Get filterPolices
+     * @return filterPolices
+     */
+    public List<SubscriptionsFilterPolicy> getFilterPolices() {
+        return filterPolices;
+    }
+
+    public void setFilterPolices(List<SubscriptionsFilterPolicy> filterPolices) {
+        this.filterPolices = filterPolices;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +217,12 @@ public class ListSubscriptionsItem {
         return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.subscriptionUrn, that.subscriptionUrn) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.remark, that.remark)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.filterPolices, that.filterPolices);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topicUrn, protocol, subscriptionUrn, owner, endpoint, remark, status);
+        return Objects.hash(topicUrn, protocol, subscriptionUrn, owner, endpoint, remark, status, filterPolices);
     }
 
     @Override
@@ -195,6 +236,7 @@ public class ListSubscriptionsItem {
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    filterPolices: ").append(toIndentedString(filterPolices)).append("\n");
         sb.append("}");
         return sb.toString();
     }

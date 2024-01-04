@@ -14,21 +14,21 @@ public class ConfigurationData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
-    private ConfigurationDataSpec spec;
+    private ConfigurationRequestDataSpec spec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
     private ConfigurationDataMetadata metadata;
 
-    public ConfigurationData withSpec(ConfigurationDataSpec spec) {
+    public ConfigurationData withSpec(ConfigurationRequestDataSpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public ConfigurationData withSpec(Consumer<ConfigurationDataSpec> specSetter) {
+    public ConfigurationData withSpec(Consumer<ConfigurationRequestDataSpec> specSetter) {
         if (this.spec == null) {
-            this.spec = new ConfigurationDataSpec();
+            this.spec = new ConfigurationRequestDataSpec();
             specSetter.accept(this.spec);
         }
 
@@ -39,11 +39,11 @@ public class ConfigurationData {
      * Get spec
      * @return spec
      */
-    public ConfigurationDataSpec getSpec() {
+    public ConfigurationRequestDataSpec getSpec() {
         return spec;
     }
 
-    public void setSpec(ConfigurationDataSpec spec) {
+    public void setSpec(ConfigurationRequestDataSpec spec) {
         this.spec = spec;
     }
 

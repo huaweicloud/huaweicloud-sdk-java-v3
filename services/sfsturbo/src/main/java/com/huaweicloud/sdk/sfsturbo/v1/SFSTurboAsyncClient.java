@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareRequest;
@@ -33,6 +35,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareRequest;
@@ -67,6 +71,10 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
@@ -77,6 +85,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 
@@ -342,6 +352,36 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 创建并绑定ldap配置
+     *
+     * 创建并绑定ldap配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLdapConfigRequest 请求对象
+     * @return CompletableFuture<CreateLdapConfigResponse>
+     */
+    public CompletableFuture<CreateLdapConfigResponse> createLdapConfigAsync(CreateLdapConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createLdapConfig);
+    }
+
+    /**
+     * 创建并绑定ldap配置
+     *
+     * 创建并绑定ldap配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLdapConfigRequest 请求对象
+     * @return AsyncInvoker<CreateLdapConfigRequest, CreateLdapConfigResponse>
+     */
+    public AsyncInvoker<CreateLdapConfigRequest, CreateLdapConfigResponse> createLdapConfigAsyncInvoker(
+        CreateLdapConfigRequest request) {
+        return new AsyncInvoker<CreateLdapConfigRequest, CreateLdapConfigResponse>(request,
+            SFSTurboMeta.createLdapConfig, hcClient);
+    }
+
+    /**
      * 创建权限规则
      *
      * 创建权限规则
@@ -551,6 +591,36 @@ public class SFSTurboAsyncClient {
         DeleteFsTaskRequest request) {
         return new AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse>(request, SFSTurboMeta.deleteFsTask,
             hcClient);
+    }
+
+    /**
+     * 删除ldap配置
+     *
+     * 删除ldap配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLdapConfigRequest 请求对象
+     * @return CompletableFuture<DeleteLdapConfigResponse>
+     */
+    public CompletableFuture<DeleteLdapConfigResponse> deleteLdapConfigAsync(DeleteLdapConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deleteLdapConfig);
+    }
+
+    /**
+     * 删除ldap配置
+     *
+     * 删除ldap配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLdapConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteLdapConfigRequest, DeleteLdapConfigResponse>
+     */
+    public AsyncInvoker<DeleteLdapConfigRequest, DeleteLdapConfigResponse> deleteLdapConfigAsyncInvoker(
+        DeleteLdapConfigRequest request) {
+        return new AsyncInvoker<DeleteLdapConfigRequest, DeleteLdapConfigResponse>(request,
+            SFSTurboMeta.deleteLdapConfig, hcClient);
     }
 
     /**
@@ -1053,6 +1123,66 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 查询job的状态详情
+     *
+     * 查询job的执行状态。 可用于查询SFS Turbo异步API的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return CompletableFuture<ShowJobDetailResponse>
+     */
+    public CompletableFuture<ShowJobDetailResponse> showJobDetailAsync(ShowJobDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showJobDetail);
+    }
+
+    /**
+     * 查询job的状态详情
+     *
+     * 查询job的执行状态。 可用于查询SFS Turbo异步API的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
+     */
+    public AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailAsyncInvoker(
+        ShowJobDetailRequest request) {
+        return new AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, SFSTurboMeta.showJobDetail,
+            hcClient);
+    }
+
+    /**
+     * 查询Ldap的配置
+     *
+     * 查询Ldap的配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLdapConfigRequest 请求对象
+     * @return CompletableFuture<ShowLdapConfigResponse>
+     */
+    public CompletableFuture<ShowLdapConfigResponse> showLdapConfigAsync(ShowLdapConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showLdapConfig);
+    }
+
+    /**
+     * 查询Ldap的配置
+     *
+     * 查询Ldap的配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLdapConfigRequest 请求对象
+     * @return AsyncInvoker<ShowLdapConfigRequest, ShowLdapConfigResponse>
+     */
+    public AsyncInvoker<ShowLdapConfigRequest, ShowLdapConfigResponse> showLdapConfigAsyncInvoker(
+        ShowLdapConfigRequest request) {
+        return new AsyncInvoker<ShowLdapConfigRequest, ShowLdapConfigResponse>(request, SFSTurboMeta.showLdapConfig,
+            hcClient);
+    }
+
+    /**
      * 查询文件系统的某一个权限规则
      *
      * 查询文件系统的某一个权限规则
@@ -1198,6 +1328,36 @@ public class SFSTurboAsyncClient {
         UpdateHpcShareRequest request) {
         return new AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse>(request, SFSTurboMeta.updateHpcShare,
             hcClient);
+    }
+
+    /**
+     * 修改ldap配置
+     *
+     * 修改ldap配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLdapConfigRequest 请求对象
+     * @return CompletableFuture<UpdateLdapConfigResponse>
+     */
+    public CompletableFuture<UpdateLdapConfigResponse> updateLdapConfigAsync(UpdateLdapConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.updateLdapConfig);
+    }
+
+    /**
+     * 修改ldap配置
+     *
+     * 修改ldap配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLdapConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateLdapConfigRequest, UpdateLdapConfigResponse>
+     */
+    public AsyncInvoker<UpdateLdapConfigRequest, UpdateLdapConfigResponse> updateLdapConfigAsyncInvoker(
+        UpdateLdapConfigRequest request) {
+        return new AsyncInvoker<UpdateLdapConfigRequest, UpdateLdapConfigResponse>(request,
+            SFSTurboMeta.updateLdapConfig, hcClient);
     }
 
     /**

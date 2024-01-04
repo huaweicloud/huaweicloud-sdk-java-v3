@@ -29,7 +29,7 @@ public class MetricAPIQueryItemParam {
     }
 
     /**
-     * 资源编号,格式为resType_resId。其中resType部分的枚举值为：host, application, instance, container, process, network, storage, volume。当URI参数中的type取值为“inventory”时，通过该参数查询关联的指标，不再使用metricItems数组中的信息。
+     * 资源编号，格式为resType_resId。其中resType部分的枚举值为：host，application，instance， container，process，network，storage， volume。当URI参数中的type取值为“inventory”时，通过该参数查询关联的指标，不再使用metricItems数组中的信息。
      * @return inventoryId
      */
     public String getInventoryId() {

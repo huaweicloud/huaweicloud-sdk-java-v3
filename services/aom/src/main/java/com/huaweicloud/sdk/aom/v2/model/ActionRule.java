@@ -44,21 +44,21 @@ public class ActionRule {
     public static final class TypeEnum {
 
         /**
-         * Enum _1_ for value: "\"1\""
+         * Enum _1 for value: "1"
          */
-        public static final TypeEnum _1_ = new TypeEnum("\"1\"");
+        public static final TypeEnum _1 = new TypeEnum("1");
 
         /**
-         * Enum _2_ for value: "\"2\""
+         * Enum _2 for value: "2"
          */
-        public static final TypeEnum _2_ = new TypeEnum("\"2\"");
+        public static final TypeEnum _2 = new TypeEnum("2");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("\"1\"", _1_);
-            map.put("\"2\"", _2_);
+            map.put("1", _1);
+            map.put("2", _2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -144,7 +144,7 @@ public class ActionRule {
     }
 
     /**
-     * 规则名称
+     * 规则名称 只含有汉字数字、字母、下划线，不能以下划线等特殊符号开头和结尾，长度为 1 - 100
      * @return ruleName
      */
     public String getRuleName() {
@@ -195,7 +195,7 @@ public class ActionRule {
     }
 
     /**
-     * 规则描述
+     * 规则描述。规则描述长度为0到1024个字符，并且只能是数字、字母、特殊字符（_*）、空格和中文组成，不能以下划线开头和结尾。
      * @return desc
      */
     public String getDesc() {

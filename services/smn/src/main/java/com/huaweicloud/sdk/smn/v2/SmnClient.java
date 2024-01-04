@@ -3,10 +3,18 @@ package com.huaweicloud.sdk.smn.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserRequest;
+import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserResponse;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequest;
@@ -73,8 +81,12 @@ import com.huaweicloud.sdk.smn.v2.model.ListVersionsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionsResponse;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageResponse;
+import com.huaweicloud.sdk.smn.v2.model.PublishHttpDetectRequest;
+import com.huaweicloud.sdk.smn.v2.model.PublishHttpDetectResponse;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageResponse;
+import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
+import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequest;
@@ -134,6 +146,37 @@ public class SmnClient {
     }
 
     /**
+     * 导入订阅
+     *
+     * 为指定的Topic添加订阅者，订阅者信息来源为订阅用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSubscriptionFromSubscriptionUserRequest 请求对象
+     * @return AddSubscriptionFromSubscriptionUserResponse
+     */
+    public AddSubscriptionFromSubscriptionUserResponse addSubscriptionFromSubscriptionUser(
+        AddSubscriptionFromSubscriptionUserRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.addSubscriptionFromSubscriptionUser);
+    }
+
+    /**
+     * 导入订阅
+     *
+     * 为指定的Topic添加订阅者，订阅者信息来源为订阅用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSubscriptionFromSubscriptionUserRequest 请求对象
+     * @return SyncInvoker<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse>
+     */
+    public SyncInvoker<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse> addSubscriptionFromSubscriptionUserInvoker(
+        AddSubscriptionFromSubscriptionUserRequest request) {
+        return new SyncInvoker<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse>(
+            request, SmnMeta.addSubscriptionFromSubscriptionUser, hcClient);
+    }
+
+    /**
      * 批量添加删除资源标签
      *
      * 为指定实例批量添加或删除标签。一个资源上最多有10个标签。
@@ -168,6 +211,99 @@ public class SmnClient {
         BatchCreateOrDeleteResourceTagsRequest request) {
         return new SyncInvoker<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse>(request,
             SmnMeta.batchCreateOrDeleteResourceTags, hcClient);
+    }
+
+    /**
+     * 批量创建订阅过滤策略
+     *
+     * 创建订阅者的消息过滤策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateSubscriptionsFilterPolicesRequest 请求对象
+     * @return BatchCreateSubscriptionsFilterPolicesResponse
+     */
+    public BatchCreateSubscriptionsFilterPolicesResponse batchCreateSubscriptionsFilterPolices(
+        BatchCreateSubscriptionsFilterPolicesRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.batchCreateSubscriptionsFilterPolices);
+    }
+
+    /**
+     * 批量创建订阅过滤策略
+     *
+     * 创建订阅者的消息过滤策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateSubscriptionsFilterPolicesRequest 请求对象
+     * @return SyncInvoker<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse>
+     */
+    public SyncInvoker<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse> batchCreateSubscriptionsFilterPolicesInvoker(
+        BatchCreateSubscriptionsFilterPolicesRequest request) {
+        return new SyncInvoker<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse>(
+            request, SmnMeta.batchCreateSubscriptionsFilterPolices, hcClient);
+    }
+
+    /**
+     * 批量删除订阅过滤策略
+     *
+     * 删除订阅者的消息过滤策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSubscriptionsFilterPolicesRequest 请求对象
+     * @return BatchDeleteSubscriptionsFilterPolicesResponse
+     */
+    public BatchDeleteSubscriptionsFilterPolicesResponse batchDeleteSubscriptionsFilterPolices(
+        BatchDeleteSubscriptionsFilterPolicesRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.batchDeleteSubscriptionsFilterPolices);
+    }
+
+    /**
+     * 批量删除订阅过滤策略
+     *
+     * 删除订阅者的消息过滤策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSubscriptionsFilterPolicesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse>
+     */
+    public SyncInvoker<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse> batchDeleteSubscriptionsFilterPolicesInvoker(
+        BatchDeleteSubscriptionsFilterPolicesRequest request) {
+        return new SyncInvoker<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse>(
+            request, SmnMeta.batchDeleteSubscriptionsFilterPolices, hcClient);
+    }
+
+    /**
+     * 批量更新订阅过滤策略
+     *
+     * 更新订阅者的消息过滤策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateSubscriptionsFilterPolicesRequest 请求对象
+     * @return BatchUpdateSubscriptionsFilterPolicesResponse
+     */
+    public BatchUpdateSubscriptionsFilterPolicesResponse batchUpdateSubscriptionsFilterPolices(
+        BatchUpdateSubscriptionsFilterPolicesRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.batchUpdateSubscriptionsFilterPolices);
+    }
+
+    /**
+     * 批量更新订阅过滤策略
+     *
+     * 更新订阅者的消息过滤策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateSubscriptionsFilterPolicesRequest 请求对象
+     * @return SyncInvoker<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse>
+     */
+    public SyncInvoker<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse> batchUpdateSubscriptionsFilterPolicesInvoker(
+        BatchUpdateSubscriptionsFilterPolicesRequest request) {
+        return new SyncInvoker<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse>(
+            request, SmnMeta.batchUpdateSubscriptionsFilterPolices, hcClient);
     }
 
     /**
@@ -879,6 +1015,36 @@ public class SmnClient {
     }
 
     /**
+     * 发布探测消息
+     *
+     * 基于主题发送http/https探测消息，探测当前http/https 终端是否可用，SMN出口是否能够正常访问该终端。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishHttpDetectRequest 请求对象
+     * @return PublishHttpDetectResponse
+     */
+    public PublishHttpDetectResponse publishHttpDetect(PublishHttpDetectRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.publishHttpDetect);
+    }
+
+    /**
+     * 发布探测消息
+     *
+     * 基于主题发送http/https探测消息，探测当前http/https 终端是否可用，SMN出口是否能够正常访问该终端。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishHttpDetectRequest 请求对象
+     * @return SyncInvoker<PublishHttpDetectRequest, PublishHttpDetectResponse>
+     */
+    public SyncInvoker<PublishHttpDetectRequest, PublishHttpDetectResponse> publishHttpDetectInvoker(
+        PublishHttpDetectRequest request) {
+        return new SyncInvoker<PublishHttpDetectRequest, PublishHttpDetectResponse>(request, SmnMeta.publishHttpDetect,
+            hcClient);
+    }
+
+    /**
      * 消息发布
      *
      * 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。三种消息发送方式
@@ -924,6 +1090,36 @@ public class SmnClient {
         PublishMessageRequest request) {
         return new SyncInvoker<PublishMessageRequest, PublishMessageResponse>(request, SmnMeta.publishMessage,
             hcClient);
+    }
+
+    /**
+     * 获取http探测结果
+     *
+     * 根据http探测发送返回的task_id查询探测结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHttpDetectResultRequest 请求对象
+     * @return ShowHttpDetectResultResponse
+     */
+    public ShowHttpDetectResultResponse showHttpDetectResult(ShowHttpDetectResultRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.showHttpDetectResult);
+    }
+
+    /**
+     * 获取http探测结果
+     *
+     * 根据http探测发送返回的task_id查询探测结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHttpDetectResultRequest 请求对象
+     * @return SyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse>
+     */
+    public SyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse> showHttpDetectResultInvoker(
+        ShowHttpDetectResultRequest request) {
+        return new SyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse>(request,
+            SmnMeta.showHttpDetectResult, hcClient);
     }
 
     /**
@@ -1082,6 +1278,7 @@ public class SmnClient {
      * @param CreateApplicationRequest 请求对象
      * @return CreateApplicationResponse
      */
+    @Deprecated
     public CreateApplicationResponse createApplication(CreateApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.createApplication);
     }
@@ -1096,6 +1293,7 @@ public class SmnClient {
      * @param CreateApplicationRequest 请求对象
      * @return SyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateApplicationRequest, CreateApplicationResponse> createApplicationInvoker(
         CreateApplicationRequest request) {
         return new SyncInvoker<CreateApplicationRequest, CreateApplicationResponse>(request, SmnMeta.createApplication,
@@ -1112,6 +1310,7 @@ public class SmnClient {
      * @param DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
      */
+    @Deprecated
     public DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.deleteApplication);
     }
@@ -1126,6 +1325,7 @@ public class SmnClient {
      * @param DeleteApplicationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplicationInvoker(
         DeleteApplicationRequest request) {
         return new SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>(request, SmnMeta.deleteApplication,
@@ -1142,6 +1342,7 @@ public class SmnClient {
      * @param ListApplicationAttributesRequest 请求对象
      * @return ListApplicationAttributesResponse
      */
+    @Deprecated
     public ListApplicationAttributesResponse listApplicationAttributes(ListApplicationAttributesRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.listApplicationAttributes);
     }
@@ -1156,6 +1357,7 @@ public class SmnClient {
      * @param ListApplicationAttributesRequest 请求对象
      * @return SyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse> listApplicationAttributesInvoker(
         ListApplicationAttributesRequest request) {
         return new SyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse>(request,
@@ -1172,6 +1374,7 @@ public class SmnClient {
      * @param ListApplicationsRequest 请求对象
      * @return ListApplicationsResponse
      */
+    @Deprecated
     public ListApplicationsResponse listApplications(ListApplicationsRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.listApplications);
     }
@@ -1186,6 +1389,7 @@ public class SmnClient {
      * @param ListApplicationsRequest 请求对象
      * @return SyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListApplicationsRequest, ListApplicationsResponse> listApplicationsInvoker(
         ListApplicationsRequest request) {
         return new SyncInvoker<ListApplicationsRequest, ListApplicationsResponse>(request, SmnMeta.listApplications,
@@ -1202,6 +1406,7 @@ public class SmnClient {
      * @param PublishAppMessageRequest 请求对象
      * @return PublishAppMessageResponse
      */
+    @Deprecated
     public PublishAppMessageResponse publishAppMessage(PublishAppMessageRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.publishAppMessage);
     }
@@ -1216,6 +1421,7 @@ public class SmnClient {
      * @param PublishAppMessageRequest 请求对象
      * @return SyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse>
      */
+    @Deprecated
     public SyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse> publishAppMessageInvoker(
         PublishAppMessageRequest request) {
         return new SyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse>(request, SmnMeta.publishAppMessage,
@@ -1232,6 +1438,7 @@ public class SmnClient {
      * @param UpdateApplicationRequest 请求对象
      * @return UpdateApplicationResponse
      */
+    @Deprecated
     public UpdateApplicationResponse updateApplication(UpdateApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.updateApplication);
     }
@@ -1246,6 +1453,7 @@ public class SmnClient {
      * @param UpdateApplicationRequest 请求对象
      * @return SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse> updateApplicationInvoker(
         UpdateApplicationRequest request) {
         return new SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>(request, SmnMeta.updateApplication,
@@ -1262,6 +1470,7 @@ public class SmnClient {
      * @param CreateApplicationEndpointRequest 请求对象
      * @return CreateApplicationEndpointResponse
      */
+    @Deprecated
     public CreateApplicationEndpointResponse createApplicationEndpoint(CreateApplicationEndpointRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.createApplicationEndpoint);
     }
@@ -1276,6 +1485,7 @@ public class SmnClient {
      * @param CreateApplicationEndpointRequest 请求对象
      * @return SyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> createApplicationEndpointInvoker(
         CreateApplicationEndpointRequest request) {
         return new SyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse>(request,
@@ -1292,6 +1502,7 @@ public class SmnClient {
      * @param DeleteApplicationEndpointRequest 请求对象
      * @return DeleteApplicationEndpointResponse
      */
+    @Deprecated
     public DeleteApplicationEndpointResponse deleteApplicationEndpoint(DeleteApplicationEndpointRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.deleteApplicationEndpoint);
     }
@@ -1306,6 +1517,7 @@ public class SmnClient {
      * @param DeleteApplicationEndpointRequest 请求对象
      * @return SyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> deleteApplicationEndpointInvoker(
         DeleteApplicationEndpointRequest request) {
         return new SyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse>(request,
@@ -1322,6 +1534,7 @@ public class SmnClient {
      * @param ListApplicationEndpointAttributesRequest 请求对象
      * @return ListApplicationEndpointAttributesResponse
      */
+    @Deprecated
     public ListApplicationEndpointAttributesResponse listApplicationEndpointAttributes(
         ListApplicationEndpointAttributesRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.listApplicationEndpointAttributes);
@@ -1337,6 +1550,7 @@ public class SmnClient {
      * @param ListApplicationEndpointAttributesRequest 请求对象
      * @return SyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> listApplicationEndpointAttributesInvoker(
         ListApplicationEndpointAttributesRequest request) {
         return new SyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse>(
@@ -1353,6 +1567,7 @@ public class SmnClient {
      * @param ListApplicationEndpointsRequest 请求对象
      * @return ListApplicationEndpointsResponse
      */
+    @Deprecated
     public ListApplicationEndpointsResponse listApplicationEndpoints(ListApplicationEndpointsRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.listApplicationEndpoints);
     }
@@ -1367,6 +1582,7 @@ public class SmnClient {
      * @param ListApplicationEndpointsRequest 请求对象
      * @return SyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> listApplicationEndpointsInvoker(
         ListApplicationEndpointsRequest request) {
         return new SyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse>(request,
@@ -1383,6 +1599,7 @@ public class SmnClient {
      * @param UpdateApplicationEndpointRequest 请求对象
      * @return UpdateApplicationEndpointResponse
      */
+    @Deprecated
     public UpdateApplicationEndpointResponse updateApplicationEndpoint(UpdateApplicationEndpointRequest request) {
         return hcClient.syncInvokeHttp(request, SmnMeta.updateApplicationEndpoint);
     }
@@ -1397,6 +1614,7 @@ public class SmnClient {
      * @param UpdateApplicationEndpointRequest 请求对象
      * @return SyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> updateApplicationEndpointInvoker(
         UpdateApplicationEndpointRequest request) {
         return new SyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse>(request,

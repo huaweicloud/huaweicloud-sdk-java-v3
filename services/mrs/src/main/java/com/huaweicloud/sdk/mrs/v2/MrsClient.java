@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSyncIamUserRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSyncIamUserResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterRequest;
@@ -37,6 +39,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsFlavorsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsFlavorsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeRequest;
@@ -45,6 +49,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSyncIamUserRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSyncIamUserResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowTagStatusRequest;
@@ -63,6 +69,8 @@ import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateSyncIamUserRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateSyncIamUserResponse;
 
 public class MrsClient {
 
@@ -784,6 +792,96 @@ public class MrsClient {
     }
 
     /**
+     * 指定用户、用户组取消同步
+     *
+     * 指定用户、用户组取消同步
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelSyncIamUserRequest 请求对象
+     * @return CancelSyncIamUserResponse
+     */
+    public CancelSyncIamUserResponse cancelSyncIamUser(CancelSyncIamUserRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.cancelSyncIamUser);
+    }
+
+    /**
+     * 指定用户、用户组取消同步
+     *
+     * 指定用户、用户组取消同步
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelSyncIamUserRequest 请求对象
+     * @return SyncInvoker<CancelSyncIamUserRequest, CancelSyncIamUserResponse>
+     */
+    public SyncInvoker<CancelSyncIamUserRequest, CancelSyncIamUserResponse> cancelSyncIamUserInvoker(
+        CancelSyncIamUserRequest request) {
+        return new SyncInvoker<CancelSyncIamUserRequest, CancelSyncIamUserResponse>(request, MrsMeta.cancelSyncIamUser,
+            hcClient);
+    }
+
+    /**
+     * 获取已经同步的IAM用户和用户组
+     *
+     * 获取已经同步的IAM用户和用户组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSyncIamUserRequest 请求对象
+     * @return ShowSyncIamUserResponse
+     */
+    public ShowSyncIamUserResponse showSyncIamUser(ShowSyncIamUserRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.showSyncIamUser);
+    }
+
+    /**
+     * 获取已经同步的IAM用户和用户组
+     *
+     * 获取已经同步的IAM用户和用户组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSyncIamUserRequest 请求对象
+     * @return SyncInvoker<ShowSyncIamUserRequest, ShowSyncIamUserResponse>
+     */
+    public SyncInvoker<ShowSyncIamUserRequest, ShowSyncIamUserResponse> showSyncIamUserInvoker(
+        ShowSyncIamUserRequest request) {
+        return new SyncInvoker<ShowSyncIamUserRequest, ShowSyncIamUserResponse>(request, MrsMeta.showSyncIamUser,
+            hcClient);
+    }
+
+    /**
+     * IAM同步
+     *
+     * 将IAM用户和用户组同步到manager，指定用户的情况下，会将该用户关联的IAM用户组也同步到manager。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSyncIamUserRequest 请求对象
+     * @return UpdateSyncIamUserResponse
+     */
+    public UpdateSyncIamUserResponse updateSyncIamUser(UpdateSyncIamUserRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.updateSyncIamUser);
+    }
+
+    /**
+     * IAM同步
+     *
+     * 将IAM用户和用户组同步到manager，指定用户的情况下，会将该用户关联的IAM用户组也同步到manager。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSyncIamUserRequest 请求对象
+     * @return SyncInvoker<UpdateSyncIamUserRequest, UpdateSyncIamUserResponse>
+     */
+    public SyncInvoker<UpdateSyncIamUserRequest, UpdateSyncIamUserResponse> updateSyncIamUserInvoker(
+        UpdateSyncIamUserRequest request) {
+        return new SyncInvoker<UpdateSyncIamUserRequest, UpdateSyncIamUserResponse>(request, MrsMeta.updateSyncIamUser,
+            hcClient);
+    }
+
+    /**
      * 取消SQL执行任务
      *
      * 在MRS集群中取消一条SQL的执行任务。
@@ -950,6 +1048,36 @@ public class MrsClient {
     public SyncInvoker<SwitchClusterTagsRequest, SwitchClusterTagsResponse> switchClusterTagsInvoker(
         SwitchClusterTagsRequest request) {
         return new SyncInvoker<SwitchClusterTagsRequest, SwitchClusterTagsResponse>(request, MrsMeta.switchClusterTags,
+            hcClient);
+    }
+
+    /**
+     * 查询MRS集群版本可用的规格
+     *
+     * 查询MRS集群版本可用的规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMrsFlavorsRequest 请求对象
+     * @return ShowMrsFlavorsResponse
+     */
+    public ShowMrsFlavorsResponse showMrsFlavors(ShowMrsFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.showMrsFlavors);
+    }
+
+    /**
+     * 查询MRS集群版本可用的规格
+     *
+     * 查询MRS集群版本可用的规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMrsFlavorsRequest 请求对象
+     * @return SyncInvoker<ShowMrsFlavorsRequest, ShowMrsFlavorsResponse>
+     */
+    public SyncInvoker<ShowMrsFlavorsRequest, ShowMrsFlavorsResponse> showMrsFlavorsInvoker(
+        ShowMrsFlavorsRequest request) {
+        return new SyncInvoker<ShowMrsFlavorsRequest, ShowMrsFlavorsResponse>(request, MrsMeta.showMrsFlavors,
             hcClient);
     }
 

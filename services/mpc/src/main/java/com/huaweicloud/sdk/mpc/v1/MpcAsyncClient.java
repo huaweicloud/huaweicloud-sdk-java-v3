@@ -115,12 +115,16 @@ import com.huaweicloud.sdk.mpc.v1.model.NotifySmnTopicConfigRequest;
 import com.huaweicloud.sdk.mpc.v1.model.NotifySmnTopicConfigResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ShowAgenciesTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ShowAgenciesTaskResponse;
+import com.huaweicloud.sdk.mpc.v1.model.ShowTenantAccessInfoRequest;
+import com.huaweicloud.sdk.mpc.v1.model.ShowTenantAccessInfoResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateBucketAuthorizedRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateBucketAuthorizedResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateQualityEnhanceTemplateRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateQualityEnhanceTemplateResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTemplateGroupRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTemplateGroupResponse;
+import com.huaweicloud.sdk.mpc.v1.model.UpdateTenantAccessInfoRequest;
+import com.huaweicloud.sdk.mpc.v1.model.UpdateTenantAccessInfoResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTransTemplateRequest;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateTransTemplateResponse;
 import com.huaweicloud.sdk.mpc.v1.model.UpdateWatermarkTemplateRequest;
@@ -1595,6 +1599,68 @@ public class MpcAsyncClient {
         UpdateTemplateGroupRequest request) {
         return new AsyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>(request,
             MpcMeta.updateTemplateGroup, hcClient);
+    }
+
+    /**
+     * 租户查询服务开通状态信息
+     *
+     * 租户查询媒体转码服务开通状态信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTenantAccessInfoRequest 请求对象
+     * @return CompletableFuture<ShowTenantAccessInfoResponse>
+     */
+    public CompletableFuture<ShowTenantAccessInfoResponse> showTenantAccessInfoAsync(
+        ShowTenantAccessInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.showTenantAccessInfo);
+    }
+
+    /**
+     * 租户查询服务开通状态信息
+     *
+     * 租户查询媒体转码服务开通状态信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTenantAccessInfoRequest 请求对象
+     * @return AsyncInvoker<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse>
+     */
+    public AsyncInvoker<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> showTenantAccessInfoAsyncInvoker(
+        ShowTenantAccessInfoRequest request) {
+        return new AsyncInvoker<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse>(request,
+            MpcMeta.showTenantAccessInfo, hcClient);
+    }
+
+    /**
+     * 租户开通媒体转码服务
+     *
+     * 租户开通媒体转码服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTenantAccessInfoRequest 请求对象
+     * @return CompletableFuture<UpdateTenantAccessInfoResponse>
+     */
+    public CompletableFuture<UpdateTenantAccessInfoResponse> updateTenantAccessInfoAsync(
+        UpdateTenantAccessInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.updateTenantAccessInfo);
+    }
+
+    /**
+     * 租户开通媒体转码服务
+     *
+     * 租户开通媒体转码服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTenantAccessInfoRequest 请求对象
+     * @return AsyncInvoker<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse>
+     */
+    public AsyncInvoker<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> updateTenantAccessInfoAsyncInvoker(
+        UpdateTenantAccessInfoRequest request) {
+        return new AsyncInvoker<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse>(request,
+            MpcMeta.updateTenantAccessInfo, hcClient);
     }
 
     /**

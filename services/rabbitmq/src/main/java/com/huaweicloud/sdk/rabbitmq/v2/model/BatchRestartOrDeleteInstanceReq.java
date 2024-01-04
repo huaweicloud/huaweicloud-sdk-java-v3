@@ -24,14 +24,9 @@ public class BatchRestartOrDeleteInstanceReq {
     private List<String> instances = null;
 
     /**
-     * 对实例的操作：restart、delete
+     * 对实例的操作：delete
      */
     public static final class ActionEnum {
-
-        /**
-         * Enum RESTART for value: "restart"
-         */
-        public static final ActionEnum RESTART = new ActionEnum("restart");
 
         /**
          * Enum DELETE for value: "delete"
@@ -42,7 +37,6 @@ public class BatchRestartOrDeleteInstanceReq {
 
         private static Map<String, ActionEnum> createStaticFields() {
             Map<String, ActionEnum> map = new HashMap<>();
-            map.put("restart", RESTART);
             map.put("delete", DELETE);
             return Collections.unmodifiableMap(map);
         }
@@ -206,7 +200,7 @@ public class BatchRestartOrDeleteInstanceReq {
     }
 
     /**
-     * 对实例的操作：restart、delete
+     * 对实例的操作：delete
      * @return action
      */
     public ActionEnum getAction() {

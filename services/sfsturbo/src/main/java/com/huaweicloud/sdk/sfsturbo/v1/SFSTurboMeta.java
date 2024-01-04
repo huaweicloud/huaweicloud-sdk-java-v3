@@ -28,6 +28,9 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskReq;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateLdapConfigRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRulesRequestBody;
@@ -47,6 +50,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareRequest;
@@ -85,6 +90,10 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
@@ -97,6 +106,9 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 
@@ -376,6 +388,38 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLdapConfigRequest, CreateLdapConfigResponse> createLdapConfig =
+        genForcreateLdapConfig();
+
+    private static HttpRequestDef<CreateLdapConfigRequest, CreateLdapConfigResponse> genForcreateLdapConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateLdapConfigRequest, CreateLdapConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLdapConfigRequest.class, CreateLdapConfigResponse.class)
+                .withName("CreateLdapConfig")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/ldap")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLdapConfigRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<CreateLdapConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLdapConfigRequestBody.class),
+            f -> f.withMarshaller(CreateLdapConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePermRuleRequest, CreatePermRuleResponse> createPermRule =
         genForcreatePermRule();
 
@@ -603,6 +647,31 @@ public class SFSTurboMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFsTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLdapConfigRequest, DeleteLdapConfigResponse> deleteLdapConfig =
+        genFordeleteLdapConfig();
+
+    private static HttpRequestDef<DeleteLdapConfigRequest, DeleteLdapConfigResponse> genFordeleteLdapConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteLdapConfigRequest, DeleteLdapConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLdapConfigRequest.class, DeleteLdapConfigResponse.class)
+                .withName("DeleteLdapConfig")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/ldap")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLdapConfigRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
             }));
 
         // response
@@ -1202,6 +1271,61 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
+        genForshowJobDetail();
+
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
+                .withName("ShowJobDetail")
+                .withUri("/v1/{project_id}/sfs-turbo/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowJobDetailResponse::getXRequestId, ShowJobDetailResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLdapConfigRequest, ShowLdapConfigResponse> showLdapConfig =
+        genForshowLdapConfig();
+
+    private static HttpRequestDef<ShowLdapConfigRequest, ShowLdapConfigResponse> genForshowLdapConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowLdapConfigRequest, ShowLdapConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLdapConfigRequest.class, ShowLdapConfigResponse.class)
+                .withName("ShowLdapConfig")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/ldap")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLdapConfigRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> showPermRule = genForshowPermRule();
 
     private static HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> genForshowPermRule() {
@@ -1348,6 +1472,38 @@ public class SFSTurboMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(UpdateHpcShareResponse::getXRequestId, UpdateHpcShareResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLdapConfigRequest, UpdateLdapConfigResponse> updateLdapConfig =
+        genForupdateLdapConfig();
+
+    private static HttpRequestDef<UpdateLdapConfigRequest, UpdateLdapConfigResponse> genForupdateLdapConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLdapConfigRequest, UpdateLdapConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLdapConfigRequest.class, UpdateLdapConfigResponse.class)
+                .withName("UpdateLdapConfig")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/ldap")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLdapConfigRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<UpdateLdapConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLdapConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateLdapConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
         return builder.build();
     }
 

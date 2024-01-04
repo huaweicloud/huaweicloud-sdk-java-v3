@@ -29,7 +29,7 @@ public class VolumeConfigurationDataVolume {
     private String resourceName;
 
     /**
-     * 云存储类型，支持obs、sfs。
+     * 云存储类型。
      */
     public static final class ResourceTypeEnum {
 
@@ -104,7 +104,7 @@ public class VolumeConfigurationDataVolume {
     private ResourceTypeEnum resourceType;
 
     /**
-     * 云存储子类型，支持object_bucket、parallel_file_system、sfs3.0。
+     * 云存储子类型。
      */
     public static final class ResourceSubTypeEnum {
 
@@ -229,7 +229,7 @@ public class VolumeConfigurationDataVolume {
     }
 
     /**
-     * 云存储类型，支持obs、sfs。
+     * 云存储类型。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -246,7 +246,7 @@ public class VolumeConfigurationDataVolume {
     }
 
     /**
-     * 云存储子类型，支持object_bucket、parallel_file_system、sfs3.0。
+     * 云存储子类型。
      * @return resourceSubType
      */
     public ResourceSubTypeEnum getResourceSubType() {

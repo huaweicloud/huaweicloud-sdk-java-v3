@@ -23,8 +23,6 @@ import com.huaweicloud.sdk.koomap.v1.model.CreateTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.CreateWorkspaceDto;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceResponse;
-import com.huaweicloud.sdk.koomap.v1.model.DeleteMarkPointInfoRequest;
-import com.huaweicloud.sdk.koomap.v1.model.DeleteMarkPointInfoResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DTaskRequest;
@@ -34,8 +32,6 @@ import com.huaweicloud.sdk.koomap.v1.model.DeleteSpurPointResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeletedSpurInfo;
-import com.huaweicloud.sdk.koomap.v1.model.EstimateSpurPointRequest;
-import com.huaweicloud.sdk.koomap.v1.model.EstimateSpurPointResponse;
 import com.huaweicloud.sdk.koomap.v1.model.IdDto;
 import com.huaweicloud.sdk.koomap.v1.model.ListCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListCommonWorkspaceResponse;
@@ -44,8 +40,6 @@ import com.huaweicloud.sdk.koomap.v1.model.ListFolderResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoRequestBody;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoResponse;
-import com.huaweicloud.sdk.koomap.v1.model.ListMarkPointsRequest;
-import com.huaweicloud.sdk.koomap.v1.model.ListMarkPointsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListSpurPointsRequest;
@@ -56,23 +50,18 @@ import com.huaweicloud.sdk.koomap.v1.model.ListTasksInWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListTasksInWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoResponse;
-import com.huaweicloud.sdk.koomap.v1.model.MarkQueryParaInfo;
 import com.huaweicloud.sdk.koomap.v1.model.NaviServiceReq;
-import com.huaweicloud.sdk.koomap.v1.model.SaveMarkPointInfoRequest;
-import com.huaweicloud.sdk.koomap.v1.model.SaveMarkPointInfoRequestBody;
-import com.huaweicloud.sdk.koomap.v1.model.SaveMarkPointInfoResponse;
+import com.huaweicloud.sdk.koomap.v1.model.QueryFolderReq;
 import com.huaweicloud.sdk.koomap.v1.model.ShowReal3DUsageRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowReal3DUsageResponse;
-import com.huaweicloud.sdk.koomap.v1.model.ShowSpurPredictStatusRequest;
-import com.huaweicloud.sdk.koomap.v1.model.ShowSpurPredictStatusResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ShowSpurCountRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ShowSpurCountResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewInWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewInWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewResponse;
+import com.huaweicloud.sdk.koomap.v1.model.SpurCountQueryParaInfo;
 import com.huaweicloud.sdk.koomap.v1.model.SpurInfo;
-import com.huaweicloud.sdk.koomap.v1.model.SpurPredictDetail;
-import com.huaweicloud.sdk.koomap.v1.model.SpurPredictParaInfo;
-import com.huaweicloud.sdk.koomap.v1.model.SpurPredictStatusPara;
 import com.huaweicloud.sdk.koomap.v1.model.SpurQueryParaInfo;
 import com.huaweicloud.sdk.koomap.v1.model.StartNaviRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartNaviResponse;
@@ -282,45 +271,6 @@ public class KooMapMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMarkPointInfoRequest, DeleteMarkPointInfoResponse> deleteMarkPointInfo =
-        genFordeleteMarkPointInfo();
-
-    private static HttpRequestDef<DeleteMarkPointInfoRequest, DeleteMarkPointInfoResponse> genFordeleteMarkPointInfo() {
-        // basic
-        HttpRequestDef.Builder<DeleteMarkPointInfoRequest, DeleteMarkPointInfoResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteMarkPointInfoRequest.class, DeleteMarkPointInfoResponse.class)
-            .withName("DeleteMarkPointInfo")
-            .withUri("/v1/real3d/markinfo/{id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMarkPointInfoRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<Object>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(DeleteMarkPointInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteMarkPointInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteReal3DProductRequest, DeleteReal3DProductResponse> deleteReal3DProduct =
         genFordeleteReal3DProduct();
 
@@ -469,38 +419,6 @@ public class KooMapMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<EstimateSpurPointRequest, EstimateSpurPointResponse> estimateSpurPoint =
-        genForestimateSpurPoint();
-
-    private static HttpRequestDef<EstimateSpurPointRequest, EstimateSpurPointResponse> genForestimateSpurPoint() {
-        // basic
-        HttpRequestDef.Builder<EstimateSpurPointRequest, EstimateSpurPointResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, EstimateSpurPointRequest.class, EstimateSpurPointResponse.class)
-                .withName("EstimateSpurPoint")
-                .withUri("/v1/real3d/spur/predict")
-                .withContentType("application/json");
-
-        // requests
-        builder.<SpurPredictParaInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SpurPredictParaInfo.class),
-            f -> f.withMarshaller(EstimateSpurPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-        builder.<List<SpurPredictDetail>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(EstimateSpurPointResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(SpurPredictDetail.class));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse> listCommonWorkspace =
         genForlistCommonWorkspace();
 
@@ -600,19 +518,12 @@ public class KooMapMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
+        builder.<QueryFolderReq>withRequestField("body",
+            LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFolderRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFolderRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
+            TypeCasts.uncheckedConversion(QueryFolderReq.class),
+            f -> f.withMarshaller(ListFolderRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -637,31 +548,6 @@ public class KooMapMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListImageBaseInfoRequestBody.class),
             f -> f.withMarshaller(ListImageBaseInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListMarkPointsRequest, ListMarkPointsResponse> listMarkPoints =
-        genForlistMarkPoints();
-
-    private static HttpRequestDef<ListMarkPointsRequest, ListMarkPointsResponse> genForlistMarkPoints() {
-        // basic
-        HttpRequestDef.Builder<ListMarkPointsRequest, ListMarkPointsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListMarkPointsRequest.class, ListMarkPointsResponse.class)
-                .withName("ListMarkPoints")
-                .withUri("/v1/real3d/markinfo")
-                .withContentType("application/json");
-
-        // requests
-        builder.<MarkQueryParaInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(MarkQueryParaInfo.class),
-            f -> f.withMarshaller(ListMarkPointsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -854,6 +740,13 @@ public class KooMapMeta {
             f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskType, (req, v) -> {
                 req.setTaskType(v);
             }));
+        builder.<String>withRequestField("modeling_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getModelingType, (req, v) -> {
+                req.setModelingType(v);
+            }));
         builder.<String>withRequestField("create_time_from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -941,38 +834,6 @@ public class KooMapMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SaveMarkPointInfoRequest, SaveMarkPointInfoResponse> saveMarkPointInfo =
-        genForsaveMarkPointInfo();
-
-    private static HttpRequestDef<SaveMarkPointInfoRequest, SaveMarkPointInfoResponse> genForsaveMarkPointInfo() {
-        // basic
-        HttpRequestDef.Builder<SaveMarkPointInfoRequest, SaveMarkPointInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, SaveMarkPointInfoRequest.class, SaveMarkPointInfoResponse.class)
-                .withName("SaveMarkPointInfo")
-                .withUri("/v1/real3d/markinfo")
-                .withContentType("multipart/form-data");
-
-        // requests
-        builder.<SaveMarkPointInfoRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SaveMarkPointInfoRequestBody.class),
-            f -> f.withMarshaller(SaveMarkPointInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(SaveMarkPointInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowReal3DUsageRequest, ShowReal3DUsageResponse> showReal3DUsage =
         genForshowReal3DUsage();
 
@@ -998,23 +859,23 @@ public class KooMapMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSpurPredictStatusRequest, ShowSpurPredictStatusResponse> showSpurPredictStatus =
-        genForshowSpurPredictStatus();
+    public static final HttpRequestDef<ShowSpurCountRequest, ShowSpurCountResponse> showSpurCount =
+        genForshowSpurCount();
 
-    private static HttpRequestDef<ShowSpurPredictStatusRequest, ShowSpurPredictStatusResponse> genForshowSpurPredictStatus() {
+    private static HttpRequestDef<ShowSpurCountRequest, ShowSpurCountResponse> genForshowSpurCount() {
         // basic
-        HttpRequestDef.Builder<ShowSpurPredictStatusRequest, ShowSpurPredictStatusResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ShowSpurPredictStatusRequest.class, ShowSpurPredictStatusResponse.class)
-            .withName("ShowSpurPredictStatus")
-            .withUri("/v1/real3d/spur/predict/status")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<ShowSpurCountRequest, ShowSpurCountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowSpurCountRequest.class, ShowSpurCountResponse.class)
+                .withName("ShowSpurCount")
+                .withUri("/v1/real3d/spur/count")
+                .withContentType("application/json");
 
         // requests
-        builder.<SpurPredictStatusPara>withRequestField("body",
+        builder.<SpurCountQueryParaInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SpurPredictStatusPara.class),
-            f -> f.withMarshaller(ShowSpurPredictStatusRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(SpurCountQueryParaInfo.class),
+            f -> f.withMarshaller(ShowSpurCountRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

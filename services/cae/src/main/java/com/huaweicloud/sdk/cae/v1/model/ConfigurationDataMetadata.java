@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 转发策略类型访问方式的负载均衡策略配置。
+ * 组件配置元数据。
  */
 public class ConfigurationDataMetadata {
 
@@ -40,7 +40,7 @@ public class ConfigurationDataMetadata {
     }
 
     /**
-     * 如下配置表示：负载均衡分配策略使用加权轮询算法，不启用健康检查。 - \"kubernetes.io/elb.health-check-flag\": \"off\" - \"kubernetes.io/elb.lb-algorithm\": \"ROUND_ROBIN\"
+     * 附加参数。  举例：负载均衡分配策略使用加权轮询算法，不启用健康检查。配置如下： - \"kubernetes.io/elb.health-check-flag\": \"off\" - \"kubernetes.io/elb.lb-algorithm\": \"ROUND_ROBIN\" 
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

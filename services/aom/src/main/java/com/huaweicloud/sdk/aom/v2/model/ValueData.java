@@ -21,7 +21,7 @@ public class ValueData {
     private String metricName;
 
     /**
-     * 数据的类型。 取值范围 只能是\"int\"或\"float\"。
+     * 数据的类型。取值范围只能是\"int\"或\"float\"。
      */
     public static final class TypeEnum {
 
@@ -128,7 +128,7 @@ public class ValueData {
     }
 
     /**
-     * 数据的类型。 取值范围 只能是\"int\"或\"float\"。
+     * 数据的类型。取值范围只能是\"int\"或\"float\"。
      * @return type
      */
     public TypeEnum getType() {
@@ -162,7 +162,7 @@ public class ValueData {
     }
 
     /**
-     * 指标数据的值。 取值范围 有效的数值类型。
+     * 指标数据的值。取值范围有效的数值类型。
      * minimum: 0
      * @return value
      */

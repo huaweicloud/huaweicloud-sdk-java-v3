@@ -95,6 +95,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetWithEngineRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetWithEngineResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordResponse;
@@ -1403,6 +1405,55 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetMessageOffsetReq.class),
             f -> f.withMarshaller(ResetMessageOffsetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> resetMessageOffsetWithEngine =
+        genForresetMessageOffsetWithEngine();
+
+    private static HttpRequestDef<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> genForresetMessageOffsetWithEngine() {
+        // basic
+        HttpRequestDef.Builder<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ResetMessageOffsetWithEngineRequest.class,
+                    ResetMessageOffsetWithEngineResponse.class)
+                .withName("ResetMessageOffsetWithEngine")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getGroup, (req, v) -> {
+                req.setGroup(v);
+            }));
+        builder.<ResetMessageOffsetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetMessageOffsetReq.class),
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

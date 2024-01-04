@@ -304,6 +304,8 @@ public class Application {
         * [7.2.2 异步客户端请求重试](#722-异步客户端请求重试-top)
         * [7.2.3 典型重试场景调用示例](#723-典型重试场景调用示例-top)
 * [8. 文件上传与下载](#8-文件上传与下载-top)
+    * [8.1 上传与下载](#81-上传与下载-top)
+    * [8.2 获取进度](#82-获取进度-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -1277,13 +1279,14 @@ try {
 
 ### 8. 文件上传与下载 [:top:](#用户手册-top)
 
+#### 8.1 上传与下载 [:top:](#用户手册-top)
+
 以数据安全中心服务的嵌入图片水印接口为例，该接口需要上传一个图片文件，并返回加过水印的图片文件流：
 
 ```java
 package com.huaweicloud.sdk.test;
 
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.dsc.v1.DscClient;
 import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequest;
 import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequestBody;
@@ -1342,15 +1345,12 @@ public class CreateImageWatermarkDemo {
         String sk = System.getenv("HUAWEICLOUD_SDK_SK");
         String endpoint = "{your endpoint string}";
         String projectId = "{your project id}";
-        HttpConfig config = HttpConfig.getDefaultHttpConfig();
-        config.withIgnoreSSLVerification(true);
         BasicCredentials auth = new BasicCredentials()
                 .withAk(ak)
                 .withSk(sk)
                 .withProjectId(projectId);
 
         DscClient client = DscClient.newBuilder()
-                .withHttpConfig(config)
                 .withCredential(auth)
                 .withEndpoint(endpoint)
                 .build();
@@ -1359,5 +1359,99 @@ public class CreateImageWatermarkDemo {
 
     }
     
+}
+```
+
+#### 8.2 获取进度 [:top:](#用户手册-top)
+
+以对象存储服务的上传对象和下载对象接口为例：
+
+```java
+package com.huaweicloud.sdk.test;
+
+import com.huaweicloud.sdk.obs.v1.ObsClient;
+import com.huaweicloud.sdk.obs.v1.ObsCredentials;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.region.ObsRegion;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.function.Consumer;
+
+public class ObsDemo {
+
+    // 上传对象
+    public static void putObject(ObsClient client) throws IOException {
+        PutObjectRequest request = new PutObjectRequest().withBucketName("bucketname").withObjectKey("objectname");
+        FileInputStream fileInputStream = new FileInputStream("/tmp/file-to-upload");
+        request.setUploadStream(fileInputStream);
+
+        request.setProgressListener(progressStatus -> {
+            // 获取上传平均速率(B/S)
+            System.out.println("AverageSpeed:" + progressStatus.getAverageSpeed());
+            // 获取上传进度百分比
+            System.out.println("TransferPercentage:" + progressStatus.getTransferPercentage());
+        });
+        // 每上传1MB数据反馈进度
+        request.setProgressInterval(1024 * 1024L);
+
+        PutObjectResponse response = client.putObject(request);
+        System.out.println(response.getHttpStatusCode());
+        fileInputStream.close();
+    }
+
+    // 下载对象
+    public static void getObject(ObsClient client) {
+        GetObjectRequest request = new GetObjectRequest().withBucketName("bucketname").withObjectKey("objectname");
+
+        request.setProgressListener(progressStatus -> {
+            // 获取下载平均速率(B/S)
+            System.out.println("AverageSpeed:" + progressStatus.getAverageSpeed());
+            // 获取下载进度百分比
+            System.out.println("TransferPercentage:" + progressStatus.getTransferPercentage());
+        });
+        // 每下载1MB数据反馈进度
+        request.setProgressInterval(1024 * 1024L);
+
+        GetObjectResponse response = client.getObject(request);
+        System.out.println(response.getHttpStatusCode());
+
+        //下载文件的consumer
+        Consumer<InputStream> consumer = inputStream -> {
+            try {
+                FileOutputStream out = new FileOutputStream("/tmp/downloaded-file");
+                byte[] data = new byte[1024];
+                int len;
+                while ((len = inputStream.read(data)) != -1) {
+                    out.write(data, 0, len);
+                }
+
+                inputStream.close();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+        response.consumeDownloadStream(consumer);
+    }
+
+    public static void main(String[] args) throws IOException {
+        ObsCredentials credentials = new ObsCredentials()
+                .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+                .withSk(System.getenv("HUAWEICLOUD_SDK_SK"));
+
+        ObsClient client = ObsClient.newBuilder()
+                .withCredential(credentials)
+                .withRegion(ObsRegion.valueOf("cn-north-1"))
+                .build();
+
+        putObject(client);
+        getObject(client);
+    }
 }
 ```

@@ -22,7 +22,7 @@ public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
     }
 
     /**
-     * 此参数在请求实体中，采用json字符串格式。
+     * Get body
      * @return body
      */
     public Object getBody() {

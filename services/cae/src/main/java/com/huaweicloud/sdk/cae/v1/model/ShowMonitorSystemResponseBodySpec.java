@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ShowMonitorSystemResponseBodySpec
+ * 查询监控系统详情。
  */
 public class ShowMonitorSystemResponseBodySpec {
 
@@ -21,7 +21,7 @@ public class ShowMonitorSystemResponseBodySpec {
     private String id;
 
     /**
-     * 采集方式，包括apm2和opentelemetry。
+     * 采集方式。
      */
     public static final class TypeEnum {
 
@@ -96,7 +96,7 @@ public class ShowMonitorSystemResponseBodySpec {
     private TypeEnum type;
 
     /**
-     * 探针注入方式，包括automatic和manual。
+     * 探针注入方式。
      */
     public static final class InstrumentationEnum {
 
@@ -291,7 +291,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * Get id
+     * 监控系统id。
      * @return id
      */
     public String getId() {
@@ -308,7 +308,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * 采集方式，包括apm2和opentelemetry。
+     * 采集方式。
      * @return type
      */
     public TypeEnum getType() {
@@ -325,7 +325,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * 探针注入方式，包括automatic和manual。
+     * 探针注入方式。
      * @return instrumentation
      */
     public InstrumentationEnum getInstrumentation() {
@@ -342,7 +342,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * apm2 access_key。
+     * apm2访问密钥Key。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -359,7 +359,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * apm2 access_value。
+     * apm2访问密钥value。
      * @return accessValue
      */
     public String getAccessValue() {
@@ -376,7 +376,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * apm opentelemetry接入token。
+     * apm2 opentelemetry接入token。
      * @return accessToken
      */
     public String getAccessToken() {
@@ -410,7 +410,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * apm应用名。
+     * apm2应用。
      * @return apmApplication
      */
     public String getApmApplication() {
@@ -427,7 +427,7 @@ public class ShowMonitorSystemResponseBodySpec {
     }
 
     /**
-     * apm-agent/opentelemetry-agent探针版本。
+     * 增强型探针/opentelemetry探针版本。
      * @return version
      */
     public String getVersion() {

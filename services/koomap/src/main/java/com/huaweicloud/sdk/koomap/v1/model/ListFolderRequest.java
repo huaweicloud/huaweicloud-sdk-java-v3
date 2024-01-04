@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -11,47 +12,34 @@ import java.util.Objects;
 public class ListFolderRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    @JsonProperty(value = "body")
 
-    private Integer offset;
+    private QueryFolderReq body;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
+    public ListFolderRequest withBody(QueryFolderReq body) {
+        this.body = body;
+        return this;
+    }
 
-    private Integer limit;
+    public ListFolderRequest withBody(Consumer<QueryFolderReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new QueryFolderReq();
+            bodySetter.accept(this.body);
+        }
 
-    public ListFolderRequest withOffset(Integer offset) {
-        this.offset = offset;
         return this;
     }
 
     /**
-     * 分页的偏移量。
-     * @return offset
+     * Get body
+     * @return body
      */
-    public Integer getOffset() {
-        return offset;
+    public QueryFolderReq getBody() {
+        return body;
     }
 
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public ListFolderRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 每页的数据量。
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setBody(QueryFolderReq body) {
+        this.body = body;
     }
 
     @Override
@@ -63,20 +51,19 @@ public class ListFolderRequest {
             return false;
         }
         ListFolderRequest that = (ListFolderRequest) obj;
-        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFolderRequest {\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

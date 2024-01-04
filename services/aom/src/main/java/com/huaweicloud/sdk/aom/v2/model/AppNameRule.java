@@ -34,7 +34,7 @@ public class AppNameRule {
     }
 
     /**
-     * 取值类型。 从cmdLineHash、cmdLine、env、str里面选取。
+     * 取值类型。从cmdLineHash、cmdLine、env、str里面选取。
      * @return nameType
      */
     public String getNameType() {

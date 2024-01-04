@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateClusterMasterSnapshotRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateClusterMasterSnapshotResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateKubernetesClusterCertRequest;
@@ -24,8 +26,14 @@ import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePreCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
@@ -50,6 +58,12 @@ import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterMasterSnapshotTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterMasterSnapshotTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradeFeatureGatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradeFeatureGatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
@@ -58,8 +72,14 @@ import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListReleasesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListReleasesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsResponse;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
@@ -88,6 +108,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsRequest;
@@ -98,6 +120,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
@@ -106,6 +130,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
@@ -132,6 +158,8 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateResponse;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -420,6 +448,37 @@ public class CceAsyncClient {
     }
 
     /**
+     * 集群备份
+     *
+     * 集群备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterMasterSnapshotRequest 请求对象
+     * @return CompletableFuture<CreateClusterMasterSnapshotResponse>
+     */
+    public CompletableFuture<CreateClusterMasterSnapshotResponse> createClusterMasterSnapshotAsync(
+        CreateClusterMasterSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createClusterMasterSnapshot);
+    }
+
+    /**
+     * 集群备份
+     *
+     * 集群备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterMasterSnapshotRequest 请求对象
+     * @return AsyncInvoker<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse>
+     */
+    public AsyncInvoker<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> createClusterMasterSnapshotAsyncInvoker(
+        CreateClusterMasterSnapshotRequest request) {
+        return new AsyncInvoker<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse>(request,
+            CceMeta.createClusterMasterSnapshot, hcClient);
+    }
+
+    /**
      * 获取集群证书
      *
      * 该API用于获取指定集群的证书信息。
@@ -557,6 +616,66 @@ public class CceAsyncClient {
     }
 
     /**
+     * 集群升级后确认
+     *
+     * 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePostCheckRequest 请求对象
+     * @return CompletableFuture<CreatePostCheckResponse>
+     */
+    public CompletableFuture<CreatePostCheckResponse> createPostCheckAsync(CreatePostCheckRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createPostCheck);
+    }
+
+    /**
+     * 集群升级后确认
+     *
+     * 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePostCheckRequest 请求对象
+     * @return AsyncInvoker<CreatePostCheckRequest, CreatePostCheckResponse>
+     */
+    public AsyncInvoker<CreatePostCheckRequest, CreatePostCheckResponse> createPostCheckAsyncInvoker(
+        CreatePostCheckRequest request) {
+        return new AsyncInvoker<CreatePostCheckRequest, CreatePostCheckResponse>(request, CceMeta.createPostCheck,
+            hcClient);
+    }
+
+    /**
+     * 集群升级前检查
+     *
+     * 集群升级前检查
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePreCheckRequest 请求对象
+     * @return CompletableFuture<CreatePreCheckResponse>
+     */
+    public CompletableFuture<CreatePreCheckResponse> createPreCheckAsync(CreatePreCheckRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createPreCheck);
+    }
+
+    /**
+     * 集群升级前检查
+     *
+     * 集群升级前检查
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePreCheckRequest 请求对象
+     * @return AsyncInvoker<CreatePreCheckRequest, CreatePreCheckResponse>
+     */
+    public AsyncInvoker<CreatePreCheckRequest, CreatePreCheckResponse> createPreCheckAsyncInvoker(
+        CreatePreCheckRequest request) {
+        return new AsyncInvoker<CreatePreCheckRequest, CreatePreCheckResponse>(request, CceMeta.createPreCheck,
+            hcClient);
+    }
+
+    /**
      * 创建模板实例
      *
      * 创建模板实例
@@ -583,6 +702,39 @@ public class CceAsyncClient {
     public AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse> createReleaseAsyncInvoker(
         CreateReleaseRequest request) {
         return new AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse>(request, CceMeta.createRelease, hcClient);
+    }
+
+    /**
+     * 开启集群升级流程引导任务
+     *
+     * 该API用于创建一个集群升级流程引导任务。请在调用本接口完成引导任务创建之后，通过集群升级前检查开始检查任务。
+     * 升级流程任务用于控制集群升级任务的执行流程，执行流程为 升级前检查 &#x3D;&gt; 集群升级 &#x3D;&gt; 升级后检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUpgradeWorkFlowRequest 请求对象
+     * @return CompletableFuture<CreateUpgradeWorkFlowResponse>
+     */
+    public CompletableFuture<CreateUpgradeWorkFlowResponse> createUpgradeWorkFlowAsync(
+        CreateUpgradeWorkFlowRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createUpgradeWorkFlow);
+    }
+
+    /**
+     * 开启集群升级流程引导任务
+     *
+     * 该API用于创建一个集群升级流程引导任务。请在调用本接口完成引导任务创建之后，通过集群升级前检查开始检查任务。
+     * 升级流程任务用于控制集群升级任务的执行流程，执行流程为 升级前检查 &#x3D;&gt; 集群升级 &#x3D;&gt; 升级后检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUpgradeWorkFlowRequest 请求对象
+     * @return AsyncInvoker<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse>
+     */
+    public AsyncInvoker<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> createUpgradeWorkFlowAsyncInvoker(
+        CreateUpgradeWorkFlowRequest request) {
+        return new AsyncInvoker<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse>(request,
+            CceMeta.createUpgradeWorkFlow, hcClient);
     }
 
     /**
@@ -946,6 +1098,99 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取集群备份任务详情列表
+     *
+     * 获取集群备份任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterMasterSnapshotTasksRequest 请求对象
+     * @return CompletableFuture<ListClusterMasterSnapshotTasksResponse>
+     */
+    public CompletableFuture<ListClusterMasterSnapshotTasksResponse> listClusterMasterSnapshotTasksAsync(
+        ListClusterMasterSnapshotTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listClusterMasterSnapshotTasks);
+    }
+
+    /**
+     * 获取集群备份任务详情列表
+     *
+     * 获取集群备份任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterMasterSnapshotTasksRequest 请求对象
+     * @return AsyncInvoker<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse>
+     */
+    public AsyncInvoker<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> listClusterMasterSnapshotTasksAsyncInvoker(
+        ListClusterMasterSnapshotTasksRequest request) {
+        return new AsyncInvoker<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse>(request,
+            CceMeta.listClusterMasterSnapshotTasks, hcClient);
+    }
+
+    /**
+     * 获取集群升级特性开关配置
+     *
+     * 获取集群升级特性开关配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterUpgradeFeatureGatesRequest 请求对象
+     * @return CompletableFuture<ListClusterUpgradeFeatureGatesResponse>
+     */
+    public CompletableFuture<ListClusterUpgradeFeatureGatesResponse> listClusterUpgradeFeatureGatesAsync(
+        ListClusterUpgradeFeatureGatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listClusterUpgradeFeatureGates);
+    }
+
+    /**
+     * 获取集群升级特性开关配置
+     *
+     * 获取集群升级特性开关配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterUpgradeFeatureGatesRequest 请求对象
+     * @return AsyncInvoker<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse>
+     */
+    public AsyncInvoker<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> listClusterUpgradeFeatureGatesAsyncInvoker(
+        ListClusterUpgradeFeatureGatesRequest request) {
+        return new AsyncInvoker<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse>(request,
+            CceMeta.listClusterUpgradeFeatureGates, hcClient);
+    }
+
+    /**
+     * 获取集群升级路径
+     *
+     * 获取集群升级路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterUpgradePathsRequest 请求对象
+     * @return CompletableFuture<ListClusterUpgradePathsResponse>
+     */
+    public CompletableFuture<ListClusterUpgradePathsResponse> listClusterUpgradePathsAsync(
+        ListClusterUpgradePathsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listClusterUpgradePaths);
+    }
+
+    /**
+     * 获取集群升级路径
+     *
+     * 获取集群升级路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterUpgradePathsRequest 请求对象
+     * @return AsyncInvoker<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse>
+     */
+    public AsyncInvoker<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> listClusterUpgradePathsAsyncInvoker(
+        ListClusterUpgradePathsRequest request) {
+        return new AsyncInvoker<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse>(request,
+            CceMeta.listClusterUpgradePaths, hcClient);
+    }
+
+    /**
      * 获取指定项目下的集群
      *
      * 该API用于获取指定项目下所有集群的详细信息。
@@ -1068,6 +1313,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取集群升级前检查任务详情列表
+     *
+     * 获取集群升级前检查任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPreCheckTasksRequest 请求对象
+     * @return CompletableFuture<ListPreCheckTasksResponse>
+     */
+    public CompletableFuture<ListPreCheckTasksResponse> listPreCheckTasksAsync(ListPreCheckTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listPreCheckTasks);
+    }
+
+    /**
+     * 获取集群升级前检查任务详情列表
+     *
+     * 获取集群升级前检查任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPreCheckTasksRequest 请求对象
+     * @return AsyncInvoker<ListPreCheckTasksRequest, ListPreCheckTasksResponse>
+     */
+    public AsyncInvoker<ListPreCheckTasksRequest, ListPreCheckTasksResponse> listPreCheckTasksAsyncInvoker(
+        ListPreCheckTasksRequest request) {
+        return new AsyncInvoker<ListPreCheckTasksRequest, ListPreCheckTasksResponse>(request, CceMeta.listPreCheckTasks,
+            hcClient);
+    }
+
+    /**
      * 获取模板实例列表
      *
      * 获取模板实例列表
@@ -1094,6 +1369,68 @@ public class CceAsyncClient {
     public AsyncInvoker<ListReleasesRequest, ListReleasesResponse> listReleasesAsyncInvoker(
         ListReleasesRequest request) {
         return new AsyncInvoker<ListReleasesRequest, ListReleasesResponse>(request, CceMeta.listReleases, hcClient);
+    }
+
+    /**
+     * 获取集群升级任务详情列表
+     *
+     * 获取集群升级任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpgradeClusterTasksRequest 请求对象
+     * @return CompletableFuture<ListUpgradeClusterTasksResponse>
+     */
+    public CompletableFuture<ListUpgradeClusterTasksResponse> listUpgradeClusterTasksAsync(
+        ListUpgradeClusterTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listUpgradeClusterTasks);
+    }
+
+    /**
+     * 获取集群升级任务详情列表
+     *
+     * 获取集群升级任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpgradeClusterTasksRequest 请求对象
+     * @return AsyncInvoker<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse>
+     */
+    public AsyncInvoker<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> listUpgradeClusterTasksAsyncInvoker(
+        ListUpgradeClusterTasksRequest request) {
+        return new AsyncInvoker<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse>(request,
+            CceMeta.listUpgradeClusterTasks, hcClient);
+    }
+
+    /**
+     * 获取UpgradeWorkFlows列表
+     *
+     * 获取历史集群升级引导任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpgradeWorkFlowsRequest 请求对象
+     * @return CompletableFuture<ListUpgradeWorkFlowsResponse>
+     */
+    public CompletableFuture<ListUpgradeWorkFlowsResponse> listUpgradeWorkFlowsAsync(
+        ListUpgradeWorkFlowsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listUpgradeWorkFlows);
+    }
+
+    /**
+     * 获取UpgradeWorkFlows列表
+     *
+     * 获取历史集群升级引导任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpgradeWorkFlowsRequest 请求对象
+     * @return AsyncInvoker<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse>
+     */
+    public AsyncInvoker<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> listUpgradeWorkFlowsAsyncInvoker(
+        ListUpgradeWorkFlowsRequest request) {
+        return new AsyncInvoker<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse>(request,
+            CceMeta.listUpgradeWorkFlows, hcClient);
     }
 
     /**
@@ -1539,6 +1876,37 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取集群升级相关信息
+     *
+     * 获取集群升级相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterUpgradeInfoRequest 请求对象
+     * @return CompletableFuture<ShowClusterUpgradeInfoResponse>
+     */
+    public CompletableFuture<ShowClusterUpgradeInfoResponse> showClusterUpgradeInfoAsync(
+        ShowClusterUpgradeInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showClusterUpgradeInfo);
+    }
+
+    /**
+     * 获取集群升级相关信息
+     *
+     * 获取集群升级相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterUpgradeInfoRequest 请求对象
+     * @return AsyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse>
+     */
+    public AsyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfoAsyncInvoker(
+        ShowClusterUpgradeInfoRequest request) {
+        return new AsyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse>(request,
+            CceMeta.showClusterUpgradeInfo, hcClient);
+    }
+
+    /**
      * 获取任务信息
      *
      * 该API用于获取任务信息。通过某一任务请求下发后返回的jobID来查询指定任务的进度。
@@ -1696,6 +2064,35 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取集群升级前检查任务详情
+     *
+     * 获取集群升级前检查任务详情，任务ID由调用集群检查API后从响应体中uid字段获取。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPreCheckRequest 请求对象
+     * @return CompletableFuture<ShowPreCheckResponse>
+     */
+    public CompletableFuture<ShowPreCheckResponse> showPreCheckAsync(ShowPreCheckRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showPreCheck);
+    }
+
+    /**
+     * 获取集群升级前检查任务详情
+     *
+     * 获取集群升级前检查任务详情，任务ID由调用集群检查API后从响应体中uid字段获取。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPreCheckRequest 请求对象
+     * @return AsyncInvoker<ShowPreCheckRequest, ShowPreCheckResponse>
+     */
+    public AsyncInvoker<ShowPreCheckRequest, ShowPreCheckResponse> showPreCheckAsyncInvoker(
+        ShowPreCheckRequest request) {
+        return new AsyncInvoker<ShowPreCheckRequest, ShowPreCheckResponse>(request, CceMeta.showPreCheck, hcClient);
+    }
+
+    /**
      * 查询CCE服务下的资源配额
      *
      * 该API用于查询CCE服务下的资源配额。
@@ -1814,6 +2211,36 @@ public class CceAsyncClient {
         ShowUpgradeClusterTaskRequest request) {
         return new AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse>(request,
             CceMeta.showUpgradeClusterTask, hcClient);
+    }
+
+    /**
+     * 获取指定集群升级引导任务详情
+     *
+     * 该API用于通过升级引导任务ID获取任务的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpgradeWorkFlowRequest 请求对象
+     * @return CompletableFuture<ShowUpgradeWorkFlowResponse>
+     */
+    public CompletableFuture<ShowUpgradeWorkFlowResponse> showUpgradeWorkFlowAsync(ShowUpgradeWorkFlowRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showUpgradeWorkFlow);
+    }
+
+    /**
+     * 获取指定集群升级引导任务详情
+     *
+     * 该API用于通过升级引导任务ID获取任务的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpgradeWorkFlowRequest 请求对象
+     * @return AsyncInvoker<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse>
+     */
+    public AsyncInvoker<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> showUpgradeWorkFlowAsyncInvoker(
+        ShowUpgradeWorkFlowRequest request) {
+        return new AsyncInvoker<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse>(request,
+            CceMeta.showUpgradeWorkFlow, hcClient);
     }
 
     /**
@@ -2193,6 +2620,39 @@ public class CceAsyncClient {
         UpgradeClusterRequest request) {
         return new AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse>(request, CceMeta.upgradeCluster,
             hcClient);
+    }
+
+    /**
+     * 更新指定集群升级引导任务状态
+     *
+     * 该API用于更新指定集群升级引导任务状态，当前仅适用于取消升级流程
+     * 调用该API时升级流程引导任务状态不能为进行中(running) 已完成(success) 已取消(cancel),升级子任务状态不能为running(进行中) init(已初始化) pause(任务被暂停) queue(队列中)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeWorkFlowUpdateRequest 请求对象
+     * @return CompletableFuture<UpgradeWorkFlowUpdateResponse>
+     */
+    public CompletableFuture<UpgradeWorkFlowUpdateResponse> upgradeWorkFlowUpdateAsync(
+        UpgradeWorkFlowUpdateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.upgradeWorkFlowUpdate);
+    }
+
+    /**
+     * 更新指定集群升级引导任务状态
+     *
+     * 该API用于更新指定集群升级引导任务状态，当前仅适用于取消升级流程
+     * 调用该API时升级流程引导任务状态不能为进行中(running) 已完成(success) 已取消(cancel),升级子任务状态不能为running(进行中) init(已初始化) pause(任务被暂停) queue(队列中)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeWorkFlowUpdateRequest 请求对象
+     * @return AsyncInvoker<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse>
+     */
+    public AsyncInvoker<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> upgradeWorkFlowUpdateAsyncInvoker(
+        UpgradeWorkFlowUpdateRequest request) {
+        return new AsyncInvoker<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse>(request,
+            CceMeta.upgradeWorkFlowUpdate, hcClient);
     }
 
     /**

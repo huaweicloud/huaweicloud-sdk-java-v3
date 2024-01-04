@@ -66,7 +66,7 @@ public class UsageVo {
     }
 
     /**
-     * 用量度量名称，通常与KooMap的计费项保持一致。当前支持以下用量度量名称： - 时空专属存储（实景三维生产服务） - 实景三维生产服务基础版
+     * 用量度量名称，通常与KooMap的计费项保持一致。当前支持以下用量度量名称： - 时空专属存储 - 实景三维生产服务基础版 - 实景三维生产服务专业版
      * @return usageMeasureName
      */
     public String getUsageMeasureName() {
@@ -83,7 +83,7 @@ public class UsageVo {
     }
 
     /**
-     * 用量类型。 - 该值为“DATA”时表示时空专属存储（实景三维生产服务）对应的用量消耗。 - 该值为“REAL3D”时表示处理三维建模任务对应的用量消耗。
+     * 用量类型。 - 该值为“DATA”时表示时空专属存储对应的用量消耗。 - 该值为“REAL3D”时表示处理三维建模任务对应的用量消耗。
      * @return usageType
      */
     public String getUsageType() {
@@ -117,7 +117,7 @@ public class UsageVo {
     }
 
     /**
-     * 用量子类型，用于区分同一用量类型下的多个子用量，目前usage_type为“REAL3D”时才需要设置该值。 - REAL3D_BASIC：实景三维基础版
+     * 用量子类型，用于区分同一用量类型下的多个子用量，目前usage_type为“REAL3D”时才需要设置该值。 - REAL3D_BASIC：实景三维生产服务基础版用量 - REAL3D_PRO：实景三维生产服务专业版用量
      * @return usageSubtype
      */
     public String getUsageSubtype() {

@@ -26,7 +26,7 @@ public class Event2alarmRuleBodyTriggerPolicies {
     private String name;
 
     /**
-     * 触发类型
+     * 触发类型。accumulative: 累计触发，immediately: 立即触发
      */
     public static final class TriggerTypeEnum {
 
@@ -36,16 +36,16 @@ public class Event2alarmRuleBodyTriggerPolicies {
         public static final TriggerTypeEnum ACCUMULATIVE = new TriggerTypeEnum("accumulative");
 
         /**
-         * Enum NOTIFICATION for value: "notification"
+         * Enum IMMEDIATELY for value: "immediately"
          */
-        public static final TriggerTypeEnum NOTIFICATION = new TriggerTypeEnum("notification");
+        public static final TriggerTypeEnum IMMEDIATELY = new TriggerTypeEnum("immediately");
 
         private static final Map<String, TriggerTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TriggerTypeEnum> createStaticFields() {
             Map<String, TriggerTypeEnum> map = new HashMap<>();
             map.put("accumulative", ACCUMULATIVE);
-            map.put("notification", NOTIFICATION);
+            map.put("immediately", IMMEDIATELY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -162,7 +162,7 @@ public class Event2alarmRuleBodyTriggerPolicies {
     }
 
     /**
-     * 触发类型
+     * 触发类型。accumulative: 累计触发，immediately: 立即触发
      * @return triggerType
      */
     public TriggerTypeEnum getTriggerType() {
@@ -180,7 +180,7 @@ public class Event2alarmRuleBodyTriggerPolicies {
 
     /**
      * 触发周期
-     * minimum: 0
+     * minimum: 1
      * maximum: 86400
      * @return period
      */
@@ -216,7 +216,7 @@ public class Event2alarmRuleBodyTriggerPolicies {
 
     /**
      * 触发次数
-     * minimum: 0
+     * minimum: 1
      * maximum: 100
      * @return count
      */

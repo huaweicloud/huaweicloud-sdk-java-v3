@@ -3,7 +3,9 @@ package com.huaweicloud.sdk.smn.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -42,6 +44,11 @@ public class PublishMessageRequestBody {
     @JsonProperty(value = "time_to_live")
 
     private String timeToLive;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message_attributes")
+
+    private List<MessageAttribute> messageAttributes = null;
 
     public PublishMessageRequestBody withSubject(String subject) {
         this.subject = subject;
@@ -161,6 +168,39 @@ public class PublishMessageRequestBody {
         this.timeToLive = timeToLive;
     }
 
+    public PublishMessageRequestBody withMessageAttributes(List<MessageAttribute> messageAttributes) {
+        this.messageAttributes = messageAttributes;
+        return this;
+    }
+
+    public PublishMessageRequestBody addMessageAttributesItem(MessageAttribute messageAttributesItem) {
+        if (this.messageAttributes == null) {
+            this.messageAttributes = new ArrayList<>();
+        }
+        this.messageAttributes.add(messageAttributesItem);
+        return this;
+    }
+
+    public PublishMessageRequestBody withMessageAttributes(Consumer<List<MessageAttribute>> messageAttributesSetter) {
+        if (this.messageAttributes == null) {
+            this.messageAttributes = new ArrayList<>();
+        }
+        messageAttributesSetter.accept(this.messageAttributes);
+        return this;
+    }
+
+    /**
+     * 消息属性列表
+     * @return messageAttributes
+     */
+    public List<MessageAttribute> getMessageAttributes() {
+        return messageAttributes;
+    }
+
+    public void setMessageAttributes(List<MessageAttribute> messageAttributes) {
+        this.messageAttributes = messageAttributes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,12 +213,14 @@ public class PublishMessageRequestBody {
         return Objects.equals(this.subject, that.subject) && Objects.equals(this.message, that.message)
             && Objects.equals(this.messageStructure, that.messageStructure)
             && Objects.equals(this.messageTemplateName, that.messageTemplateName)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.timeToLive, that.timeToLive);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.timeToLive, that.timeToLive)
+            && Objects.equals(this.messageAttributes, that.messageAttributes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subject, message, messageStructure, messageTemplateName, tags, timeToLive);
+        return Objects
+            .hash(subject, message, messageStructure, messageTemplateName, tags, timeToLive, messageAttributes);
     }
 
     @Override
@@ -191,6 +233,7 @@ public class PublishMessageRequestBody {
         sb.append("    messageTemplateName: ").append(toIndentedString(messageTemplateName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    timeToLive: ").append(toIndentedString(timeToLive)).append("\n");
+        sb.append("    messageAttributes: ").append(toIndentedString(messageAttributes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

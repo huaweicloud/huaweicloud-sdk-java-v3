@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 影像图片文件夹信息。
+ * 倾斜影像信息。
  */
 public class FolderVo {
 
@@ -24,16 +24,6 @@ public class FolderVo {
     @JsonProperty(value = "folder_alias")
 
     private String folderAlias;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "supplier")
-
-    private String supplier;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "coordinate_sys")
-
-    private String coordinateSys;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "folder_desc")
@@ -66,7 +56,7 @@ public class FolderVo {
     }
 
     /**
-     * 文件夹的唯一标识。
+     * 倾斜影像的唯一标识。
      * @return folderCode
      */
     public String getFolderCode() {
@@ -83,7 +73,7 @@ public class FolderVo {
     }
 
     /**
-     * 文件夹名称。
+     * 倾斜影像名称。
      * @return folderName
      */
     public String getFolderName() {
@@ -100,7 +90,7 @@ public class FolderVo {
     }
 
     /**
-     * 文件夹别名。
+     * 倾斜影像别名。
      * @return folderAlias
      */
     public String getFolderAlias() {
@@ -111,47 +101,13 @@ public class FolderVo {
         this.folderAlias = folderAlias;
     }
 
-    public FolderVo withSupplier(String supplier) {
-        this.supplier = supplier;
-        return this;
-    }
-
-    /**
-     * 供应商。
-     * @return supplier
-     */
-    public String getSupplier() {
-        return supplier;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
-    }
-
-    public FolderVo withCoordinateSys(String coordinateSys) {
-        this.coordinateSys = coordinateSys;
-        return this;
-    }
-
-    /**
-     * 坐标系。
-     * @return coordinateSys
-     */
-    public String getCoordinateSys() {
-        return coordinateSys;
-    }
-
-    public void setCoordinateSys(String coordinateSys) {
-        this.coordinateSys = coordinateSys;
-    }
-
     public FolderVo withFolderDesc(String folderDesc) {
         this.folderDesc = folderDesc;
         return this;
     }
 
     /**
-     * 文件夹描述。
+     * 倾斜影像描述。
      * @return folderDesc
      */
     public String getFolderDesc() {
@@ -168,7 +124,7 @@ public class FolderVo {
     }
 
     /**
-     * 文件夹所在OBS的Endpoint。
+     * 倾斜影像所在OBS的Endpoint。
      * @return obsEndpoint
      */
     public String getObsEndpoint() {
@@ -185,7 +141,7 @@ public class FolderVo {
     }
 
     /**
-     * 文件夹所在OBS的目录地址。
+     * 倾斜影像所在OBS的目录地址。
      * @return obsPath
      */
     public String getObsPath() {
@@ -202,7 +158,7 @@ public class FolderVo {
     }
 
     /**
-     * 影像上传时间。
+     * 倾斜影像上传时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -219,7 +175,7 @@ public class FolderVo {
     }
 
     /**
-     * 影像文件夹的可操作状态。  - 1：可操作 - 0：不可操作
+     * 倾斜影像状态。  - 0：处理中 - 1：已完成 - 2：导入失败
      * @return status
      */
     public Integer getStatus() {
@@ -240,25 +196,14 @@ public class FolderVo {
         }
         FolderVo that = (FolderVo) obj;
         return Objects.equals(this.folderCode, that.folderCode) && Objects.equals(this.folderName, that.folderName)
-            && Objects.equals(this.folderAlias, that.folderAlias) && Objects.equals(this.supplier, that.supplier)
-            && Objects.equals(this.coordinateSys, that.coordinateSys)
-            && Objects.equals(this.folderDesc, that.folderDesc) && Objects.equals(this.obsEndpoint, that.obsEndpoint)
-            && Objects.equals(this.obsPath, that.obsPath) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.folderAlias, that.folderAlias) && Objects.equals(this.folderDesc, that.folderDesc)
+            && Objects.equals(this.obsEndpoint, that.obsEndpoint) && Objects.equals(this.obsPath, that.obsPath)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(folderCode,
-            folderName,
-            folderAlias,
-            supplier,
-            coordinateSys,
-            folderDesc,
-            obsEndpoint,
-            obsPath,
-            createTime,
-            status);
+        return Objects.hash(folderCode, folderName, folderAlias, folderDesc, obsEndpoint, obsPath, createTime, status);
     }
 
     @Override
@@ -268,8 +213,6 @@ public class FolderVo {
         sb.append("    folderCode: ").append(toIndentedString(folderCode)).append("\n");
         sb.append("    folderName: ").append(toIndentedString(folderName)).append("\n");
         sb.append("    folderAlias: ").append(toIndentedString(folderAlias)).append("\n");
-        sb.append("    supplier: ").append(toIndentedString(supplier)).append("\n");
-        sb.append("    coordinateSys: ").append(toIndentedString(coordinateSys)).append("\n");
         sb.append("    folderDesc: ").append(toIndentedString(folderDesc)).append("\n");
         sb.append("    obsEndpoint: ").append(toIndentedString(obsEndpoint)).append("\n");
         sb.append("    obsPath: ").append(toIndentedString(obsPath)).append("\n");

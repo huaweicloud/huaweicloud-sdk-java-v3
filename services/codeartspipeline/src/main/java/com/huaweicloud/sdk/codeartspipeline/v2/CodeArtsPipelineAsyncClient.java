@@ -10,8 +10,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusReq
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateRequest;
@@ -34,8 +32,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
@@ -56,8 +52,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsRequest;
@@ -74,8 +68,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginVersionNumberRequ
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginVersionNumberResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginsResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPublisherRequest;
@@ -106,8 +98,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
@@ -128,8 +118,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginOutputsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginOutputsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginVersionRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginVersionResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherRequest;
@@ -146,14 +134,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineRunResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateOpenSourceStrategyRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
@@ -343,37 +327,6 @@ public class CodeArtsPipelineAsyncClient {
         CreateBasicPluginRequest request) {
         return new AsyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse>(request,
             CodeArtsPipelineMeta.createBasicPlugin, hcClient);
-    }
-
-    /**
-     * 创建租户级开源治理策略
-     *
-     * 创建租户级开源治理策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<CreateOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<CreateOpenSourceStrategyResponse> createOpenSourceStrategyAsync(
-        CreateOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createOpenSourceStrategy);
-    }
-
-    /**
-     * 创建租户级开源治理策略
-     *
-     * 创建租户级开源治理策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse> createOpenSourceStrategyAsyncInvoker(
-        CreateOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.createOpenSourceStrategy, hcClient);
     }
 
     /**
@@ -709,37 +662,6 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 删除租户级开源治理策略
-     *
-     * 删除租户级开源治理策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<DeleteOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<DeleteOpenSourceStrategyResponse> deleteOpenSourceStrategyAsync(
-        DeleteOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.deleteOpenSourceStrategy);
-    }
-
-    /**
-     * 删除租户级开源治理策略
-     *
-     * 删除租户级开源治理策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse> deleteOpenSourceStrategyAsyncInvoker(
-        DeleteOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.deleteOpenSourceStrategy, hcClient);
-    }
-
-    /**
      * 删除流水线
      *
      * 删除流水线
@@ -1042,37 +964,6 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 查询租户级开源治理策略列表
-     *
-     * 查询租户级开源治理策略列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<ListOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<ListOpenSourceStrategyResponse> listOpenSourceStrategyAsync(
-        ListOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.listOpenSourceStrategy);
-    }
-
-    /**
-     * 查询租户级开源治理策略列表
-     *
-     * 查询租户级开源治理策略列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse> listOpenSourceStrategyAsyncInvoker(
-        ListOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.listOpenSourceStrategy, hcClient);
-    }
-
-    /**
      * 查询插件所有版本信息
      *
      * 查询插件所有版本信息
@@ -1313,37 +1204,6 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsAsyncInvoker(ListPluginsRequest request) {
         return new AsyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, CodeArtsPipelineMeta.listPlugins,
             hcClient);
-    }
-
-    /**
-     * 查询项目级开源治理策略列表
-     *
-     * 查询项目级开源治理策略列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProjectOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<ListProjectOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<ListProjectOpenSourceStrategyResponse> listProjectOpenSourceStrategyAsync(
-        ListProjectOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.listProjectOpenSourceStrategy);
-    }
-
-    /**
-     * 查询项目级开源治理策略列表
-     *
-     * 查询项目级开源治理策略列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProjectOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse> listProjectOpenSourceStrategyAsyncInvoker(
-        ListProjectOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.listProjectOpenSourceStrategy, hcClient);
     }
 
     /**
@@ -1794,37 +1654,6 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 查询租户级开源治理策略详情
-     *
-     * 查询租户级开源治理策略详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<ShowOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<ShowOpenSourceStrategyResponse> showOpenSourceStrategyAsync(
-        ShowOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showOpenSourceStrategy);
-    }
-
-    /**
-     * 查询租户级开源治理策略详情
-     *
-     * 查询租户级开源治理策略详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse> showOpenSourceStrategyAsyncInvoker(
-        ShowOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.showOpenSourceStrategy, hcClient);
-    }
-
-    /**
      * 查询流水线详情
      *
      * 查询流水线详情
@@ -2128,37 +1957,6 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 查询项目级开源治理策略详情
-     *
-     * 查询项目级开源治理策略详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowProjectOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<ShowProjectOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<ShowProjectOpenSourceStrategyResponse> showProjectOpenSourceStrategyAsync(
-        ShowProjectOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showProjectOpenSourceStrategy);
-    }
-
-    /**
-     * 查询项目级开源治理策略详情
-     *
-     * 查询项目级开源治理策略详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowProjectOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse> showProjectOpenSourceStrategyAsyncInvoker(
-        ShowProjectOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.showProjectOpenSourceStrategy, hcClient);
-    }
-
-    /**
      * 
      *
      * 查询项目级策略详情
@@ -2397,37 +2195,6 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 修改租户级开源治理策略启用状态
-     *
-     * 修改租户级开源治理策略启用状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SwitchOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<SwitchOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<SwitchOpenSourceStrategyResponse> switchOpenSourceStrategyAsync(
-        SwitchOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.switchOpenSourceStrategy);
-    }
-
-    /**
-     * 修改租户级开源治理策略启用状态
-     *
-     * 修改租户级开源治理策略启用状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SwitchOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse> switchOpenSourceStrategyAsyncInvoker(
-        SwitchOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.switchOpenSourceStrategy, hcClient);
-    }
-
-    /**
      * 开关规则集
      *
      * 修改规则集状态
@@ -2485,37 +2252,6 @@ public class CodeArtsPipelineAsyncClient {
         UpdateBasicPluginRequest request) {
         return new AsyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse>(request,
             CodeArtsPipelineMeta.updateBasicPlugin, hcClient);
-    }
-
-    /**
-     * 修改租户级开源治理策略
-     *
-     * 修改租户级开源治理策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateOpenSourceStrategyRequest 请求对象
-     * @return CompletableFuture<UpdateOpenSourceStrategyResponse>
-     */
-    public CompletableFuture<UpdateOpenSourceStrategyResponse> updateOpenSourceStrategyAsync(
-        UpdateOpenSourceStrategyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.updateOpenSourceStrategy);
-    }
-
-    /**
-     * 修改租户级开源治理策略
-     *
-     * 修改租户级开源治理策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateOpenSourceStrategyRequest 请求对象
-     * @return AsyncInvoker<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse>
-     */
-    public AsyncInvoker<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse> updateOpenSourceStrategyAsyncInvoker(
-        UpdateOpenSourceStrategyRequest request) {
-        return new AsyncInvoker<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse>(request,
-            CodeArtsPipelineMeta.updateOpenSourceStrategy, hcClient);
     }
 
     /**

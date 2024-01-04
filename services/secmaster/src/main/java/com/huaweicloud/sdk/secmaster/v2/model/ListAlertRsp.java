@@ -24,9 +24,9 @@ public class ListAlertRsp {
     private ShowAlertRspEnvironment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "datasource")
+    @JsonProperty(value = "data_source")
 
-    private ShowAlertRspDatasource datasource;
+    private ShowAlertRspDatasource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_observed_time")
@@ -74,9 +74,9 @@ public class ListAlertRsp {
     private Integer confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "serverity")
+    @JsonProperty(value = "severity")
 
-    private String serverity;
+    private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "criticality")
@@ -159,9 +159,9 @@ public class ListAlertRsp {
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cteator")
+    @JsonProperty(value = "creator")
 
-    private String cteator;
+    private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "close_reason")
@@ -256,30 +256,30 @@ public class ListAlertRsp {
         this.environment = environment;
     }
 
-    public ListAlertRsp withDatasource(ShowAlertRspDatasource datasource) {
-        this.datasource = datasource;
+    public ListAlertRsp withDataSource(ShowAlertRspDatasource dataSource) {
+        this.dataSource = dataSource;
         return this;
     }
 
-    public ListAlertRsp withDatasource(Consumer<ShowAlertRspDatasource> datasourceSetter) {
-        if (this.datasource == null) {
-            this.datasource = new ShowAlertRspDatasource();
-            datasourceSetter.accept(this.datasource);
+    public ListAlertRsp withDataSource(Consumer<ShowAlertRspDatasource> dataSourceSetter) {
+        if (this.dataSource == null) {
+            this.dataSource = new ShowAlertRspDatasource();
+            dataSourceSetter.accept(this.dataSource);
         }
 
         return this;
     }
 
     /**
-     * Get datasource
-     * @return datasource
+     * Get dataSource
+     * @return dataSource
      */
-    public ShowAlertRspDatasource getDatasource() {
-        return datasource;
+    public ShowAlertRspDatasource getDataSource() {
+        return dataSource;
     }
 
-    public void setDatasource(ShowAlertRspDatasource datasource) {
-        this.datasource = datasource;
+    public void setDataSource(ShowAlertRspDatasource dataSource) {
+        this.dataSource = dataSource;
     }
 
     public ListAlertRsp withFirstObservedTime(String firstObservedTime) {
@@ -439,21 +439,21 @@ public class ListAlertRsp {
         this.confidence = confidence;
     }
 
-    public ListAlertRsp withServerity(String serverity) {
-        this.serverity = serverity;
+    public ListAlertRsp withSeverity(String severity) {
+        this.severity = severity;
         return this;
     }
 
     /**
      * 严重性等级
-     * @return serverity
+     * @return severity
      */
-    public String getServerity() {
-        return serverity;
+    public String getSeverity() {
+        return severity;
     }
 
-    public void setServerity(String serverity) {
-        this.serverity = serverity;
+    public void setSeverity(String severity) {
+        this.severity = severity;
     }
 
     public ListAlertRsp withCriticality(Integer criticality) {
@@ -771,21 +771,21 @@ public class ListAlertRsp {
         this.owner = owner;
     }
 
-    public ListAlertRsp withCteator(String cteator) {
-        this.cteator = cteator;
+    public ListAlertRsp withCreator(String creator) {
+        this.creator = creator;
         return this;
     }
 
     /**
      * The name, display only
-     * @return cteator
+     * @return creator
      */
-    public String getCteator() {
-        return cteator;
+    public String getCreator() {
+        return creator;
     }
 
-    public void setCteator(String cteator) {
-        this.cteator = cteator;
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
     public ListAlertRsp withCloseReason(String closeReason) {
@@ -1025,13 +1025,13 @@ public class ListAlertRsp {
         }
         ListAlertRsp that = (ListAlertRsp) obj;
         return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
-            && Objects.equals(this.datasource, that.datasource)
+            && Objects.equals(this.dataSource, that.dataSource)
             && Objects.equals(this.firstObservedTime, that.firstObservedTime)
             && Objects.equals(this.lastObservedTime, that.lastObservedTime)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
             && Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.serverity, that.serverity)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.severity, that.severity)
             && Objects.equals(this.criticality, that.criticality) && Objects.equals(this.alertType, that.alertType)
             && Objects.equals(this.networkList, that.networkList)
             && Objects.equals(this.resourceList, that.resourceList)
@@ -1042,7 +1042,7 @@ public class ListAlertRsp {
             && Objects.equals(this.chopPhase, that.chopPhase) && Objects.equals(this.ipdrrPhase, that.ipdrrPhase)
             && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
             && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.cteator, that.cteator) && Objects.equals(this.closeReason, that.closeReason)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.closeReason, that.closeReason)
             && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
             && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
             && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
@@ -1054,7 +1054,7 @@ public class ListAlertRsp {
     public int hashCode() {
         return Objects.hash(version,
             environment,
-            datasource,
+            dataSource,
             firstObservedTime,
             lastObservedTime,
             createTime,
@@ -1064,7 +1064,7 @@ public class ListAlertRsp {
             sourceUrl,
             count,
             confidence,
-            serverity,
+            severity,
             criticality,
             alertType,
             networkList,
@@ -1081,7 +1081,7 @@ public class ListAlertRsp {
             simulation,
             actor,
             owner,
-            cteator,
+            creator,
             closeReason,
             closeComment,
             malware,
@@ -1100,7 +1100,7 @@ public class ListAlertRsp {
         sb.append("class ListAlertRsp {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
-        sb.append("    datasource: ").append(toIndentedString(datasource)).append("\n");
+        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    firstObservedTime: ").append(toIndentedString(firstObservedTime)).append("\n");
         sb.append("    lastObservedTime: ").append(toIndentedString(lastObservedTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
@@ -1110,7 +1110,7 @@ public class ListAlertRsp {
         sb.append("    sourceUrl: ").append(toIndentedString(sourceUrl)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-        sb.append("    serverity: ").append(toIndentedString(serverity)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    criticality: ").append(toIndentedString(criticality)).append("\n");
         sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
         sb.append("    networkList: ").append(toIndentedString(networkList)).append("\n");
@@ -1127,7 +1127,7 @@ public class ListAlertRsp {
         sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
         sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-        sb.append("    cteator: ").append(toIndentedString(cteator)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    closeReason: ").append(toIndentedString(closeReason)).append("\n");
         sb.append("    closeComment: ").append(toIndentedString(closeComment)).append("\n");
         sb.append("    malware: ").append(toIndentedString(malware)).append("\n");

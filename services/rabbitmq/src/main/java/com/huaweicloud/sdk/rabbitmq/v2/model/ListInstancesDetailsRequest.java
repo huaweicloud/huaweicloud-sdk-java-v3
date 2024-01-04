@@ -96,16 +96,6 @@ public class ListInstancesDetailsRequest {
         public static final StatusEnum CONFIGURING = new StatusEnum("CONFIGURING");
 
         /**
-         * Enum UPGRADING for value: "UPGRADING"
-         */
-        public static final StatusEnum UPGRADING = new StatusEnum("UPGRADING");
-
-        /**
-         * Enum UPGRADINGFAILED for value: "UPGRADINGFAILED"
-         */
-        public static final StatusEnum UPGRADINGFAILED = new StatusEnum("UPGRADINGFAILED");
-
-        /**
          * Enum ROLLBACK for value: "ROLLBACK"
          */
         public static final StatusEnum ROLLBACK = new StatusEnum("ROLLBACK");
@@ -136,8 +126,6 @@ public class ListInstancesDetailsRequest {
             map.put("SHRINKING", SHRINKING);
             map.put("EXTENDEDFAILED", EXTENDEDFAILED);
             map.put("CONFIGURING", CONFIGURING);
-            map.put("UPGRADING", UPGRADING);
-            map.put("UPGRADINGFAILED", UPGRADINGFAILED);
             map.put("ROLLBACK", ROLLBACK);
             map.put("ROLLBACKFAILED", ROLLBACKFAILED);
             map.put("VOLUMETYPECHANGING", VOLUMETYPECHANGING);

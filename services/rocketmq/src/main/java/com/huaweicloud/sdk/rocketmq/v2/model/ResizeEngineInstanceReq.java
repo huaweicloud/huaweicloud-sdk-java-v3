@@ -30,6 +30,11 @@ public class ResizeEngineInstanceReq {
 
     private Integer newBrokerNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_id")
+
+    private String publicipId;
+
     public ResizeEngineInstanceReq withOperType(String operType) {
         this.operType = operType;
         return this;
@@ -98,6 +103,23 @@ public class ResizeEngineInstanceReq {
         this.newBrokerNum = newBrokerNum;
     }
 
+    public ResizeEngineInstanceReq withPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+        return this;
+    }
+
+    /**
+     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 当oper_type参数为horizontal且开启了公网访问时，此参数必填。            
+     * @return publicipId
+     */
+    public String getPublicipId() {
+        return publicipId;
+    }
+
+    public void setPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +132,12 @@ public class ResizeEngineInstanceReq {
         return Objects.equals(this.operType, that.operType)
             && Objects.equals(this.newStorageSpace, that.newStorageSpace)
             && Objects.equals(this.newProductId, that.newProductId)
-            && Objects.equals(this.newBrokerNum, that.newBrokerNum);
+            && Objects.equals(this.newBrokerNum, that.newBrokerNum) && Objects.equals(this.publicipId, that.publicipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operType, newStorageSpace, newProductId, newBrokerNum);
+        return Objects.hash(operType, newStorageSpace, newProductId, newBrokerNum, publicipId);
     }
 
     @Override
@@ -126,6 +148,7 @@ public class ResizeEngineInstanceReq {
         sb.append("    newStorageSpace: ").append(toIndentedString(newStorageSpace)).append("\n");
         sb.append("    newProductId: ").append(toIndentedString(newProductId)).append("\n");
         sb.append("    newBrokerNum: ").append(toIndentedString(newBrokerNum)).append("\n");
+        sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

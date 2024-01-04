@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * MonitorSystemRequestBodySpec
+ * 创建或更新监控系统配置。
  */
 public class MonitorSystemRequestBodySpec {
 
     /**
-     * 采集方式，包括apm2和opentelemetry。
+     * 采集方式。
      */
     public static final class TypeEnum {
 
@@ -91,7 +91,7 @@ public class MonitorSystemRequestBodySpec {
     private TypeEnum type;
 
     /**
-     * 探针注入方式，包括automatic和manual。
+     * 探针注入方式。
      */
     public static final class InstrumentationEnum {
 
@@ -271,7 +271,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * 采集方式，包括apm2和opentelemetry。
+     * 采集方式。
      * @return type
      */
     public TypeEnum getType() {
@@ -288,7 +288,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * 探针注入方式，包括automatic和manual。
+     * 探针注入方式。
      * @return instrumentation
      */
     public InstrumentationEnum getInstrumentation() {
@@ -305,7 +305,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * apm2 access_key。
+     * apm2访问密钥Key。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -322,7 +322,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * apm2 access_value。
+     * apm2访问密钥value。
      * @return accessValue
      */
     public String getAccessValue() {
@@ -339,7 +339,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * apm opentelemetry接入token。
+     * apm2 opentelemetry接入token。
      * @return accessToken
      */
     public String getAccessToken() {
@@ -356,7 +356,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * apm应用名。
+     * apm2应用。
      * @return apmApplication
      */
     public String getApmApplication() {
@@ -373,7 +373,7 @@ public class MonitorSystemRequestBodySpec {
     }
 
     /**
-     * apm-agent/opentelemetry-agent探针版本。
+     * 增强型探针/opentelemetry探针版本。
      * @return version
      */
     public String getVersion() {

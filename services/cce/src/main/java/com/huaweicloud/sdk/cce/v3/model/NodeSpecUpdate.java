@@ -35,6 +35,11 @@ public class NodeSpecUpdate {
 
     private List<String> initializedConditions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "login")
+
+    private Login login;
+
     public NodeSpecUpdate withTaints(List<Taint> taints) {
         this.taints = taints;
         return this;
@@ -167,6 +172,32 @@ public class NodeSpecUpdate {
         this.initializedConditions = initializedConditions;
     }
 
+    public NodeSpecUpdate withLogin(Login login) {
+        this.login = login;
+        return this;
+    }
+
+    public NodeSpecUpdate withLogin(Consumer<Login> loginSetter) {
+        if (this.login == null) {
+            this.login = new Login();
+            loginSetter.accept(this.login);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get login
+     * @return login
+     */
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,12 +209,13 @@ public class NodeSpecUpdate {
         NodeSpecUpdate that = (NodeSpecUpdate) obj;
         return Objects.equals(this.taints, that.taints) && Objects.equals(this.k8sTags, that.k8sTags)
             && Objects.equals(this.userTags, that.userTags)
-            && Objects.equals(this.initializedConditions, that.initializedConditions);
+            && Objects.equals(this.initializedConditions, that.initializedConditions)
+            && Objects.equals(this.login, that.login);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taints, k8sTags, userTags, initializedConditions);
+        return Objects.hash(taints, k8sTags, userTags, initializedConditions, login);
     }
 
     @Override
@@ -194,6 +226,7 @@ public class NodeSpecUpdate {
         sb.append("    k8sTags: ").append(toIndentedString(k8sTags)).append("\n");
         sb.append("    userTags: ").append(toIndentedString(userTags)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
+        sb.append("    login: ").append(toIndentedString(login)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,7 +24,7 @@ public class VolumeSpec {
     private String resourceType;
 
     /**
-     * 对象存储类型，包括：并行文件系统、存储桶、SFS3.0容量型。
+     * 对象存储类型。
      */
     public static final class ResourceSubTypeEnum {
 
@@ -132,7 +132,7 @@ public class VolumeSpec {
     }
 
     /**
-     * 对象存储类型，包括：并行文件系统、存储桶、SFS3.0容量型。
+     * 对象存储类型。
      * @return resourceSubType
      */
     public ResourceSubTypeEnum getResourceSubType() {

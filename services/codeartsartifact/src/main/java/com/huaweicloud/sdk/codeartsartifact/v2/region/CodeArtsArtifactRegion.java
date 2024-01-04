@@ -18,17 +18,17 @@ public class CodeArtsArtifactRegion {
     public static final Region CN_EAST_2 =
         new Region("cn-east-2", "https://cloudartifacts-ext.cn-east-2.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_1 =
-        new Region("cn-north-1", "https://cloudartifacts-ext.cn-north-1.myhuaweicloud.com");
+    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://artifact.cn-north-1.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_4 =
-        new Region("cn-north-4", "https://cloudartifacts-ext.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://artifact.cn-north-4.myhuaweicloud.com");
 
-    public static final Region CN_SOUTH_1 =
-        new Region("cn-south-1", "https://cloudartifacts-ext.cn-south-1.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://artifact.cn-south-1.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://cloudartifacts-ext.cn-southwest-2.myhuaweicloud.com");
+        new Region("cn-southwest-2", "https://artifact.cn-southwest-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://artifact.ap-southeast-3.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER =
         RegionProviderChain.getDefaultRegionProviderChain("CODEARTSARTIFACT");
@@ -43,6 +43,7 @@ public class CodeArtsArtifactRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

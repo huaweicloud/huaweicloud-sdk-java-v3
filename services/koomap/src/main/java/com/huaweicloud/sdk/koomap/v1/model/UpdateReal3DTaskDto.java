@@ -22,6 +22,11 @@ public class UpdateReal3DTaskDto {
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modeling_type")
+
+    private String modelingType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_description")
 
     private String taskDescription;
@@ -73,6 +78,23 @@ public class UpdateReal3DTaskDto {
 
     public void setTaskType(String taskType) {
         this.taskType = taskType;
+    }
+
+    public UpdateReal3DTaskDto withModelingType(String modelingType) {
+        this.modelingType = modelingType;
+        return this;
+    }
+
+    /**
+     * 建模类型。  - Mesh：纹理模型实景三维建模。 - Nerf：显式辐射场实景三维建模。
+     * @return modelingType
+     */
+    public String getModelingType() {
+        return modelingType;
+    }
+
+    public void setModelingType(String modelingType) {
+        this.modelingType = modelingType;
     }
 
     public UpdateReal3DTaskDto withTaskDescription(String taskDescription) {
@@ -162,6 +184,7 @@ public class UpdateReal3DTaskDto {
         }
         UpdateReal3DTaskDto that = (UpdateReal3DTaskDto) obj;
         return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.modelingType, that.modelingType)
             && Objects.equals(this.taskDescription, that.taskDescription)
             && Objects.equals(this.folderCode, that.folderCode)
             && Objects.equals(this.modelingParams, that.modelingParams)
@@ -170,7 +193,8 @@ public class UpdateReal3DTaskDto {
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, taskType, taskDescription, folderCode, modelingParams, coordinateSys);
+        return Objects
+            .hash(taskName, taskType, modelingType, taskDescription, folderCode, modelingParams, coordinateSys);
     }
 
     @Override
@@ -179,6 +203,7 @@ public class UpdateReal3DTaskDto {
         sb.append("class UpdateReal3DTaskDto {\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    modelingType: ").append(toIndentedString(modelingType)).append("\n");
         sb.append("    taskDescription: ").append(toIndentedString(taskDescription)).append("\n");
         sb.append("    folderCode: ").append(toIndentedString(folderCode)).append("\n");
         sb.append("    modelingParams: ").append(toIndentedString(modelingParams)).append("\n");
