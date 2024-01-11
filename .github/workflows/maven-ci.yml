@@ -1,4 +1,4 @@
-name: Maven test CI
+name: Maven CI
 on:
   workflow_dispatch:
   schedule:
@@ -14,5 +14,5 @@ jobs:
           java-version: '8.0.352'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Maven test
-        run: mvn -U -B test
+      - name: Maven CI
+        run: mvn -U -B clean install
