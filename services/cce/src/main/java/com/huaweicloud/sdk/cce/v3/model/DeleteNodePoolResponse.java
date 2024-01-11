@@ -35,7 +35,7 @@ public class DeleteNodePoolResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private NodePoolStatus status;
+    private DeleteNodePoolStatus status;
 
     public DeleteNodePoolResponse withKind(String kind) {
         this.kind = kind;
@@ -123,14 +123,14 @@ public class DeleteNodePoolResponse extends SdkResponse {
         this.spec = spec;
     }
 
-    public DeleteNodePoolResponse withStatus(NodePoolStatus status) {
+    public DeleteNodePoolResponse withStatus(DeleteNodePoolStatus status) {
         this.status = status;
         return this;
     }
 
-    public DeleteNodePoolResponse withStatus(Consumer<NodePoolStatus> statusSetter) {
+    public DeleteNodePoolResponse withStatus(Consumer<DeleteNodePoolStatus> statusSetter) {
         if (this.status == null) {
-            this.status = new NodePoolStatus();
+            this.status = new DeleteNodePoolStatus();
             statusSetter.accept(this.status);
         }
 
@@ -141,11 +141,11 @@ public class DeleteNodePoolResponse extends SdkResponse {
      * Get status
      * @return status
      */
-    public NodePoolStatus getStatus() {
+    public DeleteNodePoolStatus getStatus() {
         return status;
     }
 
-    public void setStatus(NodePoolStatus status) {
+    public void setStatus(DeleteNodePoolStatus status) {
         this.status = status;
     }
 

@@ -16,20 +16,20 @@ import java.util.function.Consumer;
 public class PrimaryKeySchema {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ShardKeyFields")
-    @BsonProperty(value = "ShardKeyFields")
+    @JsonProperty(value = "shard_key_fields")
+    @BsonProperty(value = "shard_key_fields")
 
     private List<Field> shardKeyFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ShardMode")
-    @BsonProperty(value = "ShardMode")
+    @JsonProperty(value = "shard_mode")
+    @BsonProperty(value = "shard_mode")
 
     private String shardMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "SortKeyFields")
-    @BsonProperty(value = "SortKeyFields")
+    @JsonProperty(value = "sort_key_fields")
+    @BsonProperty(value = "sort_key_fields")
 
     private List<Field> sortKeyFields = null;
 
@@ -55,7 +55,7 @@ public class PrimaryKeySchema {
     }
 
     /**
-     * Get shardKeyFields
+     * 分区键字段名数组，顺序组合。
      * @return shardKeyFields
      */
     public List<Field> getShardKeyFields() {
@@ -72,7 +72,7 @@ public class PrimaryKeySchema {
     }
 
     /**
-     * Get shardMode
+     * 分区模式。
      * @return shardMode
      */
     public String getShardMode() {
@@ -105,7 +105,7 @@ public class PrimaryKeySchema {
     }
 
     /**
-     * Get sortKeyFields
+     * 排序键字段名数组，顺序组合。
      * @return sortKeyFields
      */
     public List<Field> getSortKeyFields() {

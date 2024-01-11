@@ -523,7 +523,7 @@ public class ListSecurityPermissionSetPermissionsRequest {
     }
 
     /**
-     * workspace 信息
+     * DataArts Studio工作空间ID
      * @return workspace
      */
     public String getWorkspace() {

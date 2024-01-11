@@ -8,19 +8,19 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 import java.util.Objects;
 
 /**
- * Fail
+ * 失败的操作指示。
  */
 public class Fail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "OperId")
-    @BsonProperty(value = "OperId")
+    @JsonProperty(value = "oper_id")
+    @BsonProperty(value = "oper_id")
 
     private Integer operId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Status")
-    @BsonProperty(value = "Status")
+    @JsonProperty(value = "status")
+    @BsonProperty(value = "status")
 
     private String status;
 
@@ -30,7 +30,7 @@ public class Fail {
     }
 
     /**
-     * Get operId
+     * 失败的操作标识，1_个或多个。
      * @return operId
      */
     public Integer getOperId() {
@@ -47,7 +47,7 @@ public class Fail {
     }
 
     /**
-     * Get status
+     * 处理失败操作提示。
      * @return status
      */
     public String getStatus() {

@@ -128,6 +128,11 @@ public class VaultCreateResource {
 
     private Boolean frozen;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_lock_source_service")
+
+    private String sysLockSourceService;
+
     public VaultCreateResource withBilling(Billing billing) {
         this.billing = billing;
         return this;
@@ -587,6 +592,23 @@ public class VaultCreateResource {
         this.frozen = frozen;
     }
 
+    public VaultCreateResource withSysLockSourceService(String sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+        return this;
+    }
+
+    /**
+     * 用于标识SMB服务
+     * @return sysLockSourceService
+     */
+    public String getSysLockSourceService() {
+        return sysLockSourceService;
+    }
+
+    public void setSysLockSourceService(String sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -608,7 +630,8 @@ public class VaultCreateResource {
             && Objects.equals(this.retCode, that.retCode) && Objects.equals(this.orders, that.orders)
             && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
             && Objects.equals(this.demandBilling, that.demandBilling)
-            && Objects.equals(this.cbcDeleteCount, that.cbcDeleteCount) && Objects.equals(this.frozen, that.frozen);
+            && Objects.equals(this.cbcDeleteCount, that.cbcDeleteCount) && Objects.equals(this.frozen, that.frozen)
+            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService);
     }
 
     @Override
@@ -635,7 +658,8 @@ public class VaultCreateResource {
             backupNamePrefix,
             demandBilling,
             cbcDeleteCount,
-            frozen);
+            frozen,
+            sysLockSourceService);
     }
 
     @Override
@@ -665,6 +689,7 @@ public class VaultCreateResource {
         sb.append("    demandBilling: ").append(toIndentedString(demandBilling)).append("\n");
         sb.append("    cbcDeleteCount: ").append(toIndentedString(cbcDeleteCount)).append("\n");
         sb.append("    frozen: ").append(toIndentedString(frozen)).append("\n");
+        sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

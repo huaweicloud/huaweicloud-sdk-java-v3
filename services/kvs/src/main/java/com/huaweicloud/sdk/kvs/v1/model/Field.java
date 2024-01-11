@@ -13,14 +13,14 @@ import java.util.Objects;
 public class Field {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Name")
-    @BsonProperty(value = "Name")
+    @JsonProperty(value = "name")
+    @BsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Order")
-    @BsonProperty(value = "Order")
+    @JsonProperty(value = "order")
+    @BsonProperty(value = "order")
 
     private Boolean order;
 
@@ -30,7 +30,7 @@ public class Field {
     }
 
     /**
-     * Get name
+     * 字段名。
      * @return name
      */
     public String getName() {
@@ -47,7 +47,7 @@ public class Field {
     }
 
     /**
-     * Get order
+     * bool值预留无意义。
      * @return order
      */
     public Boolean getOrder() {

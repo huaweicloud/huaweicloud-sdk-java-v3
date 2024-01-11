@@ -14,14 +14,14 @@ import java.util.Objects;
 public class GetKv {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "OperId")
-    @BsonProperty(value = "OperId")
+    @JsonProperty(value = "oper_id")
+    @BsonProperty(value = "oper_id")
 
     private Integer operId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
@@ -31,7 +31,7 @@ public class GetKv {
     }
 
     /**
-     * Get operId
+     * 请求内的操作编码，未成功的操作返回该标识。
      * @return operId
      */
     public Integer getOperId() {
@@ -48,7 +48,7 @@ public class GetKv {
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。
      * @return primaryKey
      */
     public Document getPrimaryKey() {

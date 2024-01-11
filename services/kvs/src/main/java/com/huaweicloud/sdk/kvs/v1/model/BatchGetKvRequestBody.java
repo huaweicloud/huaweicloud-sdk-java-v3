@@ -16,42 +16,42 @@ import java.util.function.Consumer;
 public class BatchGetKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableOpers")
-    @BsonProperty(value = "TableOpers")
+    @JsonProperty(value = "batch_get_kv_opers")
+    @BsonProperty(value = "batch_get_kv_opers")
 
-    private List<TableBatchGet> tableOpers = null;
+    private List<BatchGetKvOfTable> batchGetKvOpers = null;
 
-    public BatchGetKvRequestBody withTableOpers(List<TableBatchGet> tableOpers) {
-        this.tableOpers = tableOpers;
+    public BatchGetKvRequestBody withBatchGetKvOpers(List<BatchGetKvOfTable> batchGetKvOpers) {
+        this.batchGetKvOpers = batchGetKvOpers;
         return this;
     }
 
-    public BatchGetKvRequestBody addTableOpersItem(TableBatchGet tableOpersItem) {
-        if (this.tableOpers == null) {
-            this.tableOpers = new ArrayList<>();
+    public BatchGetKvRequestBody addBatchGetKvOpersItem(BatchGetKvOfTable batchGetKvOpersItem) {
+        if (this.batchGetKvOpers == null) {
+            this.batchGetKvOpers = new ArrayList<>();
         }
-        this.tableOpers.add(tableOpersItem);
+        this.batchGetKvOpers.add(batchGetKvOpersItem);
         return this;
     }
 
-    public BatchGetKvRequestBody withTableOpers(Consumer<List<TableBatchGet>> tableOpersSetter) {
-        if (this.tableOpers == null) {
-            this.tableOpers = new ArrayList<>();
+    public BatchGetKvRequestBody withBatchGetKvOpers(Consumer<List<BatchGetKvOfTable>> batchGetKvOpersSetter) {
+        if (this.batchGetKvOpers == null) {
+            this.batchGetKvOpers = new ArrayList<>();
         }
-        tableOpersSetter.accept(this.tableOpers);
+        batchGetKvOpersSetter.accept(this.batchGetKvOpers);
         return this;
     }
 
     /**
-     * Get tableOpers
-     * @return tableOpers
+     * 按照table分类组织的get操作。
+     * @return batchGetKvOpers
      */
-    public List<TableBatchGet> getTableOpers() {
-        return tableOpers;
+    public List<BatchGetKvOfTable> getBatchGetKvOpers() {
+        return batchGetKvOpers;
     }
 
-    public void setTableOpers(List<TableBatchGet> tableOpers) {
-        this.tableOpers = tableOpers;
+    public void setBatchGetKvOpers(List<BatchGetKvOfTable> batchGetKvOpers) {
+        this.batchGetKvOpers = batchGetKvOpers;
     }
 
     @Override
@@ -63,19 +63,19 @@ public class BatchGetKvRequestBody {
             return false;
         }
         BatchGetKvRequestBody that = (BatchGetKvRequestBody) obj;
-        return Objects.equals(this.tableOpers, that.tableOpers);
+        return Objects.equals(this.batchGetKvOpers, that.batchGetKvOpers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableOpers);
+        return Objects.hash(batchGetKvOpers);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchGetKvRequestBody {\n");
-        sb.append("    tableOpers: ").append(toIndentedString(tableOpers)).append("\n");
+        sb.append("    batchGetKvOpers: ").append(toIndentedString(batchGetKvOpers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

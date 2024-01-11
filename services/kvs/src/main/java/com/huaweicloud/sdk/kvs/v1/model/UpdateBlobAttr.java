@@ -14,8 +14,8 @@ import java.util.Objects;
 public class UpdateBlobAttr {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Xattr")
-    @BsonProperty(value = "Xattr")
+    @JsonProperty(value = "xattr")
+    @BsonProperty(value = "xattr")
 
     private Binary xattr;
 
@@ -25,7 +25,7 @@ public class UpdateBlobAttr {
     }
 
     /**
-     * Get xattr
+     * 属性信息。
      * @return xattr
      */
     public Binary getXattr() {

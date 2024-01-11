@@ -15,6 +15,11 @@ public class BaseEndpointConfig {
 
     private Boolean isTargetReadonly;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_num")
+
+    private Integer nodeNum;
+
     public BaseEndpointConfig withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
         return this;
@@ -32,6 +37,25 @@ public class BaseEndpointConfig {
         this.isTargetReadonly = isTargetReadonly;
     }
 
+    public BaseEndpointConfig withNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+        return this;
+    }
+
+    /**
+     * Redis集群到GeminiDB Redis迁移场景填写，连接源端Redis集群的子任务个数，输入值在1到16之间，且输入值不能大于源端Redis集群的分片个数，请根据源端Redis集群的规模合理选择。建议集群的每4个分片设置1个源端分片个数，即每1个子任务连接源端集群的4个分片。
+     * minimum: 1
+     * maximum: 16
+     * @return nodeNum
+     */
+    public Integer getNodeNum() {
+        return nodeNum;
+    }
+
+    public void setNodeNum(Integer nodeNum) {
+        this.nodeNum = nodeNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +65,13 @@ public class BaseEndpointConfig {
             return false;
         }
         BaseEndpointConfig that = (BaseEndpointConfig) obj;
-        return Objects.equals(this.isTargetReadonly, that.isTargetReadonly);
+        return Objects.equals(this.isTargetReadonly, that.isTargetReadonly)
+            && Objects.equals(this.nodeNum, that.nodeNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isTargetReadonly);
+        return Objects.hash(isTargetReadonly, nodeNum);
     }
 
     @Override
@@ -54,6 +79,7 @@ public class BaseEndpointConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class BaseEndpointConfig {\n");
         sb.append("    isTargetReadonly: ").append(toIndentedString(isTargetReadonly)).append("\n");
+        sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

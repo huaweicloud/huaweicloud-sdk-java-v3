@@ -9,6 +9,9 @@ import com.huaweicloud.sdk.ec.v1.model.AddEcnWithErRequest;
 import com.huaweicloud.sdk.ec.v1.model.AddEcnWithErResponse;
 import com.huaweicloud.sdk.ec.v1.model.AddEcnWithIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.AddEcnWithIegResponse;
+import com.huaweicloud.sdk.ec.v1.model.AddEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.AddEcnWithVpcRequestBody;
+import com.huaweicloud.sdk.ec.v1.model.AddEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.AddVrrpConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.AddVrrpConfigResponse;
 import com.huaweicloud.sdk.ec.v1.model.ChangeIegPasswordRequest;
@@ -30,6 +33,8 @@ import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithErRequest;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithErResponse;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithIegResponse;
+import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEquipmentLanConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEquipmentLanConfigResponse;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEquipmentRequest;
@@ -58,6 +63,8 @@ import com.huaweicloud.sdk.ec.v1.model.ListEcnWithErRequest;
 import com.huaweicloud.sdk.ec.v1.model.ListEcnWithErResponse;
 import com.huaweicloud.sdk.ec.v1.model.ListEcnWithIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.ListEcnWithIegResponse;
+import com.huaweicloud.sdk.ec.v1.model.ListEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.ListEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.ListEquipmentInterfaceNameRequest;
 import com.huaweicloud.sdk.ec.v1.model.ListEquipmentInterfaceNameResponse;
 import com.huaweicloud.sdk.ec.v1.model.ListEquipmentsRequest;
@@ -102,6 +109,9 @@ import com.huaweicloud.sdk.ec.v1.model.UpdateEcnAccessPointResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEcnRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEcnRequestBody;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEcnResponse;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEcnWithVpcRequestBody;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentDnsInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentDnsInfoResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentEsnRequest;
@@ -1728,6 +1738,136 @@ public class EcMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddEcnWithVpcRequest, AddEcnWithVpcResponse> addEcnWithVpc =
+        genForaddEcnWithVpc();
+
+    private static HttpRequestDef<AddEcnWithVpcRequest, AddEcnWithVpcResponse> genForaddEcnWithVpc() {
+        // basic
+        HttpRequestDef.Builder<AddEcnWithVpcRequest, AddEcnWithVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddEcnWithVpcRequest.class, AddEcnWithVpcResponse.class)
+                .withName("AddEcnWithVpc")
+                .withUri("/v1/{domain_id}/enterprise-connect/enterprise-connect-network/{ecn_id}/relationship/vpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ecn_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddEcnWithVpcRequest::getEcnId, (req, v) -> {
+                req.setEcnId(v);
+            }));
+        builder.<AddEcnWithVpcRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddEcnWithVpcRequestBody.class),
+            f -> f.withMarshaller(AddEcnWithVpcRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> deleteEcnWithVpc =
+        genFordeleteEcnWithVpc();
+
+    private static HttpRequestDef<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> genFordeleteEcnWithVpc() {
+        // basic
+        HttpRequestDef.Builder<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEcnWithVpcRequest.class, DeleteEcnWithVpcResponse.class)
+            .withName("DeleteEcnWithVpc")
+            .withUri(
+                "/v1/{domain_id}/enterprise-connect/enterprise-connect-network/{ecn_id}/relationship/vpc/{relation_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ecn_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEcnWithVpcRequest::getEcnId, (req, v) -> {
+                req.setEcnId(v);
+            }));
+        builder.<String>withRequestField("relation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEcnWithVpcRequest::getRelationId, (req, v) -> {
+                req.setRelationId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEcnWithVpcRequest, ListEcnWithVpcResponse> listEcnWithVpc =
+        genForlistEcnWithVpc();
+
+    private static HttpRequestDef<ListEcnWithVpcRequest, ListEcnWithVpcResponse> genForlistEcnWithVpc() {
+        // basic
+        HttpRequestDef.Builder<ListEcnWithVpcRequest, ListEcnWithVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEcnWithVpcRequest.class, ListEcnWithVpcResponse.class)
+                .withName("ListEcnWithVpc")
+                .withUri("/v1/{domain_id}/enterprise-connect/enterprise-connect-network/{ecn_id}/relationship/vpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ecn_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEcnWithVpcRequest::getEcnId, (req, v) -> {
+                req.setEcnId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> updateEcnWithVpc =
+        genForupdateEcnWithVpc();
+
+    private static HttpRequestDef<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> genForupdateEcnWithVpc() {
+        // basic
+        HttpRequestDef.Builder<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateEcnWithVpcRequest.class, UpdateEcnWithVpcResponse.class)
+            .withName("UpdateEcnWithVpc")
+            .withUri(
+                "/v1/{domain_id}/enterprise-connect/enterprise-connect-network/{ecn_id}/relationship/vpc/{relation_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ecn_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getEcnId, (req, v) -> {
+                req.setEcnId(v);
+            }));
+        builder.<String>withRequestField("relation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getRelationId, (req, v) -> {
+                req.setRelationId(v);
+            }));
+        builder.<UpdateEcnWithVpcRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateEcnWithVpcRequestBody.class),
+            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

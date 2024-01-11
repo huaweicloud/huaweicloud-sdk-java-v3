@@ -13,8 +13,8 @@ import java.util.Objects;
 public class TableInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableStatus")
-    @BsonProperty(value = "TableStatus")
+    @JsonProperty(value = "table_status")
+    @BsonProperty(value = "table_status")
 
     private String tableStatus;
 
@@ -24,7 +24,7 @@ public class TableInfo {
     }
 
     /**
-     * Get tableStatus
+     * 表状态。 - \"creating\" - \"active\" - \"deleting\"
      * @return tableStatus
      */
     public String getTableStatus() {

@@ -269,6 +269,11 @@ public class ListInstancesRequest {
     private DatastoreTypeEnum datastoreType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eps_id")
+
+    private String epsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -380,6 +385,23 @@ public class ListInstancesRequest {
         this.datastoreType = datastoreType;
     }
 
+    public ListInstancesRequest withEpsId(String epsId) {
+        this.epsId = epsId;
+        return this;
+    }
+
+    /**
+     * 企业项目id。
+     * @return epsId
+     */
+    public String getEpsId() {
+        return epsId;
+    }
+
+    public void setEpsId(String epsId) {
+        this.epsId = epsId;
+    }
+
     public ListInstancesRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -476,14 +498,15 @@ public class ListInstancesRequest {
         ListInstancesRequest that = (ListInstancesRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, offset, limit, tags);
+        return Objects.hash(xLanguage, id, name, type, datastoreType, epsId, vpcId, subnetId, offset, limit, tags);
     }
 
     @Override
@@ -495,6 +518,7 @@ public class ListInstancesRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

@@ -9,19 +9,19 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * TableOperIds
+ * 某个表的行操作数组， 可以是多个文档的_put_kv或delete_kv。
  */
 public class TableOperIds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvOperIds")
-    @BsonProperty(value = "KvOperIds")
+    @JsonProperty(value = "kv_oper_ids")
+    @BsonProperty(value = "kv_oper_ids")
 
     private KvOperIds kvOperIds;
 
@@ -31,7 +31,7 @@ public class TableOperIds {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {

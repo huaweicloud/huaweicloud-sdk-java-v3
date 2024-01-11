@@ -15,6 +15,7 @@ import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
 import java.nio.ByteBuffer;
+import java.util.Objects;
 
 import static com.mongodb.MongoClient.getDefaultCodecRegistry;
 
@@ -23,11 +24,11 @@ public class KvsExceptionHandler implements ExceptionHandler {
     public void handleException(HttpRequest httpRequest, HttpResponse httpResponse) {
         if (httpResponse.getStatusCode() >= Constants.StatusCode.CLIENT_ERROR) {
             throw ServiceResponseException.mapException(
-                    httpResponse.getStatusCode(), parseErrorMessage(httpResponse.getBodyAsBytes()));
+                    httpResponse.getStatusCode(), parseErrorMessage(httpResponse.getBodyAsBytes(), httpResponse));
         }
     }
 
-    private SdkErrorMessage parseErrorMessage(byte[] buf) {
+    private SdkErrorMessage parseErrorMessage(byte[] buf, HttpResponse httpResponse) {
         if (buf == null) {
             return null;
         }
@@ -37,7 +38,13 @@ public class KvsExceptionHandler implements ExceptionHandler {
                 getDefaultCodecRegistry(),
                 CodecRegistries.fromProviders(pojoCodecProvider)
         );
-        return (SdkErrorMessage) decodeBody(codecRegistry, reader);
+        SdkErrorMessage sdkErrorMessage = (SdkErrorMessage) decodeBody(codecRegistry, reader);
+
+        if (Objects.isNull(sdkErrorMessage.getRequestId()) && Objects.nonNull(httpResponse.getHeader("X-Request-Id"))) {
+            sdkErrorMessage.setRequestId(httpResponse.getHeader("X-Request-Id"));
+        }
+
+        return sdkErrorMessage;
     }
 
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {

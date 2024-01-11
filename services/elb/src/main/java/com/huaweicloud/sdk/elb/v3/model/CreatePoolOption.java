@@ -171,6 +171,11 @@ public class CreatePoolOption {
 
     private Boolean anyPortEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_drain")
+
+    private ConnectionDrain connectionDrain;
+
     public CreatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -479,6 +484,32 @@ public class CreatePoolOption {
         this.anyPortEnable = anyPortEnable;
     }
 
+    public CreatePoolOption withConnectionDrain(ConnectionDrain connectionDrain) {
+        this.connectionDrain = connectionDrain;
+        return this;
+    }
+
+    public CreatePoolOption withConnectionDrain(Consumer<ConnectionDrain> connectionDrainSetter) {
+        if (this.connectionDrain == null) {
+            this.connectionDrain = new ConnectionDrain();
+            connectionDrainSetter.accept(this.connectionDrain);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get connectionDrain
+     * @return connectionDrain
+     */
+    public ConnectionDrain getConnectionDrain() {
+        return connectionDrain;
+    }
+
+    public void setConnectionDrain(ConnectionDrain connectionDrain) {
+        this.connectionDrain = connectionDrain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -500,7 +531,8 @@ public class CreatePoolOption {
             && Objects.equals(this.ipVersion, that.ipVersion)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
             && Objects.equals(this.protectionReason, that.protectionReason)
-            && Objects.equals(this.anyPortEnable, that.anyPortEnable);
+            && Objects.equals(this.anyPortEnable, that.anyPortEnable)
+            && Objects.equals(this.connectionDrain, that.connectionDrain);
     }
 
     @Override
@@ -521,7 +553,8 @@ public class CreatePoolOption {
             ipVersion,
             protectionStatus,
             protectionReason,
-            anyPortEnable);
+            anyPortEnable,
+            connectionDrain);
     }
 
     @Override
@@ -547,6 +580,7 @@ public class CreatePoolOption {
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
+        sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,28 +14,28 @@ import java.util.Objects;
 public class UpdateBlob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Xattr")
-    @BsonProperty(value = "Xattr")
+    @JsonProperty(value = "xattr")
+    @BsonProperty(value = "xattr")
 
     private Binary xattr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Offset")
-    @BsonProperty(value = "Offset")
+    @JsonProperty(value = "offset")
+    @BsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Len")
-    @BsonProperty(value = "Len")
+    @JsonProperty(value = "len")
+    @BsonProperty(value = "len")
 
     private Integer len;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Blobdata")
-    @BsonProperty(value = "Blobdata")
+    @JsonProperty(value = "blob_data")
+    @BsonProperty(value = "blob_data")
 
-    private Binary blobdata;
+    private Binary blobData;
 
     public UpdateBlob withXattr(Binary xattr) {
         this.xattr = xattr;
@@ -43,7 +43,7 @@ public class UpdateBlob {
     }
 
     /**
-     * Get xattr
+     * 属性信息。
      * @return xattr
      */
     public Binary getXattr() {
@@ -60,7 +60,7 @@ public class UpdateBlob {
     }
 
     /**
-     * Get offset
+     * value部分的偏移位置。 > - 超过value当前size无效 > - \"offset\"与\"len\"与\"blob_data\" 要么都带，要么都不带。
      * @return offset
      */
     public Integer getOffset() {
@@ -77,7 +77,7 @@ public class UpdateBlob {
     }
 
     /**
-     * Get len
+     * 更新内容长度。
      * @return len
      */
     public Integer getLen() {
@@ -88,21 +88,21 @@ public class UpdateBlob {
         this.len = len;
     }
 
-    public UpdateBlob withBlobdata(Binary blobdata) {
-        this.blobdata = blobdata;
+    public UpdateBlob withBlobData(Binary blobData) {
+        this.blobData = blobData;
         return this;
     }
 
     /**
-     * Get blobdata
-     * @return blobdata
+     * 二进制内容。
+     * @return blobData
      */
-    public Binary getBlobdata() {
-        return blobdata;
+    public Binary getBlobData() {
+        return blobData;
     }
 
-    public void setBlobdata(Binary blobdata) {
-        this.blobdata = blobdata;
+    public void setBlobData(Binary blobData) {
+        this.blobData = blobData;
     }
 
     @Override
@@ -115,12 +115,12 @@ public class UpdateBlob {
         }
         UpdateBlob that = (UpdateBlob) obj;
         return Objects.equals(this.xattr, that.xattr) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.len, that.len) && Objects.equals(this.blobdata, that.blobdata);
+            && Objects.equals(this.len, that.len) && Objects.equals(this.blobData, that.blobData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xattr, offset, len, blobdata);
+        return Objects.hash(xattr, offset, len, blobData);
     }
 
     @Override
@@ -130,7 +130,7 @@ public class UpdateBlob {
         sb.append("    xattr: ").append(toIndentedString(xattr)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    len: ").append(toIndentedString(len)).append("\n");
-        sb.append("    blobdata: ").append(toIndentedString(blobdata)).append("\n");
+        sb.append("    blobData: ").append(toIndentedString(blobData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

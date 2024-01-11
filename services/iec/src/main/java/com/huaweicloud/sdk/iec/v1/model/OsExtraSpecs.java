@@ -60,6 +60,11 @@ public class OsExtraSpecs {
 
     private String resourceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cond:network")
+
+    private String condNetwork;
+
     public OsExtraSpecs withCondOperationStatus(String condOperationStatus) {
         this.condOperationStatus = condOperationStatus;
         return this;
@@ -230,6 +235,23 @@ public class OsExtraSpecs {
         this.resourceType = resourceType;
     }
 
+    public OsExtraSpecs withCondNetwork(String condNetwork) {
+        this.condNetwork = condNetwork;
+        return this;
+    }
+
+    /**
+     * 网络约束  支持网络特性，不配置时以控制台默认配置为准。
+     * @return condNetwork
+     */
+    public String getCondNetwork() {
+        return condNetwork;
+    }
+
+    public void setCondNetwork(String condNetwork) {
+        this.condNetwork = condNetwork;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -247,7 +269,8 @@ public class OsExtraSpecs {
             && Objects.equals(this.pciPassthroughAlias, that.pciPassthroughAlias)
             && Objects.equals(this.pciPassthroughEnableGpu, that.pciPassthroughEnableGpu)
             && Objects.equals(this.pciPassthroughGpuSpecs, that.pciPassthroughGpuSpecs)
-            && Objects.equals(this.resourceType, that.resourceType);
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.condNetwork, that.condNetwork);
     }
 
     @Override
@@ -261,7 +284,8 @@ public class OsExtraSpecs {
             pciPassthroughAlias,
             pciPassthroughEnableGpu,
             pciPassthroughGpuSpecs,
-            resourceType);
+            resourceType,
+            condNetwork);
     }
 
     @Override
@@ -278,6 +302,7 @@ public class OsExtraSpecs {
         sb.append("    pciPassthroughEnableGpu: ").append(toIndentedString(pciPassthroughEnableGpu)).append("\n");
         sb.append("    pciPassthroughGpuSpecs: ").append(toIndentedString(pciPassthroughGpuSpecs)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    condNetwork: ").append(toIndentedString(condNetwork)).append("\n");
         sb.append("}");
         return sb.toString();
     }

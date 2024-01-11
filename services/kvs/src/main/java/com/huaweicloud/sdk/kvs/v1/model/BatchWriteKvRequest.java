@@ -35,7 +35,7 @@ public class BatchWriteKvRequest extends SdkBsonDocRequest {
     }
 
     /**
-     * store name
+     * 仓名
      * @return storeName
      */
     public String getStoreName() {

@@ -19,22 +19,16 @@ import java.util.function.Consumer;
 public class RenameKvResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "OldPrimaryKey")
-    @BsonProperty(value = "OldPrimaryKey")
+    @JsonProperty(value = "old_primary_key")
+    @BsonProperty(value = "old_primary_key")
 
     private Document oldPrimaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvBlobAttr")
-    @BsonProperty(value = "KvBlobAttr")
+    @JsonProperty(value = "kv_blob_attr")
+    @BsonProperty(value = "kv_blob_attr")
 
     private KvBlobAttr kvBlobAttr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvDoc")
-    @BsonProperty(value = "KvDoc")
-
-    private Document kvDoc;
 
     public RenameKvResponse withOldPrimaryKey(Document oldPrimaryKey) {
         this.oldPrimaryKey = oldPrimaryKey;
@@ -42,7 +36,7 @@ public class RenameKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get oldPrimaryKey
+     * 用户自定义的主键名及值。
      * @return oldPrimaryKey
      */
     public Document getOldPrimaryKey() {
@@ -79,23 +73,6 @@ public class RenameKvResponse extends SdkBsonDocResponse {
         this.kvBlobAttr = kvBlobAttr;
     }
 
-    public RenameKvResponse withKvDoc(Document kvDoc) {
-        this.kvDoc = kvDoc;
-        return this;
-    }
-
-    /**
-     * Get kvDoc
-     * @return kvDoc
-     */
-    public Document getKvDoc() {
-        return kvDoc;
-    }
-
-    public void setKvDoc(Document kvDoc) {
-        this.kvDoc = kvDoc;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +83,12 @@ public class RenameKvResponse extends SdkBsonDocResponse {
         }
         RenameKvResponse that = (RenameKvResponse) obj;
         return Objects.equals(this.oldPrimaryKey, that.oldPrimaryKey)
-            && Objects.equals(this.kvBlobAttr, that.kvBlobAttr) && Objects.equals(this.kvDoc, that.kvDoc);
+            && Objects.equals(this.kvBlobAttr, that.kvBlobAttr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(oldPrimaryKey, kvBlobAttr, kvDoc);
+        return Objects.hash(oldPrimaryKey, kvBlobAttr);
     }
 
     @Override
@@ -120,7 +97,6 @@ public class RenameKvResponse extends SdkBsonDocResponse {
         sb.append("class RenameKvResponse {\n");
         sb.append("    oldPrimaryKey: ").append(toIndentedString(oldPrimaryKey)).append("\n");
         sb.append("    kvBlobAttr: ").append(toIndentedString(kvBlobAttr)).append("\n");
-        sb.append("    kvDoc: ").append(toIndentedString(kvDoc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

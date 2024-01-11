@@ -93,6 +93,11 @@ public class Vault {
 
     private Integer threshold;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_lock_source_service")
+
+    private String sysLockSourceService;
+
     public Vault withBilling(Billing billing) {
         this.billing = billing;
         return this;
@@ -417,6 +422,23 @@ public class Vault {
         this.threshold = threshold;
     }
 
+    public Vault withSysLockSourceService(String sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+        return this;
+    }
+
+    /**
+     * 用于标识SMB服务
+     * @return sysLockSourceService
+     */
+    public String getSysLockSourceService() {
+        return sysLockSourceService;
+    }
+
+    public void setSysLockSourceService(String sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -434,7 +456,8 @@ public class Vault {
             && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
             && Objects.equals(this.userId, that.userId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
-            && Objects.equals(this.threshold, that.threshold);
+            && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService);
     }
 
     @Override
@@ -454,7 +477,8 @@ public class Vault {
             createdAt,
             autoExpand,
             smnNotify,
-            threshold);
+            threshold,
+            sysLockSourceService);
     }
 
     @Override
@@ -477,6 +501,7 @@ public class Vault {
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -20,16 +20,16 @@ import java.util.function.Consumer;
 public class ListTableResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "CursorName")
-    @BsonProperty(value = "CursorName")
+    @JsonProperty(value = "cursor_name")
+    @BsonProperty(value = "cursor_name")
 
     private String cursorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableNameList")
-    @BsonProperty(value = "TableNameList")
+    @JsonProperty(value = "table_names")
+    @BsonProperty(value = "table_names")
 
-    private List<String> tableNameList = null;
+    private List<String> tableNames = null;
 
     public ListTableResponse withCursorName(String cursorName) {
         this.cursorName = cursorName;
@@ -37,7 +37,7 @@ public class ListTableResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get cursorName
+     * 本次响应后的游标位置，下次请求时携带，如果为空，表示后面无更多 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+ > 如果为空，表示后面无更多。
      * @return cursorName
      */
     public String getCursorName() {
@@ -48,37 +48,37 @@ public class ListTableResponse extends SdkBsonDocResponse {
         this.cursorName = cursorName;
     }
 
-    public ListTableResponse withTableNameList(List<String> tableNameList) {
-        this.tableNameList = tableNameList;
+    public ListTableResponse withTableNames(List<String> tableNames) {
+        this.tableNames = tableNames;
         return this;
     }
 
-    public ListTableResponse addTableNameListItem(String tableNameListItem) {
-        if (this.tableNameList == null) {
-            this.tableNameList = new ArrayList<>();
+    public ListTableResponse addTableNamesItem(String tableNamesItem) {
+        if (this.tableNames == null) {
+            this.tableNames = new ArrayList<>();
         }
-        this.tableNameList.add(tableNameListItem);
+        this.tableNames.add(tableNamesItem);
         return this;
     }
 
-    public ListTableResponse withTableNameList(Consumer<List<String>> tableNameListSetter) {
-        if (this.tableNameList == null) {
-            this.tableNameList = new ArrayList<>();
+    public ListTableResponse withTableNames(Consumer<List<String>> tableNamesSetter) {
+        if (this.tableNames == null) {
+            this.tableNames = new ArrayList<>();
         }
-        tableNameListSetter.accept(this.tableNameList);
+        tableNamesSetter.accept(this.tableNames);
         return this;
     }
 
     /**
-     * Get tableNameList
-     * @return tableNameList
+     * 返回的表名列表。 - 长度：最大_100
+     * @return tableNames
      */
-    public List<String> getTableNameList() {
-        return tableNameList;
+    public List<String> getTableNames() {
+        return tableNames;
     }
 
-    public void setTableNameList(List<String> tableNameList) {
-        this.tableNameList = tableNameList;
+    public void setTableNames(List<String> tableNames) {
+        this.tableNames = tableNames;
     }
 
     @Override
@@ -90,13 +90,12 @@ public class ListTableResponse extends SdkBsonDocResponse {
             return false;
         }
         ListTableResponse that = (ListTableResponse) obj;
-        return Objects.equals(this.cursorName, that.cursorName)
-            && Objects.equals(this.tableNameList, that.tableNameList);
+        return Objects.equals(this.cursorName, that.cursorName) && Objects.equals(this.tableNames, that.tableNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cursorName, tableNameList);
+        return Objects.hash(cursorName, tableNames);
     }
 
     @Override
@@ -104,7 +103,7 @@ public class ListTableResponse extends SdkBsonDocResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTableResponse {\n");
         sb.append("    cursorName: ").append(toIndentedString(cursorName)).append("\n");
-        sb.append("    tableNameList: ").append(toIndentedString(tableNameList)).append("\n");
+        sb.append("    tableNames: ").append(toIndentedString(tableNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

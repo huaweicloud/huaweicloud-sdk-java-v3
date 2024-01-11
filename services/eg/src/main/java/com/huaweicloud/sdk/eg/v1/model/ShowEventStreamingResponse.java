@@ -135,9 +135,9 @@ public class ShowEventStreamingResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "streaming_id")
+    @JsonProperty(value = "id")
 
-    private String streamingId;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
@@ -309,21 +309,21 @@ public class ShowEventStreamingResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowEventStreamingResponse withStreamingId(String streamingId) {
-        this.streamingId = streamingId;
+    public ShowEventStreamingResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
      * 事件流ID
-     * @return streamingId
+     * @return id
      */
-    public String getStreamingId() {
-        return streamingId;
+    public String getId() {
+        return id;
     }
 
-    public void setStreamingId(String streamingId) {
-        this.streamingId = streamingId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ShowEventStreamingResponse withCreatedTime(String createdTime) {
@@ -391,7 +391,7 @@ public class ShowEventStreamingResponse extends SdkResponse {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.source, that.source) && Objects.equals(this.sink, that.sink)
             && Objects.equals(this.ruleConfig, that.ruleConfig) && Objects.equals(this.option, that.option)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.streamingId, that.streamingId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
@@ -405,7 +405,7 @@ public class ShowEventStreamingResponse extends SdkResponse {
             ruleConfig,
             option,
             status,
-            streamingId,
+            id,
             createdTime,
             updatedTime,
             xRequestId);
@@ -422,7 +422,7 @@ public class ShowEventStreamingResponse extends SdkResponse {
         sb.append("    ruleConfig: ").append(toIndentedString(ruleConfig)).append("\n");
         sb.append("    option: ").append(toIndentedString(option)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    streamingId: ").append(toIndentedString(streamingId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

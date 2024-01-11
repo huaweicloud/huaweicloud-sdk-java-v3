@@ -13,16 +13,16 @@ import java.util.Objects;
 public class ListTableRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "CursorName")
-    @BsonProperty(value = "CursorName")
+    @JsonProperty(value = "cursor_name")
+    @BsonProperty(value = "cursor_name")
 
     private String cursorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "LimitNum")
-    @BsonProperty(value = "LimitNum")
+    @JsonProperty(value = "limit")
+    @BsonProperty(value = "limit")
 
-    private Integer limitNum;
+    private Integer limit;
 
     public ListTableRequestBody withCursorName(String cursorName) {
         this.cursorName = cursorName;
@@ -30,7 +30,7 @@ public class ListTableRequestBody {
     }
 
     /**
-     * Get cursorName
+     * 上次返回游标位置，本次响应包含该table，空表示遍历完。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+ > 如果为空，表示后面无更多。
      * @return cursorName
      */
     public String getCursorName() {
@@ -41,21 +41,21 @@ public class ListTableRequestBody {
         this.cursorName = cursorName;
     }
 
-    public ListTableRequestBody withLimitNum(Integer limitNum) {
-        this.limitNum = limitNum;
+    public ListTableRequestBody withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
-     * Get limitNum
-     * @return limitNum
+     * 响应返回的表个数。 - 长度：最大_100
+     * @return limit
      */
-    public Integer getLimitNum() {
-        return limitNum;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setLimitNum(Integer limitNum) {
-        this.limitNum = limitNum;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     @Override
@@ -67,12 +67,12 @@ public class ListTableRequestBody {
             return false;
         }
         ListTableRequestBody that = (ListTableRequestBody) obj;
-        return Objects.equals(this.cursorName, that.cursorName) && Objects.equals(this.limitNum, that.limitNum);
+        return Objects.equals(this.cursorName, that.cursorName) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cursorName, limitNum);
+        return Objects.hash(cursorName, limit);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class ListTableRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTableRequestBody {\n");
         sb.append("    cursorName: ").append(toIndentedString(cursorName)).append("\n");
-        sb.append("    limitNum: ").append(toIndentedString(limitNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -27,6 +32,81 @@ public class ListUsedDesktopInfoReq {
     @JsonProperty(value = "end_time")
 
     private String endTime;
+
+    /**
+     * 统计方式，不传则默认按天。可选值为： - DAY: 按天。 - HOUR: 按小时。
+     */
+    public static final class GroupByTypeEnum {
+
+        /**
+         * Enum DAY for value: "DAY"
+         */
+        public static final GroupByTypeEnum DAY = new GroupByTypeEnum("DAY");
+
+        /**
+         * Enum HOUR for value: "HOUR"
+         */
+        public static final GroupByTypeEnum HOUR = new GroupByTypeEnum("HOUR");
+
+        private static final Map<String, GroupByTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, GroupByTypeEnum> createStaticFields() {
+            Map<String, GroupByTypeEnum> map = new HashMap<>();
+            map.put("DAY", DAY);
+            map.put("HOUR", HOUR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        GroupByTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static GroupByTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GroupByTypeEnum(value));
+        }
+
+        public static GroupByTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof GroupByTypeEnum) {
+                return this.value.equals(((GroupByTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_by_type")
+
+    private GroupByTypeEnum groupByType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_username")
@@ -110,6 +190,23 @@ public class ListUsedDesktopInfoReq {
         this.endTime = endTime;
     }
 
+    public ListUsedDesktopInfoReq withGroupByType(GroupByTypeEnum groupByType) {
+        this.groupByType = groupByType;
+        return this;
+    }
+
+    /**
+     * 统计方式，不传则默认按天。可选值为： - DAY: 按天。 - HOUR: 按小时。
+     * @return groupByType
+     */
+    public GroupByTypeEnum getGroupByType() {
+        return groupByType;
+    }
+
+    public void setGroupByType(GroupByTypeEnum groupByType) {
+        this.groupByType = groupByType;
+    }
+
     public ListUsedDesktopInfoReq withDesktopUsername(String desktopUsername) {
         this.desktopUsername = desktopUsername;
         return this;
@@ -175,13 +272,14 @@ public class ListUsedDesktopInfoReq {
         }
         ListUsedDesktopInfoReq that = (ListUsedDesktopInfoReq) obj;
         return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.desktopUsername, that.desktopUsername)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.groupByType, that.groupByType)
+            && Objects.equals(this.desktopUsername, that.desktopUsername) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds, startTime, endTime, desktopUsername, offset, limit);
+        return Objects.hash(desktopIds, startTime, endTime, groupByType, desktopUsername, offset, limit);
     }
 
     @Override
@@ -191,6 +289,7 @@ public class ListUsedDesktopInfoReq {
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    groupByType: ").append(toIndentedString(groupByType)).append("\n");
         sb.append("    desktopUsername: ").append(toIndentedString(desktopUsername)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

@@ -1053,6 +1053,16 @@ public class UpdateInstanceV2Response extends SdkResponse {
     private NodeIps nodeIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_ipv6_ips")
+
+    private NodeIps nodeIpv6Ips;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ipv6_ips")
+
+    private List<String> publicIpv6Ips = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
 
     private List<IpDetails> publicips = null;
@@ -1061,6 +1071,16 @@ public class UpdateInstanceV2Response extends SdkResponse {
     @JsonProperty(value = "privateips")
 
     private List<IpDetails> privateips = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unreliable_ips")
+
+    private List<String> unreliableIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_fullstack_ipv6")
+
+    private Boolean enableFullstackIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_releasable")
@@ -1767,6 +1787,65 @@ public class UpdateInstanceV2Response extends SdkResponse {
         this.nodeIps = nodeIps;
     }
 
+    public UpdateInstanceV2Response withNodeIpv6Ips(NodeIps nodeIpv6Ips) {
+        this.nodeIpv6Ips = nodeIpv6Ips;
+        return this;
+    }
+
+    public UpdateInstanceV2Response withNodeIpv6Ips(Consumer<NodeIps> nodeIpv6IpsSetter) {
+        if (this.nodeIpv6Ips == null) {
+            this.nodeIpv6Ips = new NodeIps();
+            nodeIpv6IpsSetter.accept(this.nodeIpv6Ips);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nodeIpv6Ips
+     * @return nodeIpv6Ips
+     */
+    public NodeIps getNodeIpv6Ips() {
+        return nodeIpv6Ips;
+    }
+
+    public void setNodeIpv6Ips(NodeIps nodeIpv6Ips) {
+        this.nodeIpv6Ips = nodeIpv6Ips;
+    }
+
+    public UpdateInstanceV2Response withPublicIpv6Ips(List<String> publicIpv6Ips) {
+        this.publicIpv6Ips = publicIpv6Ips;
+        return this;
+    }
+
+    public UpdateInstanceV2Response addPublicIpv6IpsItem(String publicIpv6IpsItem) {
+        if (this.publicIpv6Ips == null) {
+            this.publicIpv6Ips = new ArrayList<>();
+        }
+        this.publicIpv6Ips.add(publicIpv6IpsItem);
+        return this;
+    }
+
+    public UpdateInstanceV2Response withPublicIpv6Ips(Consumer<List<String>> publicIpv6IpsSetter) {
+        if (this.publicIpv6Ips == null) {
+            this.publicIpv6Ips = new ArrayList<>();
+        }
+        publicIpv6IpsSetter.accept(this.publicIpv6Ips);
+        return this;
+    }
+
+    /**
+     * 实例IPV6出公网IP
+     * @return publicIpv6Ips
+     */
+    public List<String> getPublicIpv6Ips() {
+        return publicIpv6Ips;
+    }
+
+    public void setPublicIpv6Ips(List<String> publicIpv6Ips) {
+        this.publicIpv6Ips = publicIpv6Ips;
+    }
+
     public UpdateInstanceV2Response withPublicips(List<IpDetails> publicips) {
         this.publicips = publicips;
         return this;
@@ -1831,6 +1910,56 @@ public class UpdateInstanceV2Response extends SdkResponse {
 
     public void setPrivateips(List<IpDetails> privateips) {
         this.privateips = privateips;
+    }
+
+    public UpdateInstanceV2Response withUnreliableIps(List<String> unreliableIps) {
+        this.unreliableIps = unreliableIps;
+        return this;
+    }
+
+    public UpdateInstanceV2Response addUnreliableIpsItem(String unreliableIpsItem) {
+        if (this.unreliableIps == null) {
+            this.unreliableIps = new ArrayList<>();
+        }
+        this.unreliableIps.add(unreliableIpsItem);
+        return this;
+    }
+
+    public UpdateInstanceV2Response withUnreliableIps(Consumer<List<String>> unreliableIpsSetter) {
+        if (this.unreliableIps == null) {
+            this.unreliableIps = new ArrayList<>();
+        }
+        unreliableIpsSetter.accept(this.unreliableIps);
+        return this;
+    }
+
+    /**
+     * 不建议使用的实例入口列表：分组子域名解析未指向到该列表的IP，不能用该列表的IP直接访问DEFAULT分组
+     * @return unreliableIps
+     */
+    public List<String> getUnreliableIps() {
+        return unreliableIps;
+    }
+
+    public void setUnreliableIps(List<String> unreliableIps) {
+        this.unreliableIps = unreliableIps;
+    }
+
+    public UpdateInstanceV2Response withEnableFullstackIpv6(Boolean enableFullstackIpv6) {
+        this.enableFullstackIpv6 = enableFullstackIpv6;
+        return this;
+    }
+
+    /**
+     * 实例是否支持全量IPv6 - true：支持，实例入口和实例出口都支持IPV6 - false：不支持，仅实例入口支持IPV6
+     * @return enableFullstackIpv6
+     */
+    public Boolean getEnableFullstackIpv6() {
+        return enableFullstackIpv6;
+    }
+
+    public void setEnableFullstackIpv6(Boolean enableFullstackIpv6) {
+        this.enableFullstackIpv6 = enableFullstackIpv6;
     }
 
     public UpdateInstanceV2Response withIsReleasable(Boolean isReleasable) {
@@ -1904,8 +2033,12 @@ public class UpdateInstanceV2Response extends SdkResponse {
             && Objects.equals(this.supportedFeatures, that.supportedFeatures)
             && Objects.equals(this.endpointService, that.endpointService)
             && Objects.equals(this.endpointServices, that.endpointServices)
-            && Objects.equals(this.nodeIps, that.nodeIps) && Objects.equals(this.publicips, that.publicips)
-            && Objects.equals(this.privateips, that.privateips) && Objects.equals(this.isReleasable, that.isReleasable)
+            && Objects.equals(this.nodeIps, that.nodeIps) && Objects.equals(this.nodeIpv6Ips, that.nodeIpv6Ips)
+            && Objects.equals(this.publicIpv6Ips, that.publicIpv6Ips) && Objects.equals(this.publicips, that.publicips)
+            && Objects.equals(this.privateips, that.privateips)
+            && Objects.equals(this.unreliableIps, that.unreliableIps)
+            && Objects.equals(this.enableFullstackIpv6, that.enableFullstackIpv6)
+            && Objects.equals(this.isReleasable, that.isReleasable)
             && Objects.equals(this.ingressBandwidthChargingMode, that.ingressBandwidthChargingMode);
     }
 
@@ -1948,8 +2081,12 @@ public class UpdateInstanceV2Response extends SdkResponse {
             endpointService,
             endpointServices,
             nodeIps,
+            nodeIpv6Ips,
+            publicIpv6Ips,
             publicips,
             privateips,
+            unreliableIps,
+            enableFullstackIpv6,
             isReleasable,
             ingressBandwidthChargingMode);
     }
@@ -1995,8 +2132,12 @@ public class UpdateInstanceV2Response extends SdkResponse {
         sb.append("    endpointService: ").append(toIndentedString(endpointService)).append("\n");
         sb.append("    endpointServices: ").append(toIndentedString(endpointServices)).append("\n");
         sb.append("    nodeIps: ").append(toIndentedString(nodeIps)).append("\n");
+        sb.append("    nodeIpv6Ips: ").append(toIndentedString(nodeIpv6Ips)).append("\n");
+        sb.append("    publicIpv6Ips: ").append(toIndentedString(publicIpv6Ips)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    privateips: ").append(toIndentedString(privateips)).append("\n");
+        sb.append("    unreliableIps: ").append(toIndentedString(unreliableIps)).append("\n");
+        sb.append("    enableFullstackIpv6: ").append(toIndentedString(enableFullstackIpv6)).append("\n");
         sb.append("    isReleasable: ").append(toIndentedString(isReleasable)).append("\n");
         sb.append("    ingressBandwidthChargingMode: ")
             .append(toIndentedString(ingressBandwidthChargingMode))

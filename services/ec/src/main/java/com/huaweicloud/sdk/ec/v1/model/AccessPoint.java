@@ -32,6 +32,11 @@ public class AccessPoint {
     private Integer bindIegCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attach_vpc_count")
+
+    private Integer attachVpcCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -109,6 +114,23 @@ public class AccessPoint {
         this.bindIegCount = bindIegCount;
     }
 
+    public AccessPoint withAttachVpcCount(Integer attachVpcCount) {
+        this.attachVpcCount = attachVpcCount;
+        return this;
+    }
+
+    /**
+     * 关联VPC数量
+     * @return attachVpcCount
+     */
+    public Integer getAttachVpcCount() {
+        return attachVpcCount;
+    }
+
+    public void setAttachVpcCount(Integer attachVpcCount) {
+        this.attachVpcCount = attachVpcCount;
+    }
+
     public AccessPoint withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -154,13 +176,14 @@ public class AccessPoint {
         AccessPoint that = (AccessPoint) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
-            && Objects.equals(this.bindIegCount, that.bindIegCount) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.bindIegCount, that.bindIegCount)
+            && Objects.equals(this.attachVpcCount, that.attachVpcCount)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, regionId, bandwidthSize, bindIegCount, createdAt, updatedAt);
+        return Objects.hash(id, regionId, bandwidthSize, bindIegCount, attachVpcCount, createdAt, updatedAt);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class AccessPoint {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    bindIegCount: ").append(toIndentedString(bindIegCount)).append("\n");
+        sb.append("    attachVpcCount: ").append(toIndentedString(attachVpcCount)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");

@@ -51,6 +51,19 @@ public class DbssRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://dbss.cn-north-9.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://dbss.cn-north-11.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://dbss.me-east-1.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://dbss.cn-south-4.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://dbss.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://dbss.tr-west-1.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://dbss.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DBSS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -74,6 +87,12 @@ public class DbssRegion {
         map.put("cn-north-2", CN_NORTH_2);
         map.put("la-south-2", LA_SOUTH_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

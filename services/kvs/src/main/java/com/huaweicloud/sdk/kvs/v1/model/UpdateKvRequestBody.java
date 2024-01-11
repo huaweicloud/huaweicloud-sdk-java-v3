@@ -17,52 +17,52 @@ import java.util.function.Consumer;
 public class UpdateKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ConditionExpression")
-    @BsonProperty(value = "ConditionExpression")
+    @JsonProperty(value = "condition_expression")
+    @BsonProperty(value = "condition_expression")
 
     private ConditionExpression conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvOptions")
-    @BsonProperty(value = "KvOptions")
+    @JsonProperty(value = "kv_options")
+    @BsonProperty(value = "kv_options")
 
     private KvOptions kvOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "UpdateFields")
-    @BsonProperty(value = "UpdateFields")
+    @JsonProperty(value = "update_fields")
+    @BsonProperty(value = "update_fields")
 
     private UpdateFields updateFields;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ProjectionFields")
-    @BsonProperty(value = "ProjectionFields")
+    @JsonProperty(value = "projection_fields")
+    @BsonProperty(value = "projection_fields")
 
     private List<String> projectionFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "UpdateBlob")
-    @BsonProperty(value = "UpdateBlob")
+    @JsonProperty(value = "update_blob")
+    @BsonProperty(value = "update_blob")
 
     private UpdateBlob updateBlob;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnPartialBlob")
-    @BsonProperty(value = "ReturnPartialBlob")
+    @JsonProperty(value = "projection_blob")
+    @BsonProperty(value = "projection_blob")
 
-    private ReturnPartialBlob returnPartialBlob;
+    private ProjectionBlob projectionBlob;
 
     public UpdateKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -70,7 +70,7 @@ public class UpdateKvRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -87,7 +87,7 @@ public class UpdateKvRequestBody {
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。 > 内容字段：主键字段名和值，组合索引多个元素。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -198,7 +198,7 @@ public class UpdateKvRequestBody {
     }
 
     /**
-     * Get projectionFields
+     * 对kv_doc有效，返回哪些字段列表，默认全部。 > 字段名或嵌套字段路径用'/'分割 ，e_name为下标。
      * @return projectionFields
      */
     public List<String> getProjectionFields() {
@@ -235,30 +235,30 @@ public class UpdateKvRequestBody {
         this.updateBlob = updateBlob;
     }
 
-    public UpdateKvRequestBody withReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public UpdateKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
         return this;
     }
 
-    public UpdateKvRequestBody withReturnPartialBlob(Consumer<ReturnPartialBlob> returnPartialBlobSetter) {
-        if (this.returnPartialBlob == null) {
-            this.returnPartialBlob = new ReturnPartialBlob();
-            returnPartialBlobSetter.accept(this.returnPartialBlob);
+    public UpdateKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
+        if (this.projectionBlob == null) {
+            this.projectionBlob = new ProjectionBlob();
+            projectionBlobSetter.accept(this.projectionBlob);
         }
 
         return this;
     }
 
     /**
-     * Get returnPartialBlob
-     * @return returnPartialBlob
+     * Get projectionBlob
+     * @return projectionBlob
      */
-    public ReturnPartialBlob getReturnPartialBlob() {
-        return returnPartialBlob;
+    public ProjectionBlob getProjectionBlob() {
+        return projectionBlob;
     }
 
-    public void setReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public void setProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
     }
 
     @Override
@@ -275,7 +275,7 @@ public class UpdateKvRequestBody {
             && Objects.equals(this.kvOptions, that.kvOptions) && Objects.equals(this.updateFields, that.updateFields)
             && Objects.equals(this.projectionFields, that.projectionFields)
             && Objects.equals(this.updateBlob, that.updateBlob)
-            && Objects.equals(this.returnPartialBlob, that.returnPartialBlob);
+            && Objects.equals(this.projectionBlob, that.projectionBlob);
     }
 
     @Override
@@ -287,7 +287,7 @@ public class UpdateKvRequestBody {
             updateFields,
             projectionFields,
             updateBlob,
-            returnPartialBlob);
+            projectionBlob);
     }
 
     @Override
@@ -301,7 +301,7 @@ public class UpdateKvRequestBody {
         sb.append("    updateFields: ").append(toIndentedString(updateFields)).append("\n");
         sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
         sb.append("    updateBlob: ").append(toIndentedString(updateBlob)).append("\n");
-        sb.append("    returnPartialBlob: ").append(toIndentedString(returnPartialBlob)).append("\n");
+        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

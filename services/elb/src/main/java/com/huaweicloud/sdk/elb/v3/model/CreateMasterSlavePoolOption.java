@@ -83,6 +83,11 @@ public class CreateMasterSlavePoolOption {
 
     private Boolean anyPortEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_drain")
+
+    private ConnectionDrain connectionDrain;
+
     public CreateMasterSlavePoolOption withDescription(String description) {
         this.description = description;
         return this;
@@ -357,6 +362,32 @@ public class CreateMasterSlavePoolOption {
         this.anyPortEnable = anyPortEnable;
     }
 
+    public CreateMasterSlavePoolOption withConnectionDrain(ConnectionDrain connectionDrain) {
+        this.connectionDrain = connectionDrain;
+        return this;
+    }
+
+    public CreateMasterSlavePoolOption withConnectionDrain(Consumer<ConnectionDrain> connectionDrainSetter) {
+        if (this.connectionDrain == null) {
+            this.connectionDrain = new ConnectionDrain();
+            connectionDrainSetter.accept(this.connectionDrain);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get connectionDrain
+     * @return connectionDrain
+     */
+    public ConnectionDrain getConnectionDrain() {
+        return connectionDrain;
+    }
+
+    public void setConnectionDrain(ConnectionDrain connectionDrain) {
+        this.connectionDrain = connectionDrain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -374,7 +405,8 @@ public class CreateMasterSlavePoolOption {
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.members, that.members)
             && Objects.equals(this.healthmonitor, that.healthmonitor)
-            && Objects.equals(this.anyPortEnable, that.anyPortEnable);
+            && Objects.equals(this.anyPortEnable, that.anyPortEnable)
+            && Objects.equals(this.connectionDrain, that.connectionDrain);
     }
 
     @Override
@@ -392,7 +424,8 @@ public class CreateMasterSlavePoolOption {
             ipVersion,
             members,
             healthmonitor,
-            anyPortEnable);
+            anyPortEnable,
+            connectionDrain);
     }
 
     @Override
@@ -413,6 +446,7 @@ public class CreateMasterSlavePoolOption {
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    healthmonitor: ").append(toIndentedString(healthmonitor)).append("\n");
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
+        sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

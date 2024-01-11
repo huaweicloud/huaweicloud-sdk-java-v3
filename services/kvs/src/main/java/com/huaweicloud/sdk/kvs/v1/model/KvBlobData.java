@@ -15,38 +15,38 @@ import java.util.Objects;
 public class KvBlobData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TotalBytes")
-    @BsonProperty(value = "TotalBytes")
+    @JsonProperty(value = "total_bytes")
+    @BsonProperty(value = "total_bytes")
 
     private Integer totalBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Offset")
-    @BsonProperty(value = "Offset")
+    @JsonProperty(value = "offset")
+    @BsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Len")
-    @BsonProperty(value = "Len")
+    @JsonProperty(value = "len")
+    @BsonProperty(value = "len")
 
     private Integer len;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Blobdata")
-    @BsonProperty(value = "Blobdata")
+    @JsonProperty(value = "blob_data")
+    @BsonProperty(value = "blob_data")
 
-    private Binary blobdata;
+    private Binary blobData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Xattr")
-    @BsonProperty(value = "Xattr")
+    @JsonProperty(value = "xattr")
+    @BsonProperty(value = "xattr")
 
     private Binary xattr;
 
@@ -56,7 +56,7 @@ public class KvBlobData {
     }
 
     /**
-     * Get primaryKey
+     * 对kv_blob有效，返回全部or局部数据。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -73,7 +73,7 @@ public class KvBlobData {
     }
 
     /**
-     * Get totalBytes
+     * value的总字节数。
      * @return totalBytes
      */
     public Integer getTotalBytes() {
@@ -90,7 +90,7 @@ public class KvBlobData {
     }
 
     /**
-     * Get offset
+     * value部分的偏移位置。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class KvBlobData {
     }
 
     /**
-     * Get len
+     * value返回数据的实际长度 <= 请求的长度。
      * @return len
      */
     public Integer getLen() {
@@ -118,21 +118,21 @@ public class KvBlobData {
         this.len = len;
     }
 
-    public KvBlobData withBlobdata(Binary blobdata) {
-        this.blobdata = blobdata;
+    public KvBlobData withBlobData(Binary blobData) {
+        this.blobData = blobData;
         return this;
     }
 
     /**
-     * Get blobdata
-     * @return blobdata
+     * 二进制字节数组。
+     * @return blobData
      */
-    public Binary getBlobdata() {
-        return blobdata;
+    public Binary getBlobData() {
+        return blobData;
     }
 
-    public void setBlobdata(Binary blobdata) {
-        this.blobdata = blobdata;
+    public void setBlobData(Binary blobData) {
+        this.blobData = blobData;
     }
 
     public KvBlobData withXattr(Binary xattr) {
@@ -141,7 +141,7 @@ public class KvBlobData {
     }
 
     /**
-     * Get xattr
+     * 属性信息。
      * @return xattr
      */
     public Binary getXattr() {
@@ -163,12 +163,12 @@ public class KvBlobData {
         KvBlobData that = (KvBlobData) obj;
         return Objects.equals(this.primaryKey, that.primaryKey) && Objects.equals(this.totalBytes, that.totalBytes)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.len, that.len)
-            && Objects.equals(this.blobdata, that.blobdata) && Objects.equals(this.xattr, that.xattr);
+            && Objects.equals(this.blobData, that.blobData) && Objects.equals(this.xattr, that.xattr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(primaryKey, totalBytes, offset, len, blobdata, xattr);
+        return Objects.hash(primaryKey, totalBytes, offset, len, blobData, xattr);
     }
 
     @Override
@@ -179,7 +179,7 @@ public class KvBlobData {
         sb.append("    totalBytes: ").append(toIndentedString(totalBytes)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    len: ").append(toIndentedString(len)).append("\n");
-        sb.append("    blobdata: ").append(toIndentedString(blobdata)).append("\n");
+        sb.append("    blobData: ").append(toIndentedString(blobData)).append("\n");
         sb.append("    xattr: ").append(toIndentedString(xattr)).append("\n");
         sb.append("}");
         return sb.toString();

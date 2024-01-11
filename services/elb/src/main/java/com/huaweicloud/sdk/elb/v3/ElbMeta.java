@@ -2416,6 +2416,13 @@ public class ElbMeta {
             f -> f.withMarshaller(ListMasterSlavePoolsRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
+        builder.<Boolean>withRequestField("connection_drain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getConnectionDrain, (req, v) -> {
+                req.setConnectionDrain(v);
+            }));
 
         // response
 
@@ -2708,6 +2715,13 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getProtectionStatus, (req, v) -> {
                 req.setProtectionStatus(v);
+            }));
+        builder.<Boolean>withRequestField("connection_drain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPoolsRequest::getConnectionDrain, (req, v) -> {
+                req.setConnectionDrain(v);
             }));
 
         // response

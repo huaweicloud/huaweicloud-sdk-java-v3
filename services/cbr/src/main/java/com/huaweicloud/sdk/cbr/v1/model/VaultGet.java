@@ -94,6 +94,11 @@ public class VaultGet {
     private Integer threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_lock_source_service")
+
+    private String sysLockSourceService;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private String updatedAt;
@@ -427,6 +432,23 @@ public class VaultGet {
         this.threshold = threshold;
     }
 
+    public VaultGet withSysLockSourceService(String sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+        return this;
+    }
+
+    /**
+     * 用于标识SMB服务
+     * @return sysLockSourceService
+     */
+    public String getSysLockSourceService() {
+        return sysLockSourceService;
+    }
+
+    public void setSysLockSourceService(String sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+    }
+
     public VaultGet withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -478,8 +500,9 @@ public class VaultGet {
             && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
             && Objects.equals(this.userId, that.userId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
-            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -500,6 +523,7 @@ public class VaultGet {
             autoExpand,
             smnNotify,
             threshold,
+            sysLockSourceService,
             updatedAt,
             version);
     }
@@ -524,6 +548,7 @@ public class VaultGet {
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");

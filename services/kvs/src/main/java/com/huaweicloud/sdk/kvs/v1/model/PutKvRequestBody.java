@@ -15,26 +15,26 @@ import java.util.function.Consumer;
 public class PutKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ConditionExpression")
-    @BsonProperty(value = "ConditionExpression")
+    @JsonProperty(value = "condition_expression")
+    @BsonProperty(value = "condition_expression")
 
     private ConditionExpression conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvDoc")
-    @BsonProperty(value = "KvDoc")
+    @JsonProperty(value = "kv_doc")
+    @BsonProperty(value = "kv_doc")
 
     private Document kvDoc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvBlob")
-    @BsonProperty(value = "KvBlob")
+    @JsonProperty(value = "kv_blob")
+    @BsonProperty(value = "kv_blob")
 
     private KvBlob kvBlob;
 
@@ -44,7 +44,7 @@ public class PutKvRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -87,7 +87,7 @@ public class PutKvRequestBody {
     }
 
     /**
-     * Get kvDoc
+     * 用户文档。
      * @return kvDoc
      */
     public Document getKvDoc() {

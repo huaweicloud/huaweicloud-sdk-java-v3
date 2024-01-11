@@ -15,20 +15,20 @@ import java.util.Objects;
 public class KvBlob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Xblob")
-    @BsonProperty(value = "Xblob")
+    @JsonProperty(value = "xblob")
+    @BsonProperty(value = "xblob")
 
     private Binary xblob;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Xattr")
-    @BsonProperty(value = "Xattr")
+    @JsonProperty(value = "xattr")
+    @BsonProperty(value = "xattr")
 
     private Binary xattr;
 
@@ -38,7 +38,7 @@ public class KvBlob {
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。 > 内容字段：主键字段名和值，组合索引多个元素。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -55,7 +55,7 @@ public class KvBlob {
     }
 
     /**
-     * Get xblob
+     * 属性信息，最大_2_kb。
      * @return xblob
      */
     public Binary getXblob() {
@@ -72,7 +72,7 @@ public class KvBlob {
     }
 
     /**
-     * Get xattr
+     * 非结构化数据内容。
      * @return xattr
      */
     public Binary getXattr() {

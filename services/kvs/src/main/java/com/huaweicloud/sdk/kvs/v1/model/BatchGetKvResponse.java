@@ -20,81 +20,82 @@ import java.util.function.Consumer;
 public class BatchGetKvResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Exceptions")
-    @BsonProperty(value = "Exceptions")
+    @JsonProperty(value = "exception_opers")
+    @BsonProperty(value = "exception_opers")
 
-    private List<ExceptItem> exceptions = null;
+    private List<ExceptionOpersOfTable> exceptionOpers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableKvArray")
-    @BsonProperty(value = "TableKvArray")
+    @JsonProperty(value = "returned_kv_items_of_all")
+    @BsonProperty(value = "returned_kv_items_of_all")
 
-    private List<TableBatchItem> tableKvArray = null;
+    private List<ReturnedKvItemsOfTable> returnedKvItemsOfAll = null;
 
-    public BatchGetKvResponse withExceptions(List<ExceptItem> exceptions) {
-        this.exceptions = exceptions;
+    public BatchGetKvResponse withExceptionOpers(List<ExceptionOpersOfTable> exceptionOpers) {
+        this.exceptionOpers = exceptionOpers;
         return this;
     }
 
-    public BatchGetKvResponse addExceptionsItem(ExceptItem exceptionsItem) {
-        if (this.exceptions == null) {
-            this.exceptions = new ArrayList<>();
+    public BatchGetKvResponse addExceptionOpersItem(ExceptionOpersOfTable exceptionOpersItem) {
+        if (this.exceptionOpers == null) {
+            this.exceptionOpers = new ArrayList<>();
         }
-        this.exceptions.add(exceptionsItem);
+        this.exceptionOpers.add(exceptionOpersItem);
         return this;
     }
 
-    public BatchGetKvResponse withExceptions(Consumer<List<ExceptItem>> exceptionsSetter) {
-        if (this.exceptions == null) {
-            this.exceptions = new ArrayList<>();
+    public BatchGetKvResponse withExceptionOpers(Consumer<List<ExceptionOpersOfTable>> exceptionOpersSetter) {
+        if (this.exceptionOpers == null) {
+            this.exceptionOpers = new ArrayList<>();
         }
-        exceptionsSetter.accept(this.exceptions);
+        exceptionOpersSetter.accept(this.exceptionOpers);
         return this;
     }
 
     /**
-     * Get exceptions
-     * @return exceptions
+     * 异常处理的操作，按照table分类组织。
+     * @return exceptionOpers
      */
-    public List<ExceptItem> getExceptions() {
-        return exceptions;
+    public List<ExceptionOpersOfTable> getExceptionOpers() {
+        return exceptionOpers;
     }
 
-    public void setExceptions(List<ExceptItem> exceptions) {
-        this.exceptions = exceptions;
+    public void setExceptionOpers(List<ExceptionOpersOfTable> exceptionOpers) {
+        this.exceptionOpers = exceptionOpers;
     }
 
-    public BatchGetKvResponse withTableKvArray(List<TableBatchItem> tableKvArray) {
-        this.tableKvArray = tableKvArray;
+    public BatchGetKvResponse withReturnedKvItemsOfAll(List<ReturnedKvItemsOfTable> returnedKvItemsOfAll) {
+        this.returnedKvItemsOfAll = returnedKvItemsOfAll;
         return this;
     }
 
-    public BatchGetKvResponse addTableKvArrayItem(TableBatchItem tableKvArrayItem) {
-        if (this.tableKvArray == null) {
-            this.tableKvArray = new ArrayList<>();
+    public BatchGetKvResponse addReturnedKvItemsOfAllItem(ReturnedKvItemsOfTable returnedKvItemsOfAllItem) {
+        if (this.returnedKvItemsOfAll == null) {
+            this.returnedKvItemsOfAll = new ArrayList<>();
         }
-        this.tableKvArray.add(tableKvArrayItem);
+        this.returnedKvItemsOfAll.add(returnedKvItemsOfAllItem);
         return this;
     }
 
-    public BatchGetKvResponse withTableKvArray(Consumer<List<TableBatchItem>> tableKvArraySetter) {
-        if (this.tableKvArray == null) {
-            this.tableKvArray = new ArrayList<>();
+    public BatchGetKvResponse withReturnedKvItemsOfAll(
+        Consumer<List<ReturnedKvItemsOfTable>> returnedKvItemsOfAllSetter) {
+        if (this.returnedKvItemsOfAll == null) {
+            this.returnedKvItemsOfAll = new ArrayList<>();
         }
-        tableKvArraySetter.accept(this.tableKvArray);
+        returnedKvItemsOfAllSetter.accept(this.returnedKvItemsOfAll);
         return this;
     }
 
     /**
-     * Get tableKvArray
-     * @return tableKvArray
+     * 返回的kvdoc列表，按照table分类组织。
+     * @return returnedKvItemsOfAll
      */
-    public List<TableBatchItem> getTableKvArray() {
-        return tableKvArray;
+    public List<ReturnedKvItemsOfTable> getReturnedKvItemsOfAll() {
+        return returnedKvItemsOfAll;
     }
 
-    public void setTableKvArray(List<TableBatchItem> tableKvArray) {
-        this.tableKvArray = tableKvArray;
+    public void setReturnedKvItemsOfAll(List<ReturnedKvItemsOfTable> returnedKvItemsOfAll) {
+        this.returnedKvItemsOfAll = returnedKvItemsOfAll;
     }
 
     @Override
@@ -106,20 +107,21 @@ public class BatchGetKvResponse extends SdkBsonDocResponse {
             return false;
         }
         BatchGetKvResponse that = (BatchGetKvResponse) obj;
-        return Objects.equals(this.exceptions, that.exceptions) && Objects.equals(this.tableKvArray, that.tableKvArray);
+        return Objects.equals(this.exceptionOpers, that.exceptionOpers)
+            && Objects.equals(this.returnedKvItemsOfAll, that.returnedKvItemsOfAll);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(exceptions, tableKvArray);
+        return Objects.hash(exceptionOpers, returnedKvItemsOfAll);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchGetKvResponse {\n");
-        sb.append("    exceptions: ").append(toIndentedString(exceptions)).append("\n");
-        sb.append("    tableKvArray: ").append(toIndentedString(tableKvArray)).append("\n");
+        sb.append("    exceptionOpers: ").append(toIndentedString(exceptionOpers)).append("\n");
+        sb.append("    returnedKvItemsOfAll: ").append(toIndentedString(returnedKvItemsOfAll)).append("\n");
         sb.append("}");
         return sb.toString();
     }

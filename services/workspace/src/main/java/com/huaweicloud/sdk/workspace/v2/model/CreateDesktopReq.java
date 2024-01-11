@@ -168,6 +168,11 @@ public class CreateDesktopReq {
 
     private Eip eip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_name_policy_id")
+
+    private String desktopNamePolicyId;
+
     public CreateDesktopReq withDesktopType(DesktopTypeEnum desktopType) {
         this.desktopType = desktopType;
         return this;
@@ -540,6 +545,23 @@ public class CreateDesktopReq {
         this.eip = eip;
     }
 
+    public CreateDesktopReq withDesktopNamePolicyId(String desktopNamePolicyId) {
+        this.desktopNamePolicyId = desktopNamePolicyId;
+        return this;
+    }
+
+    /**
+     * 策略id，用于指定生成桌面名称策略，如果指定了桌面名称则优先使用指定的桌面名称。
+     * @return desktopNamePolicyId
+     */
+    public String getDesktopNamePolicyId() {
+        return desktopNamePolicyId;
+    }
+
+    public void setDesktopNamePolicyId(String desktopNamePolicyId) {
+        this.desktopNamePolicyId = desktopNamePolicyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -558,7 +580,8 @@ public class CreateDesktopReq {
             && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.size, that.size)
             && Objects.equals(this.emailNotification, that.emailNotification)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.eip, that.eip);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.eip, that.eip)
+            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
     }
 
     @Override
@@ -578,7 +601,8 @@ public class CreateDesktopReq {
             emailNotification,
             enterpriseProjectId,
             tags,
-            eip);
+            eip,
+            desktopNamePolicyId);
     }
 
     @Override
@@ -601,6 +625,7 @@ public class CreateDesktopReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
+        sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

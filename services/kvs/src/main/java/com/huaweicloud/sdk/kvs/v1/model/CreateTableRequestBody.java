@@ -16,38 +16,32 @@ import java.util.function.Consumer;
 public class CreateTableRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Temporary")
-    @BsonProperty(value = "Temporary")
-
-    private Boolean temporary;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKeySchema")
-    @BsonProperty(value = "PrimaryKeySchema")
+    @JsonProperty(value = "primary_key_schema")
+    @BsonProperty(value = "primary_key_schema")
 
     private PrimaryKeySchema primaryKeySchema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Local2ndIndexSchema")
-    @BsonProperty(value = "Local2ndIndexSchema")
+    @JsonProperty(value = "local_secondary_index_schema")
+    @BsonProperty(value = "local_secondary_index_schema")
 
-    private List<LsiIndex> local2ndIndexSchema = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Global2ndIndexSchema")
-    @BsonProperty(value = "Global2ndIndexSchema")
-
-    private List<GsiIndex> global2ndIndexSchema = null;
+    private List<SecondaryIndex> localSecondaryIndexSchema = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PreSplitKeyOptions")
-    @BsonProperty(value = "PreSplitKeyOptions")
+    @JsonProperty(value = "global_secondary_index_schema")
+    @BsonProperty(value = "global_secondary_index_schema")
+
+    private List<GlobalSecondaryIndex> globalSecondaryIndexSchema = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_split_key_options")
+    @BsonProperty(value = "pre_split_key_options")
 
     private PreSplitKeyOptions preSplitKeyOptions;
 
@@ -57,7 +51,7 @@ public class CreateTableRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。
      * @return tableName
      */
     public String getTableName() {
@@ -66,23 +60,6 @@ public class CreateTableRequestBody {
 
     public void setTableName(String tableName) {
         this.tableName = tableName;
-    }
-
-    public CreateTableRequestBody withTemporary(Boolean temporary) {
-        this.temporary = temporary;
-        return this;
-    }
-
-    /**
-     * Get temporary
-     * @return temporary
-     */
-    public Boolean getTemporary() {
-        return temporary;
-    }
-
-    public void setTemporary(Boolean temporary) {
-        this.temporary = temporary;
     }
 
     public CreateTableRequestBody withPrimaryKeySchema(PrimaryKeySchema primaryKeySchema) {
@@ -111,70 +88,74 @@ public class CreateTableRequestBody {
         this.primaryKeySchema = primaryKeySchema;
     }
 
-    public CreateTableRequestBody withLocal2ndIndexSchema(List<LsiIndex> local2ndIndexSchema) {
-        this.local2ndIndexSchema = local2ndIndexSchema;
+    public CreateTableRequestBody withLocalSecondaryIndexSchema(List<SecondaryIndex> localSecondaryIndexSchema) {
+        this.localSecondaryIndexSchema = localSecondaryIndexSchema;
         return this;
     }
 
-    public CreateTableRequestBody addLocal2ndIndexSchemaItem(LsiIndex local2ndIndexSchemaItem) {
-        if (this.local2ndIndexSchema == null) {
-            this.local2ndIndexSchema = new ArrayList<>();
+    public CreateTableRequestBody addLocalSecondaryIndexSchemaItem(SecondaryIndex localSecondaryIndexSchemaItem) {
+        if (this.localSecondaryIndexSchema == null) {
+            this.localSecondaryIndexSchema = new ArrayList<>();
         }
-        this.local2ndIndexSchema.add(local2ndIndexSchemaItem);
+        this.localSecondaryIndexSchema.add(localSecondaryIndexSchemaItem);
         return this;
     }
 
-    public CreateTableRequestBody withLocal2ndIndexSchema(Consumer<List<LsiIndex>> local2ndIndexSchemaSetter) {
-        if (this.local2ndIndexSchema == null) {
-            this.local2ndIndexSchema = new ArrayList<>();
+    public CreateTableRequestBody withLocalSecondaryIndexSchema(
+        Consumer<List<SecondaryIndex>> localSecondaryIndexSchemaSetter) {
+        if (this.localSecondaryIndexSchema == null) {
+            this.localSecondaryIndexSchema = new ArrayList<>();
         }
-        local2ndIndexSchemaSetter.accept(this.local2ndIndexSchema);
+        localSecondaryIndexSchemaSetter.accept(this.localSecondaryIndexSchema);
         return this;
     }
 
     /**
-     * Get local2ndIndexSchema
-     * @return local2ndIndexSchema
+     * 本地二级索引模板，可以多个。
+     * @return localSecondaryIndexSchema
      */
-    public List<LsiIndex> getLocal2ndIndexSchema() {
-        return local2ndIndexSchema;
+    public List<SecondaryIndex> getLocalSecondaryIndexSchema() {
+        return localSecondaryIndexSchema;
     }
 
-    public void setLocal2ndIndexSchema(List<LsiIndex> local2ndIndexSchema) {
-        this.local2ndIndexSchema = local2ndIndexSchema;
+    public void setLocalSecondaryIndexSchema(List<SecondaryIndex> localSecondaryIndexSchema) {
+        this.localSecondaryIndexSchema = localSecondaryIndexSchema;
     }
 
-    public CreateTableRequestBody withGlobal2ndIndexSchema(List<GsiIndex> global2ndIndexSchema) {
-        this.global2ndIndexSchema = global2ndIndexSchema;
+    public CreateTableRequestBody withGlobalSecondaryIndexSchema(
+        List<GlobalSecondaryIndex> globalSecondaryIndexSchema) {
+        this.globalSecondaryIndexSchema = globalSecondaryIndexSchema;
         return this;
     }
 
-    public CreateTableRequestBody addGlobal2ndIndexSchemaItem(GsiIndex global2ndIndexSchemaItem) {
-        if (this.global2ndIndexSchema == null) {
-            this.global2ndIndexSchema = new ArrayList<>();
+    public CreateTableRequestBody addGlobalSecondaryIndexSchemaItem(
+        GlobalSecondaryIndex globalSecondaryIndexSchemaItem) {
+        if (this.globalSecondaryIndexSchema == null) {
+            this.globalSecondaryIndexSchema = new ArrayList<>();
         }
-        this.global2ndIndexSchema.add(global2ndIndexSchemaItem);
+        this.globalSecondaryIndexSchema.add(globalSecondaryIndexSchemaItem);
         return this;
     }
 
-    public CreateTableRequestBody withGlobal2ndIndexSchema(Consumer<List<GsiIndex>> global2ndIndexSchemaSetter) {
-        if (this.global2ndIndexSchema == null) {
-            this.global2ndIndexSchema = new ArrayList<>();
+    public CreateTableRequestBody withGlobalSecondaryIndexSchema(
+        Consumer<List<GlobalSecondaryIndex>> globalSecondaryIndexSchemaSetter) {
+        if (this.globalSecondaryIndexSchema == null) {
+            this.globalSecondaryIndexSchema = new ArrayList<>();
         }
-        global2ndIndexSchemaSetter.accept(this.global2ndIndexSchema);
+        globalSecondaryIndexSchemaSetter.accept(this.globalSecondaryIndexSchema);
         return this;
     }
 
     /**
-     * Get global2ndIndexSchema
-     * @return global2ndIndexSchema
+     * 全局二级索引模板。
+     * @return globalSecondaryIndexSchema
      */
-    public List<GsiIndex> getGlobal2ndIndexSchema() {
-        return global2ndIndexSchema;
+    public List<GlobalSecondaryIndex> getGlobalSecondaryIndexSchema() {
+        return globalSecondaryIndexSchema;
     }
 
-    public void setGlobal2ndIndexSchema(List<GsiIndex> global2ndIndexSchema) {
-        this.global2ndIndexSchema = global2ndIndexSchema;
+    public void setGlobalSecondaryIndexSchema(List<GlobalSecondaryIndex> globalSecondaryIndexSchema) {
+        this.globalSecondaryIndexSchema = globalSecondaryIndexSchema;
     }
 
     public CreateTableRequestBody withPreSplitKeyOptions(PreSplitKeyOptions preSplitKeyOptions) {
@@ -212,20 +193,19 @@ public class CreateTableRequestBody {
             return false;
         }
         CreateTableRequestBody that = (CreateTableRequestBody) obj;
-        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.temporary, that.temporary)
+        return Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.primaryKeySchema, that.primaryKeySchema)
-            && Objects.equals(this.local2ndIndexSchema, that.local2ndIndexSchema)
-            && Objects.equals(this.global2ndIndexSchema, that.global2ndIndexSchema)
+            && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
+            && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
             && Objects.equals(this.preSplitKeyOptions, that.preSplitKeyOptions);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(tableName,
-            temporary,
             primaryKeySchema,
-            local2ndIndexSchema,
-            global2ndIndexSchema,
+            localSecondaryIndexSchema,
+            globalSecondaryIndexSchema,
             preSplitKeyOptions);
     }
 
@@ -234,10 +214,9 @@ public class CreateTableRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTableRequestBody {\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
-        sb.append("    temporary: ").append(toIndentedString(temporary)).append("\n");
         sb.append("    primaryKeySchema: ").append(toIndentedString(primaryKeySchema)).append("\n");
-        sb.append("    local2ndIndexSchema: ").append(toIndentedString(local2ndIndexSchema)).append("\n");
-        sb.append("    global2ndIndexSchema: ").append(toIndentedString(global2ndIndexSchema)).append("\n");
+        sb.append("    localSecondaryIndexSchema: ").append(toIndentedString(localSecondaryIndexSchema)).append("\n");
+        sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");
         sb.append("    preSplitKeyOptions: ").append(toIndentedString(preSplitKeyOptions)).append("\n");
         sb.append("}");
         return sb.toString();

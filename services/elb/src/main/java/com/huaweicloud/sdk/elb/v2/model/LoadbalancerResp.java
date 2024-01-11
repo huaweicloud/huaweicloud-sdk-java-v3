@@ -272,6 +272,21 @@ public class LoadbalancerResp {
 
     private List<String> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicips")
+
+    private List<PublicIpInfo> publicips = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_mode")
+
+    private String chargeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frozen_scene")
+
+    private String frozenScene;
+
     public LoadbalancerResp withId(String id) {
         this.id = id;
         return this;
@@ -626,6 +641,73 @@ public class LoadbalancerResp {
         this.tags = tags;
     }
 
+    public LoadbalancerResp withPublicips(List<PublicIpInfo> publicips) {
+        this.publicips = publicips;
+        return this;
+    }
+
+    public LoadbalancerResp addPublicipsItem(PublicIpInfo publicipsItem) {
+        if (this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
+        this.publicips.add(publicipsItem);
+        return this;
+    }
+
+    public LoadbalancerResp withPublicips(Consumer<List<PublicIpInfo>> publicipsSetter) {
+        if (this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
+        publicipsSetter.accept(this.publicips);
+        return this;
+    }
+
+    /**
+     * 负载均衡器绑定的公网IP。只支持绑定一个公网IP。
+     * @return publicips
+     */
+    public List<PublicIpInfo> getPublicips() {
+        return publicips;
+    }
+
+    public void setPublicips(List<PublicIpInfo> publicips) {
+        this.publicips = publicips;
+    }
+
+    public LoadbalancerResp withChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    /**
+     * 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：不影响弹性扩缩容实例、包周期实例的计费方式
+     * @return chargeMode
+     */
+    public String getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
+    public LoadbalancerResp withFrozenScene(String frozenScene) {
+        this.frozenScene = frozenScene;
+        return this;
+    }
+
+    /**
+     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值：  POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 AREAR：欠费冻结场景。
+     * @return frozenScene
+     */
+    public String getFrozenScene() {
+        return frozenScene;
+    }
+
+    public void setFrozenScene(String frozenScene) {
+        this.frozenScene = frozenScene;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -645,7 +727,9 @@ public class LoadbalancerResp {
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.publicips, that.publicips) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.frozenScene, that.frozenScene);
     }
 
     @Override
@@ -667,7 +751,10 @@ public class LoadbalancerResp {
             updatedAt,
             enterpriseProjectId,
             projectId,
-            tags);
+            tags,
+            publicips,
+            chargeMode,
+            frozenScene);
     }
 
     @Override
@@ -692,6 +779,9 @@ public class LoadbalancerResp {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    frozenScene: ").append(toIndentedString(frozenScene)).append("\n");
         sb.append("}");
         return sb.toString();
     }

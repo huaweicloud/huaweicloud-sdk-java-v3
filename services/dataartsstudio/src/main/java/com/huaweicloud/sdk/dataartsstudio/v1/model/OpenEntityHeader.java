@@ -21,7 +21,7 @@ public class OpenEntityHeader {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection")
 
-    private List<Connection> connection = null;
+    private Connection connection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_text")
@@ -65,36 +65,29 @@ public class OpenEntityHeader {
         this.attributes = attributes;
     }
 
-    public OpenEntityHeader withConnection(List<Connection> connection) {
+    public OpenEntityHeader withConnection(Connection connection) {
         this.connection = connection;
         return this;
     }
 
-    public OpenEntityHeader addConnectionItem(Connection connectionItem) {
+    public OpenEntityHeader withConnection(Consumer<Connection> connectionSetter) {
         if (this.connection == null) {
-            this.connection = new ArrayList<>();
+            this.connection = new Connection();
+            connectionSetter.accept(this.connection);
         }
-        this.connection.add(connectionItem);
-        return this;
-    }
 
-    public OpenEntityHeader withConnection(Consumer<List<Connection>> connectionSetter) {
-        if (this.connection == null) {
-            this.connection = new ArrayList<>();
-        }
-        connectionSetter.accept(this.connection);
         return this;
     }
 
     /**
-     * 数据连接
+     * Get connection
      * @return connection
      */
-    public List<Connection> getConnection() {
+    public Connection getConnection() {
         return connection;
     }
 
-    public void setConnection(List<Connection> connection) {
+    public void setConnection(Connection connection) {
         this.connection = connection;
     }
 

@@ -161,6 +161,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
@@ -171,6 +177,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllStandardsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllStandardsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllTablesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiTopNRequest;
@@ -2697,6 +2705,94 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 导入主题
+     *
+     * 用于导入主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportCatalogsRequest 请求对象
+     * @return ImportCatalogsResponse
+     */
+    public ImportCatalogsResponse importCatalogs(ImportCatalogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.importCatalogs);
+    }
+
+    /**
+     * 导入主题
+     *
+     * 用于导入主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportCatalogsRequest 请求对象
+     * @return SyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse>
+     */
+    public SyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse> importCatalogsInvoker(
+        ImportCatalogsRequest request) {
+        return new SyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse>(request,
+            DataArtsStudioMeta.importCatalogs, hcClient);
+    }
+
+    /**
+     * 血缘导入
+     *
+     * 血缘查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportLineageRequest 请求对象
+     * @return ImportLineageResponse
+     */
+    public ImportLineageResponse importLineage(ImportLineageRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.importLineage);
+    }
+
+    /**
+     * 血缘导入
+     *
+     * 血缘查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportLineageRequest 请求对象
+     * @return SyncInvoker<ImportLineageRequest, ImportLineageResponse>
+     */
+    public SyncInvoker<ImportLineageRequest, ImportLineageResponse> importLineageInvoker(ImportLineageRequest request) {
+        return new SyncInvoker<ImportLineageRequest, ImportLineageResponse>(request, DataArtsStudioMeta.importLineage,
+            hcClient);
+    }
+
+    /**
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     *
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportModelsRequest 请求对象
+     * @return ImportModelsResponse
+     */
+    public ImportModelsResponse importModels(ImportModelsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.importModels);
+    }
+
+    /**
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     *
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportModelsRequest 请求对象
+     * @return SyncInvoker<ImportModelsRequest, ImportModelsResponse>
+     */
+    public SyncInvoker<ImportModelsRequest, ImportModelsResponse> importModelsInvoker(ImportModelsRequest request) {
+        return new SyncInvoker<ImportModelsRequest, ImportModelsResponse>(request, DataArtsStudioMeta.importModels,
+            hcClient);
+    }
+
+    /**
      * 查询导入结果
      *
      * 查询导入excel的处理结果
@@ -2843,6 +2939,35 @@ public class DataArtsStudioClient {
         ListAllStandardsRequest request) {
         return new SyncInvoker<ListAllStandardsRequest, ListAllStandardsResponse>(request,
             DataArtsStudioMeta.listAllStandards, hcClient);
+    }
+
+    /**
+     * 查询多种类型的表信息
+     *
+     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllTablesRequest 请求对象
+     * @return ListAllTablesResponse
+     */
+    public ListAllTablesResponse listAllTables(ListAllTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listAllTables);
+    }
+
+    /**
+     * 查询多种类型的表信息
+     *
+     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllTablesRequest 请求对象
+     * @return SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>
+     */
+    public SyncInvoker<ListAllTablesRequest, ListAllTablesResponse> listAllTablesInvoker(ListAllTablesRequest request) {
+        return new SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>(request, DataArtsStudioMeta.listAllTables,
+            hcClient);
     }
 
     /**

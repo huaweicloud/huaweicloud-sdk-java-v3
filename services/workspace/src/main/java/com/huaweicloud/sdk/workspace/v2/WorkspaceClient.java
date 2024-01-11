@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
@@ -43,6 +45,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
@@ -77,6 +81,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -139,6 +145,8 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequest;
@@ -849,6 +857,127 @@ public class WorkspaceClient {
         ShowDesktopNetworkRequest request) {
         return new SyncInvoker<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse>(request,
             WorkspaceMeta.showDesktopNetwork, hcClient);
+    }
+
+    /**
+     * 批量删除桌面名称策略
+     *
+     * 批量删除桌面名称策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteDesktopNamePolicyRequest 请求对象
+     * @return BatchDeleteDesktopNamePolicyResponse
+     */
+    public BatchDeleteDesktopNamePolicyResponse batchDeleteDesktopNamePolicy(
+        BatchDeleteDesktopNamePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchDeleteDesktopNamePolicy);
+    }
+
+    /**
+     * 批量删除桌面名称策略
+     *
+     * 批量删除桌面名称策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteDesktopNamePolicyRequest 请求对象
+     * @return SyncInvoker<BatchDeleteDesktopNamePolicyRequest, BatchDeleteDesktopNamePolicyResponse>
+     */
+    public SyncInvoker<BatchDeleteDesktopNamePolicyRequest, BatchDeleteDesktopNamePolicyResponse> batchDeleteDesktopNamePolicyInvoker(
+        BatchDeleteDesktopNamePolicyRequest request) {
+        return new SyncInvoker<BatchDeleteDesktopNamePolicyRequest, BatchDeleteDesktopNamePolicyResponse>(request,
+            WorkspaceMeta.batchDeleteDesktopNamePolicy, hcClient);
+    }
+
+    /**
+     * 创建桌面名称策略
+     *
+     * 创建桌面名称策略，用于自动生成桌面名称，最多允许50个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDesktopNamePolicyRequest 请求对象
+     * @return CreateDesktopNamePolicyResponse
+     */
+    public CreateDesktopNamePolicyResponse createDesktopNamePolicy(CreateDesktopNamePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.createDesktopNamePolicy);
+    }
+
+    /**
+     * 创建桌面名称策略
+     *
+     * 创建桌面名称策略，用于自动生成桌面名称，最多允许50个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDesktopNamePolicyRequest 请求对象
+     * @return SyncInvoker<CreateDesktopNamePolicyRequest, CreateDesktopNamePolicyResponse>
+     */
+    public SyncInvoker<CreateDesktopNamePolicyRequest, CreateDesktopNamePolicyResponse> createDesktopNamePolicyInvoker(
+        CreateDesktopNamePolicyRequest request) {
+        return new SyncInvoker<CreateDesktopNamePolicyRequest, CreateDesktopNamePolicyResponse>(request,
+            WorkspaceMeta.createDesktopNamePolicy, hcClient);
+    }
+
+    /**
+     * 获取桌面名称策略
+     *
+     * 获取桌面名称策略，用于自动生成桌面名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopNamePolicyRequest 请求对象
+     * @return ListDesktopNamePolicyResponse
+     */
+    public ListDesktopNamePolicyResponse listDesktopNamePolicy(ListDesktopNamePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listDesktopNamePolicy);
+    }
+
+    /**
+     * 获取桌面名称策略
+     *
+     * 获取桌面名称策略，用于自动生成桌面名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopNamePolicyRequest 请求对象
+     * @return SyncInvoker<ListDesktopNamePolicyRequest, ListDesktopNamePolicyResponse>
+     */
+    public SyncInvoker<ListDesktopNamePolicyRequest, ListDesktopNamePolicyResponse> listDesktopNamePolicyInvoker(
+        ListDesktopNamePolicyRequest request) {
+        return new SyncInvoker<ListDesktopNamePolicyRequest, ListDesktopNamePolicyResponse>(request,
+            WorkspaceMeta.listDesktopNamePolicy, hcClient);
+    }
+
+    /**
+     * 更新桌面名称策略
+     *
+     * 更新桌面名称策略，用于自动生成桌面名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDesktopNamePolicyRequest 请求对象
+     * @return UpdateDesktopNamePolicyResponse
+     */
+    public UpdateDesktopNamePolicyResponse updateDesktopNamePolicy(UpdateDesktopNamePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateDesktopNamePolicy);
+    }
+
+    /**
+     * 更新桌面名称策略
+     *
+     * 更新桌面名称策略，用于自动生成桌面名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDesktopNamePolicyRequest 请求对象
+     * @return SyncInvoker<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse>
+     */
+    public SyncInvoker<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse> updateDesktopNamePolicyInvoker(
+        UpdateDesktopNamePolicyRequest request) {
+        return new SyncInvoker<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse>(request,
+            WorkspaceMeta.updateDesktopNamePolicy, hcClient);
     }
 
     /**

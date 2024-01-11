@@ -377,7 +377,7 @@ public class ListJobsRequest {
     private StatusEnum status;
 
     /**
-     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。
+     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
      */
     public static final class EngineTypeEnum {
 
@@ -386,11 +386,24 @@ public class ListJobsRequest {
          */
         public static final EngineTypeEnum ORACLE_TO_GAUSSDBV5 = new EngineTypeEnum("oracle-to-gaussdbv5");
 
+        /**
+         * Enum REDIS_TO_GAUSSREDIS for value: "redis-to-gaussredis"
+         */
+        public static final EngineTypeEnum REDIS_TO_GAUSSREDIS = new EngineTypeEnum("redis-to-gaussredis");
+
+        /**
+         * Enum REDISCLUSTER_TO_GAUSSREDIS for value: "rediscluster-to-gaussredis"
+         */
+        public static final EngineTypeEnum REDISCLUSTER_TO_GAUSSREDIS =
+            new EngineTypeEnum("rediscluster-to-gaussredis");
+
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
             Map<String, EngineTypeEnum> map = new HashMap<>();
             map.put("oracle-to-gaussdbv5", ORACLE_TO_GAUSSDBV5);
+            map.put("redis-to-gaussredis", REDIS_TO_GAUSSREDIS);
+            map.put("rediscluster-to-gaussredis", REDISCLUSTER_TO_GAUSSREDIS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -637,7 +650,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。
+     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {

@@ -15,14 +15,14 @@ import java.util.Objects;
 public class KvBlobAttr {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Xattr")
-    @BsonProperty(value = "Xattr")
+    @JsonProperty(value = "xattr")
+    @BsonProperty(value = "xattr")
 
     private Binary xattr;
 
@@ -32,7 +32,7 @@ public class KvBlobAttr {
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -49,7 +49,7 @@ public class KvBlobAttr {
     }
 
     /**
-     * Get xattr
+     * 属性信息。
      * @return xattr
      */
     public Binary getXattr() {

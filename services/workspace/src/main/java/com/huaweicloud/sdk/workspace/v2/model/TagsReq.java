@@ -100,7 +100,7 @@ public class TagsReq {
     }
 
     /**
-     * 标签对象
+     * 标签对象（已废弃）
      * @return sysTags
      */
     public List<Tag> getSysTags() {

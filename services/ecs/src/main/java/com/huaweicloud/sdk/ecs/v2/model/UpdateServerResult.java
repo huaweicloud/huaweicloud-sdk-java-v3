@@ -116,6 +116,11 @@ public class UpdateServerResult {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:user_data")
+
+    private String osEXTSRVATTRUserData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-SRV-ATTR:hostname")
 
     private String osEXTSRVATTRHostname;
@@ -533,6 +538,23 @@ public class UpdateServerResult {
         this.status = status;
     }
 
+    public UpdateServerResult withOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
+        this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
+        return this;
+    }
+
+    /**
+     * 创建弹性云服务器时指定的user_data（编码过后的信息）。
+     * @return osEXTSRVATTRUserData
+     */
+    public String getOsEXTSRVATTRUserData() {
+        return osEXTSRVATTRUserData;
+    }
+
+    public void setOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
+        this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
+    }
+
     public UpdateServerResult withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
@@ -569,6 +591,7 @@ public class UpdateServerResult {
             && Objects.equals(this.id, that.id) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.locked, that.locked) && Objects.equals(this.description, that.description)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.osEXTSRVATTRUserData, that.osEXTSRVATTRUserData)
             && Objects.equals(this.osEXTSRVATTRHostname, that.osEXTSRVATTRHostname);
     }
 
@@ -594,6 +617,7 @@ public class UpdateServerResult {
             description,
             tags,
             status,
+            osEXTSRVATTRUserData,
             osEXTSRVATTRHostname);
     }
 
@@ -621,6 +645,7 @@ public class UpdateServerResult {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
         sb.append("    osEXTSRVATTRHostname: ").append(toIndentedString(osEXTSRVATTRHostname)).append("\n");
         sb.append("}");
         return sb.toString();

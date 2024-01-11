@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ec.v1.model.AddEcnWithErRequest;
 import com.huaweicloud.sdk.ec.v1.model.AddEcnWithErResponse;
 import com.huaweicloud.sdk.ec.v1.model.AddEcnWithIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.AddEcnWithIegResponse;
+import com.huaweicloud.sdk.ec.v1.model.AddEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.AddEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.AddVrrpConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.AddVrrpConfigResponse;
 import com.huaweicloud.sdk.ec.v1.model.ChangeIegPasswordRequest;
@@ -25,6 +27,8 @@ import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithErRequest;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithErResponse;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithIegResponse;
+import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.DeleteEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEquipmentLanConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEquipmentLanConfigResponse;
 import com.huaweicloud.sdk.ec.v1.model.DeleteEquipmentRequest;
@@ -43,6 +47,8 @@ import com.huaweicloud.sdk.ec.v1.model.ListEcnWithErRequest;
 import com.huaweicloud.sdk.ec.v1.model.ListEcnWithErResponse;
 import com.huaweicloud.sdk.ec.v1.model.ListEcnWithIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.ListEcnWithIegResponse;
+import com.huaweicloud.sdk.ec.v1.model.ListEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.ListEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.ListEquipmentInterfaceNameRequest;
 import com.huaweicloud.sdk.ec.v1.model.ListEquipmentInterfaceNameResponse;
 import com.huaweicloud.sdk.ec.v1.model.ListEquipmentsRequest;
@@ -83,6 +89,8 @@ import com.huaweicloud.sdk.ec.v1.model.UpdateEcnAccessPointRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEcnAccessPointResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEcnRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEcnResponse;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEcnWithVpcRequest;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEcnWithVpcResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentDnsInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentDnsInfoResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentEsnRequest;
@@ -1501,6 +1509,125 @@ public class EcAsyncClient {
     public AsyncInvoker<ShowQuotasInfoRequest, ShowQuotasInfoResponse> showQuotasInfoAsyncInvoker(
         ShowQuotasInfoRequest request) {
         return new AsyncInvoker<ShowQuotasInfoRequest, ShowQuotasInfoResponse>(request, EcMeta.showQuotasInfo,
+            hcClient);
+    }
+
+    /**
+     * 关联虚拟私有云到企业连接网络
+     *
+     * 关联虚拟私有云到企业连接网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddEcnWithVpcRequest 请求对象
+     * @return CompletableFuture<AddEcnWithVpcResponse>
+     */
+    public CompletableFuture<AddEcnWithVpcResponse> addEcnWithVpcAsync(AddEcnWithVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcMeta.addEcnWithVpc);
+    }
+
+    /**
+     * 关联虚拟私有云到企业连接网络
+     *
+     * 关联虚拟私有云到企业连接网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddEcnWithVpcRequest 请求对象
+     * @return AsyncInvoker<AddEcnWithVpcRequest, AddEcnWithVpcResponse>
+     */
+    public AsyncInvoker<AddEcnWithVpcRequest, AddEcnWithVpcResponse> addEcnWithVpcAsyncInvoker(
+        AddEcnWithVpcRequest request) {
+        return new AsyncInvoker<AddEcnWithVpcRequest, AddEcnWithVpcResponse>(request, EcMeta.addEcnWithVpc, hcClient);
+    }
+
+    /**
+     * 解除虚拟私有云和企业连接网络的关联
+     *
+     * 解除虚拟私有云和企业连接网络的关联
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEcnWithVpcRequest 请求对象
+     * @return CompletableFuture<DeleteEcnWithVpcResponse>
+     */
+    public CompletableFuture<DeleteEcnWithVpcResponse> deleteEcnWithVpcAsync(DeleteEcnWithVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcMeta.deleteEcnWithVpc);
+    }
+
+    /**
+     * 解除虚拟私有云和企业连接网络的关联
+     *
+     * 解除虚拟私有云和企业连接网络的关联
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEcnWithVpcRequest 请求对象
+     * @return AsyncInvoker<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse>
+     */
+    public AsyncInvoker<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> deleteEcnWithVpcAsyncInvoker(
+        DeleteEcnWithVpcRequest request) {
+        return new AsyncInvoker<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse>(request, EcMeta.deleteEcnWithVpc,
+            hcClient);
+    }
+
+    /**
+     * 查询企业连接网络与虚拟私有云关联关系
+     *
+     * 根据企业连接网络ID，查询企业连接网络与虚拟私有云关联关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEcnWithVpcRequest 请求对象
+     * @return CompletableFuture<ListEcnWithVpcResponse>
+     */
+    public CompletableFuture<ListEcnWithVpcResponse> listEcnWithVpcAsync(ListEcnWithVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcMeta.listEcnWithVpc);
+    }
+
+    /**
+     * 查询企业连接网络与虚拟私有云关联关系
+     *
+     * 根据企业连接网络ID，查询企业连接网络与虚拟私有云关联关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEcnWithVpcRequest 请求对象
+     * @return AsyncInvoker<ListEcnWithVpcRequest, ListEcnWithVpcResponse>
+     */
+    public AsyncInvoker<ListEcnWithVpcRequest, ListEcnWithVpcResponse> listEcnWithVpcAsyncInvoker(
+        ListEcnWithVpcRequest request) {
+        return new AsyncInvoker<ListEcnWithVpcRequest, ListEcnWithVpcResponse>(request, EcMeta.listEcnWithVpc,
+            hcClient);
+    }
+
+    /**
+     * 更新虚拟私有云和企业连接网络的关联
+     *
+     * 更新虚拟私有云和企业连接网络的关联
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEcnWithVpcRequest 请求对象
+     * @return CompletableFuture<UpdateEcnWithVpcResponse>
+     */
+    public CompletableFuture<UpdateEcnWithVpcResponse> updateEcnWithVpcAsync(UpdateEcnWithVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcMeta.updateEcnWithVpc);
+    }
+
+    /**
+     * 更新虚拟私有云和企业连接网络的关联
+     *
+     * 更新虚拟私有云和企业连接网络的关联
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEcnWithVpcRequest 请求对象
+     * @return AsyncInvoker<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse>
+     */
+    public AsyncInvoker<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> updateEcnWithVpcAsyncInvoker(
+        UpdateEcnWithVpcRequest request) {
+        return new AsyncInvoker<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse>(request, EcMeta.updateEcnWithVpc,
             hcClient);
     }
 

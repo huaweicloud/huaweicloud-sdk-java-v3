@@ -19,14 +19,14 @@ import java.util.function.Consumer;
 public class DeleteKvResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvBlobData")
-    @BsonProperty(value = "KvBlobData")
+    @JsonProperty(value = "kv_blob_data")
+    @BsonProperty(value = "kv_blob_data")
 
     private KvBlobData kvBlobData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvDoc")
-    @BsonProperty(value = "KvDoc")
+    @JsonProperty(value = "kv_doc")
+    @BsonProperty(value = "kv_doc")
 
     private Document kvDoc;
 
@@ -62,7 +62,7 @@ public class DeleteKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get kvDoc
+     * 对kv_doc有效。
      * @return kvDoc
      */
     public Document getKvDoc() {

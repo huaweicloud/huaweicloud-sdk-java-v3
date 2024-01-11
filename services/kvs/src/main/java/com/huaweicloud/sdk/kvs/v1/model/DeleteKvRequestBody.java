@@ -17,40 +17,34 @@ import java.util.function.Consumer;
 public class DeleteKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ConditionExpression")
-    @BsonProperty(value = "ConditionExpression")
+    @JsonProperty(value = "condition_expression")
+    @BsonProperty(value = "condition_expression")
 
     private ConditionExpression conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ExpressionVarDefine")
-    @BsonProperty(value = "ExpressionVarDefine")
-
-    private Document expressionVarDefine;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ProjectionFields")
-    @BsonProperty(value = "ProjectionFields")
+    @JsonProperty(value = "projection_fields")
+    @BsonProperty(value = "projection_fields")
 
     private List<String> projectionFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnPartialBlob")
-    @BsonProperty(value = "ReturnPartialBlob")
+    @JsonProperty(value = "projection_blob")
+    @BsonProperty(value = "projection_blob")
 
-    private ReturnPartialBlob returnPartialBlob;
+    private ProjectionBlob projectionBlob;
 
     public DeleteKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -58,7 +52,7 @@ public class DeleteKvRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -75,7 +69,7 @@ public class DeleteKvRequestBody {
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。 > 内容字段为主键字段名和值，组合索引多个元素。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -112,23 +106,6 @@ public class DeleteKvRequestBody {
         this.conditionExpression = conditionExpression;
     }
 
-    public DeleteKvRequestBody withExpressionVarDefine(Document expressionVarDefine) {
-        this.expressionVarDefine = expressionVarDefine;
-        return this;
-    }
-
-    /**
-     * Get expressionVarDefine
-     * @return expressionVarDefine
-     */
-    public Document getExpressionVarDefine() {
-        return expressionVarDefine;
-    }
-
-    public void setExpressionVarDefine(Document expressionVarDefine) {
-        this.expressionVarDefine = expressionVarDefine;
-    }
-
     public DeleteKvRequestBody withProjectionFields(List<String> projectionFields) {
         this.projectionFields = projectionFields;
         return this;
@@ -151,7 +128,7 @@ public class DeleteKvRequestBody {
     }
 
     /**
-     * Get projectionFields
+     * 对kv_doc有效，返回哪些字段列表，默认全部。
      * @return projectionFields
      */
     public List<String> getProjectionFields() {
@@ -162,30 +139,30 @@ public class DeleteKvRequestBody {
         this.projectionFields = projectionFields;
     }
 
-    public DeleteKvRequestBody withReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public DeleteKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
         return this;
     }
 
-    public DeleteKvRequestBody withReturnPartialBlob(Consumer<ReturnPartialBlob> returnPartialBlobSetter) {
-        if (this.returnPartialBlob == null) {
-            this.returnPartialBlob = new ReturnPartialBlob();
-            returnPartialBlobSetter.accept(this.returnPartialBlob);
+    public DeleteKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
+        if (this.projectionBlob == null) {
+            this.projectionBlob = new ProjectionBlob();
+            projectionBlobSetter.accept(this.projectionBlob);
         }
 
         return this;
     }
 
     /**
-     * Get returnPartialBlob
-     * @return returnPartialBlob
+     * Get projectionBlob
+     * @return projectionBlob
      */
-    public ReturnPartialBlob getReturnPartialBlob() {
-        return returnPartialBlob;
+    public ProjectionBlob getProjectionBlob() {
+        return projectionBlob;
     }
 
-    public void setReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public void setProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
     }
 
     @Override
@@ -199,15 +176,13 @@ public class DeleteKvRequestBody {
         DeleteKvRequestBody that = (DeleteKvRequestBody) obj;
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.primaryKey, that.primaryKey)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
-            && Objects.equals(this.expressionVarDefine, that.expressionVarDefine)
             && Objects.equals(this.projectionFields, that.projectionFields)
-            && Objects.equals(this.returnPartialBlob, that.returnPartialBlob);
+            && Objects.equals(this.projectionBlob, that.projectionBlob);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(tableName, primaryKey, conditionExpression, expressionVarDefine, projectionFields, returnPartialBlob);
+        return Objects.hash(tableName, primaryKey, conditionExpression, projectionFields, projectionBlob);
     }
 
     @Override
@@ -217,9 +192,8 @@ public class DeleteKvRequestBody {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    primaryKey: ").append(toIndentedString(primaryKey)).append("\n");
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
-        sb.append("    expressionVarDefine: ").append(toIndentedString(expressionVarDefine)).append("\n");
         sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
-        sb.append("    returnPartialBlob: ").append(toIndentedString(returnPartialBlob)).append("\n");
+        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

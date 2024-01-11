@@ -20,8 +20,8 @@ import java.util.function.Consumer;
 public class BatchWriteKvResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "UnprocessedOpers")
-    @BsonProperty(value = "UnprocessedOpers")
+    @JsonProperty(value = "unprocessed_opers")
+    @BsonProperty(value = "unprocessed_opers")
 
     private List<TableOperIds> unprocessedOpers = null;
 
@@ -47,7 +47,7 @@ public class BatchWriteKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get unprocessedOpers
+     * 未处理的操作列表。
      * @return unprocessedOpers
      */
     public List<TableOperIds> getUnprocessedOpers() {

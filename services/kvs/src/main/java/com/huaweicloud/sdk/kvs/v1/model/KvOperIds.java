@@ -16,14 +16,14 @@ import java.util.function.Consumer;
 public class KvOperIds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PutKvIds")
-    @BsonProperty(value = "PutKvIds")
+    @JsonProperty(value = "put_kv_ids")
+    @BsonProperty(value = "put_kv_ids")
 
     private List<Integer> putKvIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "DeleteKvIds")
-    @BsonProperty(value = "DeleteKvIds")
+    @JsonProperty(value = "delete_kv_ids")
+    @BsonProperty(value = "delete_kv_ids")
 
     private List<Integer> deleteKvIds = null;
 
@@ -49,7 +49,7 @@ public class KvOperIds {
     }
 
     /**
-     * Get putKvIds
+     * 上传kv操作, \"oper_id\"数组。 - 数组元素：请求内的操作编码，未成功的操作返回该标识。
      * @return putKvIds
      */
     public List<Integer> getPutKvIds() {
@@ -82,7 +82,7 @@ public class KvOperIds {
     }
 
     /**
-     * Get deleteKvIds
+     * 请求内的操作编码，未成功的操作返回该标识。 - 数组元素：请求内的操作编码，未成功的操作返回该标识。
      * @return deleteKvIds
      */
     public List<Integer> getDeleteKvIds() {

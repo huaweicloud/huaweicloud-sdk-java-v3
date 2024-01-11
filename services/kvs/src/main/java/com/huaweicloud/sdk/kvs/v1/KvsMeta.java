@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.kvs.v1.model.DescribeTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.GetKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.GetKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.ListStoreRequest;
+import com.huaweicloud.sdk.kvs.v1.model.ListStoreResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ListTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ListTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.PutKvRequest;
@@ -27,6 +29,10 @@ import com.huaweicloud.sdk.kvs.v1.model.ScanKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.TransactGetKvRequest;
+import com.huaweicloud.sdk.kvs.v1.model.TransactGetKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvRequest;
+import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvResponse;
 
@@ -82,6 +88,23 @@ public class KvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListStoreRequest, ListStoreResponse> listStore = genForlistStore();
+
+    private static HttpRequestDef<ListStoreRequest, ListStoreResponse> genForlistStore() {
+        // basic
+        HttpRequestDef.Builder<ListStoreRequest, ListStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListStoreRequest.class, ListStoreResponse.class)
+                .withName("ListStore")
+                .withUri("/v1/list-store")
+                .withContentType("application/bson");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTableRequest, ListTableResponse> listTable = genForlistTable();
 
     private static HttpRequestDef<ListTableRequest, ListTableResponse> genForlistTable() {
@@ -98,30 +121,6 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForrenameKv();
-
-    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForrenameKv() {
-        // basic
-        HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
-                .withName("RenameKv")
-                .withUri("/v1/rename-kv")
-                .withContentType("application/bson");
-
-        // requests
-        builder.<String>withRequestField("store_name",
-            LocationType.Cname,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RenameKvRequest::getStoreName, (req, v) -> {
                 req.setStoreName(v);
             }));
 
@@ -250,6 +249,30 @@ public class KvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForrenameKv();
+
+    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForrenameKv() {
+        // basic
+        HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
+                .withName("RenameKv")
+                .withUri("/v1/rename-kv")
+                .withContentType("application/bson");
+
+        // requests
+        builder.<String>withRequestField("store_name",
+            LocationType.Cname,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RenameKvRequest::getStoreName, (req, v) -> {
+                req.setStoreName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ScanKvRequest, ScanKvResponse> scanKv = genForscanKv();
 
     private static HttpRequestDef<ScanKvRequest, ScanKvResponse> genForscanKv() {
@@ -290,6 +313,56 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ScanSkeyKvRequest::getStoreName, (req, v) -> {
+                req.setStoreName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TransactGetKvRequest, TransactGetKvResponse> transactGetKv =
+        genFortransactGetKv();
+
+    private static HttpRequestDef<TransactGetKvRequest, TransactGetKvResponse> genFortransactGetKv() {
+        // basic
+        HttpRequestDef.Builder<TransactGetKvRequest, TransactGetKvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TransactGetKvRequest.class, TransactGetKvResponse.class)
+                .withName("TransactGetKv")
+                .withUri("/v1/transact-get-kv")
+                .withContentType("application/bson");
+
+        // requests
+        builder.<String>withRequestField("store_name",
+            LocationType.Cname,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(TransactGetKvRequest::getStoreName, (req, v) -> {
+                req.setStoreName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> transactWriteSkeyKv =
+        genFortransactWriteSkeyKv();
+
+    private static HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> genFortransactWriteSkeyKv() {
+        // basic
+        HttpRequestDef.Builder<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TransactWriteSkeyKvRequest.class, TransactWriteSkeyKvResponse.class)
+                .withName("TransactWriteSkeyKv")
+                .withUri("/v1/transact-write-skey-kv")
+                .withContentType("application/bson");
+
+        // requests
+        builder.<String>withRequestField("store_name",
+            LocationType.Cname,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(TransactWriteSkeyKvRequest::getStoreName, (req, v) -> {
                 req.setStoreName(v);
             }));
 

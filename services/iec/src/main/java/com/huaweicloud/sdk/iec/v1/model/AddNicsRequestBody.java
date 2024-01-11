@@ -33,6 +33,16 @@ public class AddNicsRequestBody {
 
     private Integer nicNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_bandwidth")
+
+    private Ipv6BandwidthForNic ipv6Bandwidth;
+
     public AddNicsRequestBody withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -118,6 +128,49 @@ public class AddNicsRequestBody {
         this.nicNum = nicNum;
     }
 
+    public AddNicsRequestBody withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否支持IPv6  取值为true时，标识此网卡支持IPv6。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public AddNicsRequestBody withIpv6Bandwidth(Ipv6BandwidthForNic ipv6Bandwidth) {
+        this.ipv6Bandwidth = ipv6Bandwidth;
+        return this;
+    }
+
+    public AddNicsRequestBody withIpv6Bandwidth(Consumer<Ipv6BandwidthForNic> ipv6BandwidthSetter) {
+        if (this.ipv6Bandwidth == null) {
+            this.ipv6Bandwidth = new Ipv6BandwidthForNic();
+            ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipv6Bandwidth
+     * @return ipv6Bandwidth
+     */
+    public Ipv6BandwidthForNic getIpv6Bandwidth() {
+        return ipv6Bandwidth;
+    }
+
+    public void setIpv6Bandwidth(Ipv6BandwidthForNic ipv6Bandwidth) {
+        this.ipv6Bandwidth = ipv6Bandwidth;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -128,12 +181,14 @@ public class AddNicsRequestBody {
         }
         AddNicsRequestBody that = (AddNicsRequestBody) obj;
         return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroups, that.securityGroups)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.nicNum, that.nicNum);
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.nicNum, that.nicNum)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcId, securityGroups, subnetId, nicNum);
+        return Objects.hash(vpcId, securityGroups, subnetId, nicNum, ipv6Enable, ipv6Bandwidth);
     }
 
     @Override
@@ -144,6 +199,8 @@ public class AddNicsRequestBody {
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    nicNum: ").append(toIndentedString(nicNum)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

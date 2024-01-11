@@ -14,99 +14,131 @@ import java.util.function.Consumer;
 public class ConditionExpression {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "SingleFieldExpr")
-    @BsonProperty(value = "SingleFieldExpr")
+    @JsonProperty(value = "single_field_expression")
+    @BsonProperty(value = "single_field_expression")
 
-    private SingleFieldExpr singleFieldExpr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "MultiFieldExpr")
-    @BsonProperty(value = "MultiFieldExpr")
-
-    private MultiFieldExpr multiFieldExpr;
+    private SingleFieldExpression singleFieldExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "SingleKvExpr")
-    @BsonProperty(value = "SingleKvExpr")
+    @JsonProperty(value = "multi_field_expression")
+    @BsonProperty(value = "multi_field_expression")
 
-    private SingleKvExpr singleKvExpr;
+    private MultiFieldExpression multiFieldExpression;
 
-    public ConditionExpression withSingleFieldExpr(SingleFieldExpr singleFieldExpr) {
-        this.singleFieldExpr = singleFieldExpr;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single_kv_expression")
+    @BsonProperty(value = "single_kv_expression")
+
+    private SingleKvExpression singleKvExpression;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "composed_expression")
+    @BsonProperty(value = "composed_expression")
+
+    private ComposedExpression composedExpression;
+
+    public ConditionExpression withSingleFieldExpression(SingleFieldExpression singleFieldExpression) {
+        this.singleFieldExpression = singleFieldExpression;
         return this;
     }
 
-    public ConditionExpression withSingleFieldExpr(Consumer<SingleFieldExpr> singleFieldExprSetter) {
-        if (this.singleFieldExpr == null) {
-            this.singleFieldExpr = new SingleFieldExpr();
-            singleFieldExprSetter.accept(this.singleFieldExpr);
+    public ConditionExpression withSingleFieldExpression(Consumer<SingleFieldExpression> singleFieldExpressionSetter) {
+        if (this.singleFieldExpression == null) {
+            this.singleFieldExpression = new SingleFieldExpression();
+            singleFieldExpressionSetter.accept(this.singleFieldExpression);
         }
 
         return this;
     }
 
     /**
-     * Get singleFieldExpr
-     * @return singleFieldExpr
+     * Get singleFieldExpression
+     * @return singleFieldExpression
      */
-    public SingleFieldExpr getSingleFieldExpr() {
-        return singleFieldExpr;
+    public SingleFieldExpression getSingleFieldExpression() {
+        return singleFieldExpression;
     }
 
-    public void setSingleFieldExpr(SingleFieldExpr singleFieldExpr) {
-        this.singleFieldExpr = singleFieldExpr;
+    public void setSingleFieldExpression(SingleFieldExpression singleFieldExpression) {
+        this.singleFieldExpression = singleFieldExpression;
     }
 
-    public ConditionExpression withMultiFieldExpr(MultiFieldExpr multiFieldExpr) {
-        this.multiFieldExpr = multiFieldExpr;
+    public ConditionExpression withMultiFieldExpression(MultiFieldExpression multiFieldExpression) {
+        this.multiFieldExpression = multiFieldExpression;
         return this;
     }
 
-    public ConditionExpression withMultiFieldExpr(Consumer<MultiFieldExpr> multiFieldExprSetter) {
-        if (this.multiFieldExpr == null) {
-            this.multiFieldExpr = new MultiFieldExpr();
-            multiFieldExprSetter.accept(this.multiFieldExpr);
+    public ConditionExpression withMultiFieldExpression(Consumer<MultiFieldExpression> multiFieldExpressionSetter) {
+        if (this.multiFieldExpression == null) {
+            this.multiFieldExpression = new MultiFieldExpression();
+            multiFieldExpressionSetter.accept(this.multiFieldExpression);
         }
 
         return this;
     }
 
     /**
-     * Get multiFieldExpr
-     * @return multiFieldExpr
+     * Get multiFieldExpression
+     * @return multiFieldExpression
      */
-    public MultiFieldExpr getMultiFieldExpr() {
-        return multiFieldExpr;
+    public MultiFieldExpression getMultiFieldExpression() {
+        return multiFieldExpression;
     }
 
-    public void setMultiFieldExpr(MultiFieldExpr multiFieldExpr) {
-        this.multiFieldExpr = multiFieldExpr;
+    public void setMultiFieldExpression(MultiFieldExpression multiFieldExpression) {
+        this.multiFieldExpression = multiFieldExpression;
     }
 
-    public ConditionExpression withSingleKvExpr(SingleKvExpr singleKvExpr) {
-        this.singleKvExpr = singleKvExpr;
+    public ConditionExpression withSingleKvExpression(SingleKvExpression singleKvExpression) {
+        this.singleKvExpression = singleKvExpression;
         return this;
     }
 
-    public ConditionExpression withSingleKvExpr(Consumer<SingleKvExpr> singleKvExprSetter) {
-        if (this.singleKvExpr == null) {
-            this.singleKvExpr = new SingleKvExpr();
-            singleKvExprSetter.accept(this.singleKvExpr);
+    public ConditionExpression withSingleKvExpression(Consumer<SingleKvExpression> singleKvExpressionSetter) {
+        if (this.singleKvExpression == null) {
+            this.singleKvExpression = new SingleKvExpression();
+            singleKvExpressionSetter.accept(this.singleKvExpression);
         }
 
         return this;
     }
 
     /**
-     * Get singleKvExpr
-     * @return singleKvExpr
+     * Get singleKvExpression
+     * @return singleKvExpression
      */
-    public SingleKvExpr getSingleKvExpr() {
-        return singleKvExpr;
+    public SingleKvExpression getSingleKvExpression() {
+        return singleKvExpression;
     }
 
-    public void setSingleKvExpr(SingleKvExpr singleKvExpr) {
-        this.singleKvExpr = singleKvExpr;
+    public void setSingleKvExpression(SingleKvExpression singleKvExpression) {
+        this.singleKvExpression = singleKvExpression;
+    }
+
+    public ConditionExpression withComposedExpression(ComposedExpression composedExpression) {
+        this.composedExpression = composedExpression;
+        return this;
+    }
+
+    public ConditionExpression withComposedExpression(Consumer<ComposedExpression> composedExpressionSetter) {
+        if (this.composedExpression == null) {
+            this.composedExpression = new ComposedExpression();
+            composedExpressionSetter.accept(this.composedExpression);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get composedExpression
+     * @return composedExpression
+     */
+    public ComposedExpression getComposedExpression() {
+        return composedExpression;
+    }
+
+    public void setComposedExpression(ComposedExpression composedExpression) {
+        this.composedExpression = composedExpression;
     }
 
     @Override
@@ -118,23 +150,25 @@ public class ConditionExpression {
             return false;
         }
         ConditionExpression that = (ConditionExpression) obj;
-        return Objects.equals(this.singleFieldExpr, that.singleFieldExpr)
-            && Objects.equals(this.multiFieldExpr, that.multiFieldExpr)
-            && Objects.equals(this.singleKvExpr, that.singleKvExpr);
+        return Objects.equals(this.singleFieldExpression, that.singleFieldExpression)
+            && Objects.equals(this.multiFieldExpression, that.multiFieldExpression)
+            && Objects.equals(this.singleKvExpression, that.singleKvExpression)
+            && Objects.equals(this.composedExpression, that.composedExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(singleFieldExpr, multiFieldExpr, singleKvExpr);
+        return Objects.hash(singleFieldExpression, multiFieldExpression, singleKvExpression, composedExpression);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConditionExpression {\n");
-        sb.append("    singleFieldExpr: ").append(toIndentedString(singleFieldExpr)).append("\n");
-        sb.append("    multiFieldExpr: ").append(toIndentedString(multiFieldExpr)).append("\n");
-        sb.append("    singleKvExpr: ").append(toIndentedString(singleKvExpr)).append("\n");
+        sb.append("    singleFieldExpression: ").append(toIndentedString(singleFieldExpression)).append("\n");
+        sb.append("    multiFieldExpression: ").append(toIndentedString(multiFieldExpression)).append("\n");
+        sb.append("    singleKvExpression: ").append(toIndentedString(singleKvExpression)).append("\n");
+        sb.append("    composedExpression: ").append(toIndentedString(composedExpression)).append("\n");
         sb.append("}");
         return sb.toString();
     }

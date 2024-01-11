@@ -35,7 +35,7 @@ public class GetKvRequest extends SdkBsonDocRequest {
     }
 
     /**
-     * store name
+     * 仓名
      * @return storeName
      */
     public String getStoreName() {

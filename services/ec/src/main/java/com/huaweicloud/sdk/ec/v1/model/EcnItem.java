@@ -80,6 +80,11 @@ public class EcnItem {
     private List<String> enterpriseRouterIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_ids")
+
+    private List<String> vpcIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bind_ieg_count")
 
     private Integer bindIegCount;
@@ -367,6 +372,39 @@ public class EcnItem {
         this.enterpriseRouterIds = enterpriseRouterIds;
     }
 
+    public EcnItem withVpcIds(List<String> vpcIds) {
+        this.vpcIds = vpcIds;
+        return this;
+    }
+
+    public EcnItem addVpcIdsItem(String vpcIdsItem) {
+        if (this.vpcIds == null) {
+            this.vpcIds = new ArrayList<>();
+        }
+        this.vpcIds.add(vpcIdsItem);
+        return this;
+    }
+
+    public EcnItem withVpcIds(Consumer<List<String>> vpcIdsSetter) {
+        if (this.vpcIds == null) {
+            this.vpcIds = new ArrayList<>();
+        }
+        vpcIdsSetter.accept(this.vpcIds);
+        return this;
+    }
+
+    /**
+     * 虚拟私有云列表
+     * @return vpcIds
+     */
+    public List<String> getVpcIds() {
+        return vpcIds;
+    }
+
+    public void setVpcIds(List<String> vpcIds) {
+        this.vpcIds = vpcIds;
+    }
+
     public EcnItem withBindIegCount(Integer bindIegCount) {
         this.bindIegCount = bindIegCount;
         return this;
@@ -540,7 +578,7 @@ public class EcnItem {
             && Objects.equals(this.areaId, that.areaId) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.ecnAsn, that.ecnAsn) && Objects.equals(this.iegAsn, that.iegAsn)
             && Objects.equals(this.vni, that.vni) && Objects.equals(this.enterpriseRouterIds, that.enterpriseRouterIds)
-            && Objects.equals(this.bindIegCount, that.bindIegCount)
+            && Objects.equals(this.vpcIds, that.vpcIds) && Objects.equals(this.bindIegCount, that.bindIegCount)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.frozenEffect, that.frozenEffect)
             && Objects.equals(this.hubEnable, that.hubEnable) && Objects.equals(this.createdAt, that.createdAt)
@@ -563,6 +601,7 @@ public class EcnItem {
             iegAsn,
             vni,
             enterpriseRouterIds,
+            vpcIds,
             bindIegCount,
             enterpriseProjectId,
             status,
@@ -591,6 +630,7 @@ public class EcnItem {
         sb.append("    iegAsn: ").append(toIndentedString(iegAsn)).append("\n");
         sb.append("    vni: ").append(toIndentedString(vni)).append("\n");
         sb.append("    enterpriseRouterIds: ").append(toIndentedString(enterpriseRouterIds)).append("\n");
+        sb.append("    vpcIds: ").append(toIndentedString(vpcIds)).append("\n");
         sb.append("    bindIegCount: ").append(toIndentedString(bindIegCount)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

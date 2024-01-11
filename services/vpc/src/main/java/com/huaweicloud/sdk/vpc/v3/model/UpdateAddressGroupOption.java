@@ -33,6 +33,11 @@ public class UpdateAddressGroupOption {
 
     private Integer maxCapacity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_extra_set")
+
+    private List<IpExtraSetOption> ipExtraSet = null;
+
     public UpdateAddressGroupOption withName(String name) {
         this.name = name;
         return this;
@@ -117,6 +122,39 @@ public class UpdateAddressGroupOption {
         this.maxCapacity = maxCapacity;
     }
 
+    public UpdateAddressGroupOption withIpExtraSet(List<IpExtraSetOption> ipExtraSet) {
+        this.ipExtraSet = ipExtraSet;
+        return this;
+    }
+
+    public UpdateAddressGroupOption addIpExtraSetItem(IpExtraSetOption ipExtraSetItem) {
+        if (this.ipExtraSet == null) {
+            this.ipExtraSet = new ArrayList<>();
+        }
+        this.ipExtraSet.add(ipExtraSetItem);
+        return this;
+    }
+
+    public UpdateAddressGroupOption withIpExtraSet(Consumer<List<IpExtraSetOption>> ipExtraSetSetter) {
+        if (this.ipExtraSet == null) {
+            this.ipExtraSet = new ArrayList<>();
+        }
+        ipExtraSetSetter.accept(this.ipExtraSet);
+        return this;
+    }
+
+    /**
+     * 功能说明：IP地址组包含的IP列表及其备注信息 约束：ip数量限制默认20, 与ip_set参数只能二选一
+     * @return ipExtraSet
+     */
+    public List<IpExtraSetOption> getIpExtraSet() {
+        return ipExtraSet;
+    }
+
+    public void setIpExtraSet(List<IpExtraSetOption> ipExtraSet) {
+        this.ipExtraSet = ipExtraSet;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +165,13 @@ public class UpdateAddressGroupOption {
         }
         UpdateAddressGroupOption that = (UpdateAddressGroupOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.ipSet, that.ipSet) && Objects.equals(this.maxCapacity, that.maxCapacity);
+            && Objects.equals(this.ipSet, that.ipSet) && Objects.equals(this.maxCapacity, that.maxCapacity)
+            && Objects.equals(this.ipExtraSet, that.ipExtraSet);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, ipSet, maxCapacity);
+        return Objects.hash(name, description, ipSet, maxCapacity, ipExtraSet);
     }
 
     @Override
@@ -143,6 +182,7 @@ public class UpdateAddressGroupOption {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipSet: ").append(toIndentedString(ipSet)).append("\n");
         sb.append("    maxCapacity: ").append(toIndentedString(maxCapacity)).append("\n");
+        sb.append("    ipExtraSet: ").append(toIndentedString(ipExtraSet)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,6 @@ public class ResourceGroup {
 
     /**
      * 事件类型，默认为0。
-     * minimum: 0
-     * maximum: 1
      * @return eventType
      */
     public Integer getEventType() {

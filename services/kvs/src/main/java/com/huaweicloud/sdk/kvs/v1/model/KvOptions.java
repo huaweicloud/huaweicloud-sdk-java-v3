@@ -13,8 +13,8 @@ import java.util.Objects;
 public class KvOptions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnHint")
-    @BsonProperty(value = "ReturnHint")
+    @JsonProperty(value = "return_hint")
+    @BsonProperty(value = "return_hint")
 
     private Boolean returnHint;
 
@@ -24,7 +24,7 @@ public class KvOptions {
     }
 
     /**
-     * Get returnHint
+     * - true:返回操作执行前的内容，默认true - false:返回操作执行后的内容
      * @return returnHint
      */
     public Boolean getReturnHint() {

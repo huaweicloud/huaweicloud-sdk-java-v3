@@ -208,6 +208,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.GatewayDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.IdsParam;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
@@ -221,6 +229,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllStandardsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllStandardsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllTablesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiTopNRequest;
@@ -341,6 +351,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.MigrateCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.MigrateCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ObjectIdInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApiParaForCheckMessage;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApiParaForPublish;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApplyIdsForApproveApply;
@@ -520,6 +531,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.StandElementValueVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SubjectParamsVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.TableLineage;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelUpdateVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TagRequest;
@@ -3051,6 +3063,150 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ImportCatalogsRequest, ImportCatalogsResponse> importCatalogs =
+        genForimportCatalogs();
+
+    private static HttpRequestDef<ImportCatalogsRequest, ImportCatalogsResponse> genForimportCatalogs() {
+        // basic
+        HttpRequestDef.Builder<ImportCatalogsRequest, ImportCatalogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportCatalogsRequest.class, ImportCatalogsResponse.class)
+                .withName("ImportCatalogs")
+                .withUri("/v2/{project_id}/design/catalogs/action")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("action-id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportCatalogsRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            }));
+        builder.<Boolean>withRequestField("skip-exist",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ImportCatalogsRequest::getSkipExist, (req, v) -> {
+                req.setSkipExist(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportCatalogsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<ImportCatalogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportCatalogsRequestBody.class),
+            f -> f.withMarshaller(ImportCatalogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportLineageRequest, ImportLineageResponse> importLineage =
+        genForimportLineage();
+
+    private static HttpRequestDef<ImportLineageRequest, ImportLineageResponse> genForimportLineage() {
+        // basic
+        HttpRequestDef.Builder<ImportLineageRequest, ImportLineageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportLineageRequest.class, ImportLineageResponse.class)
+                .withName("ImportLineage")
+                .withUri("/v3/{project_id}/lineage/import")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportLineageRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<List<TableLineage>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ImportLineageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(TableLineage.class));
+
+        // response
+        builder.<List<ObjectIdInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ImportLineageResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ObjectIdInfo.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportModelsRequest, ImportModelsResponse> importModels = genForimportModels();
+
+    private static HttpRequestDef<ImportModelsRequest, ImportModelsResponse> genForimportModels() {
+        // basic
+        HttpRequestDef.Builder<ImportModelsRequest, ImportModelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportModelsRequest.class, ImportModelsResponse.class)
+                .withName("ImportModels")
+                .withUri("/v2/{project_id}/design/models/action")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<ImportModelsRequest.ActionIdEnum>withRequestField("action-id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportModelsRequest.ActionIdEnum.class),
+            f -> f.withMarshaller(ImportModelsRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            }));
+        builder.<String>withRequestField("model_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportModelsRequest::getModelId, (req, v) -> {
+                req.setModelId(v);
+            }));
+        builder.<String>withRequestField("directory_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportModelsRequest::getDirectoryId, (req, v) -> {
+                req.setDirectoryId(v);
+            }));
+        builder.<Boolean>withRequestField("skip-exist",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ImportModelsRequest::getSkipExist, (req, v) -> {
+                req.setSkipExist(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportModelsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<ImportModelsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportModelsRequestBody.class),
+            f -> f.withMarshaller(ImportModelsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportResultRequest, ImportResultResponse> importResult = genForimportResult();
 
     private static HttpRequestDef<ImportResultRequest, ImportResultResponse> genForimportResult() {
@@ -3355,6 +3511,115 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllStandardsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> listAllTables =
+        genForlistAllTables();
+
+    private static HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> genForlistAllTables() {
+        // basic
+        HttpRequestDef.Builder<ListAllTablesRequest, ListAllTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllTablesRequest.class, ListAllTablesResponse.class)
+                .withName("ListAllTables")
+                .withUri("/v2/{project_id}/design/all-tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("create_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getCreateBy, (req, v) -> {
+                req.setCreateBy(v);
+            }));
+        builder.<ListAllTablesRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAllTablesRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<ListAllTablesRequest.SyncStatusEnum>withRequestField("sync_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAllTablesRequest.SyncStatusEnum.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getSyncStatus, (req, v) -> {
+                req.setSyncStatus(v);
+            }));
+        builder.<List<ListAllTablesRequest.SyncKeyEnum>>withRequestField("sync_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getSyncKey, (req, v) -> {
+                req.setSyncKey(v);
+            }));
+        builder.<String>withRequestField("biz_catalog_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getBizCatalogId, (req, v) -> {
+                req.setBizCatalogId(v);
+            }));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<List<Long>>withRequestField("biz_catalog_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getBizCatalogIdList, (req, v) -> {
+                req.setBizCatalogIdList(v);
+            }));
+        builder.<List<ListAllTablesRequest.BizTypeListEnum>>withRequestField("biz_type_list",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getBizTypeList, (req, v) -> {
+                req.setBizTypeList(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
             }));
 

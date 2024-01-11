@@ -482,6 +482,11 @@ public class ImageList {
 
     private String supportGpuT4;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+
+    private String supportAmd;
+
     public ImageList withId(String id) {
         this.id = id;
         return this;
@@ -999,6 +1004,25 @@ public class ImageList {
         this.supportGpuT4 = supportGpuT4;
     }
 
+    public ImageList withSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+        return this;
+    }
+
+    /**
+     * 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+     * @return supportAmd
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_amd")
+    public String getSupportAmd() {
+        return supportAmd;
+    }
+
+    public void setSupportAmd(String supportAmd) {
+        this.supportAmd = supportAmd;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1024,7 +1048,8 @@ public class ImageList {
             && Objects.equals(this.supportKvmHi1822Hiovs, that.supportKvmHi1822Hiovs)
             && Objects.equals(this.supportArm, that.supportArm)
             && Objects.equals(this.hwFirmwareType, that.hwFirmwareType)
-            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.supportGpuT4, that.supportGpuT4);
+            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.supportGpuT4, that.supportGpuT4)
+            && Objects.equals(this.supportAmd, that.supportAmd);
     }
 
     @Override
@@ -1057,7 +1082,8 @@ public class ImageList {
             supportArm,
             hwFirmwareType,
             dataSource,
-            supportGpuT4);
+            supportGpuT4,
+            supportAmd);
     }
 
     @Override
@@ -1093,6 +1119,7 @@ public class ImageList {
         sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    supportGpuT4: ").append(toIndentedString(supportGpuT4)).append("\n");
+        sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

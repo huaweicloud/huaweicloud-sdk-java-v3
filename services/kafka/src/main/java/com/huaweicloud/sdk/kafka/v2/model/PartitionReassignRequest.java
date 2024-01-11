@@ -23,6 +23,16 @@ public class PartitionReassignRequest {
 
     private Integer throttle;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_schedule")
+
+    private Boolean isSchedule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_at")
+
+    private Long executeAt;
+
     public PartitionReassignRequest withReassignments(List<PartitionReassignEntity> reassignments) {
         this.reassignments = reassignments;
         return this;
@@ -73,6 +83,40 @@ public class PartitionReassignRequest {
         this.throttle = throttle;
     }
 
+    public PartitionReassignRequest withIsSchedule(Boolean isSchedule) {
+        this.isSchedule = isSchedule;
+        return this;
+    }
+
+    /**
+     * 是否作为定时任务执行。若非定时执行，则is_schedule 和execute_at字段可为空；若为定时执行，is_schedule为true，execute_at字段非空。
+     * @return isSchedule
+     */
+    public Boolean getIsSchedule() {
+        return isSchedule;
+    }
+
+    public void setIsSchedule(Boolean isSchedule) {
+        this.isSchedule = isSchedule;
+    }
+
+    public PartitionReassignRequest withExecuteAt(Long executeAt) {
+        this.executeAt = executeAt;
+        return this;
+    }
+
+    /**
+     * 定时时间，格式为Unix时间戳，单位为毫秒
+     * @return executeAt
+     */
+    public Long getExecuteAt() {
+        return executeAt;
+    }
+
+    public void setExecuteAt(Long executeAt) {
+        this.executeAt = executeAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +126,13 @@ public class PartitionReassignRequest {
             return false;
         }
         PartitionReassignRequest that = (PartitionReassignRequest) obj;
-        return Objects.equals(this.reassignments, that.reassignments) && Objects.equals(this.throttle, that.throttle);
+        return Objects.equals(this.reassignments, that.reassignments) && Objects.equals(this.throttle, that.throttle)
+            && Objects.equals(this.isSchedule, that.isSchedule) && Objects.equals(this.executeAt, that.executeAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reassignments, throttle);
+        return Objects.hash(reassignments, throttle, isSchedule, executeAt);
     }
 
     @Override
@@ -96,6 +141,8 @@ public class PartitionReassignRequest {
         sb.append("class PartitionReassignRequest {\n");
         sb.append("    reassignments: ").append(toIndentedString(reassignments)).append("\n");
         sb.append("    throttle: ").append(toIndentedString(throttle)).append("\n");
+        sb.append("    isSchedule: ").append(toIndentedString(isSchedule)).append("\n");
+        sb.append("    executeAt: ").append(toIndentedString(executeAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

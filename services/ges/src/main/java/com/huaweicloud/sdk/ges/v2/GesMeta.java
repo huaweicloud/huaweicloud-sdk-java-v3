@@ -33,9 +33,15 @@ import com.huaweicloud.sdk.ges.v2.model.DetachEipReq;
 import com.huaweicloud.sdk.ges.v2.model.ExpandGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ExpandGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ExpandGraphReq;
+import com.huaweicloud.sdk.ges.v2.model.ExportBackup2Request;
+import com.huaweicloud.sdk.ges.v2.model.ExportBackup2Response;
+import com.huaweicloud.sdk.ges.v2.model.ExportBackupReq;
 import com.huaweicloud.sdk.ges.v2.model.ExportGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ExportGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ExportGraphReq;
+import com.huaweicloud.sdk.ges.v2.model.ImportBackup2Request;
+import com.huaweicloud.sdk.ges.v2.model.ImportBackup2Response;
+import com.huaweicloud.sdk.ges.v2.model.ImportBackupReq;
 import com.huaweicloud.sdk.ges.v2.model.ImportGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ImportGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ImportGraphReq;
@@ -398,6 +404,38 @@ public class GesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportBackup2Request, ExportBackup2Response> exportBackup2 =
+        genForexportBackup2();
+
+    private static HttpRequestDef<ExportBackup2Request, ExportBackup2Response> genForexportBackup2() {
+        // basic
+        HttpRequestDef.Builder<ExportBackup2Request, ExportBackup2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportBackup2Request.class, ExportBackup2Response.class)
+                .withName("ExportBackup2")
+                .withUri("/v2/{project_id}/graphs/{graph_id}/backups/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("graph_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportBackup2Request::getGraphId, (req, v) -> {
+                req.setGraphId(v);
+            }));
+        builder.<ExportBackupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportBackupReq.class),
+            f -> f.withMarshaller(ExportBackup2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportGraph2Request, ExportGraph2Response> exportGraph2 = genForexportGraph2();
 
     private static HttpRequestDef<ExportGraph2Request, ExportGraph2Response> genForexportGraph2() {
@@ -421,6 +459,38 @@ public class GesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportGraphReq.class),
             f -> f.withMarshaller(ExportGraph2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportBackup2Request, ImportBackup2Response> importBackup2 =
+        genForimportBackup2();
+
+    private static HttpRequestDef<ImportBackup2Request, ImportBackup2Response> genForimportBackup2() {
+        // basic
+        HttpRequestDef.Builder<ImportBackup2Request, ImportBackup2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportBackup2Request.class, ImportBackup2Response.class)
+                .withName("ImportBackup2")
+                .withUri("/v2/{project_id}/graphs/{graph_id}/backups/import")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("graph_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportBackup2Request::getGraphId, (req, v) -> {
+                req.setGraphId(v);
+            }));
+        builder.<ImportBackupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportBackupReq.class),
+            f -> f.withMarshaller(ImportBackup2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

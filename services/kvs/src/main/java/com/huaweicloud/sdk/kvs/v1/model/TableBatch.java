@@ -11,19 +11,19 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * TableBatch
+ * 单个表的所有kv操作。
  */
 public class TableBatch {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvOpers")
-    @BsonProperty(value = "KvOpers")
+    @JsonProperty(value = "kv_opers")
+    @BsonProperty(value = "kv_opers")
 
     private List<OperItem> kvOpers = null;
 
@@ -33,7 +33,7 @@ public class TableBatch {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -66,7 +66,7 @@ public class TableBatch {
     }
 
     /**
-     * Get kvOpers
+     * kv操作数组。
      * @return kvOpers
      */
     public List<OperItem> getKvOpers() {

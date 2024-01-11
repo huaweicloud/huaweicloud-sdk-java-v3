@@ -130,6 +130,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
@@ -1890,6 +1892,38 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaShowServerRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> novaShowServerInterface =
+        genFornovaShowServerInterface();
+
+    private static HttpRequestDef<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> genFornovaShowServerInterface() {
+        // basic
+        HttpRequestDef.Builder<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, NovaShowServerInterfaceRequest.class, NovaShowServerInterfaceResponse.class)
+            .withName("NovaShowServerInterface")
+            .withUri("/v2.1/{project_id}/servers/{server_id}/os-interface/{port_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaShowServerInterfaceRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaShowServerInterfaceRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
             }));
 
         // response

@@ -15,40 +15,34 @@ import java.util.function.Consumer;
 public class RenameKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "NewSortKey")
-    @BsonProperty(value = "NewSortKey")
+    @JsonProperty(value = "new_sort_key")
+    @BsonProperty(value = "new_sort_key")
 
     private Document newSortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvOptions")
-    @BsonProperty(value = "KvOptions")
+    @JsonProperty(value = "kv_options")
+    @BsonProperty(value = "kv_options")
 
     private KvOptions kvOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "UpdateBlobAttr")
-    @BsonProperty(value = "UpdateBlobAttr")
+    @JsonProperty(value = "update_blob_attr")
+    @BsonProperty(value = "update_blob_attr")
 
     private UpdateBlobAttr updateBlobAttr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnBlobAttr")
-    @BsonProperty(value = "ReturnBlobAttr")
-
-    private ReturnBlobAttr returnBlobAttr;
 
     public RenameKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -56,7 +50,7 @@ public class RenameKvRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -73,7 +67,7 @@ public class RenameKvRequestBody {
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -90,7 +84,7 @@ public class RenameKvRequestBody {
     }
 
     /**
-     * Get newSortKey
+     * 对kv_doc和kv_blob有效，数组元素为_sortkey的字段。
      * @return newSortKey
      */
     public Document getNewSortKey() {
@@ -153,32 +147,6 @@ public class RenameKvRequestBody {
         this.updateBlobAttr = updateBlobAttr;
     }
 
-    public RenameKvRequestBody withReturnBlobAttr(ReturnBlobAttr returnBlobAttr) {
-        this.returnBlobAttr = returnBlobAttr;
-        return this;
-    }
-
-    public RenameKvRequestBody withReturnBlobAttr(Consumer<ReturnBlobAttr> returnBlobAttrSetter) {
-        if (this.returnBlobAttr == null) {
-            this.returnBlobAttr = new ReturnBlobAttr();
-            returnBlobAttrSetter.accept(this.returnBlobAttr);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get returnBlobAttr
-     * @return returnBlobAttr
-     */
-    public ReturnBlobAttr getReturnBlobAttr() {
-        return returnBlobAttr;
-    }
-
-    public void setReturnBlobAttr(ReturnBlobAttr returnBlobAttr) {
-        this.returnBlobAttr = returnBlobAttr;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -190,13 +158,12 @@ public class RenameKvRequestBody {
         RenameKvRequestBody that = (RenameKvRequestBody) obj;
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.primaryKey, that.primaryKey)
             && Objects.equals(this.newSortKey, that.newSortKey) && Objects.equals(this.kvOptions, that.kvOptions)
-            && Objects.equals(this.updateBlobAttr, that.updateBlobAttr)
-            && Objects.equals(this.returnBlobAttr, that.returnBlobAttr);
+            && Objects.equals(this.updateBlobAttr, that.updateBlobAttr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, primaryKey, newSortKey, kvOptions, updateBlobAttr, returnBlobAttr);
+        return Objects.hash(tableName, primaryKey, newSortKey, kvOptions, updateBlobAttr);
     }
 
     @Override
@@ -208,7 +175,6 @@ public class RenameKvRequestBody {
         sb.append("    newSortKey: ").append(toIndentedString(newSortKey)).append("\n");
         sb.append("    kvOptions: ").append(toIndentedString(kvOptions)).append("\n");
         sb.append("    updateBlobAttr: ").append(toIndentedString(updateBlobAttr)).append("\n");
-        sb.append("    returnBlobAttr: ").append(toIndentedString(returnBlobAttr)).append("\n");
         sb.append("}");
         return sb.toString();
     }

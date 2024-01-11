@@ -20,34 +20,34 @@ import java.util.function.Consumer;
 public class DescribeTableResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKeySchema")
-    @BsonProperty(value = "PrimaryKeySchema")
+    @JsonProperty(value = "primary_key_schema")
+    @BsonProperty(value = "primary_key_schema")
 
     private PrimaryKeySchema primaryKeySchema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Local2ndIndexSchema")
-    @BsonProperty(value = "Local2ndIndexSchema")
+    @JsonProperty(value = "local_secondary_index_schema")
+    @BsonProperty(value = "local_secondary_index_schema")
 
-    private List<LsiIndex> local2ndIndexSchema = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Global2ndIndexSchema")
-    @BsonProperty(value = "Global2ndIndexSchema")
-
-    private List<GsiIndex> global2ndIndexSchema = null;
+    private List<SecondaryIndex> localSecondaryIndexSchema = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "RuntimeInfo")
-    @BsonProperty(value = "RuntimeInfo")
+    @JsonProperty(value = "global_secondary_index_schema")
+    @BsonProperty(value = "global_secondary_index_schema")
 
-    private RuntimeInfo runtimeInfo;
+    private List<GlobalSecondaryIndex> globalSecondaryIndexSchema = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "run_time_info")
+    @BsonProperty(value = "run_time_info")
+
+    private RunTimeInfo runTimeInfo;
 
     public DescribeTableResponse withTableName(String tableName) {
         this.tableName = tableName;
@@ -55,7 +55,7 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get tableName
+     * 表名。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -92,96 +92,99 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         this.primaryKeySchema = primaryKeySchema;
     }
 
-    public DescribeTableResponse withLocal2ndIndexSchema(List<LsiIndex> local2ndIndexSchema) {
-        this.local2ndIndexSchema = local2ndIndexSchema;
+    public DescribeTableResponse withLocalSecondaryIndexSchema(List<SecondaryIndex> localSecondaryIndexSchema) {
+        this.localSecondaryIndexSchema = localSecondaryIndexSchema;
         return this;
     }
 
-    public DescribeTableResponse addLocal2ndIndexSchemaItem(LsiIndex local2ndIndexSchemaItem) {
-        if (this.local2ndIndexSchema == null) {
-            this.local2ndIndexSchema = new ArrayList<>();
+    public DescribeTableResponse addLocalSecondaryIndexSchemaItem(SecondaryIndex localSecondaryIndexSchemaItem) {
+        if (this.localSecondaryIndexSchema == null) {
+            this.localSecondaryIndexSchema = new ArrayList<>();
         }
-        this.local2ndIndexSchema.add(local2ndIndexSchemaItem);
+        this.localSecondaryIndexSchema.add(localSecondaryIndexSchemaItem);
         return this;
     }
 
-    public DescribeTableResponse withLocal2ndIndexSchema(Consumer<List<LsiIndex>> local2ndIndexSchemaSetter) {
-        if (this.local2ndIndexSchema == null) {
-            this.local2ndIndexSchema = new ArrayList<>();
+    public DescribeTableResponse withLocalSecondaryIndexSchema(
+        Consumer<List<SecondaryIndex>> localSecondaryIndexSchemaSetter) {
+        if (this.localSecondaryIndexSchema == null) {
+            this.localSecondaryIndexSchema = new ArrayList<>();
         }
-        local2ndIndexSchemaSetter.accept(this.local2ndIndexSchema);
+        localSecondaryIndexSchemaSetter.accept(this.localSecondaryIndexSchema);
         return this;
     }
 
     /**
-     * Get local2ndIndexSchema
-     * @return local2ndIndexSchema
+     * 本地二级索引模板，可以多个。
+     * @return localSecondaryIndexSchema
      */
-    public List<LsiIndex> getLocal2ndIndexSchema() {
-        return local2ndIndexSchema;
+    public List<SecondaryIndex> getLocalSecondaryIndexSchema() {
+        return localSecondaryIndexSchema;
     }
 
-    public void setLocal2ndIndexSchema(List<LsiIndex> local2ndIndexSchema) {
-        this.local2ndIndexSchema = local2ndIndexSchema;
+    public void setLocalSecondaryIndexSchema(List<SecondaryIndex> localSecondaryIndexSchema) {
+        this.localSecondaryIndexSchema = localSecondaryIndexSchema;
     }
 
-    public DescribeTableResponse withGlobal2ndIndexSchema(List<GsiIndex> global2ndIndexSchema) {
-        this.global2ndIndexSchema = global2ndIndexSchema;
+    public DescribeTableResponse withGlobalSecondaryIndexSchema(List<GlobalSecondaryIndex> globalSecondaryIndexSchema) {
+        this.globalSecondaryIndexSchema = globalSecondaryIndexSchema;
         return this;
     }
 
-    public DescribeTableResponse addGlobal2ndIndexSchemaItem(GsiIndex global2ndIndexSchemaItem) {
-        if (this.global2ndIndexSchema == null) {
-            this.global2ndIndexSchema = new ArrayList<>();
+    public DescribeTableResponse addGlobalSecondaryIndexSchemaItem(
+        GlobalSecondaryIndex globalSecondaryIndexSchemaItem) {
+        if (this.globalSecondaryIndexSchema == null) {
+            this.globalSecondaryIndexSchema = new ArrayList<>();
         }
-        this.global2ndIndexSchema.add(global2ndIndexSchemaItem);
+        this.globalSecondaryIndexSchema.add(globalSecondaryIndexSchemaItem);
         return this;
     }
 
-    public DescribeTableResponse withGlobal2ndIndexSchema(Consumer<List<GsiIndex>> global2ndIndexSchemaSetter) {
-        if (this.global2ndIndexSchema == null) {
-            this.global2ndIndexSchema = new ArrayList<>();
+    public DescribeTableResponse withGlobalSecondaryIndexSchema(
+        Consumer<List<GlobalSecondaryIndex>> globalSecondaryIndexSchemaSetter) {
+        if (this.globalSecondaryIndexSchema == null) {
+            this.globalSecondaryIndexSchema = new ArrayList<>();
         }
-        global2ndIndexSchemaSetter.accept(this.global2ndIndexSchema);
+        globalSecondaryIndexSchemaSetter.accept(this.globalSecondaryIndexSchema);
         return this;
     }
 
     /**
-     * Get global2ndIndexSchema
-     * @return global2ndIndexSchema
+     * 全局二级索引模板。
+     * @return globalSecondaryIndexSchema
      */
-    public List<GsiIndex> getGlobal2ndIndexSchema() {
-        return global2ndIndexSchema;
+    public List<GlobalSecondaryIndex> getGlobalSecondaryIndexSchema() {
+        return globalSecondaryIndexSchema;
     }
 
-    public void setGlobal2ndIndexSchema(List<GsiIndex> global2ndIndexSchema) {
-        this.global2ndIndexSchema = global2ndIndexSchema;
+    public void setGlobalSecondaryIndexSchema(List<GlobalSecondaryIndex> globalSecondaryIndexSchema) {
+        this.globalSecondaryIndexSchema = globalSecondaryIndexSchema;
     }
 
-    public DescribeTableResponse withRuntimeInfo(RuntimeInfo runtimeInfo) {
-        this.runtimeInfo = runtimeInfo;
+    public DescribeTableResponse withRunTimeInfo(RunTimeInfo runTimeInfo) {
+        this.runTimeInfo = runTimeInfo;
         return this;
     }
 
-    public DescribeTableResponse withRuntimeInfo(Consumer<RuntimeInfo> runtimeInfoSetter) {
-        if (this.runtimeInfo == null) {
-            this.runtimeInfo = new RuntimeInfo();
-            runtimeInfoSetter.accept(this.runtimeInfo);
+    public DescribeTableResponse withRunTimeInfo(Consumer<RunTimeInfo> runTimeInfoSetter) {
+        if (this.runTimeInfo == null) {
+            this.runTimeInfo = new RunTimeInfo();
+            runTimeInfoSetter.accept(this.runTimeInfo);
         }
 
         return this;
     }
 
     /**
-     * Get runtimeInfo
-     * @return runtimeInfo
+     * Get runTimeInfo
+     * @return runTimeInfo
      */
-    public RuntimeInfo getRuntimeInfo() {
-        return runtimeInfo;
+    public RunTimeInfo getRunTimeInfo() {
+        return runTimeInfo;
     }
 
-    public void setRuntimeInfo(RuntimeInfo runtimeInfo) {
-        this.runtimeInfo = runtimeInfo;
+    public void setRunTimeInfo(RunTimeInfo runTimeInfo) {
+        this.runTimeInfo = runTimeInfo;
     }
 
     @Override
@@ -195,14 +198,15 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         DescribeTableResponse that = (DescribeTableResponse) obj;
         return Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.primaryKeySchema, that.primaryKeySchema)
-            && Objects.equals(this.local2ndIndexSchema, that.local2ndIndexSchema)
-            && Objects.equals(this.global2ndIndexSchema, that.global2ndIndexSchema)
-            && Objects.equals(this.runtimeInfo, that.runtimeInfo);
+            && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
+            && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
+            && Objects.equals(this.runTimeInfo, that.runTimeInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, primaryKeySchema, local2ndIndexSchema, global2ndIndexSchema, runtimeInfo);
+        return Objects
+            .hash(tableName, primaryKeySchema, localSecondaryIndexSchema, globalSecondaryIndexSchema, runTimeInfo);
     }
 
     @Override
@@ -211,9 +215,9 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         sb.append("class DescribeTableResponse {\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    primaryKeySchema: ").append(toIndentedString(primaryKeySchema)).append("\n");
-        sb.append("    local2ndIndexSchema: ").append(toIndentedString(local2ndIndexSchema)).append("\n");
-        sb.append("    global2ndIndexSchema: ").append(toIndentedString(global2ndIndexSchema)).append("\n");
-        sb.append("    runtimeInfo: ").append(toIndentedString(runtimeInfo)).append("\n");
+        sb.append("    localSecondaryIndexSchema: ").append(toIndentedString(localSecondaryIndexSchema)).append("\n");
+        sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");
+        sb.append("    runTimeInfo: ").append(toIndentedString(runTimeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

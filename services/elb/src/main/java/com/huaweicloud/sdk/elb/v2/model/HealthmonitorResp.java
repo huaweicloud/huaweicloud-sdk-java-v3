@@ -169,6 +169,11 @@ public class HealthmonitorResp {
 
     private List<ResourceList> pools = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_retries_down")
+
+    private Integer maxRetriesDown;
+
     public HealthmonitorResp withId(String id) {
         this.id = id;
         return this;
@@ -349,7 +354,7 @@ public class HealthmonitorResp {
     }
 
     /**
-     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 健康检查请求的请求路径。以\"/\"开头，默认为\"/\"。 支持使用字母、数字和短划线（-）、正斜线（/）、半角句号（.）、百分号（%）、半角问号（?）、井号（#）和and（&）以及扩展字符集_;~!()*[]@$^:',+  使用说明：当type为HTTP/HTTPS时生效。
      * @return urlPath
      */
     public String getUrlPath() {
@@ -448,6 +453,23 @@ public class HealthmonitorResp {
         this.pools = pools;
     }
 
+    public HealthmonitorResp withMaxRetriesDown(Integer maxRetriesDown) {
+        this.maxRetriesDown = maxRetriesDown;
+        return this;
+    }
+
+    /**
+     * 健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。取值范围：1-10。
+     * @return maxRetriesDown
+     */
+    public Integer getMaxRetriesDown() {
+        return maxRetriesDown;
+    }
+
+    public void setMaxRetriesDown(Integer maxRetriesDown) {
+        this.maxRetriesDown = maxRetriesDown;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -464,7 +486,8 @@ public class HealthmonitorResp {
             && Objects.equals(this.type, that.type) && Objects.equals(this.expectedCodes, that.expectedCodes)
             && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.urlPath, that.urlPath)
             && Objects.equals(this.httpMethod, that.httpMethod) && Objects.equals(this.delay, that.delay)
-            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.pools, that.pools);
+            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.pools, that.pools)
+            && Objects.equals(this.maxRetriesDown, that.maxRetriesDown);
     }
 
     @Override
@@ -483,7 +506,8 @@ public class HealthmonitorResp {
             httpMethod,
             delay,
             maxRetries,
-            pools);
+            pools,
+            maxRetriesDown);
     }
 
     @Override
@@ -505,6 +529,7 @@ public class HealthmonitorResp {
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
         sb.append("    maxRetries: ").append(toIndentedString(maxRetries)).append("\n");
         sb.append("    pools: ").append(toIndentedString(pools)).append("\n");
+        sb.append("    maxRetriesDown: ").append(toIndentedString(maxRetriesDown)).append("\n");
         sb.append("}");
         return sb.toString();
     }

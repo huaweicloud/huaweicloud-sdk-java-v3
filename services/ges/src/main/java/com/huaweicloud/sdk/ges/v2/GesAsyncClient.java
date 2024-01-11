@@ -25,8 +25,12 @@ import com.huaweicloud.sdk.ges.v2.model.DetachEip2Request;
 import com.huaweicloud.sdk.ges.v2.model.DetachEip2Response;
 import com.huaweicloud.sdk.ges.v2.model.ExpandGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ExpandGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ExportBackup2Request;
+import com.huaweicloud.sdk.ges.v2.model.ExportBackup2Response;
 import com.huaweicloud.sdk.ges.v2.model.ExportGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ExportGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ImportBackup2Request;
+import com.huaweicloud.sdk.ges.v2.model.ImportBackup2Response;
 import com.huaweicloud.sdk.ges.v2.model.ImportGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ImportGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ListBackups2Request;
@@ -375,6 +379,35 @@ public class GesAsyncClient {
     }
 
     /**
+     * 导出备份
+     *
+     * 导出备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportBackup2Request 请求对象
+     * @return CompletableFuture<ExportBackup2Response>
+     */
+    public CompletableFuture<ExportBackup2Response> exportBackup2Async(ExportBackup2Request request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.exportBackup2);
+    }
+
+    /**
+     * 导出备份
+     *
+     * 导出备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportBackup2Request 请求对象
+     * @return AsyncInvoker<ExportBackup2Request, ExportBackup2Response>
+     */
+    public AsyncInvoker<ExportBackup2Request, ExportBackup2Response> exportBackup2AsyncInvoker(
+        ExportBackup2Request request) {
+        return new AsyncInvoker<ExportBackup2Request, ExportBackup2Response>(request, GesMeta.exportBackup2, hcClient);
+    }
+
+    /**
      * 导出图
      *
      * 导出图。
@@ -401,6 +434,35 @@ public class GesAsyncClient {
     public AsyncInvoker<ExportGraph2Request, ExportGraph2Response> exportGraph2AsyncInvoker(
         ExportGraph2Request request) {
         return new AsyncInvoker<ExportGraph2Request, ExportGraph2Response>(request, GesMeta.exportGraph2, hcClient);
+    }
+
+    /**
+     * 导入备份
+     *
+     * 导入备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportBackup2Request 请求对象
+     * @return CompletableFuture<ImportBackup2Response>
+     */
+    public CompletableFuture<ImportBackup2Response> importBackup2Async(ImportBackup2Request request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.importBackup2);
+    }
+
+    /**
+     * 导入备份
+     *
+     * 导入备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportBackup2Request 请求对象
+     * @return AsyncInvoker<ImportBackup2Request, ImportBackup2Response>
+     */
+    public AsyncInvoker<ImportBackup2Request, ImportBackup2Response> importBackup2AsyncInvoker(
+        ImportBackup2Request request) {
+        return new AsyncInvoker<ImportBackup2Request, ImportBackup2Response>(request, GesMeta.importBackup2, hcClient);
     }
 
     /**

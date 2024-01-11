@@ -50,6 +50,36 @@ public class IdCardRequestBody {
 
     private Boolean returnPortraitLocation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_tampering")
+
+    private Boolean detectTampering;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_border_integrity")
+
+    private Boolean detectBorderIntegrity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_blocking_within_border")
+
+    private Boolean detectBlockingWithinBorder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_blur")
+
+    private Boolean detectBlur;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_interim")
+
+    private Boolean detectInterim;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_glare")
+
+    private Boolean detectGlare;
+
     public IdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -90,7 +120,7 @@ public class IdCardRequestBody {
     }
 
     /**
-     *  - front：身份证正面。 - back：身份证背面。  > 说明： 如果参数值为空或无该参数，系统自动识别，建议填写，准确率更高。 
+     *  - front：身份证人像面。 - back：身份证国徽面。 - double_side：身份证双面信息 > 说明： 如果参数值为空或无该参数，系统自动识别，建议填写，准确率更高。 
      * @return side
      */
     public String getSide() {
@@ -141,7 +171,7 @@ public class IdCardRequestBody {
     }
 
     /**
-     * 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否经过翻拍  - false：不返回身份证图像是否经过翻拍 
+     * 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：开启判断身份证图像是否经过翻拍功能  - false：关闭判断身份证图像是否经过翻拍功能 
      * @return detectReproduce
      */
     public Boolean getDetectReproduce() {
@@ -158,7 +188,7 @@ public class IdCardRequestBody {
     }
 
     /**
-     * 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件 
+     * 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：开启判断身份证图像是否是复印件功能  - false : 关闭身份证图像是否是复印件功能 
      * @return detectCopy
      */
     public Boolean getDetectCopy() {
@@ -186,6 +216,108 @@ public class IdCardRequestBody {
         this.returnPortraitLocation = returnPortraitLocation;
     }
 
+    public IdCardRequestBody withDetectTampering(Boolean detectTampering) {
+        this.detectTampering = detectTampering;
+        return this;
+    }
+
+    /**
+     * 身份证图像PS告警功能开关，默认false，可选值如下：  - true ：开启身份证图像PS告警功能 - false : 关闭身份证图像告警功能 
+     * @return detectTampering
+     */
+    public Boolean getDetectTampering() {
+        return detectTampering;
+    }
+
+    public void setDetectTampering(Boolean detectTampering) {
+        this.detectTampering = detectTampering;
+    }
+
+    public IdCardRequestBody withDetectBorderIntegrity(Boolean detectBorderIntegrity) {
+        this.detectBorderIntegrity = detectBorderIntegrity;
+        return this;
+    }
+
+    /**
+     * 身份证图像边框完整性告警功能开关，默认false，可选值如下：  - true ：打开身份证图像边框完整性告警功能 - false : 关闭身份证图像边框完整性告警功能 
+     * @return detectBorderIntegrity
+     */
+    public Boolean getDetectBorderIntegrity() {
+        return detectBorderIntegrity;
+    }
+
+    public void setDetectBorderIntegrity(Boolean detectBorderIntegrity) {
+        this.detectBorderIntegrity = detectBorderIntegrity;
+    }
+
+    public IdCardRequestBody withDetectBlockingWithinBorder(Boolean detectBlockingWithinBorder) {
+        this.detectBlockingWithinBorder = detectBlockingWithinBorder;
+        return this;
+    }
+
+    /**
+     * 身份证图像边框内部是否有异物遮挡的告警功能开关，默认false，可选值如下：  - true ：开启身份证边框内部异物遮挡告警功能 - false : 关闭身份证边框内部异物遮挡告警功能 
+     * @return detectBlockingWithinBorder
+     */
+    public Boolean getDetectBlockingWithinBorder() {
+        return detectBlockingWithinBorder;
+    }
+
+    public void setDetectBlockingWithinBorder(Boolean detectBlockingWithinBorder) {
+        this.detectBlockingWithinBorder = detectBlockingWithinBorder;
+    }
+
+    public IdCardRequestBody withDetectBlur(Boolean detectBlur) {
+        this.detectBlur = detectBlur;
+        return this;
+    }
+
+    /**
+     * 身份证图像模糊告警功能的开关，默认false，可选值如下：  - true ：开启身份证图像模糊告警功能 - false : 关闭身份证图像模糊告警功能 
+     * @return detectBlur
+     */
+    public Boolean getDetectBlur() {
+        return detectBlur;
+    }
+
+    public void setDetectBlur(Boolean detectBlur) {
+        this.detectBlur = detectBlur;
+    }
+
+    public IdCardRequestBody withDetectInterim(Boolean detectInterim) {
+        this.detectInterim = detectInterim;
+        return this;
+    }
+
+    /**
+     * 临时身份证告警功能开关，默认false，可选值如下：  - true ：开启临时身份证告警功能 - false : 关闭临时身份证告警功能 
+     * @return detectInterim
+     */
+    public Boolean getDetectInterim() {
+        return detectInterim;
+    }
+
+    public void setDetectInterim(Boolean detectInterim) {
+        this.detectInterim = detectInterim;
+    }
+
+    public IdCardRequestBody withDetectGlare(Boolean detectGlare) {
+        this.detectGlare = detectGlare;
+        return this;
+    }
+
+    /**
+     * 身份证反光告警功能开关，默认false，可选值如下：  - true ：开启身份证反光告警功能  - false : 关闭身份证反光告警功能 
+     * @return detectGlare
+     */
+    public Boolean getDetectGlare() {
+        return detectGlare;
+    }
+
+    public void setDetectGlare(Boolean detectGlare) {
+        this.detectGlare = detectGlare;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -200,7 +332,13 @@ public class IdCardRequestBody {
             && Objects.equals(this.returnTextLocation, that.returnTextLocation)
             && Objects.equals(this.detectReproduce, that.detectReproduce)
             && Objects.equals(this.detectCopy, that.detectCopy)
-            && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation);
+            && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation)
+            && Objects.equals(this.detectTampering, that.detectTampering)
+            && Objects.equals(this.detectBorderIntegrity, that.detectBorderIntegrity)
+            && Objects.equals(this.detectBlockingWithinBorder, that.detectBlockingWithinBorder)
+            && Objects.equals(this.detectBlur, that.detectBlur)
+            && Objects.equals(this.detectInterim, that.detectInterim)
+            && Objects.equals(this.detectGlare, that.detectGlare);
     }
 
     @Override
@@ -212,7 +350,13 @@ public class IdCardRequestBody {
             returnTextLocation,
             detectReproduce,
             detectCopy,
-            returnPortraitLocation);
+            returnPortraitLocation,
+            detectTampering,
+            detectBorderIntegrity,
+            detectBlockingWithinBorder,
+            detectBlur,
+            detectInterim,
+            detectGlare);
     }
 
     @Override
@@ -227,6 +371,12 @@ public class IdCardRequestBody {
         sb.append("    detectReproduce: ").append(toIndentedString(detectReproduce)).append("\n");
         sb.append("    detectCopy: ").append(toIndentedString(detectCopy)).append("\n");
         sb.append("    returnPortraitLocation: ").append(toIndentedString(returnPortraitLocation)).append("\n");
+        sb.append("    detectTampering: ").append(toIndentedString(detectTampering)).append("\n");
+        sb.append("    detectBorderIntegrity: ").append(toIndentedString(detectBorderIntegrity)).append("\n");
+        sb.append("    detectBlockingWithinBorder: ").append(toIndentedString(detectBlockingWithinBorder)).append("\n");
+        sb.append("    detectBlur: ").append(toIndentedString(detectBlur)).append("\n");
+        sb.append("    detectInterim: ").append(toIndentedString(detectInterim)).append("\n");
+        sb.append("    detectGlare: ").append(toIndentedString(detectGlare)).append("\n");
         sb.append("}");
         return sb.toString();
     }

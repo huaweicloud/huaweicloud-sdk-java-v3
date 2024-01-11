@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
@@ -1796,6 +1798,37 @@ public class EcsAsyncClient {
         NovaShowServerRequest request) {
         return new AsyncInvoker<NovaShowServerRequest, NovaShowServerResponse>(request, EcsMeta.novaShowServer,
             hcClient);
+    }
+
+    /**
+     * 查询指定云服务器网卡信息
+     *
+     * 根据网卡ID，查询云服务器网卡信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NovaShowServerInterfaceRequest 请求对象
+     * @return CompletableFuture<NovaShowServerInterfaceResponse>
+     */
+    public CompletableFuture<NovaShowServerInterfaceResponse> novaShowServerInterfaceAsync(
+        NovaShowServerInterfaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowServerInterface);
+    }
+
+    /**
+     * 查询指定云服务器网卡信息
+     *
+     * 根据网卡ID，查询云服务器网卡信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NovaShowServerInterfaceRequest 请求对象
+     * @return AsyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse>
+     */
+    public AsyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> novaShowServerInterfaceAsyncInvoker(
+        NovaShowServerInterfaceRequest request) {
+        return new AsyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse>(request,
+            EcsMeta.novaShowServerInterface, hcClient);
     }
 
     /**

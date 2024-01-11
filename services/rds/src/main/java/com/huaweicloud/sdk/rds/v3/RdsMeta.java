@@ -2192,6 +2192,13 @@ public class RdsMeta {
             f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, (req, v) -> {
                 req.setDatastoreType(v);
             }));
+        builder.<String>withRequestField("eps_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getEpsId, (req, v) -> {
+                req.setEpsId(v);
+            }));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

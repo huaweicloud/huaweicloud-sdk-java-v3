@@ -21,28 +21,28 @@ import java.util.function.Consumer;
 public class ScanSkeyKvResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnedCount")
-    @BsonProperty(value = "ReturnedCount")
+    @JsonProperty(value = "returned_count")
+    @BsonProperty(value = "returned_count")
 
     private Integer returnedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "FilteredCount")
-    @BsonProperty(value = "FilteredCount")
+    @JsonProperty(value = "filtered_count")
+    @BsonProperty(value = "filtered_count")
 
     private Integer filteredCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "CursorSortKey")
-    @BsonProperty(value = "CursorSortKey")
+    @JsonProperty(value = "cursor_sort_key")
+    @BsonProperty(value = "cursor_sort_key")
 
     private Document cursorSortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvArray")
-    @BsonProperty(value = "KvArray")
+    @JsonProperty(value = "returned_kv_items")
+    @BsonProperty(value = "returned_kv_items")
 
-    private List<KvItem> kvArray = null;
+    private List<ReturnedKvItem> returnedKvItems = null;
 
     public ScanSkeyKvResponse withReturnedCount(Integer returnedCount) {
         this.returnedCount = returnedCount;
@@ -50,7 +50,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get returnedCount
+     * 返回的文档数量，为_0_不表示结束。 - 如果filtered_count超过_500_仍无匹配，则返回_0。 -  长度：4
      * @return returnedCount
      */
     public Integer getReturnedCount() {
@@ -67,7 +67,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get filteredCount
+     * 被过滤掉的文档数量 - 长度：4
      * @return filteredCount
      */
     public Integer getFilteredCount() {
@@ -84,7 +84,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * Get cursorSortKey
+     * 下次请求时的start_key。 > 该值为空时，表示指定范围或者指定filter条件所有kv已经返回。
      * @return cursorSortKey
      */
     public Document getCursorSortKey() {
@@ -95,37 +95,37 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
         this.cursorSortKey = cursorSortKey;
     }
 
-    public ScanSkeyKvResponse withKvArray(List<KvItem> kvArray) {
-        this.kvArray = kvArray;
+    public ScanSkeyKvResponse withReturnedKvItems(List<ReturnedKvItem> returnedKvItems) {
+        this.returnedKvItems = returnedKvItems;
         return this;
     }
 
-    public ScanSkeyKvResponse addKvArrayItem(KvItem kvArrayItem) {
-        if (this.kvArray == null) {
-            this.kvArray = new ArrayList<>();
+    public ScanSkeyKvResponse addReturnedKvItemsItem(ReturnedKvItem returnedKvItemsItem) {
+        if (this.returnedKvItems == null) {
+            this.returnedKvItems = new ArrayList<>();
         }
-        this.kvArray.add(kvArrayItem);
+        this.returnedKvItems.add(returnedKvItemsItem);
         return this;
     }
 
-    public ScanSkeyKvResponse withKvArray(Consumer<List<KvItem>> kvArraySetter) {
-        if (this.kvArray == null) {
-            this.kvArray = new ArrayList<>();
+    public ScanSkeyKvResponse withReturnedKvItems(Consumer<List<ReturnedKvItem>> returnedKvItemsSetter) {
+        if (this.returnedKvItems == null) {
+            this.returnedKvItems = new ArrayList<>();
         }
-        kvArraySetter.accept(this.kvArray);
+        returnedKvItemsSetter.accept(this.returnedKvItems);
         return this;
     }
 
     /**
-     * Get kvArray
-     * @return kvArray
+     * 返回的kv列表，与scan_kv的kv_array相同。
+     * @return returnedKvItems
      */
-    public List<KvItem> getKvArray() {
-        return kvArray;
+    public List<ReturnedKvItem> getReturnedKvItems() {
+        return returnedKvItems;
     }
 
-    public void setKvArray(List<KvItem> kvArray) {
-        this.kvArray = kvArray;
+    public void setReturnedKvItems(List<ReturnedKvItem> returnedKvItems) {
+        this.returnedKvItems = returnedKvItems;
     }
 
     @Override
@@ -139,12 +139,13 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
         ScanSkeyKvResponse that = (ScanSkeyKvResponse) obj;
         return Objects.equals(this.returnedCount, that.returnedCount)
             && Objects.equals(this.filteredCount, that.filteredCount)
-            && Objects.equals(this.cursorSortKey, that.cursorSortKey) && Objects.equals(this.kvArray, that.kvArray);
+            && Objects.equals(this.cursorSortKey, that.cursorSortKey)
+            && Objects.equals(this.returnedKvItems, that.returnedKvItems);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(returnedCount, filteredCount, cursorSortKey, kvArray);
+        return Objects.hash(returnedCount, filteredCount, cursorSortKey, returnedKvItems);
     }
 
     @Override
@@ -154,7 +155,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
         sb.append("    returnedCount: ").append(toIndentedString(returnedCount)).append("\n");
         sb.append("    filteredCount: ").append(toIndentedString(filteredCount)).append("\n");
         sb.append("    cursorSortKey: ").append(toIndentedString(cursorSortKey)).append("\n");
-        sb.append("    kvArray: ").append(toIndentedString(kvArray)).append("\n");
+        sb.append("    returnedKvItems: ").append(toIndentedString(returnedKvItems)).append("\n");
         sb.append("}");
         return sb.toString();
     }

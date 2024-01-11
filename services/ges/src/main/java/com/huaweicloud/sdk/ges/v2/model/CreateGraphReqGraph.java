@@ -113,6 +113,11 @@ public class CreateGraphReqGraph {
 
     private Boolean enableMultiLabel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "capacity_ratio")
+
+    private Integer capacityRatio;
+
     public CreateGraphReqGraph withName(String name) {
         this.name = name;
         return this;
@@ -522,6 +527,23 @@ public class CreateGraphReqGraph {
         this.enableMultiLabel = enableMultiLabel;
     }
 
+    public CreateGraphReqGraph withCapacityRatio(Integer capacityRatio) {
+        this.capacityRatio = capacityRatio;
+        return this;
+    }
+
+    /**
+     * 图的容量倍率。该参数只有持久化版百亿规格图支持，且从2.3.18版本后开始支持。
+     * @return capacityRatio
+     */
+    public Integer getCapacityRatio() {
+        return capacityRatio;
+    }
+
+    public void setCapacityRatio(Integer capacityRatio) {
+        this.capacityRatio = capacityRatio;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -545,7 +567,8 @@ public class CreateGraphReqGraph {
             && Objects.equals(this.cryptAlgorithm, that.cryptAlgorithm)
             && Objects.equals(this.enableHttps, that.enableHttps) && Objects.equals(this.productType, that.productType)
             && Objects.equals(this.vertexIdType, that.vertexIdType)
-            && Objects.equals(this.enableMultiLabel, that.enableMultiLabel);
+            && Objects.equals(this.enableMultiLabel, that.enableMultiLabel)
+            && Objects.equals(this.capacityRatio, that.capacityRatio);
     }
 
     @Override
@@ -569,7 +592,8 @@ public class CreateGraphReqGraph {
             enableHttps,
             productType,
             vertexIdType,
-            enableMultiLabel);
+            enableMultiLabel,
+            capacityRatio);
     }
 
     @Override
@@ -596,6 +620,7 @@ public class CreateGraphReqGraph {
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    vertexIdType: ").append(toIndentedString(vertexIdType)).append("\n");
         sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
+        sb.append("    capacityRatio: ").append(toIndentedString(capacityRatio)).append("\n");
         sb.append("}");
         return sb.toString();
     }

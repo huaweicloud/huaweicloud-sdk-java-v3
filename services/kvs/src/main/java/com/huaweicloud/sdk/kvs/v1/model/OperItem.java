@@ -9,27 +9,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * OperItem
+ * put_kv或delete_kv或get_kv操作。
  */
 public class OperItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PutKv")
-    @BsonProperty(value = "PutKv")
+    @JsonProperty(value = "put_kv")
+    @BsonProperty(value = "put_kv")
 
     private PutKv putKv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "DeleteKv")
-    @BsonProperty(value = "DeleteKv")
+    @JsonProperty(value = "delete_kv")
+    @BsonProperty(value = "delete_kv")
 
     private DeleteKv deleteKv;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "GetKv")
-    @BsonProperty(value = "GetKv")
-
-    private GetKv getKv;
 
     public OperItem withPutKv(PutKv putKv) {
         this.putKv = putKv;
@@ -83,32 +77,6 @@ public class OperItem {
         this.deleteKv = deleteKv;
     }
 
-    public OperItem withGetKv(GetKv getKv) {
-        this.getKv = getKv;
-        return this;
-    }
-
-    public OperItem withGetKv(Consumer<GetKv> getKvSetter) {
-        if (this.getKv == null) {
-            this.getKv = new GetKv();
-            getKvSetter.accept(this.getKv);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get getKv
-     * @return getKv
-     */
-    public GetKv getGetKv() {
-        return getKv;
-    }
-
-    public void setGetKv(GetKv getKv) {
-        this.getKv = getKv;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,13 +86,12 @@ public class OperItem {
             return false;
         }
         OperItem that = (OperItem) obj;
-        return Objects.equals(this.putKv, that.putKv) && Objects.equals(this.deleteKv, that.deleteKv)
-            && Objects.equals(this.getKv, that.getKv);
+        return Objects.equals(this.putKv, that.putKv) && Objects.equals(this.deleteKv, that.deleteKv);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(putKv, deleteKv, getKv);
+        return Objects.hash(putKv, deleteKv);
     }
 
     @Override
@@ -133,7 +100,6 @@ public class OperItem {
         sb.append("class OperItem {\n");
         sb.append("    putKv: ").append(toIndentedString(putKv)).append("\n");
         sb.append("    deleteKv: ").append(toIndentedString(deleteKv)).append("\n");
-        sb.append("    getKv: ").append(toIndentedString(getKv)).append("\n");
         sb.append("}");
         return sb.toString();
     }

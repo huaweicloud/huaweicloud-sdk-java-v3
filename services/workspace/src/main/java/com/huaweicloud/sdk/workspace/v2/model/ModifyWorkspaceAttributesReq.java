@@ -139,6 +139,21 @@ public class ModifyWorkspaceAttributesReq {
 
     private String dcVncIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorized_collect_log")
+
+    private Boolean authorizedCollectLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorized_hda_upgrade")
+
+    private Boolean authorizedHdaUpgrade;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_dedicated_standby_network_param")
+
+    private ApplyDedicatedStandbyNetworkParam applyDedicatedStandbyNetworkParam;
+
     public ModifyWorkspaceAttributesReq withAdInfo(AdDomainInfo adInfo) {
         this.adInfo = adInfo;
         return this;
@@ -326,6 +341,69 @@ public class ModifyWorkspaceAttributesReq {
         this.dcVncIp = dcVncIp;
     }
 
+    public ModifyWorkspaceAttributesReq withAuthorizedCollectLog(Boolean authorizedCollectLog) {
+        this.authorizedCollectLog = authorizedCollectLog;
+        return this;
+    }
+
+    /**
+     * 是否授权收集日志。
+     * @return authorizedCollectLog
+     */
+    public Boolean getAuthorizedCollectLog() {
+        return authorizedCollectLog;
+    }
+
+    public void setAuthorizedCollectLog(Boolean authorizedCollectLog) {
+        this.authorizedCollectLog = authorizedCollectLog;
+    }
+
+    public ModifyWorkspaceAttributesReq withAuthorizedHdaUpgrade(Boolean authorizedHdaUpgrade) {
+        this.authorizedHdaUpgrade = authorizedHdaUpgrade;
+        return this;
+    }
+
+    /**
+     * 是否授权hda升级。
+     * @return authorizedHdaUpgrade
+     */
+    public Boolean getAuthorizedHdaUpgrade() {
+        return authorizedHdaUpgrade;
+    }
+
+    public void setAuthorizedHdaUpgrade(Boolean authorizedHdaUpgrade) {
+        this.authorizedHdaUpgrade = authorizedHdaUpgrade;
+    }
+
+    public ModifyWorkspaceAttributesReq withApplyDedicatedStandbyNetworkParam(
+        ApplyDedicatedStandbyNetworkParam applyDedicatedStandbyNetworkParam) {
+        this.applyDedicatedStandbyNetworkParam = applyDedicatedStandbyNetworkParam;
+        return this;
+    }
+
+    public ModifyWorkspaceAttributesReq withApplyDedicatedStandbyNetworkParam(
+        Consumer<ApplyDedicatedStandbyNetworkParam> applyDedicatedStandbyNetworkParamSetter) {
+        if (this.applyDedicatedStandbyNetworkParam == null) {
+            this.applyDedicatedStandbyNetworkParam = new ApplyDedicatedStandbyNetworkParam();
+            applyDedicatedStandbyNetworkParamSetter.accept(this.applyDedicatedStandbyNetworkParam);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get applyDedicatedStandbyNetworkParam
+     * @return applyDedicatedStandbyNetworkParam
+     */
+    public ApplyDedicatedStandbyNetworkParam getApplyDedicatedStandbyNetworkParam() {
+        return applyDedicatedStandbyNetworkParam;
+    }
+
+    public void setApplyDedicatedStandbyNetworkParam(
+        ApplyDedicatedStandbyNetworkParam applyDedicatedStandbyNetworkParam) {
+        this.applyDedicatedStandbyNetworkParam = applyDedicatedStandbyNetworkParam;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -341,7 +419,10 @@ public class ModifyWorkspaceAttributesReq {
             && Objects.equals(this.subnetIds, that.subnetIds)
             && Objects.equals(this.internetAccessPort, that.internetAccessPort)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
-            && Objects.equals(this.isSendEmail, that.isSendEmail) && Objects.equals(this.dcVncIp, that.dcVncIp);
+            && Objects.equals(this.isSendEmail, that.isSendEmail) && Objects.equals(this.dcVncIp, that.dcVncIp)
+            && Objects.equals(this.authorizedCollectLog, that.authorizedCollectLog)
+            && Objects.equals(this.authorizedHdaUpgrade, that.authorizedHdaUpgrade)
+            && Objects.equals(this.applyDedicatedStandbyNetworkParam, that.applyDedicatedStandbyNetworkParam);
     }
 
     @Override
@@ -354,7 +435,10 @@ public class ModifyWorkspaceAttributesReq {
             internetAccessPort,
             enterpriseId,
             isSendEmail,
-            dcVncIp);
+            dcVncIp,
+            authorizedCollectLog,
+            authorizedHdaUpgrade,
+            applyDedicatedStandbyNetworkParam);
     }
 
     @Override
@@ -370,6 +454,11 @@ public class ModifyWorkspaceAttributesReq {
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
         sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
+        sb.append("    authorizedCollectLog: ").append(toIndentedString(authorizedCollectLog)).append("\n");
+        sb.append("    authorizedHdaUpgrade: ").append(toIndentedString(authorizedHdaUpgrade)).append("\n");
+        sb.append("    applyDedicatedStandbyNetworkParam: ")
+            .append(toIndentedString(applyDedicatedStandbyNetworkParam))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

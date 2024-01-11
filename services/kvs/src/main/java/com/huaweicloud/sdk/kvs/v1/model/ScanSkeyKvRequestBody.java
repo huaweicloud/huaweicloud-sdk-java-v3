@@ -17,70 +17,58 @@ import java.util.function.Consumer;
 public class ScanSkeyKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "StrongConsistent")
-    @BsonProperty(value = "StrongConsistent")
+    @JsonProperty(value = "hint_index_name")
+    @BsonProperty(value = "hint_index_name")
 
-    private Boolean strongConsistent;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "HintIndex")
-    @BsonProperty(value = "HintIndex")
-
-    private String hintIndex;
+    private String hintIndexName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "LimitNum")
-    @BsonProperty(value = "LimitNum")
+    @JsonProperty(value = "limit")
+    @BsonProperty(value = "limit")
 
-    private Integer limitNum;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ShardKey")
-    @BsonProperty(value = "ShardKey")
+    @JsonProperty(value = "shard_key")
+    @BsonProperty(value = "shard_key")
 
     private Document shardKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "StartSortKey")
-    @BsonProperty(value = "StartSortKey")
+    @JsonProperty(value = "start_sort_key")
+    @BsonProperty(value = "start_sort_key")
 
     private Document startSortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "EndSortKey")
-    @BsonProperty(value = "EndSortKey")
+    @JsonProperty(value = "end_sort_key")
+    @BsonProperty(value = "end_sort_key")
 
     private Document endSortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "FilterExpression")
-    @BsonProperty(value = "FilterExpression")
+    @JsonProperty(value = "filter_expression")
+    @BsonProperty(value = "filter_expression")
 
     private ConditionExpression filterExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "FilterVarDefine")
-    @BsonProperty(value = "FilterVarDefine")
-
-    private Document filterVarDefine;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ProjectionFields")
-    @BsonProperty(value = "ProjectionFields")
+    @JsonProperty(value = "projection_fields")
+    @BsonProperty(value = "projection_fields")
 
     private List<String> projectionFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnPartialBlob")
-    @BsonProperty(value = "ReturnPartialBlob")
+    @JsonProperty(value = "projection_blob")
+    @BsonProperty(value = "projection_blob")
 
-    private ReturnPartialBlob returnPartialBlob;
+    private ProjectionBlob projectionBlob;
 
     public ScanSkeyKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -88,7 +76,7 @@ public class ScanSkeyKvRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -99,56 +87,39 @@ public class ScanSkeyKvRequestBody {
         this.tableName = tableName;
     }
 
-    public ScanSkeyKvRequestBody withStrongConsistent(Boolean strongConsistent) {
-        this.strongConsistent = strongConsistent;
+    public ScanSkeyKvRequestBody withHintIndexName(String hintIndexName) {
+        this.hintIndexName = hintIndexName;
         return this;
     }
 
     /**
-     * Get strongConsistent
-     * @return strongConsistent
+     * create_table时指定的索引名。
+     * @return hintIndexName
      */
-    public Boolean getStrongConsistent() {
-        return strongConsistent;
+    public String getHintIndexName() {
+        return hintIndexName;
     }
 
-    public void setStrongConsistent(Boolean strongConsistent) {
-        this.strongConsistent = strongConsistent;
+    public void setHintIndexName(String hintIndexName) {
+        this.hintIndexName = hintIndexName;
     }
 
-    public ScanSkeyKvRequestBody withHintIndex(String hintIndex) {
-        this.hintIndex = hintIndex;
+    public ScanSkeyKvRequestBody withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
-     * Get hintIndex
-     * @return hintIndex
-     */
-    public String getHintIndex() {
-        return hintIndex;
-    }
-
-    public void setHintIndex(String hintIndex) {
-        this.hintIndex = hintIndex;
-    }
-
-    public ScanSkeyKvRequestBody withLimitNum(Integer limitNum) {
-        this.limitNum = limitNum;
-        return this;
-    }
-
-    /**
-     * Get limitNum
+     * 数据量不超过_1_mb时，返回的文档个数，最大_100_个，默认_1_mb_或者_100_个文档。
      * maximum: 100
-     * @return limitNum
+     * @return limit
      */
-    public Integer getLimitNum() {
-        return limitNum;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setLimitNum(Integer limitNum) {
-        this.limitNum = limitNum;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public ScanSkeyKvRequestBody withShardKey(Document shardKey) {
@@ -157,7 +128,7 @@ public class ScanSkeyKvRequestBody {
     }
 
     /**
-     * Get shardKey
+     * 要遍历的指定分区键下的kv。
      * @return shardKey
      */
     public Document getShardKey() {
@@ -174,7 +145,7 @@ public class ScanSkeyKvRequestBody {
     }
 
     /**
-     * Get startSortKey
+     * 起始排序键值，默认空表示从头遍历，左闭。 > 分页返回时，该值使用上次响应返回的cursor_sort_key
      * @return startSortKey
      */
     public Document getStartSortKey() {
@@ -191,7 +162,7 @@ public class ScanSkeyKvRequestBody {
     }
 
     /**
-     * Get endSortKey
+     * 终止主键或索引键值，默认空表示直到最后，右开。
      * @return endSortKey
      */
     public Document getEndSortKey() {
@@ -228,23 +199,6 @@ public class ScanSkeyKvRequestBody {
         this.filterExpression = filterExpression;
     }
 
-    public ScanSkeyKvRequestBody withFilterVarDefine(Document filterVarDefine) {
-        this.filterVarDefine = filterVarDefine;
-        return this;
-    }
-
-    /**
-     * Get filterVarDefine
-     * @return filterVarDefine
-     */
-    public Document getFilterVarDefine() {
-        return filterVarDefine;
-    }
-
-    public void setFilterVarDefine(Document filterVarDefine) {
-        this.filterVarDefine = filterVarDefine;
-    }
-
     public ScanSkeyKvRequestBody withProjectionFields(List<String> projectionFields) {
         this.projectionFields = projectionFields;
         return this;
@@ -267,7 +221,7 @@ public class ScanSkeyKvRequestBody {
     }
 
     /**
-     * Get projectionFields
+     * 对kv_doc有效，返回哪些字段列表，默认全部。 - 数组元素的字段名或嵌套字段路径用'/'分割，e_name为下标。
      * @return projectionFields
      */
     public List<String> getProjectionFields() {
@@ -278,30 +232,30 @@ public class ScanSkeyKvRequestBody {
         this.projectionFields = projectionFields;
     }
 
-    public ScanSkeyKvRequestBody withReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public ScanSkeyKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
         return this;
     }
 
-    public ScanSkeyKvRequestBody withReturnPartialBlob(Consumer<ReturnPartialBlob> returnPartialBlobSetter) {
-        if (this.returnPartialBlob == null) {
-            this.returnPartialBlob = new ReturnPartialBlob();
-            returnPartialBlobSetter.accept(this.returnPartialBlob);
+    public ScanSkeyKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
+        if (this.projectionBlob == null) {
+            this.projectionBlob = new ProjectionBlob();
+            projectionBlobSetter.accept(this.projectionBlob);
         }
 
         return this;
     }
 
     /**
-     * Get returnPartialBlob
-     * @return returnPartialBlob
+     * Get projectionBlob
+     * @return projectionBlob
      */
-    public ReturnPartialBlob getReturnPartialBlob() {
-        return returnPartialBlob;
+    public ProjectionBlob getProjectionBlob() {
+        return projectionBlob;
     }
 
-    public void setReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public void setProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
     }
 
     @Override
@@ -313,30 +267,25 @@ public class ScanSkeyKvRequestBody {
             return false;
         }
         ScanSkeyKvRequestBody that = (ScanSkeyKvRequestBody) obj;
-        return Objects.equals(this.tableName, that.tableName)
-            && Objects.equals(this.strongConsistent, that.strongConsistent)
-            && Objects.equals(this.hintIndex, that.hintIndex) && Objects.equals(this.limitNum, that.limitNum)
-            && Objects.equals(this.shardKey, that.shardKey) && Objects.equals(this.startSortKey, that.startSortKey)
-            && Objects.equals(this.endSortKey, that.endSortKey)
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.hintIndexName, that.hintIndexName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.shardKey, that.shardKey)
+            && Objects.equals(this.startSortKey, that.startSortKey) && Objects.equals(this.endSortKey, that.endSortKey)
             && Objects.equals(this.filterExpression, that.filterExpression)
-            && Objects.equals(this.filterVarDefine, that.filterVarDefine)
             && Objects.equals(this.projectionFields, that.projectionFields)
-            && Objects.equals(this.returnPartialBlob, that.returnPartialBlob);
+            && Objects.equals(this.projectionBlob, that.projectionBlob);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(tableName,
-            strongConsistent,
-            hintIndex,
-            limitNum,
+            hintIndexName,
+            limit,
             shardKey,
             startSortKey,
             endSortKey,
             filterExpression,
-            filterVarDefine,
             projectionFields,
-            returnPartialBlob);
+            projectionBlob);
     }
 
     @Override
@@ -344,16 +293,14 @@ public class ScanSkeyKvRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScanSkeyKvRequestBody {\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
-        sb.append("    strongConsistent: ").append(toIndentedString(strongConsistent)).append("\n");
-        sb.append("    hintIndex: ").append(toIndentedString(hintIndex)).append("\n");
-        sb.append("    limitNum: ").append(toIndentedString(limitNum)).append("\n");
+        sb.append("    hintIndexName: ").append(toIndentedString(hintIndexName)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    shardKey: ").append(toIndentedString(shardKey)).append("\n");
         sb.append("    startSortKey: ").append(toIndentedString(startSortKey)).append("\n");
         sb.append("    endSortKey: ").append(toIndentedString(endSortKey)).append("\n");
         sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
-        sb.append("    filterVarDefine: ").append(toIndentedString(filterVarDefine)).append("\n");
         sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
-        sb.append("    returnPartialBlob: ").append(toIndentedString(returnPartialBlob)).append("\n");
+        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

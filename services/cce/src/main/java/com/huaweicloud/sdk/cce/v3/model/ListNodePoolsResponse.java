@@ -27,7 +27,7 @@ public class ListNodePoolsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<NodePool> items = null;
+    private List<NodePoolResp> items = null;
 
     public ListNodePoolsResponse withKind(String kind) {
         this.kind = kind;
@@ -63,12 +63,12 @@ public class ListNodePoolsResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
-    public ListNodePoolsResponse withItems(List<NodePool> items) {
+    public ListNodePoolsResponse withItems(List<NodePoolResp> items) {
         this.items = items;
         return this;
     }
 
-    public ListNodePoolsResponse addItemsItem(NodePool itemsItem) {
+    public ListNodePoolsResponse addItemsItem(NodePoolResp itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListNodePoolsResponse extends SdkResponse {
         return this;
     }
 
-    public ListNodePoolsResponse withItems(Consumer<List<NodePool>> itemsSetter) {
+    public ListNodePoolsResponse withItems(Consumer<List<NodePoolResp>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListNodePoolsResponse extends SdkResponse {
      * /
      * @return items
      */
-    public List<NodePool> getItems() {
+    public List<NodePoolResp> getItems() {
         return items;
     }
 
-    public void setItems(List<NodePool> items) {
+    public void setItems(List<NodePoolResp> items) {
         this.items = items;
     }
 

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.iec.v1.model.AddNicsRequest;
 import com.huaweicloud.sdk.iec.v1.model.AddNicsResponse;
 import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetResponse;
+import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthRequest;
+import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthResponse;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceRequest;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceResponse;
 import com.huaweicloud.sdk.iec.v1.model.BatchStartInstanceRequest;
@@ -73,6 +75,8 @@ import com.huaweicloud.sdk.iec.v1.model.DeleteSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.DeleteSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.iec.v1.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.iec.v1.model.DetachVipBandwidthRequest;
+import com.huaweicloud.sdk.iec.v1.model.DetachVipBandwidthResponse;
 import com.huaweicloud.sdk.iec.v1.model.DisassociateSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.DisassociateSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.ExecuteDeploymentRequest;
@@ -2683,6 +2687,66 @@ public class IecClient {
         UpdatePublicIpRequest request) {
         return new SyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse>(request, IecMeta.updatePublicIp,
             hcClient);
+    }
+
+    /**
+     * 端口绑定带宽
+     *
+     * IPv6虚拟IP或者IPv6私网IP绑定带宽，支持公网访问。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachVipBandwidthRequest 请求对象
+     * @return AttachVipBandwidthResponse
+     */
+    public AttachVipBandwidthResponse attachVipBandwidth(AttachVipBandwidthRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.attachVipBandwidth);
+    }
+
+    /**
+     * 端口绑定带宽
+     *
+     * IPv6虚拟IP或者IPv6私网IP绑定带宽，支持公网访问。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachVipBandwidthRequest 请求对象
+     * @return SyncInvoker<AttachVipBandwidthRequest, AttachVipBandwidthResponse>
+     */
+    public SyncInvoker<AttachVipBandwidthRequest, AttachVipBandwidthResponse> attachVipBandwidthInvoker(
+        AttachVipBandwidthRequest request) {
+        return new SyncInvoker<AttachVipBandwidthRequest, AttachVipBandwidthResponse>(request,
+            IecMeta.attachVipBandwidth, hcClient);
+    }
+
+    /**
+     * 端口解绑带宽
+     *
+     * IPv6虚拟IP或者IPv6私网IP解绑带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachVipBandwidthRequest 请求对象
+     * @return DetachVipBandwidthResponse
+     */
+    public DetachVipBandwidthResponse detachVipBandwidth(DetachVipBandwidthRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.detachVipBandwidth);
+    }
+
+    /**
+     * 端口解绑带宽
+     *
+     * IPv6虚拟IP或者IPv6私网IP解绑带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachVipBandwidthRequest 请求对象
+     * @return SyncInvoker<DetachVipBandwidthRequest, DetachVipBandwidthResponse>
+     */
+    public SyncInvoker<DetachVipBandwidthRequest, DetachVipBandwidthResponse> detachVipBandwidthInvoker(
+        DetachVipBandwidthRequest request) {
+        return new SyncInvoker<DetachVipBandwidthRequest, DetachVipBandwidthResponse>(request,
+            IecMeta.detachVipBandwidth, hcClient);
     }
 
     /**

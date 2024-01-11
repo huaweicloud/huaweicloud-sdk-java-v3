@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.iec.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -40,6 +42,11 @@ public class IpPool {
     @JsonProperty(value = "display_name")
 
     private String displayName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_share_bandwidth_types")
+
+    private List<String> allowShareBandwidthTypes = null;
 
     public IpPool withId(String id) {
         this.id = id;
@@ -152,6 +159,39 @@ public class IpPool {
         this.displayName = displayName;
     }
 
+    public IpPool withAllowShareBandwidthTypes(List<String> allowShareBandwidthTypes) {
+        this.allowShareBandwidthTypes = allowShareBandwidthTypes;
+        return this;
+    }
+
+    public IpPool addAllowShareBandwidthTypesItem(String allowShareBandwidthTypesItem) {
+        if (this.allowShareBandwidthTypes == null) {
+            this.allowShareBandwidthTypes = new ArrayList<>();
+        }
+        this.allowShareBandwidthTypes.add(allowShareBandwidthTypesItem);
+        return this;
+    }
+
+    public IpPool withAllowShareBandwidthTypes(Consumer<List<String>> allowShareBandwidthTypesSetter) {
+        if (this.allowShareBandwidthTypes == null) {
+            this.allowShareBandwidthTypes = new ArrayList<>();
+        }
+        allowShareBandwidthTypesSetter.accept(this.allowShareBandwidthTypes);
+        return this;
+    }
+
+    /**
+     * 功能说明：表示此线路可以使用的带宽类型列表，如果列表为空，则表示该线路不能使用任何带宽  约束：线路下的ip只能加入到带宽类型在allow_share_bandwidth_types中带宽 
+     * @return allowShareBandwidthTypes
+     */
+    public List<String> getAllowShareBandwidthTypes() {
+        return allowShareBandwidthTypes;
+    }
+
+    public void setAllowShareBandwidthTypes(List<String> allowShareBandwidthTypes) {
+        this.allowShareBandwidthTypes = allowShareBandwidthTypes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -163,12 +203,13 @@ public class IpPool {
         IpPool that = (IpPool) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.siteId, that.siteId)
             && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.ipVersion, that.ipVersion)
-            && Objects.equals(this.operator, that.operator) && Objects.equals(this.displayName, that.displayName);
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.allowShareBandwidthTypes, that.allowShareBandwidthTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, siteId, poolId, ipVersion, operator, displayName);
+        return Objects.hash(id, siteId, poolId, ipVersion, operator, displayName, allowShareBandwidthTypes);
     }
 
     @Override
@@ -181,6 +222,7 @@ public class IpPool {
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+        sb.append("    allowShareBandwidthTypes: ").append(toIndentedString(allowShareBandwidthTypes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

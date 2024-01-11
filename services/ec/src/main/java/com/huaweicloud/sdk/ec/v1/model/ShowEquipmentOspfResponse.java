@@ -59,6 +59,11 @@ public class ShowEquipmentOspfResponse extends SdkResponse {
 
     private List<String> blockList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_subnet_list")
+
+    private List<String> cloudSubnetList = null;
+
     public ShowEquipmentOspfResponse withOspfEnabled(Boolean ospfEnabled) {
         this.ospfEnabled = ospfEnabled;
         return this;
@@ -264,6 +269,39 @@ public class ShowEquipmentOspfResponse extends SdkResponse {
         this.blockList = blockList;
     }
 
+    public ShowEquipmentOspfResponse withCloudSubnetList(List<String> cloudSubnetList) {
+        this.cloudSubnetList = cloudSubnetList;
+        return this;
+    }
+
+    public ShowEquipmentOspfResponse addCloudSubnetListItem(String cloudSubnetListItem) {
+        if (this.cloudSubnetList == null) {
+            this.cloudSubnetList = new ArrayList<>();
+        }
+        this.cloudSubnetList.add(cloudSubnetListItem);
+        return this;
+    }
+
+    public ShowEquipmentOspfResponse withCloudSubnetList(Consumer<List<String>> cloudSubnetListSetter) {
+        if (this.cloudSubnetList == null) {
+            this.cloudSubnetList = new ArrayList<>();
+        }
+        cloudSubnetListSetter.accept(this.cloudSubnetList);
+        return this;
+    }
+
+    /**
+     * 上云子网列表
+     * @return cloudSubnetList
+     */
+    public List<String> getCloudSubnetList() {
+        return cloudSubnetList;
+    }
+
+    public void setCloudSubnetList(List<String> cloudSubnetList) {
+        this.cloudSubnetList = cloudSubnetList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -277,7 +315,8 @@ public class ShowEquipmentOspfResponse extends SdkResponse {
             && Objects.equals(this.postToCloud, that.postToCloud) && Objects.equals(this.helloTimer, that.helloTimer)
             && Objects.equals(this.routerId, that.routerId) && Objects.equals(this.interfaces, that.interfaces)
             && Objects.equals(this.filterEnabled, that.filterEnabled) && Objects.equals(this.trustList, that.trustList)
-            && Objects.equals(this.blockList, that.blockList);
+            && Objects.equals(this.blockList, that.blockList)
+            && Objects.equals(this.cloudSubnetList, that.cloudSubnetList);
     }
 
     @Override
@@ -290,7 +329,8 @@ public class ShowEquipmentOspfResponse extends SdkResponse {
             interfaces,
             filterEnabled,
             trustList,
-            blockList);
+            blockList,
+            cloudSubnetList);
     }
 
     @Override
@@ -306,6 +346,7 @@ public class ShowEquipmentOspfResponse extends SdkResponse {
         sb.append("    filterEnabled: ").append(toIndentedString(filterEnabled)).append("\n");
         sb.append("    trustList: ").append(toIndentedString(trustList)).append("\n");
         sb.append("    blockList: ").append(toIndentedString(blockList)).append("\n");
+        sb.append("    cloudSubnetList: ").append(toIndentedString(cloudSubnetList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
@@ -1770,6 +1772,36 @@ public class EcsClient {
         NovaShowServerRequest request) {
         return new SyncInvoker<NovaShowServerRequest, NovaShowServerResponse>(request, EcsMeta.novaShowServer,
             hcClient);
+    }
+
+    /**
+     * 查询指定云服务器网卡信息
+     *
+     * 根据网卡ID，查询云服务器网卡信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NovaShowServerInterfaceRequest 请求对象
+     * @return NovaShowServerInterfaceResponse
+     */
+    public NovaShowServerInterfaceResponse novaShowServerInterface(NovaShowServerInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.novaShowServerInterface);
+    }
+
+    /**
+     * 查询指定云服务器网卡信息
+     *
+     * 根据网卡ID，查询云服务器网卡信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NovaShowServerInterfaceRequest 请求对象
+     * @return SyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse>
+     */
+    public SyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> novaShowServerInterfaceInvoker(
+        NovaShowServerInterfaceRequest request) {
+        return new SyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse>(request,
+            EcsMeta.novaShowServerInterface, hcClient);
     }
 
     /**

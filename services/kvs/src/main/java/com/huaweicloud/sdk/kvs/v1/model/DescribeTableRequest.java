@@ -35,7 +35,7 @@ public class DescribeTableRequest extends SdkBsonDocRequest {
     }
 
     /**
-     * store name
+     * 仓名
      * @return storeName
      */
     public String getStoreName() {

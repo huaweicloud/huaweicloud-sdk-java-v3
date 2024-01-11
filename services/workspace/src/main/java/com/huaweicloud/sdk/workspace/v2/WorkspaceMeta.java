@@ -31,6 +31,9 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsReq;
@@ -60,6 +63,9 @@ import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
@@ -106,6 +112,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -179,6 +187,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequest;
@@ -238,7 +249,7 @@ public class WorkspaceMeta {
         // requests
         builder.<CreateAccessPolicyReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAccessPolicyReq.class),
             f -> f.withMarshaller(CreateAccessPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1077,6 +1088,144 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDesktopNetworkRequest::getDesktopId, (req, v) -> {
                 req.setDesktopId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteDesktopNamePolicyRequest, BatchDeleteDesktopNamePolicyResponse> batchDeleteDesktopNamePolicy =
+        genForbatchDeleteDesktopNamePolicy();
+
+    private static HttpRequestDef<BatchDeleteDesktopNamePolicyRequest, BatchDeleteDesktopNamePolicyResponse> genForbatchDeleteDesktopNamePolicy() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteDesktopNamePolicyRequest, BatchDeleteDesktopNamePolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteDesktopNamePolicyRequest.class,
+                    BatchDeleteDesktopNamePolicyResponse.class)
+                .withName("BatchDeleteDesktopNamePolicy")
+                .withUri("/v2/{project_id}/desktop-name-policies/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteDesktopNamePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteDesktopNamePolicyReq.class),
+            f -> f.withMarshaller(BatchDeleteDesktopNamePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesktopNamePolicyRequest, CreateDesktopNamePolicyResponse> createDesktopNamePolicy =
+        genForcreateDesktopNamePolicy();
+
+    private static HttpRequestDef<CreateDesktopNamePolicyRequest, CreateDesktopNamePolicyResponse> genForcreateDesktopNamePolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateDesktopNamePolicyRequest, CreateDesktopNamePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDesktopNamePolicyRequest.class, CreateDesktopNamePolicyResponse.class)
+            .withName("CreateDesktopNamePolicy")
+            .withUri("/v2/{project_id}/desktop-name-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateDesktopNamePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDesktopNamePolicyReq.class),
+            f -> f.withMarshaller(CreateDesktopNamePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopNamePolicyRequest, ListDesktopNamePolicyResponse> listDesktopNamePolicy =
+        genForlistDesktopNamePolicy();
+
+    private static HttpRequestDef<ListDesktopNamePolicyRequest, ListDesktopNamePolicyResponse> genForlistDesktopNamePolicy() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopNamePolicyRequest, ListDesktopNamePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDesktopNamePolicyRequest.class, ListDesktopNamePolicyResponse.class)
+            .withName("ListDesktopNamePolicy")
+            .withUri("/v2/{project_id}/desktop-name-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_contain_user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDesktopNamePolicyRequest::getIsContainUser, (req, v) -> {
+                req.setIsContainUser(v);
+            }));
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopNamePolicyRequest::getPolicyName, (req, v) -> {
+                req.setPolicyName(v);
+            }));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopNamePolicyRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopNamePolicyRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopNamePolicyRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse> updateDesktopNamePolicy =
+        genForupdateDesktopNamePolicy();
+
+    private static HttpRequestDef<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse> genForupdateDesktopNamePolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDesktopNamePolicyRequest.class, UpdateDesktopNamePolicyResponse.class)
+            .withName("UpdateDesktopNamePolicy")
+            .withUri("/v2/{project_id}/desktop-name-policies/{policy_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesktopNamePolicyRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<UpdateDesktopNamePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDesktopNamePolicyReq.class),
+            f -> f.withMarshaller(UpdateDesktopNamePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

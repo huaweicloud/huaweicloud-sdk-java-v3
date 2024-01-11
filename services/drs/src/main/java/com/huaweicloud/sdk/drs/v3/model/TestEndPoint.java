@@ -362,6 +362,11 @@ public class TestEndPoint {
 
     private KafkaSecurity kafkaSecurityConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customized_dns")
+
+    private CustomizedDns customizedDns;
+
     public TestEndPoint withId(String id) {
         this.id = id;
         return this;
@@ -711,6 +716,32 @@ public class TestEndPoint {
         this.kafkaSecurityConfig = kafkaSecurityConfig;
     }
 
+    public TestEndPoint withCustomizedDns(CustomizedDns customizedDns) {
+        this.customizedDns = customizedDns;
+        return this;
+    }
+
+    public TestEndPoint withCustomizedDns(Consumer<CustomizedDns> customizedDnsSetter) {
+        if (this.customizedDns == null) {
+            this.customizedDns = new CustomizedDns();
+            customizedDnsSetter.accept(this.customizedDns);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customizedDns
+     * @return customizedDns
+     */
+    public CustomizedDns getCustomizedDns() {
+        return customizedDns;
+    }
+
+    public void setCustomizedDns(CustomizedDns customizedDns) {
+        this.customizedDns = customizedDns;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -731,7 +762,8 @@ public class TestEndPoint {
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.endPointType, that.endPointType)
             && Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.dbName, that.dbName)
-            && Objects.equals(this.kafkaSecurityConfig, that.kafkaSecurityConfig);
+            && Objects.equals(this.kafkaSecurityConfig, that.kafkaSecurityConfig)
+            && Objects.equals(this.customizedDns, that.customizedDns);
     }
 
     @Override
@@ -755,7 +787,8 @@ public class TestEndPoint {
             region,
             projectId,
             dbName,
-            kafkaSecurityConfig);
+            kafkaSecurityConfig,
+            customizedDns);
     }
 
     @Override
@@ -782,6 +815,7 @@ public class TestEndPoint {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
         sb.append("    kafkaSecurityConfig: ").append(toIndentedString(kafkaSecurityConfig)).append("\n");
+        sb.append("    customizedDns: ").append(toIndentedString(customizedDns)).append("\n");
         sb.append("}");
         return sb.toString();
     }

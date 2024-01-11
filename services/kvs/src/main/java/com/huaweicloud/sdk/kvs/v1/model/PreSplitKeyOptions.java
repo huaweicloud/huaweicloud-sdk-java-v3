@@ -12,37 +12,37 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PreSplitKeyOptions
+ * 在hash分区时，预分裂分区数量。
  */
 public class PreSplitKeyOptions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "HashSplitNum")
-    @BsonProperty(value = "HashSplitNum")
+    @JsonProperty(value = "hash_count")
+    @BsonProperty(value = "hash_count")
 
-    private Integer hashSplitNum;
+    private Integer hashCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "RangeSplitPoints")
-    @BsonProperty(value = "RangeSplitPoints")
+    @JsonProperty(value = "range_split_points")
+    @BsonProperty(value = "range_split_points")
 
     private List<Document> rangeSplitPoints = null;
 
-    public PreSplitKeyOptions withHashSplitNum(Integer hashSplitNum) {
-        this.hashSplitNum = hashSplitNum;
+    public PreSplitKeyOptions withHashCount(Integer hashCount) {
+        this.hashCount = hashCount;
         return this;
     }
 
     /**
-     * Get hashSplitNum
-     * @return hashSplitNum
+     * 在hash分区时，预分裂分区数量。
+     * @return hashCount
      */
-    public Integer getHashSplitNum() {
-        return hashSplitNum;
+    public Integer getHashCount() {
+        return hashCount;
     }
 
-    public void setHashSplitNum(Integer hashSplitNum) {
-        this.hashSplitNum = hashSplitNum;
+    public void setHashCount(Integer hashCount) {
+        this.hashCount = hashCount;
     }
 
     public PreSplitKeyOptions withRangeSplitPoints(List<Document> rangeSplitPoints) {
@@ -67,7 +67,7 @@ public class PreSplitKeyOptions {
     }
 
     /**
-     * Get rangeSplitPoints
+     * 在range分区模式有效，最大_1000_个，与\"hash_count\"二选一。
      * @return rangeSplitPoints
      */
     public List<Document> getRangeSplitPoints() {
@@ -87,20 +87,20 @@ public class PreSplitKeyOptions {
             return false;
         }
         PreSplitKeyOptions that = (PreSplitKeyOptions) obj;
-        return Objects.equals(this.hashSplitNum, that.hashSplitNum)
+        return Objects.equals(this.hashCount, that.hashCount)
             && Objects.equals(this.rangeSplitPoints, that.rangeSplitPoints);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hashSplitNum, rangeSplitPoints);
+        return Objects.hash(hashCount, rangeSplitPoints);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PreSplitKeyOptions {\n");
-        sb.append("    hashSplitNum: ").append(toIndentedString(hashSplitNum)).append("\n");
+        sb.append("    hashCount: ").append(toIndentedString(hashCount)).append("\n");
         sb.append("    rangeSplitPoints: ").append(toIndentedString(rangeSplitPoints)).append("\n");
         sb.append("}");
         return sb.toString();

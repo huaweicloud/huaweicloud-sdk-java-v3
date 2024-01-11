@@ -332,7 +332,7 @@ public class HcClient implements CustomizationConfigure {
                     .append("://")
                     .append(reqValue)
                     .append(".")
-                    .append(url.getHost());
+                    .append(url.getAuthority());
             if (!StringUtils.isEmpty(url.getPath())) {
                 endpointBuilder.append("/").append(url.getPath());
             }
@@ -413,7 +413,7 @@ public class HcClient implements CustomizationConfigure {
             ServiceResponseException currException = ServiceResponseException.mapException(httpResponse.getStatusCode(),
                     ExceptionUtils.extractErrorMessage(httpResponse));
             logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                    httpRequest.getUrl().getHost(), httpRequest.getUrl(), currException.toString());
+                    httpRequest.getUrl().getAuthority(), httpRequest.getUrl(), currException.toString());
             throw currException;
         }
     }

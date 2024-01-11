@@ -5,8 +5,12 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.drs.v5.model.BatchCreateJobsAsyncRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchCreateJobsAsyncResponse;
+import com.huaweicloud.sdk.drs.v5.model.BatchCreateTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchDeleteJobsByIdRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchDeleteJobsByIdResponse;
+import com.huaweicloud.sdk.drs.v5.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.BatchDeleteTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchExecuteJobActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchExecuteJobActionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchStopJobsActionRequest;
@@ -27,6 +31,8 @@ import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverRequest;
@@ -49,14 +55,24 @@ import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceByTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceByTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJobParametersRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJobParametersResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
@@ -111,6 +127,8 @@ import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionRequest;
@@ -169,6 +187,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 批量添加资源标签
+     *
+     * 批量添加资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateTagsResponse>
+     */
+    public CompletableFuture<BatchCreateTagsResponse> batchCreateTagsAsync(BatchCreateTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.batchCreateTags);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 批量添加资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsAsyncInvoker(
+        BatchCreateTagsRequest request) {
+        return new AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, DrsMeta.batchCreateTags,
+            hcClient);
+    }
+
+    /**
      * 批量删除任务
      *
      * 批量删除租户指定ID任务。
@@ -196,6 +244,36 @@ public class DrsAsyncClient {
         BatchDeleteJobsByIdRequest request) {
         return new AsyncInvoker<BatchDeleteJobsByIdRequest, BatchDeleteJobsByIdResponse>(request,
             DrsMeta.batchDeleteJobsById, hcClient);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 为指定实例批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteTagsResponse> batchDeleteTagsAsync(BatchDeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.batchDeleteTags);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 为指定实例批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsAsyncInvoker(
+        BatchDeleteTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, DrsMeta.batchDeleteTags,
+            hcClient);
     }
 
     /**
@@ -510,6 +588,36 @@ public class DrsAsyncClient {
      */
     public AsyncInvoker<CopyJobRequest, CopyJobResponse> copyJobAsyncInvoker(CopyJobRequest request) {
         return new AsyncInvoker<CopyJobRequest, CopyJobResponse>(request, DrsMeta.copyJob, hcClient);
+    }
+
+    /**
+     * 查询资源实例数量
+     *
+     * 查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountInstanceByTagsRequest 请求对象
+     * @return CompletableFuture<CountInstanceByTagsResponse>
+     */
+    public CompletableFuture<CountInstanceByTagsResponse> countInstanceByTagsAsync(CountInstanceByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.countInstanceByTags);
+    }
+
+    /**
+     * 查询资源实例数量
+     *
+     * 查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountInstanceByTagsRequest 请求对象
+     * @return AsyncInvoker<CountInstanceByTagsRequest, CountInstanceByTagsResponse>
+     */
+    public AsyncInvoker<CountInstanceByTagsRequest, CountInstanceByTagsResponse> countInstanceByTagsAsyncInvoker(
+        CountInstanceByTagsRequest request) {
+        return new AsyncInvoker<CountInstanceByTagsRequest, CountInstanceByTagsResponse>(request,
+            DrsMeta.countInstanceByTags, hcClient);
     }
 
     /**
@@ -840,6 +948,66 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 查询资源实例列表
+     *
+     * 查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceByTagsRequest 请求对象
+     * @return CompletableFuture<ListInstanceByTagsResponse>
+     */
+    public CompletableFuture<ListInstanceByTagsResponse> listInstanceByTagsAsync(ListInstanceByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listInstanceByTags);
+    }
+
+    /**
+     * 查询资源实例列表
+     *
+     * 查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceByTagsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceByTagsRequest, ListInstanceByTagsResponse>
+     */
+    public AsyncInvoker<ListInstanceByTagsRequest, ListInstanceByTagsResponse> listInstanceByTagsAsyncInvoker(
+        ListInstanceByTagsRequest request) {
+        return new AsyncInvoker<ListInstanceByTagsRequest, ListInstanceByTagsResponse>(request,
+            DrsMeta.listInstanceByTags, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询指定实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return CompletableFuture<ListInstanceTagsResponse>
+     */
+    public CompletableFuture<ListInstanceTagsResponse> listInstanceTagsAsync(ListInstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询指定实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsAsyncInvoker(
+        ListInstanceTagsRequest request) {
+        return new AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, DrsMeta.listInstanceTags,
+            hcClient);
+    }
+
+    /**
      * 查询驱动文件列表
      *
      * 查询驱动文件列表。
@@ -866,6 +1034,71 @@ public class DrsAsyncClient {
     public AsyncInvoker<ListJdbcDriversRequest, ListJdbcDriversResponse> listJdbcDriversAsyncInvoker(
         ListJdbcDriversRequest request) {
         return new AsyncInvoker<ListJdbcDriversRequest, ListJdbcDriversResponse>(request, DrsMeta.listJdbcDrivers,
+            hcClient);
+    }
+
+    /**
+     * 查询任务的参数配置修改历史
+     *
+     * 查询任务的参数配置修改历史
+     * - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobHistoryParametersRequest 请求对象
+     * @return CompletableFuture<ListJobHistoryParametersResponse>
+     */
+    public CompletableFuture<ListJobHistoryParametersResponse> listJobHistoryParametersAsync(
+        ListJobHistoryParametersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listJobHistoryParameters);
+    }
+
+    /**
+     * 查询任务的参数配置修改历史
+     *
+     * 查询任务的参数配置修改历史
+     * - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobHistoryParametersRequest 请求对象
+     * @return AsyncInvoker<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse>
+     */
+    public AsyncInvoker<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> listJobHistoryParametersAsyncInvoker(
+        ListJobHistoryParametersRequest request) {
+        return new AsyncInvoker<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse>(request,
+            DrsMeta.listJobHistoryParameters, hcClient);
+    }
+
+    /**
+     * 查询任务参数配置列表
+     *
+     * 查询任务的参数配置列表信息
+     * - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobParametersRequest 请求对象
+     * @return CompletableFuture<ListJobParametersResponse>
+     */
+    public CompletableFuture<ListJobParametersResponse> listJobParametersAsync(ListJobParametersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listJobParameters);
+    }
+
+    /**
+     * 查询任务参数配置列表
+     *
+     * 查询任务的参数配置列表信息
+     * - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobParametersRequest 请求对象
+     * @return AsyncInvoker<ListJobParametersRequest, ListJobParametersResponse>
+     */
+    public AsyncInvoker<ListJobParametersRequest, ListJobParametersResponse> listJobParametersAsyncInvoker(
+        ListJobParametersRequest request) {
+        return new AsyncInvoker<ListJobParametersRequest, ListJobParametersResponse>(request, DrsMeta.listJobParameters,
             hcClient);
     }
 
@@ -953,6 +1186,34 @@ public class DrsAsyncClient {
         ListProjectTagsRequest request) {
         return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, DrsMeta.listProjectTags,
             hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagsRequest 请求对象
+     * @return CompletableFuture<ListTagsResponse>
+     */
+    public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagsRequest 请求对象
+     * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
+     */
+    public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
+        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, DrsMeta.listTags, hcClient);
     }
 
     /**
@@ -1568,7 +1829,7 @@ public class DrsAsyncClient {
      *
      * 查询不同迁移对象类型的迁移进度。
      * 说明：
-     * - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的迁移支持查看迁移明细。
+     * - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的实时迁移和所有实时同步链路支持查看迁移明细。
      * - 在任务未结束前，不能修改源库和目标库的所有用户、密码和用户权限等。
      * - 全量、增量完成不代表任务结束，如果存在触发器和事件将会进行迁移。
      * 
@@ -1586,7 +1847,7 @@ public class DrsAsyncClient {
      *
      * 查询不同迁移对象类型的迁移进度。
      * 说明：
-     * - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的迁移支持查看迁移明细。
+     * - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的实时迁移和所有实时同步链路支持查看迁移明细。
      * - 在任务未结束前，不能修改源库和目标库的所有用户、密码和用户权限等。
      * - 全量、增量完成不代表任务结束，如果存在触发器和事件将会进行迁移。
      * 
@@ -1811,6 +2072,39 @@ public class DrsAsyncClient {
      */
     public AsyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobAsyncInvoker(UpdateJobRequest request) {
         return new AsyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, DrsMeta.updateJob, hcClient);
+    }
+
+    /**
+     * 更新任务的参数信息
+     *
+     * 更新任务的参数信息。
+     * - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobConfigurationsRequest 请求对象
+     * @return CompletableFuture<UpdateJobConfigurationsResponse>
+     */
+    public CompletableFuture<UpdateJobConfigurationsResponse> updateJobConfigurationsAsync(
+        UpdateJobConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.updateJobConfigurations);
+    }
+
+    /**
+     * 更新任务的参数信息
+     *
+     * 更新任务的参数信息。
+     * - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobConfigurationsRequest 请求对象
+     * @return AsyncInvoker<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse>
+     */
+    public AsyncInvoker<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> updateJobConfigurationsAsyncInvoker(
+        UpdateJobConfigurationsRequest request) {
+        return new AsyncInvoker<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse>(request,
+            DrsMeta.updateJobConfigurations, hcClient);
     }
 
     /**

@@ -486,7 +486,7 @@ public class CreateListenerReq {
     }
 
     /**
-     * 监听器使用的SNI证书（带域名的服务器证书）ID的列表。 该字段不为空列表时，SNI特性开启。该字段为空列表时，SNI特性关闭。
+     * 监听器使用的SNI证书（带域名的服务器证书）ID的列表，最大支持50个sni证书 该字段不为空列表时，SNI特性开启。该字段为空列表时，SNI特性关闭。
      * @return sniContainerRefs
      */
     public List<String> getSniContainerRefs() {

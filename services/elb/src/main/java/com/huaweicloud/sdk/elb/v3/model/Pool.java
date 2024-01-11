@@ -198,6 +198,11 @@ public class Pool {
 
     private Boolean anyPortEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_drain")
+
+    private ConnectionDrain connectionDrain;
+
     public Pool withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -638,6 +643,32 @@ public class Pool {
         this.anyPortEnable = anyPortEnable;
     }
 
+    public Pool withConnectionDrain(ConnectionDrain connectionDrain) {
+        this.connectionDrain = connectionDrain;
+        return this;
+    }
+
+    public Pool withConnectionDrain(Consumer<ConnectionDrain> connectionDrainSetter) {
+        if (this.connectionDrain == null) {
+            this.connectionDrain = new ConnectionDrain();
+            connectionDrainSetter.accept(this.connectionDrain);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get connectionDrain
+     * @return connectionDrain
+     */
+    public ConnectionDrain getConnectionDrain() {
+        return connectionDrain;
+    }
+
+    public void setConnectionDrain(ConnectionDrain connectionDrain) {
+        this.connectionDrain = connectionDrain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -661,7 +692,8 @@ public class Pool {
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
             && Objects.equals(this.protectionReason, that.protectionReason)
-            && Objects.equals(this.anyPortEnable, that.anyPortEnable);
+            && Objects.equals(this.anyPortEnable, that.anyPortEnable)
+            && Objects.equals(this.connectionDrain, that.connectionDrain);
     }
 
     @Override
@@ -687,7 +719,8 @@ public class Pool {
             type,
             protectionStatus,
             protectionReason,
-            anyPortEnable);
+            anyPortEnable,
+            connectionDrain);
     }
 
     @Override
@@ -718,6 +751,7 @@ public class Pool {
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
+        sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

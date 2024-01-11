@@ -19,16 +19,16 @@ import java.util.function.Consumer;
 public class UpdateKvResponse extends SdkBsonDocResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvBlobData")
-    @BsonProperty(value = "KvBlobData")
+    @JsonProperty(value = "kv_blob_data")
+    @BsonProperty(value = "kv_blob_data")
 
     private KvBlobData kvBlobData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvFields")
-    @BsonProperty(value = "KvFields")
+    @JsonProperty(value = "kv_doc")
+    @BsonProperty(value = "kv_doc")
 
-    private Document kvFields;
+    private Document kvDoc;
 
     public UpdateKvResponse withKvBlobData(KvBlobData kvBlobData) {
         this.kvBlobData = kvBlobData;
@@ -56,21 +56,21 @@ public class UpdateKvResponse extends SdkBsonDocResponse {
         this.kvBlobData = kvBlobData;
     }
 
-    public UpdateKvResponse withKvFields(Document kvFields) {
-        this.kvFields = kvFields;
+    public UpdateKvResponse withKvDoc(Document kvDoc) {
+        this.kvDoc = kvDoc;
         return this;
     }
 
     /**
-     * Get kvFields
-     * @return kvFields
+     * 对kv_doc有效，返回文档所有字段。
+     * @return kvDoc
      */
-    public Document getKvFields() {
-        return kvFields;
+    public Document getKvDoc() {
+        return kvDoc;
     }
 
-    public void setKvFields(Document kvFields) {
-        this.kvFields = kvFields;
+    public void setKvDoc(Document kvDoc) {
+        this.kvDoc = kvDoc;
     }
 
     @Override
@@ -82,12 +82,12 @@ public class UpdateKvResponse extends SdkBsonDocResponse {
             return false;
         }
         UpdateKvResponse that = (UpdateKvResponse) obj;
-        return Objects.equals(this.kvBlobData, that.kvBlobData) && Objects.equals(this.kvFields, that.kvFields);
+        return Objects.equals(this.kvBlobData, that.kvBlobData) && Objects.equals(this.kvDoc, that.kvDoc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(kvBlobData, kvFields);
+        return Objects.hash(kvBlobData, kvDoc);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class UpdateKvResponse extends SdkBsonDocResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateKvResponse {\n");
         sb.append("    kvBlobData: ").append(toIndentedString(kvBlobData)).append("\n");
-        sb.append("    kvFields: ").append(toIndentedString(kvFields)).append("\n");
+        sb.append("    kvDoc: ").append(toIndentedString(kvDoc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

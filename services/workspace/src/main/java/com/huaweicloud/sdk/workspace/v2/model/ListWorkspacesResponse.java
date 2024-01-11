@@ -235,6 +235,16 @@ public class ListWorkspacesResponse extends SdkResponse {
     private Boolean isSendEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorized_collect_log")
+
+    private Boolean authorizedCollectLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorized_hda_upgrade")
+
+    private Boolean authorizedHdaUpgrade;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dc_vnc_ip")
 
     private String dcVncIp;
@@ -424,7 +434,7 @@ public class ListWorkspacesResponse extends SdkResponse {
     }
 
     /**
-     * 互联网和专线切换任务的状态。 - init： 初始化 - 开通服务后的初始状态。 - available： 可用 - 执行过任务且成功后恢复的正常状态。 - internetOpening： 开启中 - 开通互联网接入开启中。 - dedicatedOpening： 开启中 - 开通专线接入开启中。 - internetOpenFailed： 开启失败 - 开通互联网接入开启失败。 - dedicatedOpenFailed： 开启失败 - 开通专线接入开启失败。 - openSuccess： 开启成功 - 开通互联网接入成功。 - internetClosing： 关闭中 - 关闭互联网接入关闭中。 - dedicatedClosing： 关闭中 - 关闭专线接入关闭中。 - internetCloseFailed： 关闭失败 - 关闭互联网接入方式失败。 - dedicatedCloseFailed： 关闭失败 - 关闭专线接入方式失败。 - closeSuccess： 关闭成功 - 关闭接入方式成功。 - internetAccessPortModifying： 互联网接入端口修改中。 - internetAccessPortModifyFailed： 端口修改失败。
+     * 互联网和专线切换任务的状态。 - init： 初始化 - 开通服务后的初始状态。 - available： 可用 - 执行过任务且成功后恢复的正常状态。 - internetOpening： 开启中 - 开通互联网接入开启中。 - dedicatedOpening： 开启中 - 开通专线接入开启中。 - internetOpenFailed： 开启失败 - 开通互联网接入开启失败。 - dedicatedOpenFailed： 开启失败 - 开通专线接入开启失败。 - openSuccess： 开启成功 - 开通接入方式成功。 - internetClosing： 关闭中 - 关闭互联网接入关闭中。 - dedicatedClosing： 关闭中 - 关闭专线接入关闭中。 - internetCloseFailed： 关闭失败 - 关闭互联网接入方式失败。 - dedicatedCloseFailed： 关闭失败 - 关闭专线接入方式失败。 - closeSuccess： 关闭成功 - 关闭接入方式成功。 - internetAccessPortModifying： 互联网接入端口修改中。 - internetAccessPortModifyFailed： 端口修改失败。
      * @return accessStatus
      */
     public String getAccessStatus() {
@@ -676,6 +686,40 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.isSendEmail = isSendEmail;
     }
 
+    public ListWorkspacesResponse withAuthorizedCollectLog(Boolean authorizedCollectLog) {
+        this.authorizedCollectLog = authorizedCollectLog;
+        return this;
+    }
+
+    /**
+     * 是否授权收集日志。
+     * @return authorizedCollectLog
+     */
+    public Boolean getAuthorizedCollectLog() {
+        return authorizedCollectLog;
+    }
+
+    public void setAuthorizedCollectLog(Boolean authorizedCollectLog) {
+        this.authorizedCollectLog = authorizedCollectLog;
+    }
+
+    public ListWorkspacesResponse withAuthorizedHdaUpgrade(Boolean authorizedHdaUpgrade) {
+        this.authorizedHdaUpgrade = authorizedHdaUpgrade;
+        return this;
+    }
+
+    /**
+     * 是否授权hda升级。
+     * @return authorizedHdaUpgrade
+     */
+    public Boolean getAuthorizedHdaUpgrade() {
+        return authorizedHdaUpgrade;
+    }
+
+    public void setAuthorizedHdaUpgrade(Boolean authorizedHdaUpgrade) {
+        this.authorizedHdaUpgrade = authorizedHdaUpgrade;
+    }
+
     public ListWorkspacesResponse withDcVncIp(String dcVncIp) {
         this.dcVncIp = dcVncIp;
         return this;
@@ -718,7 +762,10 @@ public class ListWorkspacesResponse extends SdkResponse {
             && Objects.equals(this.progress, that.progress) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.failCode, that.failCode) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
-            && Objects.equals(this.isSendEmail, that.isSendEmail) && Objects.equals(this.dcVncIp, that.dcVncIp);
+            && Objects.equals(this.isSendEmail, that.isSendEmail)
+            && Objects.equals(this.authorizedCollectLog, that.authorizedCollectLog)
+            && Objects.equals(this.authorizedHdaUpgrade, that.authorizedHdaUpgrade)
+            && Objects.equals(this.dcVncIp, that.dcVncIp);
     }
 
     @Override
@@ -746,6 +793,8 @@ public class ListWorkspacesResponse extends SdkResponse {
             failReason,
             enterpriseId,
             isSendEmail,
+            authorizedCollectLog,
+            authorizedHdaUpgrade,
             dcVncIp);
     }
 
@@ -778,6 +827,8 @@ public class ListWorkspacesResponse extends SdkResponse {
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
+        sb.append("    authorizedCollectLog: ").append(toIndentedString(authorizedCollectLog)).append("\n");
+        sb.append("    authorizedHdaUpgrade: ").append(toIndentedString(authorizedHdaUpgrade)).append("\n");
         sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
         sb.append("}");
         return sb.toString();

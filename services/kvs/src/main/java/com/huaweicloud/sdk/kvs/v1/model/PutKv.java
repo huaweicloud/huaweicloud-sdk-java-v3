@@ -15,20 +15,20 @@ import java.util.function.Consumer;
 public class PutKv {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "OperId")
-    @BsonProperty(value = "OperId")
+    @JsonProperty(value = "oper_id")
+    @BsonProperty(value = "oper_id")
 
     private Integer operId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvDoc")
-    @BsonProperty(value = "KvDoc")
+    @JsonProperty(value = "kv_doc")
+    @BsonProperty(value = "kv_doc")
 
     private Document kvDoc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "KvBlob")
-    @BsonProperty(value = "KvBlob")
+    @JsonProperty(value = "kv_blob")
+    @BsonProperty(value = "kv_blob")
 
     private KvBlob kvBlob;
 
@@ -38,7 +38,7 @@ public class PutKv {
     }
 
     /**
-     * Get operId
+     * 请求内的操作编码，未成功的操作返回该标识。
      * @return operId
      */
     public Integer getOperId() {
@@ -55,7 +55,7 @@ public class PutKv {
     }
 
     /**
-     * Get kvDoc
+     * 用户文档。
      * @return kvDoc
      */
     public Document getKvDoc() {

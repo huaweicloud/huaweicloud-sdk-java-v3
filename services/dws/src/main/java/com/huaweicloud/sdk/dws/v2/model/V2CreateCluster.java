@@ -61,7 +61,7 @@ public class V2CreateCluster {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private Tags tags;
+    private List<Tags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -282,29 +282,36 @@ public class V2CreateCluster {
         this.availabilityZones = availabilityZones;
     }
 
-    public V2CreateCluster withTags(Tags tags) {
+    public V2CreateCluster withTags(List<Tags> tags) {
         this.tags = tags;
         return this;
     }
 
-    public V2CreateCluster withTags(Consumer<Tags> tagsSetter) {
+    public V2CreateCluster addTagsItem(Tags tagsItem) {
         if (this.tags == null) {
-            this.tags = new Tags();
-            tagsSetter.accept(this.tags);
+            this.tags = new ArrayList<>();
         }
+        this.tags.add(tagsItem);
+        return this;
+    }
 
+    public V2CreateCluster withTags(Consumer<List<Tags>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
-     * Get tags
+     * 标签列表
      * @return tags
      */
-    public Tags getTags() {
+    public List<Tags> getTags() {
         return tags;
     }
 
-    public void setTags(Tags tags) {
+    public void setTags(List<Tags> tags) {
         this.tags = tags;
     }
 

@@ -17,20 +17,20 @@ import java.util.function.Consumer;
 public class UpdateFields {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Set")
-    @BsonProperty(value = "Set")
+    @JsonProperty(value = "set")
+    @BsonProperty(value = "set")
 
     private Document set;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Add")
-    @BsonProperty(value = "Add")
+    @JsonProperty(value = "add")
+    @BsonProperty(value = "add")
 
     private Document add;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Rmv")
-    @BsonProperty(value = "Rmv")
+    @JsonProperty(value = "rmv")
+    @BsonProperty(value = "rmv")
 
     private List<String> rmv = null;
 
@@ -40,7 +40,7 @@ public class UpdateFields {
     }
 
     /**
-     * Get set
+     * 新增字段或覆盖某字段的值_1_个或多个字段。 > 禁止修改sortkey的字段。
      * @return set
      */
     public Document getSet() {
@@ -57,7 +57,7 @@ public class UpdateFields {
     }
 
     /**
-     * Get add
+     * 对某个字段做加法运算，并更新为运算后的值_1_个或多个字段。
      * @return add
      */
     public Document getAdd() {

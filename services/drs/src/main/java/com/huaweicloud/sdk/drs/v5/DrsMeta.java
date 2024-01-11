@@ -5,14 +5,20 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.drs.v5.model.BatchAddTagReq;
 import com.huaweicloud.sdk.drs.v5.model.BatchAsyncCreateJobReq;
 import com.huaweicloud.sdk.drs.v5.model.BatchAsyncUpdateJobReq;
 import com.huaweicloud.sdk.drs.v5.model.BatchCreateJobsAsyncRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchCreateJobsAsyncResponse;
+import com.huaweicloud.sdk.drs.v5.model.BatchCreateTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchDealResourceTagReq;
 import com.huaweicloud.sdk.drs.v5.model.BatchDeleteJobReq;
 import com.huaweicloud.sdk.drs.v5.model.BatchDeleteJobsByIdRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchDeleteJobsByIdResponse;
+import com.huaweicloud.sdk.drs.v5.model.BatchDeleteTagReq;
+import com.huaweicloud.sdk.drs.v5.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.BatchDeleteTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchExecuteJobActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchExecuteJobActionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchJobActionReq;
@@ -37,6 +43,8 @@ import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DataProcessReq;
@@ -63,17 +71,29 @@ import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceByTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceByTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJobParametersRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJobParametersResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ModifyParameterReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyStartPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryColumnReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryDbPositionReq;
+import com.huaweicloud.sdk.drs.v5.model.QueryInstanceByTagReq;
 import com.huaweicloud.sdk.drs.v5.model.QuerySelectObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryUserSelectedObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
@@ -134,6 +154,8 @@ import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDriverReq;
+import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionRequest;
@@ -184,6 +206,52 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTags =
+        genForbatchCreateTags();
+
+    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForbatchCreateTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateTagsRequest, BatchCreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagsRequest.class, BatchCreateTagsResponse.class)
+                .withName("BatchCreateTags")
+                .withUri("/v5/{project_id}/{resource_type}/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchCreateTagsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchCreateTagsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<BatchAddTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAddTagReq.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteJobsByIdRequest, BatchDeleteJobsByIdResponse> batchDeleteJobsById =
         genForbatchDeleteJobsById();
 
@@ -208,6 +276,52 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteJobReq.class),
             f -> f.withMarshaller(BatchDeleteJobsByIdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
+        genForbatchDeleteTags();
+
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
+                .withName("BatchDeleteTags")
+                .withUri("/v5/{project_id}/{resource_type}/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchDeleteTagsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteTagsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<BatchDeleteTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteTagReq.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -604,6 +718,45 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CloneJobReq.class),
             f -> f.withMarshaller(CopyJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountInstanceByTagsRequest, CountInstanceByTagsResponse> countInstanceByTags =
+        genForcountInstanceByTags();
+
+    private static HttpRequestDef<CountInstanceByTagsRequest, CountInstanceByTagsResponse> genForcountInstanceByTags() {
+        // basic
+        HttpRequestDef.Builder<CountInstanceByTagsRequest, CountInstanceByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CountInstanceByTagsRequest.class, CountInstanceByTagsResponse.class)
+                .withName("CountInstanceByTags")
+                .withUri("/v5/{project_id}/{resource_type}/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CountInstanceByTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CountInstanceByTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(CountInstanceByTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<CountInstanceByTagsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CountInstanceByTagsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CountInstanceByTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<QueryInstanceByTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryInstanceByTagReq.class),
+            f -> f.withMarshaller(CountInstanceByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1071,6 +1224,98 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceByTagsRequest, ListInstanceByTagsResponse> listInstanceByTags =
+        genForlistInstanceByTags();
+
+    private static HttpRequestDef<ListInstanceByTagsRequest, ListInstanceByTagsResponse> genForlistInstanceByTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceByTagsRequest, ListInstanceByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListInstanceByTagsRequest.class, ListInstanceByTagsResponse.class)
+                .withName("ListInstanceByTags")
+                .withUri("/v5/{project_id}/{resource_type}/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstanceByTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstanceByTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListInstanceByTagsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceByTagsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<QueryInstanceByTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryInstanceByTagReq.class),
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
+        genForlistInstanceTags();
+
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
+                .withName("ListInstanceTags")
+                .withUri("/v5/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstanceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstanceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<ListInstanceTagsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceTagsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListJdbcDriversRequest, ListJdbcDriversResponse> listJdbcDrivers =
         genForlistJdbcDrivers();
 
@@ -1102,6 +1347,127 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJdbcDriversRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListJdbcDriversRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> listJobHistoryParameters =
+        genForlistJobHistoryParameters();
+
+    private static HttpRequestDef<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> genForlistJobHistoryParameters() {
+        // basic
+        HttpRequestDef.Builder<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListJobHistoryParametersRequest.class, ListJobHistoryParametersResponse.class)
+                .withName("ListJobHistoryParameters")
+                .withUri("/v5/{project_id}/jobs/{job_id}/configuration-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobParametersRequest, ListJobParametersResponse> listJobParameters =
+        genForlistJobParameters();
+
+    private static HttpRequestDef<ListJobParametersRequest, ListJobParametersResponse> genForlistJobParameters() {
+        // basic
+        HttpRequestDef.Builder<ListJobParametersRequest, ListJobParametersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobParametersRequest.class, ListJobParametersResponse.class)
+                .withName("ListJobParameters")
+                .withUri("/v5/{project_id}/jobs/{job_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobParametersRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobParametersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobParametersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobParametersRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobParametersRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -1287,6 +1653,37 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProjectTagsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+        // basic
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v5/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<ListTagsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTagsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTagsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -2514,6 +2911,45 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SingleUpdateJobReq.class),
             f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> updateJobConfigurations =
+        genForupdateJobConfigurations();
+
+    private static HttpRequestDef<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> genForupdateJobConfigurations() {
+        // basic
+        HttpRequestDef.Builder<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateJobConfigurationsRequest.class, UpdateJobConfigurationsResponse.class)
+            .withName("UpdateJobConfigurations")
+            .withUri("/v5/{project_id}/jobs/{job_id}/modify-configuration")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyParameterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyParameterReq.class),
+            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

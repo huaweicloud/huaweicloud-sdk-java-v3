@@ -11,6 +11,9 @@ import com.huaweicloud.sdk.iec.v1.model.AddNicsResponse;
 import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetResponse;
+import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthRequest;
+import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthRequestBody;
+import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthResponse;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceRequest;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceResponse;
@@ -97,6 +100,8 @@ import com.huaweicloud.sdk.iec.v1.model.DeleteSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.DeleteSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.iec.v1.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.iec.v1.model.DetachVipBandwidthRequest;
+import com.huaweicloud.sdk.iec.v1.model.DetachVipBandwidthResponse;
 import com.huaweicloud.sdk.iec.v1.model.DisassociateSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.DisassociateSubnetRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.DisassociateSubnetResponse;
@@ -3177,6 +3182,63 @@ public class IecMeta {
             TypeCasts.uncheckedConversion(UpdatePublicIpRequestBody.class),
             f -> f.withMarshaller(UpdatePublicIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachVipBandwidthRequest, AttachVipBandwidthResponse> attachVipBandwidth =
+        genForattachVipBandwidth();
+
+    private static HttpRequestDef<AttachVipBandwidthRequest, AttachVipBandwidthResponse> genForattachVipBandwidth() {
+        // basic
+        HttpRequestDef.Builder<AttachVipBandwidthRequest, AttachVipBandwidthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachVipBandwidthRequest.class, AttachVipBandwidthResponse.class)
+                .withName("AttachVipBandwidth")
+                .withUri("/v1/vports/{vport_id}/bandwidth/attach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vport_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachVipBandwidthRequest::getVportId, (req, v) -> {
+                req.setVportId(v);
+            }));
+        builder.<AttachVipBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachVipBandwidthRequestBody.class),
+            f -> f.withMarshaller(AttachVipBandwidthRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachVipBandwidthRequest, DetachVipBandwidthResponse> detachVipBandwidth =
+        genFordetachVipBandwidth();
+
+    private static HttpRequestDef<DetachVipBandwidthRequest, DetachVipBandwidthResponse> genFordetachVipBandwidth() {
+        // basic
+        HttpRequestDef.Builder<DetachVipBandwidthRequest, DetachVipBandwidthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetachVipBandwidthRequest.class, DetachVipBandwidthResponse.class)
+                .withName("DetachVipBandwidth")
+                .withUri("/v1/vports/{vport_id}/bandwidth/detach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vport_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachVipBandwidthRequest::getVportId, (req, v) -> {
+                req.setVportId(v);
             }));
 
         // response

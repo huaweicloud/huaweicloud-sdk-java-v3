@@ -103,6 +103,11 @@ public class ListMasterSlavePoolsRequest {
 
     private List<String> type = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_drain")
+
+    private Boolean connectionDrain;
+
     public ListMasterSlavePoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -651,6 +656,23 @@ public class ListMasterSlavePoolsRequest {
         this.type = type;
     }
 
+    public ListMasterSlavePoolsRequest withConnectionDrain(Boolean connectionDrain) {
+        this.connectionDrain = connectionDrain;
+        return this;
+    }
+
+    /**
+     * 查询是否开启延迟注销的功能，查询条件格式：*connection_drain=true或者*connection_drain=false
+     * @return connectionDrain
+     */
+    public Boolean getConnectionDrain() {
+        return connectionDrain;
+    }
+
+    public void setConnectionDrain(Boolean connectionDrain) {
+        this.connectionDrain = connectionDrain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -670,7 +692,7 @@ public class ListMasterSlavePoolsRequest {
             && Objects.equals(this.memberDeviceId, that.memberDeviceId)
             && Objects.equals(this.listenerId, that.listenerId)
             && Objects.equals(this.memberInstanceId, that.memberInstanceId) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.connectionDrain, that.connectionDrain);
     }
 
     @Override
@@ -692,7 +714,8 @@ public class ListMasterSlavePoolsRequest {
             listenerId,
             memberInstanceId,
             vpcId,
-            type);
+            type,
+            connectionDrain);
     }
 
     @Override
@@ -717,6 +740,7 @@ public class ListMasterSlavePoolsRequest {
         sb.append("    memberInstanceId: ").append(toIndentedString(memberInstanceId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

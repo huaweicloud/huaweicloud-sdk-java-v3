@@ -129,6 +129,11 @@ public class QueryTranscodingsTaskResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "progress")
+
+    private Integer progress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -235,6 +240,25 @@ public class QueryTranscodingsTaskResponse {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public QueryTranscodingsTaskResponse withProgress(Integer progress) {
+        this.progress = progress;
+        return this;
+    }
+
+    /**
+     * 任务执行进度百分比, 取值范围：[0, 100]。 
+     * minimum: 0
+     * maximum: 100
+     * @return progress
+     */
+    public Integer getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Integer progress) {
+        this.progress = progress;
     }
 
     public QueryTranscodingsTaskResponse withCreateTime(String createTime) {
@@ -602,12 +626,12 @@ public class QueryTranscodingsTaskResponse {
         }
         QueryTranscodingsTaskResponse that = (QueryTranscodingsTaskResponse) obj;
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.transTemplateId, that.transTemplateId) && Objects.equals(this.input, that.input)
-            && Objects.equals(this.output, that.output) && Objects.equals(this.outputFileName, that.outputFileName)
-            && Objects.equals(this.userData, that.userData) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.tips, that.tips)
-            && Objects.equals(this.transcodeDetail, that.transcodeDetail)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.transTemplateId, that.transTemplateId)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputFileName, that.outputFileName) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.tips, that.tips) && Objects.equals(this.transcodeDetail, that.transcodeDetail)
             && Objects.equals(this.thumbnailOutput, that.thumbnailOutput)
             && Objects.equals(this.thumbnailOutputname, that.thumbnailOutputname)
             && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.avParameters, that.avParameters);
@@ -617,6 +641,7 @@ public class QueryTranscodingsTaskResponse {
     public int hashCode() {
         return Objects.hash(taskId,
             status,
+            progress,
             createTime,
             endTime,
             transTemplateId,
@@ -640,6 +665,7 @@ public class QueryTranscodingsTaskResponse {
         sb.append("class QueryTranscodingsTaskResponse {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    transTemplateId: ").append(toIndentedString(transTemplateId)).append("\n");

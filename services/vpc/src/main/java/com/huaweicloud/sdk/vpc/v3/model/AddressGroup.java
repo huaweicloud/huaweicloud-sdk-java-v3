@@ -79,6 +79,11 @@ public class AddressGroup {
 
     private String statusMessage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_extra_set")
+
+    private List<IpExtraSetRespOption> ipExtraSet = null;
+
     public AddressGroup withId(String id) {
         this.id = id;
         return this;
@@ -332,6 +337,39 @@ public class AddressGroup {
         this.statusMessage = statusMessage;
     }
 
+    public AddressGroup withIpExtraSet(List<IpExtraSetRespOption> ipExtraSet) {
+        this.ipExtraSet = ipExtraSet;
+        return this;
+    }
+
+    public AddressGroup addIpExtraSetItem(IpExtraSetRespOption ipExtraSetItem) {
+        if (this.ipExtraSet == null) {
+            this.ipExtraSet = new ArrayList<>();
+        }
+        this.ipExtraSet.add(ipExtraSetItem);
+        return this;
+    }
+
+    public AddressGroup withIpExtraSet(Consumer<List<IpExtraSetRespOption>> ipExtraSetSetter) {
+        if (this.ipExtraSet == null) {
+            this.ipExtraSet = new ArrayList<>();
+        }
+        ipExtraSetSetter.accept(this.ipExtraSet);
+        return this;
+    }
+
+    /**
+     * 功能说明：地址组包含的地址集及其备注信息
+     * @return ipExtraSet
+     */
+    public List<IpExtraSetRespOption> getIpExtraSet() {
+        return ipExtraSet;
+    }
+
+    public void setIpExtraSet(List<IpExtraSetRespOption> ipExtraSet) {
+        this.ipExtraSet = ipExtraSet;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -348,7 +386,8 @@ public class AddressGroup {
             && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.statusMessage, that.statusMessage);
+            && Objects.equals(this.statusMessage, that.statusMessage)
+            && Objects.equals(this.ipExtraSet, that.ipExtraSet);
     }
 
     @Override
@@ -365,7 +404,8 @@ public class AddressGroup {
             enterpriseProjectId,
             tags,
             status,
-            statusMessage);
+            statusMessage,
+            ipExtraSet);
     }
 
     @Override
@@ -385,6 +425,7 @@ public class AddressGroup {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+        sb.append("    ipExtraSet: ").append(toIndentedString(ipExtraSet)).append("\n");
         sb.append("}");
         return sb.toString();
     }

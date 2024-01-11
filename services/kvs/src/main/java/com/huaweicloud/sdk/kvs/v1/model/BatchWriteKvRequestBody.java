@@ -16,8 +16,8 @@ import java.util.function.Consumer;
 public class BatchWriteKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableOpers")
-    @BsonProperty(value = "TableOpers")
+    @JsonProperty(value = "table_opers")
+    @BsonProperty(value = "table_opers")
 
     private List<TableBatch> tableOpers = null;
 
@@ -43,7 +43,7 @@ public class BatchWriteKvRequestBody {
     }
 
     /**
-     * Get tableOpers
+     * 行操作数组，可以是多个表的操作。
      * @return tableOpers
      */
     public List<TableBatch> getTableOpers() {

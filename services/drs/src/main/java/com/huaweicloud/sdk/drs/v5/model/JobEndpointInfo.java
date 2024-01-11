@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class JobEndpointInfo {
 
     /**
-     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
      */
     public static final class DbTypeEnum {
 
@@ -31,12 +31,30 @@ public class JobEndpointInfo {
          */
         public static final DbTypeEnum GAUSSDBV5 = new DbTypeEnum("gaussdbv5");
 
+        /**
+         * Enum REDIS for value: "redis"
+         */
+        public static final DbTypeEnum REDIS = new DbTypeEnum("redis");
+
+        /**
+         * Enum REDISCLUSTER for value: "rediscluster"
+         */
+        public static final DbTypeEnum REDISCLUSTER = new DbTypeEnum("rediscluster");
+
+        /**
+         * Enum GAUSSREDIS for value: "gaussredis"
+         */
+        public static final DbTypeEnum GAUSSREDIS = new DbTypeEnum("gaussredis");
+
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbTypeEnum> createStaticFields() {
             Map<String, DbTypeEnum> map = new HashMap<>();
             map.put("oracle", ORACLE);
             map.put("gaussdbv5", GAUSSDBV5);
+            map.put("redis", REDIS);
+            map.put("rediscluster", REDISCLUSTER);
+            map.put("gaussredis", GAUSSREDIS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -272,13 +290,18 @@ public class JobEndpointInfo {
 
     private EndpointSslConfig ssl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customized_dns")
+
+    private CustomizedDns customizedDns;
+
     public JobEndpointInfo withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
         return this;
     }
 
     /**
-     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
      * @return dbType
      */
     public DbTypeEnum getDbType() {
@@ -453,6 +476,32 @@ public class JobEndpointInfo {
         this.ssl = ssl;
     }
 
+    public JobEndpointInfo withCustomizedDns(CustomizedDns customizedDns) {
+        this.customizedDns = customizedDns;
+        return this;
+    }
+
+    public JobEndpointInfo withCustomizedDns(Consumer<CustomizedDns> customizedDnsSetter) {
+        if (this.customizedDns == null) {
+            this.customizedDns = new CustomizedDns();
+            customizedDnsSetter.accept(this.customizedDns);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customizedDns
+     * @return customizedDns
+     */
+    public CustomizedDns getCustomizedDns() {
+        return customizedDns;
+    }
+
+    public void setCustomizedDns(CustomizedDns customizedDns) {
+        this.customizedDns = customizedDns;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -465,12 +514,13 @@ public class JobEndpointInfo {
         return Objects.equals(this.dbType, that.dbType) && Objects.equals(this.endpointType, that.endpointType)
             && Objects.equals(this.endpointRole, that.endpointRole) && Objects.equals(this.endpoint, that.endpoint)
             && Objects.equals(this.cloud, that.cloud) && Objects.equals(this.vpc, that.vpc)
-            && Objects.equals(this.config, that.config) && Objects.equals(this.ssl, that.ssl);
+            && Objects.equals(this.config, that.config) && Objects.equals(this.ssl, that.ssl)
+            && Objects.equals(this.customizedDns, that.customizedDns);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dbType, endpointType, endpointRole, endpoint, cloud, vpc, config, ssl);
+        return Objects.hash(dbType, endpointType, endpointRole, endpoint, cloud, vpc, config, ssl, customizedDns);
     }
 
     @Override
@@ -485,6 +535,7 @@ public class JobEndpointInfo {
         sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
         sb.append("    config: ").append(toIndentedString(config)).append("\n");
         sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
+        sb.append("    customizedDns: ").append(toIndentedString(customizedDns)).append("\n");
         sb.append("}");
         return sb.toString();
     }

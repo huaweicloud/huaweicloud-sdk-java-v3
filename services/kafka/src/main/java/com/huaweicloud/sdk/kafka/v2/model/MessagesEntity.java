@@ -156,7 +156,7 @@ public class MessagesEntity {
     }
 
     /**
-     * topic名称。
+     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
      * @return timestamp
      */
     public Long getTimestamp() {

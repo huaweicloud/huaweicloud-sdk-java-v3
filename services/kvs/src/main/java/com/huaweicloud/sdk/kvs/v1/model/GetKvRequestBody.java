@@ -17,34 +17,28 @@ import java.util.function.Consumer;
 public class GetKvRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Consistency")
-    @BsonProperty(value = "Consistency")
-
-    private Boolean consistency;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PrimaryKey")
-    @BsonProperty(value = "PrimaryKey")
+    @JsonProperty(value = "primary_key")
+    @BsonProperty(value = "primary_key")
 
     private Document primaryKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ProjectionFields")
-    @BsonProperty(value = "ProjectionFields")
+    @JsonProperty(value = "projection_fields")
+    @BsonProperty(value = "projection_fields")
 
     private List<String> projectionFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ReturnPartialBlob")
-    @BsonProperty(value = "ReturnPartialBlob")
+    @JsonProperty(value = "projection_blob")
+    @BsonProperty(value = "projection_blob")
 
-    private ReturnPartialBlob returnPartialBlob;
+    private ProjectionBlob projectionBlob;
 
     public GetKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -52,7 +46,7 @@ public class GetKvRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
@@ -63,30 +57,13 @@ public class GetKvRequestBody {
         this.tableName = tableName;
     }
 
-    public GetKvRequestBody withConsistency(Boolean consistency) {
-        this.consistency = consistency;
-        return this;
-    }
-
-    /**
-     * Get consistency
-     * @return consistency
-     */
-    public Boolean getConsistency() {
-        return consistency;
-    }
-
-    public void setConsistency(Boolean consistency) {
-        this.consistency = consistency;
-    }
-
     public GetKvRequestBody withPrimaryKey(Document primaryKey) {
         this.primaryKey = primaryKey;
         return this;
     }
 
     /**
-     * Get primaryKey
+     * 用户自定义的主键名及值。
      * @return primaryKey
      */
     public Document getPrimaryKey() {
@@ -119,7 +96,7 @@ public class GetKvRequestBody {
     }
 
     /**
-     * Get projectionFields
+     * 对kv_doc有效，返回哪些字段列表，默认全部。 > 字段名或嵌套字段路径用'/'分割。
      * @return projectionFields
      */
     public List<String> getProjectionFields() {
@@ -130,30 +107,30 @@ public class GetKvRequestBody {
         this.projectionFields = projectionFields;
     }
 
-    public GetKvRequestBody withReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public GetKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
         return this;
     }
 
-    public GetKvRequestBody withReturnPartialBlob(Consumer<ReturnPartialBlob> returnPartialBlobSetter) {
-        if (this.returnPartialBlob == null) {
-            this.returnPartialBlob = new ReturnPartialBlob();
-            returnPartialBlobSetter.accept(this.returnPartialBlob);
+    public GetKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
+        if (this.projectionBlob == null) {
+            this.projectionBlob = new ProjectionBlob();
+            projectionBlobSetter.accept(this.projectionBlob);
         }
 
         return this;
     }
 
     /**
-     * Get returnPartialBlob
-     * @return returnPartialBlob
+     * Get projectionBlob
+     * @return projectionBlob
      */
-    public ReturnPartialBlob getReturnPartialBlob() {
-        return returnPartialBlob;
+    public ProjectionBlob getProjectionBlob() {
+        return projectionBlob;
     }
 
-    public void setReturnPartialBlob(ReturnPartialBlob returnPartialBlob) {
-        this.returnPartialBlob = returnPartialBlob;
+    public void setProjectionBlob(ProjectionBlob projectionBlob) {
+        this.projectionBlob = projectionBlob;
     }
 
     @Override
@@ -165,15 +142,14 @@ public class GetKvRequestBody {
             return false;
         }
         GetKvRequestBody that = (GetKvRequestBody) obj;
-        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.consistency, that.consistency)
-            && Objects.equals(this.primaryKey, that.primaryKey)
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.primaryKey, that.primaryKey)
             && Objects.equals(this.projectionFields, that.projectionFields)
-            && Objects.equals(this.returnPartialBlob, that.returnPartialBlob);
+            && Objects.equals(this.projectionBlob, that.projectionBlob);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, consistency, primaryKey, projectionFields, returnPartialBlob);
+        return Objects.hash(tableName, primaryKey, projectionFields, projectionBlob);
     }
 
     @Override
@@ -181,10 +157,9 @@ public class GetKvRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class GetKvRequestBody {\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
-        sb.append("    consistency: ").append(toIndentedString(consistency)).append("\n");
         sb.append("    primaryKey: ").append(toIndentedString(primaryKey)).append("\n");
         sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
-        sb.append("    returnPartialBlob: ").append(toIndentedString(returnPartialBlob)).append("\n");
+        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

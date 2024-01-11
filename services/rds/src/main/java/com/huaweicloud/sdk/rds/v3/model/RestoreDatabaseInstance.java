@@ -24,6 +24,11 @@ public class RestoreDatabaseInstance {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_fast_restore")
+
+    private Boolean isFastRestore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "databases")
 
     private List<RestoreDatabaseInfo> databases = null;
@@ -60,6 +65,23 @@ public class RestoreDatabaseInstance {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public RestoreDatabaseInstance withIsFastRestore(Boolean isFastRestore) {
+        this.isFastRestore = isFastRestore;
+        return this;
+    }
+
+    /**
+     * 是否使用极速恢复，可先根据”获取实例是否能使用极速恢复“接口判断本次恢复是否能使用极速恢复。 如果实例使用了XA事务，采用极速恢复的方式会导致恢复失败！
+     * @return isFastRestore
+     */
+    public Boolean getIsFastRestore() {
+        return isFastRestore;
+    }
+
+    public void setIsFastRestore(Boolean isFastRestore) {
+        this.isFastRestore = isFastRestore;
     }
 
     public RestoreDatabaseInstance withDatabases(List<RestoreDatabaseInfo> databases) {
@@ -105,12 +127,12 @@ public class RestoreDatabaseInstance {
         }
         RestoreDatabaseInstance that = (RestoreDatabaseInstance) obj;
         return Objects.equals(this.restoreTime, that.restoreTime) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.databases, that.databases);
+            && Objects.equals(this.isFastRestore, that.isFastRestore) && Objects.equals(this.databases, that.databases);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(restoreTime, instanceId, databases);
+        return Objects.hash(restoreTime, instanceId, isFastRestore, databases);
     }
 
     @Override
@@ -119,6 +141,7 @@ public class RestoreDatabaseInstance {
         sb.append("class RestoreDatabaseInstance {\n");
         sb.append("    restoreTime: ").append(toIndentedString(restoreTime)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    isFastRestore: ").append(toIndentedString(isFastRestore)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
         sb.append("}");
         return sb.toString();

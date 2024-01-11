@@ -161,6 +161,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
@@ -171,6 +177,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllStandardsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllStandardsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllTablesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAllTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListApiTopNRequest;
@@ -2720,6 +2728,96 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 导入主题
+     *
+     * 用于导入主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportCatalogsRequest 请求对象
+     * @return CompletableFuture<ImportCatalogsResponse>
+     */
+    public CompletableFuture<ImportCatalogsResponse> importCatalogsAsync(ImportCatalogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.importCatalogs);
+    }
+
+    /**
+     * 导入主题
+     *
+     * 用于导入主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportCatalogsRequest 请求对象
+     * @return AsyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse>
+     */
+    public AsyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse> importCatalogsAsyncInvoker(
+        ImportCatalogsRequest request) {
+        return new AsyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse>(request,
+            DataArtsStudioMeta.importCatalogs, hcClient);
+    }
+
+    /**
+     * 血缘导入
+     *
+     * 血缘查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportLineageRequest 请求对象
+     * @return CompletableFuture<ImportLineageResponse>
+     */
+    public CompletableFuture<ImportLineageResponse> importLineageAsync(ImportLineageRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.importLineage);
+    }
+
+    /**
+     * 血缘导入
+     *
+     * 血缘查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportLineageRequest 请求对象
+     * @return AsyncInvoker<ImportLineageRequest, ImportLineageResponse>
+     */
+    public AsyncInvoker<ImportLineageRequest, ImportLineageResponse> importLineageAsyncInvoker(
+        ImportLineageRequest request) {
+        return new AsyncInvoker<ImportLineageRequest, ImportLineageResponse>(request, DataArtsStudioMeta.importLineage,
+            hcClient);
+    }
+
+    /**
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     *
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportModelsRequest 请求对象
+     * @return CompletableFuture<ImportModelsResponse>
+     */
+    public CompletableFuture<ImportModelsResponse> importModelsAsync(ImportModelsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.importModels);
+    }
+
+    /**
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     *
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportModelsRequest 请求对象
+     * @return AsyncInvoker<ImportModelsRequest, ImportModelsResponse>
+     */
+    public AsyncInvoker<ImportModelsRequest, ImportModelsResponse> importModelsAsyncInvoker(
+        ImportModelsRequest request) {
+        return new AsyncInvoker<ImportModelsRequest, ImportModelsResponse>(request, DataArtsStudioMeta.importModels,
+            hcClient);
+    }
+
+    /**
      * 查询导入结果
      *
      * 查询导入excel的处理结果
@@ -2869,6 +2967,36 @@ public class DataArtsStudioAsyncClient {
         ListAllStandardsRequest request) {
         return new AsyncInvoker<ListAllStandardsRequest, ListAllStandardsResponse>(request,
             DataArtsStudioMeta.listAllStandards, hcClient);
+    }
+
+    /**
+     * 查询多种类型的表信息
+     *
+     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllTablesRequest 请求对象
+     * @return CompletableFuture<ListAllTablesResponse>
+     */
+    public CompletableFuture<ListAllTablesResponse> listAllTablesAsync(ListAllTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listAllTables);
+    }
+
+    /**
+     * 查询多种类型的表信息
+     *
+     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllTablesRequest 请求对象
+     * @return AsyncInvoker<ListAllTablesRequest, ListAllTablesResponse>
+     */
+    public AsyncInvoker<ListAllTablesRequest, ListAllTablesResponse> listAllTablesAsyncInvoker(
+        ListAllTablesRequest request) {
+        return new AsyncInvoker<ListAllTablesRequest, ListAllTablesResponse>(request, DataArtsStudioMeta.listAllTables,
+            hcClient);
     }
 
     /**

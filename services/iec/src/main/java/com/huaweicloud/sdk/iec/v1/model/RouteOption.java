@@ -30,12 +30,24 @@ public class RouteOption {
          */
         public static final TypeEnum VIP = new TypeEnum("vip");
 
+        /**
+         * Enum CC for value: "cc"
+         */
+        public static final TypeEnum CC = new TypeEnum("cc");
+
+        /**
+         * Enum IGW for value: "igw"
+         */
+        public static final TypeEnum IGW = new TypeEnum("igw");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("ecs", ECS);
             map.put("vip", VIP);
+            map.put("cc", CC);
+            map.put("igw", IGW);
             return Collections.unmodifiableMap(map);
         }
 

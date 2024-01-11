@@ -15,74 +15,10 @@ import java.util.Objects;
  */
 public class AccessPolicyDetailInfo {
 
-    /**
-     * 策略名，当前只支持专线接入策略名。 * PRIVATE_ACCESS： 专线接入
-     */
-    public static final class PolicyNameEnum {
-
-        /**
-         * Enum PRIVATE_ACCESS for value: "PRIVATE_ACCESS"
-         */
-        public static final PolicyNameEnum PRIVATE_ACCESS = new PolicyNameEnum("PRIVATE_ACCESS");
-
-        private static final Map<String, PolicyNameEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PolicyNameEnum> createStaticFields() {
-            Map<String, PolicyNameEnum> map = new HashMap<>();
-            map.put("PRIVATE_ACCESS", PRIVATE_ACCESS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PolicyNameEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PolicyNameEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyNameEnum(value));
-        }
-
-        public static PolicyNameEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PolicyNameEnum) {
-                return this.value.equals(((PolicyNameEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_name")
 
-    private PolicyNameEnum policyName;
+    private String policyName;
 
     /**
      * 黑名单类型，当前黑名单只支持互联网。 * INTERNET： 互联网
@@ -163,7 +99,7 @@ public class AccessPolicyDetailInfo {
 
     private String createTime;
 
-    public AccessPolicyDetailInfo withPolicyName(PolicyNameEnum policyName) {
+    public AccessPolicyDetailInfo withPolicyName(String policyName) {
         this.policyName = policyName;
         return this;
     }
@@ -172,11 +108,11 @@ public class AccessPolicyDetailInfo {
      * 策略名，当前只支持专线接入策略名。 * PRIVATE_ACCESS： 专线接入
      * @return policyName
      */
-    public PolicyNameEnum getPolicyName() {
+    public String getPolicyName() {
         return policyName;
     }
 
-    public void setPolicyName(PolicyNameEnum policyName) {
+    public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
 

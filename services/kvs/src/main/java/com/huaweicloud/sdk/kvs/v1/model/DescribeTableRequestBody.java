@@ -13,8 +13,8 @@ import java.util.Objects;
 public class DescribeTableRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "TableName")
-    @BsonProperty(value = "TableName")
+    @JsonProperty(value = "table_name")
+    @BsonProperty(value = "table_name")
 
     private String tableName;
 
@@ -24,7 +24,7 @@ public class DescribeTableRequestBody {
     }
 
     /**
-     * Get tableName
+     * 表名。 - 长度：[3, 63] - 取值字符限制：[a-zA-Z0-9_-]+
      * @return tableName
      */
     public String getTableName() {
